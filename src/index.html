@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>time to travel</title>
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+  <div class="wrapper clearfix">
+    <header class="header">
+      <h1>Time to Travel</h1>
+    </header>
+    <aside class="icon-bar">
+      <nav>
+        <ul class="icon-menu">
+          <li>icon1</li>
+          <li>icon2</li>
+          <li>icon3</li>
+          <li>icon4</li>
+        </ul>
+      </nav>
+    </aside>
+    <main class="main">
+      <h2>timeline</h2>
+      <div class="date-wrapper clearfix">
+        <div class="date-left"><</div>
+        <ul class="date-list">
+          <li>
+            <div class="month">APR</div>
+            <div class="day">17</div>
+          </li>
+          <li>
+            <div class="month">APR</div>
+            <div class="day">18</div>
+          </li>
+          <li>
+            <div class="month">APR</div>
+            <div class="day">19</div>
+          </li>
+          <li>
+            <div class="month">APR</div>
+            <div class="day">20</div>
+          </li>
+          <li>
+            <div class="month">APR</div>
+            <div class="day">21</div>
+          </li>
+          <li>
+            <div class="month">APR</div>
+            <div class="day">22</div>
+          </li>
+          <li>
+            <div class="month">APR</div>
+            <div class="day">23</div>
+          </li>
+        </ul>
+        <div class="date-right">></div>
+      </div>
+      
+      <div class="timeline clearfix">
+        <ul class="time-list">
+          <li>07:00</li>
+          <li>08:00</li>
+          <li>09:00</li>
+          <li>10:00</li>
+          <li>11:00</li>
+          <li>12:00</li>
+          <li>13:00</li>
+          <li>14:00</li>
+          <li>15:00</li>
+          <li>16:00</li>
+          <li>17:00</li>
+          <li>18:00</li>
+          <li>19:00</li>
+          <li>20:00</li>
+          <li>21:00</li>
+          <li>22:00</li>
+          <li>23:00</li>
+        </ul>
+        <div class="timeline-point">
+
+        </div>
+        <ul class="timeline-box">
+          <li class="no1">
+            <div class="time">09:20</div>
+            <div class="place">LAX 공항</div>
+            <div class="detail">공항 도착, 렌터카 수령</div>
+          </li>
+          <li class="no2">
+            <div class="time">12:00</div>
+            <div class="place">In-N-Out Burger</div>
+            <div class="detail">점심식사</div>
+          </li>
+        </ul>
+      </div>
+      
+    </main>
+    <div class="popup-btn">
+      +
+    </div>
+    <div class="popup-form">
+      <h2>스케줄 입력</h2>
+      <!-- <label for="date-select">월 선택:</label> -->
+      <select name="month" id="month-select">
+          <option value="">MONTH</option>
+          <option value="">APR</option>
+          <option value="">MAY</option>
+      </select>
+      <select name="day" id="day-select">
+          <option value="">DAY</option>
+          <option value="">13</option>
+          <option value="">14</option>
+      </select>
+      <select name="hour" id="hour-select">
+          <option value="">HOUR</option>
+          <option value="">09</option>
+          <option value="">10</option>
+      </select>
+      <select name="min" id="min-select">
+          <option value="">MINUTE</option>
+          <option value="">20</option>
+          <option value="">30</option>
+      </select>
+      <input type="text" class="input-place" placeholder="장소">
+      <input type="text" class="input-detail" placeholder="내용">
+      <button>등록</button>
+    </div>
+  </div>
+  
+</body>
+</html>
