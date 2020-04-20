@@ -1,19 +1,20 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+@import url('https://use.fontawesome.com/releases/v5.5.0/css/all.css');
 /* BORDER-BOX */
 body *, body *::before, body *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
-
 /* MODULE */
 .clearfix::after {
   display: block;
   content: '';
   clear: both;
 }
-
 body {
+  font-family: 'Open Sans', sans-serif;
+  /* font-family: 'Nanum Gothic', sans-serif; */
   padding: 20px;
   background-color: #f4f4f4;
 }
@@ -30,156 +31,227 @@ body {
   margin: 0 auto;
   background-color: #fff;
   padding: 20px;
+  border-radius: 20px;
 }
-.header h1 {
+.header h2 {
+  width: 93%;
   font-size: 25px;
   text-align: center;
-  font-weight: bold;
-  background-color: #fff;
+  font-weight: 400;
+  font-style: italic;
+  /* background-color: #ccc; */
 }
-
 /* LEFT SIDE MENU */
-.icon-bar {
+.menu-bar {
   width: 90px;
+  height: 900px;
   float: left;
+  padding: 30px;
+  border-radius: 20px 0 0 20px;
   background-color: #ccc;
 }
-nav {
-
+.menu-bar h1 {
+  /* padding: 20px; */
+  font-size: 30px;
+  /* width: 50px; */
+  /* text-align: center; */
+  font-weight: 400;
+  font-style: italic;
+  color: #fff;
+  text-shadow: 12px 12px rgb(133, 154, 206);
+  /* background-color: #ccc; */
+  /* outline: 1px solid #000; */
 }
-.icon-menu li {
-  width: 60px;
+.menu-list {
+  padding-top: 50px;
+}
+.menu-list li {
+  /* width: 60px; */
   height: 60px;
-  margin: 20px;
-  background-color: #999;
+  /* margin: 20px; */
+  /* background-color: #999; */
 }
-
-
+.menu-list > li > i {
+  color: #fff;
+  font-size: 23px;
+  line-height: 60px;
+}
+.menu-list > li > .fa-plane-departure {
+  font-size: 20px;
+}
 /* MAIN */
-.main {
+.main-schedule {
   width: 830px;
   float: right;
 }
-
-.main h2 {
-  font-size: 23px;
+.main-schedule h2 {
+  font-size: 24px;
   padding: 15px;
-  text-align: center;
-  background-color: #cdcdcd;
+  font-weight: 700;
+  /* text-align: center; */
+  /* background-color: #cdcdcd; */
 }
 /* DATE */
 .date-wrapper {
   width: 100%; 
   padding: 10px 20px;
-  background-color: #f4f4f4;
+  /* background-color: #f4f4f4; */
 }
-.date-left, .date-right {
+.date-before-btn, .date-after-btn {
   float: left;
-  padding: 20px;
-  background-color: #e8e8e8;
+  padding: 10px;
+  margin-top: 25px;
+  font-size: 28px;
+  color: rgb(133, 154, 206);
+  /* background-color: #e8e8e8; */
 }
 .date-list {
   float: left;
-  width: 680px;
+  width: 660px;
+  padding: 0 20px;
   background-color: #fff;
 }
 .date-list li {
   float: left;
-  margin: 15px 30px 15px 30px;
+  /* width: 50px; */
+  margin: 0 7px;
+  background-color: rgb(225, 225, 225);
+  padding: 15px;
+  border-radius: 13px;
 }
-.month {
-  font-size: 16px;
+.date-list .active {
+  color: #fff;
+  background-color: rgb(133, 154, 206);
+}
+.week {
+  text-align: center;
+  font-size: 13px;
+  font-weight: 200;
+  letter-spacing: 2px;
 }
 .day {
-  font-size: 37px;
+  margin-bottom: 5px;
+  font-size: 38px;
+  font-weight: 200;
 }
 /* TIME */
 .timeline {
+  position: relative;
   margin-top: 20px;
   padding: 10px;
 }
 .time-list {
   float: left;
   margin-right: 10px;
+  width: 90%;
 }
 .time-list li {
-  margin-bottom: 50px;
+  padding: 30px 10px;
+  font-size: 15px;
+  border-bottom: 1px solid #dcdcdc;
 }
-.timeline-point {
+/* .timeline-point {
   float: left;
   width: 25px;
   height: 100vh;
   margin-right: 10px;
   background-color: #e8e8e8;
-}
-.timeline-box {
-  position: relative;
+} */
+.schedule-list {
+  position: absolute;
   float: left;
-  width: 80%;
+  /* width: 80%; */
   /* height: 100vh; */
   padding: 20px;
-  background-color: #f4f4f4;
+  /* background-color: #f4f4f4; */
 }
-.timeline-box li {
+.schedule-list li {
   position: absolute;
-  width: 100%;
+  width: 610px;
   background-color: #cdcdcd;
   border-radius: 8px;
   padding: 10px;
   margin-bottom: 10px;
   line-height: 1.4;
+  left: 80px;
 }
-.no1 {
+.remove-btn {
+  position: absolute;
+  top: 8px;
+  right: 13px;
+}
+#s01 {
   top: 170px;
+  color: #fff;
+  background-color: rgb(158, 199, 208);
 }
-.no2 {
+#s02 {
   top: 330px;
+  color: #fff;
+  background-color: rgb(211, 149, 169);
 }
-.popup-btn {
+/* POPUP */
+.new-schedule-btn {
   position: fixed;
   bottom: 30px;
   right: 30px;
-  width: 60px;
-  height: 60px;
-  border-radius: 60px;
-  background-color: #666;
+  width: 80px;
+  height: 80px;
+  border-radius: 20px;
+  background-color: rgb(61, 112, 120);
   text-align: center;
-  line-height: 65px;
+  line-height: 76px;
   color: #fff;
-  font-size: 40px;
+  font-size: 50px;
   cursor: pointer;
-  font-weight: bold;
+  font-weight: 200;
 }
-
-.popup-form {
-  position: absolute;
+.popup-bg {
+  /* display: block; */
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(55, 55, 55, .7);
+}
+.new-schedule-popup {
+  position: fixed;
+  top: 150px;
+  left: calc(50% - 210px);
   width: 430px;
   height: 300px;
   padding: 30px;
   margin: 30px;
-  top: 1500px;
   text-align: center;
   background-color: #fff;
 }
-.popup-form h2 {
+.new-schedule-popup h2 {
   font-size: 23px;
   padding: 5px;
 }
-.popup-form select {
+.new-schedule-popup select {
   font-size: 14px;
-  padding: 5px;
+  padding: 10px;
   margin-bottom: 10px;
 }
 .input-place, .input-detail {
   font-size: 14px;
   padding: 5px;
   margin-bottom: 10px;
-  width: 90%;
+  width: 100%;
 }
-.popup-form button {
+.popup-remove-btn {
+  position: absolute;
+  top: 10px;
+  right: 13px;
+  font-size: 23px;
+}
+.add-schedule-btn {
   font-size: 16px;
   padding: 10px;
-  width: 90%;
+  width: 100%;
   color: #fff;
   background-color: #333;
 }
