@@ -98,6 +98,7 @@ body {
 }
 /* DATE */
 .date-wrapper {
+<<<<<<< HEAD
   width: 100%;
   padding: 10px 20px;
   /* background-color: #f4f4f4; */
@@ -105,26 +106,53 @@ body {
 .date-before-btn,
 .date-after-btn {
   float: left;
+=======
+  position: relative;
+  width: 100%; 
+  padding: 10px 20px 10px 45px;
+  /* background-color: #f4f4f4; */
+}
+.date-container {
+  width: 650px;
+  overflow: hidden;
+}
+.date-before-btn, .date-after-btn {
+  /* float: left; */
+  position: absolute;
+  top: 5px;
+>>>>>>> 0d2b1f1d5a814d84cca5bad37f531befb50baa4b
   padding: 10px;
   margin-top: 25px;
   font-size: 28px;
   color: rgb(133, 154, 206);
   /* background-color: #e8e8e8; */
+  cursor: pointer;
+}
+.date-before-btn {
+  left: 0px;
+}
+.date-after-btn {
+  right: 80px;
 }
 .date-list {
-  float: left;
+  /* float: left; */
+  display: flex;
   width: 660px;
-  padding: 0 20px;
-  background-color: #fff;
+  height: 100px;
+  padding: 5px 20px;
+  /* background-color: rgb(220, 220, 220); */
+  
 }
-.date-list li {
-  float: left;
+.date-item {
+  /* float: left; */
   /* width: 50px; */
-  margin: 0 7px;
+  margin: 0 7px 10px 7px;
   background-color: rgb(225, 225, 225);
   padding: 15px;
   border-radius: 13px;
+  /* transform: translate3d(-120px, 0, 0); */
 }
+
 .date-list .active {
   color: #fff;
   background-color: rgb(133, 154, 206);
@@ -185,6 +213,7 @@ body {
   position: absolute;
   top: 8px;
   right: 13px;
+  cursor: pointer;
 }
 #s01 {
   top: 170px;
