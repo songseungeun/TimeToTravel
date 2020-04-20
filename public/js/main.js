@@ -1,10 +1,5 @@
-// const closePopup = () => {
-//   $newSchedulePopUp.style.display = "none";
-//   $popupBg.style.display = "none";
-// };
+let travels = [];
+let schedules = [];
+let info = [];
 
-// function openPopup() {
-//   popupBg.style.display = 'block';
-//   newTravelPopup.style.display = 'block';
-// }
-
+export { travels, schedules, info };

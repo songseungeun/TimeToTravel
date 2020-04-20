@@ -1,3 +1,5 @@
+import { travels, schedules, info } from './main.js';
+
 // DOMs
 const $newTravelBtn = document.querySelector('.new-travel-btn');
 const $addTravelBtn = document.querySelector('.add-travel-btn');
@@ -15,14 +17,16 @@ const $endDate = $newTravelPopup.querySelector('#end-day-select');
 
 // functions
 const closeHomePopup = () => {
-  $newTravelPopup.style.display = 'none';
   $popupBg.style.display = 'none';
+  $newTravelPopup.style.display = 'none';
 };
 
 const openHomePopup = () => {
   $popupBg.style.display = 'block';
   $newTravelPopup.style.display = 'block';
 };
+
+const generateId = () => travels.length ? Math.max(...travels.map(({id}) => id)) + 1 : 1;
 
 const renderTravelList = () => {
 
@@ -34,14 +38,20 @@ $newTravelBtn.addEventListener('click', openHomePopup);
 $popupBg.addEventListener('click', closeHomePopup);
 $popupRemove.addEventListener('click', closeHomePopup);
 
-$addTravelBtn.onclick = async () => {
+$addTravelBtn.onclick = () => {
   const title = $inputTitle.value.trim();
   const place = $inputPlace.value.trim();
   const startDate = `${$startYear.value}/${$startMonth.value}/${$startDate.value}`;
   const endDate = `${$endYear.value}/${$endMonth.value}/${$endDate.value}`;
 
-  const { data } = await axios.post('/travels', { id: 2, title, place, startDate, endDate });
-  travels = data;
+  axios.post('/travels', { id: generateId(), title, place, startDate, endDate })
+    .then(data => console.log(data))
+    .catch(err => console.error(err));
+
+  $inputTitle.value = '';
+  $inputPlace.value = '';
+
+  // [...$newTravelPopup.children].forEach(child => child === )
 
   renderTravelList();
 };
