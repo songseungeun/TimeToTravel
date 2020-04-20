@@ -12,6 +12,9 @@ body *, body *::before, body *::after {
   content: '';
   clear: both;
 }
+.float-left {
+  float: left;
+}
 body {
   font-family: 'Open Sans', sans-serif;
   /* font-family: 'Nanum Gothic', sans-serif; */
@@ -93,32 +96,51 @@ body {
 }
 /* DATE */
 .date-wrapper {
+  position: relative;
   width: 100%; 
-  padding: 10px 20px;
+  padding: 10px 20px 10px 45px;
   /* background-color: #f4f4f4; */
 }
+.date-container {
+  width: 650px;
+  overflow: hidden;
+}
 .date-before-btn, .date-after-btn {
-  float: left;
+  /* float: left; */
+  position: absolute;
+  top: 5px;
   padding: 10px;
   margin-top: 25px;
   font-size: 28px;
   color: rgb(133, 154, 206);
   /* background-color: #e8e8e8; */
+  cursor: pointer;
+}
+.date-before-btn {
+  left: 0px;
+}
+.date-after-btn {
+  right: 80px;
 }
 .date-list {
-  float: left;
+  /* float: left; */
+  display: flex;
   width: 660px;
-  padding: 0 20px;
-  background-color: #fff;
+  height: 100px;
+  padding: 5px 20px;
+  /* background-color: rgb(220, 220, 220); */
+  
 }
-.date-list li {
-  float: left;
+.date-item {
+  /* float: left; */
   /* width: 50px; */
-  margin: 0 7px;
+  margin: 0 7px 10px 7px;
   background-color: rgb(225, 225, 225);
   padding: 15px;
   border-radius: 13px;
+  /* transform: translate3d(-120px, 0, 0); */
 }
+
 .date-list .active {
   color: #fff;
   background-color: rgb(133, 154, 206);
@@ -179,6 +201,7 @@ body {
   position: absolute;
   top: 8px;
   right: 13px;
+  cursor: pointer;
 }
 #s01 {
   top: 170px;
@@ -218,23 +241,38 @@ body {
 }
 .new-schedule-popup {
   position: fixed;
-  top: 150px;
+  top: 120px;
   left: calc(50% - 210px);
-  width: 430px;
-  height: 300px;
+  width: 400px;
   padding: 30px;
   margin: 30px;
   text-align: center;
   background-color: #fff;
 }
+.select-date,
+.select-start-hour,
+.select-end-hour {
+  /* background-color: #cdcdcd; */
+  padding-left: 13px;
+}
+
+.new-schedule-popup * {
+  display: block;
+}
 .new-schedule-popup h2 {
   font-size: 23px;
   padding: 5px;
+  margin-bottom: 10px;
+}
+.new-schedule-popup label {
+  padding: 9px 10px;
 }
 .new-schedule-popup select {
-  font-size: 14px;
-  padding: 10px;
-  margin-bottom: 10px;
+  font-size: 16px;
+  width: 100px;
+  height: 35px;
+  padding: 25px;
+  margin: 0 5px 10px 5px;
 }
 .input-place, .input-detail {
   font-size: 14px;
@@ -247,6 +285,15 @@ body {
   top: 10px;
   right: 13px;
   font-size: 23px;
+}
+.warnning-text {
+  /* display: block; */
+  display: none;
+  /* width: 350px; */
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #e38484;
+  /* background-color: #f4f4f4; */
 }
 .add-schedule-btn {
   font-size: 16px;
