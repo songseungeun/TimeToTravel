@@ -181,7 +181,8 @@ body {
   right: 13px;
 }
 #s01 {
-  top: 170px;
+  top: 75px;
+  height: 75px;
   color: #fff;
   background-color: rgb(158, 199, 208);
 }
