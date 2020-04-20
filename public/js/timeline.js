@@ -22,7 +22,7 @@ const sortTimeline = travel => {
   });
 };
 
-const render = () => {
+const renderTimeline = () => {
   let html = '';
   const travel = travels[0].schedule;
 
@@ -42,7 +42,7 @@ const render = () => {
 const getSchedules = async () => {
   const { data } = await axios.get('/travels');
   travels = data;
-  render();
+  renderTimeline();
 };
 
 const removeSchedule = async target => {
@@ -51,7 +51,7 @@ const removeSchedule = async target => {
 
   const { data } = await axios.delete(`/travels/`);
   travels = data;
-  render();
+  renderTimeline();
 };
 
 // events

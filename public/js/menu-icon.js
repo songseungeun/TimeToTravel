@@ -1,11 +1,8 @@
 const $menuList = document.querySelector('.menu-list');
-
 const $mainTravels = document.querySelector('.main-travels');
 const $mainInfo = document.querySelector('.main-info');
 const $newInfoBtn = document.querySelector('.new-info-btn')
 const $mainSchedule = document.querySelector('.main-schedule');
-
-
 const $menuItem = document.querySelector('.menu-item > i');
 
 function viewChangeMain({ target }) {
