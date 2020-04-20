@@ -4,7 +4,9 @@ const $popupBg = document.querySelector(".popup-bg");
 const $addScheduleBtn = document.querySelector(".add-schedule-btn");
 const $popupRemoveBtn = document.querySelector(".popup-remove-btn");
 const $selectDate = document.querySelector(".select-date");
-const $monthSelect = document.querySelector("#month-select");
+const $selectStartHour = document.querySelector(".select-start-hour");
+
+//const $monthSelect = document.querySelector("#month-select");
 const $dateSelect = document.querySelector("#date-select");
 const $startHourSelect = document.querySelector("#start-hour-select");
 const $startMinSelect = document.querySelector("#start-min-select");
@@ -30,9 +32,18 @@ $newScheduleBtn.onclick = () => {
 //x버튼을 누르면 팝업창 종료
 $popupRemoveBtn.addEventListener("click", closePopup);
 
+function insertdate() {
+  const $monthSelect = document.querySelector("#month-select");
+  for (let i = 0; i < $monthSelect.length; i++) {
+    if ($monthSelect[i].value == 2) {
+      $monthSelect[i].selected = true;
+    }
+  }
+}
+
 //경고 메세지
 $addScheduleBtn.onclick = (e) => {
-  console.log(e.target);
-  if ($inputPlace.value === "") return ($warningText.style.display = "block");
-  if ($inputDetail.value === "") return ($warningText.style.display = "block");
+  if ($selectDate.value === "none") {
+    $warningText.style.display = "block";
+  }
 };
