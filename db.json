@@ -6,15 +6,15 @@
       "country": "프랑스",
       "outDate": "2020.05.16",
       "inDate": "2020.05.18",
-      "schedule": [{ "day1": [{ "timeFrom": 9, "timeTo": 11, "place": "인천", "detail": "blabla"},
-                              { "timeFrom": 12, "timeTo": 14, "place": "파리", "detail": "blabla"}]},
-                    { "day2": [{ "timeFrom": 14, "timeTo": 16, "place": "에펠탑", "detail": "blabla"},
-                              { "timeFrom": 18, "timeTo": 20, "place": "개선문", "detail": "blabla"}]},
-                    { "day3": [{ "timeFrom": 14, "timeTo": 16, "place": "센느강", "detail": "blabla"},
-                              { "timeFrom": 18, "timeTo": 20, "place": "몽마르트", "detail": "blabla"}]}],
-      "info": { "flights": [{ "id": 1, "departTime": "20.05.16.18:10:00", "landTime": "20.05.16.18:10:00", "departPlace": "인천", "landPlace": "파리"},
-                              { "id": 2, "departTime": "20.05.16.18:10:00", "landTime": "20.05.16.18:10:00", "departPlace": "인천", "landPlace": "파리"}],
-                "hotels": [{ "id": 1, "name": "novotel", "address": "blabla", "website": "blabla" },
-                            { "id": 2, "name": "novotel", "address": "blabla", "website": "blabla" }]}
+      "schedule": [{ "date":"2020.05.16", "timeFrom": 9, "timeTo": 11, "place": "인천", "detail": "blabla"},
+                  { "date":"2020.05.16", "timeFrom": 12, "timeTo": 14, "place": "파리", "detail": "blabla"},
+                  { "date":"2020.05.17","timeFrom": 14, "timeTo": 16, "place": "에펠탑", "detail": "blabla"},
+                  { "date":"2020.05.17", "timeFrom": 18, "timeTo": 20, "place": "개선문", "detail": "blabla"},
+                  { "date":"2020.05.18", "timeFrom": 14, "timeTo": 16, "place": "센느강", "detail": "blabla"},
+                  { "date":"2020.05.18", "timeFrom": 18, "timeTo": 20, "place": "몽마르트", "detail": "blabla"}],
+      "info": [{ "type": "flights", "id": 1, "departTime": "20.05.16.18:10:00", "landTime": "20.05.16.18:10:00", "departPlace": "인천", "landPlace": "파리"},
+              { "type": "flights", "id": 2, "departTime": "20.05.16.18:10:00", "landTime": "20.05.16.18:10:00", "departPlace": "인천", "landPlace": "파리"},
+              { "type": "hotels", "id": 1, "name": "novotel", "address": "blabla", "website": "blabla" },
+              { "type": "hotels", "id": 2, "name": "novotel", "address": "blabla", "website": "blabla" }]
     }]
 }
