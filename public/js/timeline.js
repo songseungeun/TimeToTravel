@@ -45,7 +45,18 @@ const getSchedules = async () => {
   render();
 };
 
+const removeSchedule = async target => {
+  if (!target.matches('.schedule-list > li > .remove-btn')) return;
+  const id = target.parentNode.id;
+
+  const { data } = await axios.delete(`/travels/`);
+  travels = data;
+  render();
+};
+
 // events
 window.onload = getSchedules;
 
 $dateList.addEventListener('click', ({ target }) => toggleActiveDate(target));
+
+$scheduleList.addEventListener('click', ({ target }) => removeSchedule(target));
