@@ -1,3 +1,6 @@
+// state
+let schedules = [];
+
 // DOMs
 const $dateList = document.querySelector('.date-list');
 const $scheduleList = document.querySelector('.schedule-list');
@@ -19,28 +22,28 @@ const toggleActiveDate = target => {
 //   });
 // };
 
-// const renderTimeline = () => {
-//   let html = '';
-//   const travel = travels[0].schedule;
+const renderTimeline = () => {
+  let html = '';
+  const travel = travels[0].schedule;
 
-//   travel.forEach(({ id, timeFrom, place, detail }) => {
-//     html += `<li class="schedule" id="s${id}">
-//             <div class="time">${timeFrom}</div>
-//             <div class="place">${place}</div>
-//             <div class="detail">${detail}</div>
-//             <div class="remove-btn">X</div>
-//           </li>`;
-//   });
+  travel.forEach(({ id, timeFrom, place, detail }) => {
+    html += `<li class="schedule" id="s${id}">
+            <div class="time">${timeFrom}</div>
+            <div class="place">${place}</div>
+            <div class="detail">${detail}</div>
+            <div class="remove-btn">X</div>
+          </li>`;
+  });
 
-//   $scheduleList.innerHTML = html;
-//   sortTimeline(travel);
-// };
+  $scheduleList.innerHTML = html;
+  sortTimeline(travel);
+};
 
-// const getSchedules = async () => {
-//   const { data } = await axios.get('/travels');
-//   travels = data;
-//   renderTimeline();
-// };
+const getSchedules = async () => {
+  const { data } = await axios.get('/schedules');
+  schedules = data;
+  renderTimeline();
+};
 
 // const removeSchedule = async target => {
 //   if (!target.matches('.schedule-list > li > .remove-btn')) return;
@@ -52,7 +55,7 @@ const toggleActiveDate = target => {
 // };
 
 // events
-// window.onload = getSchedules;
+window.onload = getSchedules;
 
 $dateList.addEventListener('click', ({ target }) => toggleActiveDate(target));
 

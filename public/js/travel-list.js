@@ -1,3 +1,4 @@
+// state
 let travels = [];
 
 // DOMs
@@ -53,6 +54,10 @@ const getTravels = async () => {
   renderTravelList();
 };
 
+const checkValues = target => {
+  target.nextElementSibling.style.display = target.value === '' ? 'block' : 'none';
+};
+
 // event handlers
 window.onload = getTravels;
 
@@ -60,17 +65,25 @@ $newTravelBtn.addEventListener('click', openTravelPopup);
 $popupBg.addEventListener('click', closeTravelPopup);
 $popupRemove.addEventListener('click', closeTravelPopup);
 
+[...$newTravelPopup.children].forEach(child => child.addEventListener('change', ({ target }) => checkValues(target)));
+
 $addTravelBtn.onclick = async () => {
+  const isBlank = [...$newTravelPopup.children].filter(child => child.value === '').length !== 0;
   const title = $inputTitle.value.trim();
   const place = $inputPlace.value.trim();
   const startDate = `${$startYear.value}/${$startMonth.value}/${$startDate.value}`;
   const endDate = `${$endYear.value}/${$endMonth.value}/${$endDate.value}`;
+
+  if (isBlank) return;
 
   const { data } = await axios.post('/travels', { id: generateId(), title, place, startDate, endDate });
   travels = [data, ...travels];
 
   closeTravelPopup();
   renderTravelList();
+
+  $inputTitle.value = '';
+  $inputPlace.value = '';
 };
 
 $travelList.onclick = async ({ target }) => {

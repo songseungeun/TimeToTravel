@@ -323,8 +323,8 @@ body {
   cursor: pointer;
 }
 .warnning-text {
-  display: block;
-  /* display: none; */
+  /* display: block; */
+  display: none;
   /* width: 350px; */
   font-size: 14px;
   margin-bottom: 10px;
@@ -358,6 +358,7 @@ body {
   line-height: 1.5;
   margin: 0 20px 20px 0;
   background-color: #d4d4d4;
+  cursor: pointer;
 }
 .travel-list li h2 {
   font-size: 24px;
