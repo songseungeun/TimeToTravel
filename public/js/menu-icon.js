@@ -2,7 +2,8 @@ const $menuList = document.querySelector('.menu-list');
 
 const $mainTravels = document.querySelector('.main-travels');
 const $mainInfo = document.querySelector('.main-info');
-// const $mainSchedule = document.querySelector('.main-schedule');
+const $newInfoBtn = document.querySelector('.new-info-btn')
+const $mainSchedule = document.querySelector('.main-schedule');
 
 
 const $menuItem = document.querySelector('.menu-item > i');
@@ -14,6 +15,7 @@ function viewChangeMain({ target }) {
     $mainSchedule.style.display = 'none';
     $mainTravels.style.display = 'block';
     $mainInfo.style.display = 'none';
+    $newInfoBtn.style.display = 'none';
   } else if (target.matches('.fa-calendar-alt')) {
     $mainSchedule.style.display = 'block';
     $mainTravels.style.display = 'none';
