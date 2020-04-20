@@ -20,7 +20,5 @@ function moveDatetoNext({ target }) {
   dateList.style.transition = "all 0.3s ease-out";
 }
 
-beforeBtn.addEventListener("click", moveDatetoPrev);
-afterBtn.addEventListener("click", moveDatetoNext);
-
-//song
+beforeBtn.addEventListener('click', moveDatetoPrev);
+afterBtn.addEventListener('click', moveDatetoNext);
