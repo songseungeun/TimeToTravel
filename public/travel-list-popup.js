@@ -1,4 +1,3 @@
-//DOM
 const $newScheduleBtn = document.querySelector(".new-schedule-btn");
 const $newSchedulePopUp = document.querySelector(".new-schedule-popup");
 const $popupBg = document.querySelector(".popup-bg");
@@ -14,6 +13,9 @@ const $endMinSelect = document.querySelector("#end-min-select");
 const $inputPlace = document.querySelector(".input-place");
 const $inputDetail = document.querySelector(".input-detail");
 
+const $mainSchedule = document.querySelector(".main-schedule");
+const $warningText = document.querySelector(".warnning-text");
+
 const closePopup = () => {
   $newSchedulePopUp.style.display = "none";
   $popupBg.style.display = "none";
@@ -26,4 +28,11 @@ $newScheduleBtn.onclick = () => {
 };
 
 //x버튼을 누르면 팝업창 종료
-//$popupRemoveBtn.onclick = (e) => {};
+$popupRemoveBtn.addEventListener("click", closePopup);
+
+//경고 메세지
+$addScheduleBtn.onclick = (e) => {
+  console.log(e.target);
+  if ($inputPlace.value === "") return ($warningText.style.display = "block");
+  if ($inputDetail.value === "") return ($warningText.style.display = "block");
+};
