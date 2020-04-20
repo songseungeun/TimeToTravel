@@ -1,9 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap");
-@import url("https://use.fontawesome.com/releases/v5.5.0/css/all.css");
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+@import url('https://use.fontawesome.com/releases/v5.5.0/css/all.css');
 /* BORDER-BOX */
-body *,
-body *::before,
-body *::after {
+body *, body *::before, body *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -11,14 +9,14 @@ body *::after {
 /* MODULE */
 .clearfix::after {
   display: block;
-  content: "";
+  content: '';
   clear: both;
 }
 .float-left {
   float: left;
 }
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   /* font-family: 'Nanum Gothic', sans-serif; */
   padding: 20px;
   background-color: #f4f4f4;
@@ -123,7 +121,7 @@ body {
 /* DATE */
 .date-wrapper {
   position: relative;
-  width: 100%;
+  width: 100%; 
   padding: 10px 20px 10px 45px;
   /* background-color: #f4f4f4; */
 }
@@ -131,8 +129,7 @@ body {
   width: 650px;
   overflow: hidden;
 }
-.date-before-btn,
-.date-after-btn {
+.date-before-btn, .date-after-btn {
   /* float: left; */
   position: absolute;
   top: 5px;
@@ -156,6 +153,7 @@ body {
   height: 100px;
   padding: 5px 20px;
   /* background-color: rgb(220, 220, 220); */
+  
 }
 .date-item {
   /* float: left; */
@@ -268,7 +266,7 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgba(55, 55, 55, 0.7);
+  background-color: rgba(55, 55, 55, .7);
 }
 .new-schedule-popup {
   display: none;
@@ -306,8 +304,7 @@ body {
   padding: 25px;
   margin: 0 5px 10px 5px;
 }
-.input-place,
-.input-detail {
+.input-place, .input-detail {
   font-size: 14px;
   padding: 5px;
   margin-bottom: 10px;
