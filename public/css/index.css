@@ -99,8 +99,9 @@ body {
 }
 .menu-list > li > i {
   color: #fff;
-  font-size: 23px;
+  font-size: 21px;
   line-height: 60px;
+  cursor: pointer;
 }
 .menu-list > li > .fa-plane-departure {
   font-size: 20px;
@@ -279,6 +280,7 @@ body {
   margin: 30px;
   text-align: center;
   background-color: #fff;
+  z-index: 99;
 }
 .select-date,
 .select-start-hour,
