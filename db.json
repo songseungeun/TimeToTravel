@@ -4,13 +4,65 @@
       "id": 1,
       "title": "파리여행",
       "country": "프랑스",
-      "outDate": "2020.05.16",
-      "inDate": "2020.05.18",
-      "schedule": [{ "id": 1, "date":"2020.05.16", "timeFrom": 9, "timeTo": 11, "place": "인천", "detail": "blabla"},
-                  { "id": 2, "date":"2020.05.16", "timeFrom": 12, "timeTo": 14, "place": "파리", "detail": "blabla"}],
-      "flights": [{ "id": 1, "departTime": "20.05.16.18:10:00", "landTime": "20.05.16.18:10:00", "departPlace": "인천", "landPlace": "파리"},
-                { "id": 2, "departTime": "20.05.16.18:10:00", "landTime": "20.05.16.18:10:00", "departPlace": "인천", "landPlace": "파리"}],
-      "hotels": [{ "type": "hotels", "id": 1, "name": "novotel", "address": "blabla", "website": "blabla" },
-                { "type": "hotels", "id": 2, "name": "novotel", "address": "blabla", "website": "blabla" }]
-    }]
+      "startDate": "2020.05.16",
+      "endDate": "2020.05.18",
+      "schedule": [
+        {
+          "id": 1,
+          "date": "2020.05.16",
+          "timeFrom": 9,
+          "timeTo": 11,
+          "place": "인천",
+          "detail": "blabla"
+        },
+        {
+          "id": 2,
+          "date": "2020.05.16",
+          "timeFrom": 12,
+          "timeTo": 14,
+          "place": "파리",
+          "detail": "blabla"
+        }
+      ],
+      "flights": [
+        {
+          "id": 1,
+          "departTime": "20.05.16.18:10:00",
+          "landTime": "20.05.16.18:10:00",
+          "departPlace": "인천",
+          "landPlace": "파리"
+        },
+        {
+          "id": 2,
+          "departTime": "20.05.16.18:10:00",
+          "landTime": "20.05.16.18:10:00",
+          "departPlace": "인천",
+          "landPlace": "파리"
+        }
+      ],
+      "hotels": [
+        {
+          "type": "hotels",
+          "id": 1,
+          "name": "novotel",
+          "address": "blabla",
+          "website": "blabla"
+        },
+        {
+          "type": "hotels",
+          "id": 2,
+          "name": "novotel",
+          "address": "blabla",
+          "website": "blabla"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "fsdsd",
+      "place": "sdffsd",
+      "startDate": "2020/APR/13",
+      "endDate": "2020/APR/14"
+    }
+  ]
 }
