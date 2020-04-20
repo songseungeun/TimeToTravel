@@ -1,6 +1,7 @@
-import { travels, schedules, info } from './main.js';
+let travels = [];
 
 // DOMs
+const $travelList = document.querySelector('.travel-list');
 const $newTravelBtn = document.querySelector('.new-travel-btn');
 const $addTravelBtn = document.querySelector('.add-travel-btn');
 const $popupBg = document.querySelector('.new-travel-popup-bg');
@@ -29,11 +30,32 @@ const openHomePopup = () => {
 const generateId = () => travels.length ? Math.max(...travels.map(({id}) => id)) + 1 : 1;
 
 const renderTravelList = () => {
+  let html = '';
 
+  travels.forEach(({ id, title, place, startDate, endDate }) => {
+    html += ` <li id=${id}>
+          <h2>${title}</h2>
+          <em>D-${startDate}</em>
+          <div class="travel-info">
+            <span class="travel-place">${place}</span>
+            <span class="travel-date">${startDate} ~ ${endDate}</span>
+          </div>
+          <div class="travel-remove-btn">X</div>
+        </li>`;
+});
 
+  $travelList.innerHTML = html;
+};
+
+const getTravels = async () => {
+  const { data } = await axios.get('/travels');
+  travels = data;
+  renderTravelList();
 };
 
 // event handlers
+window.onload = getTravels;
+
 $newTravelBtn.addEventListener('click', openHomePopup);
 $popupBg.addEventListener('click', closeHomePopup);
 $popupRemove.addEventListener('click', closeHomePopup);
@@ -53,5 +75,14 @@ $addTravelBtn.onclick = () => {
 
   // [...$newTravelPopup.children].forEach(child => child === )
 
+  renderTravelList();
+};
+
+$travelList.onclick = async ({ target }) => {
+  if (!target.matches('.travel-list > li > .travel-remove-btn')) return;
+  const id = target.parentNode.id
+
+  await axios.delete(`/travels/${id}`)
+  travels = travels.filter(travel => travel.id !== +id);
   renderTravelList();
 };

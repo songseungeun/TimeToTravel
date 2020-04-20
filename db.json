@@ -1,25 +1,18 @@
 {
   "travels": [
     {
-      "id": 1,
-      "title": "파리여행",
-      "country": "프랑스",
-      "startDate": "2020.05.16",
-      "endDate": "2020.05.18"
-    },
-    {
-      "id": 2,
-      "title": "sdfsdf",
-      "place": "sdfsdf",
-      "startDate": "2020/APR/13",
-      "endDate": "2020/APR/14"
-    },
-    {
       "id": 3,
       "title": "afsdasd",
       "place": "afsd",
       "startDate": "2020/APR/13",
       "endDate": "2020/APR/13"
+    },
+    {
+      "id": 4,
+      "title": "sdf",
+      "place": "fsd",
+      "startDate": "2021/APR/14",
+      "endDate": "2021/APR/13"
     }
   ],
   "schedules": [

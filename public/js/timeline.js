@@ -1,5 +1,3 @@
-import { travels, schedules, info } from './main.js';
-
 // DOMs
 const $dateList = document.querySelector('.date-list');
 const $scheduleList = document.querySelector('.schedule-list');
