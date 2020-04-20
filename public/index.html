@@ -102,21 +102,22 @@
       <div class="new-schedule-popup">
         <h2>스케줄 입력</h2>
         <div class="select-date">
-          <label for="month-select">여행날짜:</label>
-          <select name="month" id="month-select">
+          <label for="month-select" class="float-left">여행날짜:</label>
+          <select name="month" id="month-select" class="month-select float-left">
               <option value="">MONTH</option>
               <option value="">APR</option>
               <option value="">MAY</option>
           </select>
-          <select name="date" id="date-select">
+          <select name="date" id="date-select" class="date-select">
               <option value="">DATE</option>
               <option value="">13</option>
               <option value="">14</option>
           </select>
+          <span class="warnning-text">날짜를 선택해주세요.</span>
         </div>
         <div class="select-start-hour">
-          <label for="start-hour-select">시작시간:</label>
-          <select name="hour" id="start-hour-select">
+          <label for="start-hour-select" class="float-left">시작시간:</label>
+          <select name="hour" id="start-hour-select" class="float-left">
               <option value="">HOUR</option>
               <option value="">09</option>
               <option value="">10</option>
@@ -126,10 +127,11 @@
               <option value="">20</option>
               <option value="">30</option>
           </select>
+          <span class="warnning-text">시작시간을 선택해주세요.</span>
         </div>
         <div class="select-end-hour">
-          <label for="end-hour-select">종료시간:</label>
-          <select name="hour" id="end-hour-select">
+          <label for="end-hour-select" class="float-left">종료시간:</label>
+          <select name="hour" id="end-hour-select" class="float-left">
             <option value="">HOUR</option>
             <option value="">09</option>
             <option value="">10</option>
@@ -139,9 +141,12 @@
               <option value="">20</option>
               <option value="">30</option>
           </select>
+          <span class="warnning-text">종료시간을 선택해주세요.</span>
         </div>
         <input type="text" class="input-place" placeholder="장소">
+        <span class="warnning-text">장소를 입력해주세요.</span>
         <input type="text" class="input-detail" placeholder="내용">
+        <span class="warnning-text">내용을 입력해주세요.</span>
         <button class="add-schedule-btn">등록</button>
         <div class="popup-remove-btn">X</div>
       </div>
