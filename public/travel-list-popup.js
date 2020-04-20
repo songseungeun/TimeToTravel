@@ -6,7 +6,7 @@ const $popupRemoveBtn = document.querySelector(".popup-remove-btn");
 const $selectDate = document.querySelector(".select-date");
 const $selectStartHour = document.querySelector(".select-start-hour");
 
-//const $monthSelect = document.querySelector("#month-select");
+const $monthSelect = document.querySelector("#month-select");
 const $dateSelect = document.querySelector("#date-select");
 const $startHourSelect = document.querySelector("#start-hour-select");
 const $startMinSelect = document.querySelector("#start-min-select");
@@ -32,13 +32,10 @@ $newScheduleBtn.onclick = () => {
 //x버튼을 누르면 팝업창 종료
 $popupRemoveBtn.addEventListener("click", closePopup);
 
-function insertdate() {
+function insertDate() {
   const $monthSelect = document.querySelector("#month-select");
-  for (let i = 0; i < $monthSelect.length; i++) {
-    if ($monthSelect[i].value == 2) {
-      $monthSelect[i].selected = true;
-    }
-  }
+
+  const selectValue = $monthSelect.options[$monthSelect.selectedIndex];
 }
 
 //경고 메세지
@@ -47,3 +44,5 @@ $addScheduleBtn.onclick = (e) => {
     $warningText.style.display = "block";
   }
 };
+
+//test
