@@ -17,12 +17,12 @@ const $endMonth = $newTravelPopup.querySelector('#end-month-select');
 const $endDate = $newTravelPopup.querySelector('#end-day-select');
 
 // functions
-const closeHomePopup = () => {
+const closeTravelPopup = () => {
   $popupBg.style.display = 'none';
   $newTravelPopup.style.display = 'none';
 };
 
-const openHomePopup = () => {
+const openTravelPopup = () => {
   $popupBg.style.display = 'block';
   $newTravelPopup.style.display = 'block';
 };
@@ -42,7 +42,7 @@ const renderTravelList = () => {
           </div>
           <div class="travel-remove-btn">X</div>
         </li>`;
-});
+  });
 
   $travelList.innerHTML = html;
 };
@@ -56,25 +56,20 @@ const getTravels = async () => {
 // event handlers
 window.onload = getTravels;
 
-$newTravelBtn.addEventListener('click', openHomePopup);
-$popupBg.addEventListener('click', closeHomePopup);
-$popupRemove.addEventListener('click', closeHomePopup);
+$newTravelBtn.addEventListener('click', openTravelPopup);
+$popupBg.addEventListener('click', closeTravelPopup);
+$popupRemove.addEventListener('click', closeTravelPopup);
 
-$addTravelBtn.onclick = () => {
+$addTravelBtn.onclick = async () => {
   const title = $inputTitle.value.trim();
   const place = $inputPlace.value.trim();
   const startDate = `${$startYear.value}/${$startMonth.value}/${$startDate.value}`;
   const endDate = `${$endYear.value}/${$endMonth.value}/${$endDate.value}`;
 
-  axios.post('/travels', { id: generateId(), title, place, startDate, endDate })
-    .then(data => console.log(data))
-    .catch(err => console.error(err));
+  const { data } = await axios.post('/travels', { id: generateId(), title, place, startDate, endDate });
+  travels = [data, ...travels];
 
-  $inputTitle.value = '';
-  $inputPlace.value = '';
-
-  // [...$newTravelPopup.children].forEach(child => child === )
-
+  closeTravelPopup();
   renderTravelList();
 };
 
