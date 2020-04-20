@@ -1,7 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
-@import url('https://use.fontawesome.com/releases/v5.5.0/css/all.css');
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap");
+@import url("https://use.fontawesome.com/releases/v5.5.0/css/all.css");
 /* BORDER-BOX */
-body *, body *::before, body *::after {
+body *,
+body *::before,
+body *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -9,14 +11,14 @@ body *, body *::before, body *::after {
 /* MODULE */
 .clearfix::after {
   display: block;
-  content: '';
+  content: "";
   clear: both;
 }
 .float-left {
   float: left;
 }
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   /* font-family: 'Nanum Gothic', sans-serif; */
   padding: 20px;
   background-color: #f4f4f4;
@@ -122,7 +124,7 @@ body {
 /* DATE */
 .date-wrapper {
   position: relative;
-  width: 100%; 
+  width: 100%;
   padding: 10px 20px 10px 45px;
   /* background-color: #f4f4f4; */
 }
@@ -130,7 +132,8 @@ body {
   width: 650px;
   overflow: hidden;
 }
-.date-before-btn, .date-after-btn {
+.date-before-btn,
+.date-after-btn {
   /* float: left; */
   position: absolute;
   top: 5px;
@@ -154,7 +157,6 @@ body {
   height: 100px;
   padding: 5px 20px;
   /* background-color: rgb(220, 220, 220); */
-  
 }
 .date-item {
   /* float: left; */
@@ -268,7 +270,7 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgba(55, 55, 55, .7);
+  background-color: rgba(55, 55, 55, 0.7);
 }
 .new-schedule-popup {
   display: none;
@@ -300,14 +302,16 @@ body {
 .new-schedule-popup label {
   padding: 9px 10px;
 }
-.new-schedule-popup select {
+.new-schedule-popup select,
+.new-travel-popup select {
   font-size: 15px;
   width: 110px;
-  /* height: 35px; */
   padding: 5px;
   margin: 0 5px 10px 5px;
 }
-.schedule-input-place, .schedule-input-detail {
+
+/* REMIND: 클래스명 한개로  */
+.schedule-input {
   font-size: 14px;
   padding: 5px;
   margin-bottom: 10px;
@@ -322,13 +326,16 @@ body {
   cursor: pointer;
 }
 .warnning-text {
-  display: block;
-  /* display: none; */
   /* width: 350px; */
   font-size: 14px;
   margin-bottom: 10px;
   color: #e38484;
   /* background-color: #f4f4f4; */
+}
+
+/* REMIND: 추가 */
+.text-hidden {
+  display: none;
 }
 
 .add-schedule-btn {
@@ -413,13 +420,7 @@ body {
 .new-travel-popup label {
   padding: 9px 10px;
 }
-.new-travel-popup select {
-  font-size: 16px;
-  width: 100px;
-  height: 35px;
-  padding: 25px;
-  margin: 0 5px 10px 5px;
-}
+
 .new-travel-popup input {
   font-size: 14px;
   padding: 5px;
@@ -467,7 +468,10 @@ body {
   font-weight: bold;
   padding: 10px;
 }
-.airline-info1, .airline-info2, .airline-departure, .airline-arrival {
+.airline-info1,
+.airline-info2,
+.airline-departure,
+.airline-arrival {
   float: left;
   padding: 10px;
 }
@@ -478,24 +482,30 @@ body {
 .airline-info2 {
   width: 160px;
 }
-.airline-departure, .airline-arrival {
+.airline-departure,
+.airline-arrival {
   width: 180px;
 }
-.date, .time {
+.date,
+.time {
   font-size: 26px;
   font-weight: 400;
 }
-.airlines, .airport {
+.airlines,
+.airport {
   font-size: 16px;
 }
-.hotel-reservation1, .hotel-reservation2 {
+.hotel-reservation1,
+.hotel-reservation2 {
   width: 80%;
   margin: 20px auto;
   padding: 20px;
   line-height: 1.2;
   background-color: #f4f4f4;
 }
-.hotel-name, .hotel-place, .hotel-site {
+.hotel-name,
+.hotel-place,
+.hotel-site {
   padding: 50px;
   font-size: 24px;
   font-weight: 400;
@@ -537,7 +547,11 @@ body {
   padding: 5px;
   margin-bottom: 10px;
 }
-.input-airlines, .dep-airlines, .arr-airlines, .input-place, .input-title {
+.input-airlines,
+.dep-airlines,
+.arr-airlines,
+.input-place,
+.input-title {
   font-size: 14px;
   padding: 5px;
   margin-bottom: 10px;
