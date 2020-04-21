@@ -27,15 +27,11 @@ const $endMonth = $newTravelPopup.querySelector('#end-month-select');
 const $endDate = $newTravelPopup.querySelector('#end-day-select');
 const $travelList = document.querySelector('.travel-list');
 const $addTravelBtn = document.querySelector('.add-travel-btn');
-<<<<<<< HEAD
-const $popupBg = document.querySelector('.new-travel-popup-bg');
-=======
 const $travelPopupBg = document.querySelector('.new-travel-popup-bg');
 const $newSchedulePopUp = document.querySelector('.new-schedule-popup');
 const $schedulePopupBg = document.querySelector('.popup-bg');
 const $scheduleList = document.querySelector('.schedule-list');
 
->>>>>>> 458b9b3e348eb8038298424dbc25f3aa12931020
 // functions
 // popups
 const closeSchedulePopup = () => {
@@ -46,11 +42,8 @@ const closeTravelPopup = () => {
   $travelPopupBg.style.display = 'none';
   $newTravelPopup.style.display = 'none';
 };
-<<<<<<< HEAD
-=======
 
 // travel list
->>>>>>> 458b9b3e348eb8038298424dbc25f3aa12931020
 const generateId = () => travels.length ? Math.max(...travels.map(({ id }) => id)) + 1 : 1;
 const renderTravelList = () => {
   let html = '';
