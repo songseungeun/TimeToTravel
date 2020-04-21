@@ -443,7 +443,7 @@ main.main-view {
   z-index: 99;
 }
 .new-travel-popup * {
-  display: block;
+  /* display: block; */
 }
 .new-travel-popup h2 {
   font-size: 23px;
