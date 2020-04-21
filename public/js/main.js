@@ -52,9 +52,18 @@ const renderTravelList = () => {
   let html = '';
 
   travels.forEach(({ id, title, place, startDate, endDate }) => {
+    const generateDday = () => {
+      let dDay = 0;
+      let today = new Date();
+      today = today.getTime();
+      dDay = new Date(startDate).getTime();
+      dDay = Math.ceil((dDay - today) / 86400000) + 1;
+      return dDay;
+    };
+
     html += ` <li id=${id}>
           <h2>${title}</h2>
-          <em>D-${startDate}</em>
+          <em>D-${generateDday()}</em>
           <div class="travel-info">
             <span class="travel-place">${place}</span>
             <span class="travel-date">${startDate} ~ ${endDate}</span>
@@ -168,7 +177,6 @@ $addTravelBtn.onclick = async () => {
 
   closeTravelPopup();
   renderTravelList();
-  makeScheduleData(newId);
 
   $inputTravelTitle.value = '';
   $inputTravelPlace.value = '';
