@@ -52,7 +52,8 @@ function showWarning(element, defaultValue, warningElement) {
   }
 }
 
-$addScheduleBtn.onclick = () => {
+function errorMsg() {
+
   let errorCount = 0;
   errorCount += showWarning($inputPlace, '', $inputPlaceWarning);
   errorCount += showWarning($inputDetail, '', $inputDetailWarning);
@@ -71,12 +72,13 @@ $addScheduleBtn.onclick = () => {
   errorCount += showWarning($endHourSelect, 'end-default', $selectEndWarning);
   errorCount += showWarning($endMinSelect, 'end-default', $selectEndWarning);
 
-  // 서버로 전송하는 로직
+  // // 서버로 전송하는 로직
 
-  if (errorCount === 0) {
-    console.log('successful');
-  } else {
-    console.log('validation error');
-  }
-};
+  // if (errorCount === 0) {
+  //   console.log('successful');
+  // } else {
+  //   console.log('validation error');
+  // }
+}
 
+$addScheduleBtn.addEventListener('click', errorMsg);
