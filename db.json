@@ -1,13 +1,6 @@
 {
   "travels": [
     {
-      "id": 5,
-      "title": "fds",
-      "place": "fsd",
-      "startDate": "2020/MAY/14",
-      "endDate": "2020/MAY/14"
-    },
-    {
       "id": 7,
       "title": "london",
       "place": "harrypotter studio",
@@ -15,30 +8,30 @@
       "endDate": "2020/APR/13"
     },
     {
-      "id": 10,
-      "title": "fds",
-      "place": "sdfsdf",
-      "startDate": "//",
-      "endDate": "//"
-    },
-    {
-      "id": 11,
-      "title": "fsdsdf",
-      "place": "sdfsdfsdf",
-      "startDate": "//",
-      "endDate": "//"
-    },
-    {
-      "id": 12,
-      "title": "aaaaaaaaaaaaaaaaaaaa",
-      "place": "",
-      "startDate": "//",
-      "endDate": "//"
-    },
-    {
       "id": 13,
       "title": "dfs",
       "place": "sdf",
+      "startDate": "default/default/default",
+      "endDate": "default/default/default"
+    },
+    {
+      "id": 14,
+      "title": "fdsaaaaaaaaaaaaaaaa",
+      "place": "",
+      "startDate": "default/default/default",
+      "endDate": "default/default/default"
+    },
+    {
+      "id": 15,
+      "title": "김우정",
+      "place": "",
+      "startDate": "default/default/default",
+      "endDate": "default/default/default"
+    },
+    {
+      "id": 16,
+      "title": "김우정",
+      "place": "",
       "startDate": "default/default/default",
       "endDate": "default/default/default"
     }
@@ -77,6 +70,12 @@
     },
     {
       "id": 13
+    },
+    {
+      "id": 14
+    },
+    {
+      "id": 16
     }
   ],
   "info": [

@@ -93,7 +93,6 @@ $addScheduleBtn.onclick = () => {
   const detail = $inputDetail;
 
   const { data } = axios.post(`/schedules/${timelineOf}`, { date, timeFrom, timeTo, place, detail });
-  // schedules = data;
 };
 
 $addTravelBtn.onclick = async () => {
