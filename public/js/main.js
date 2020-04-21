@@ -138,7 +138,7 @@ const addSchedule = async () => {
   schedules = [data, ...schedules];
 
   closeSchedulePopup();
-  renderTimeline();
+  renderTimeline(schedules);
 
   $inputSchedulePlace.value = '';
   $inputScheduleDetail.value = '';

@@ -54,6 +54,24 @@
       "place": "ㅇㄴ",
       "detail": "ㅇㄹㅋㅋㅋㅋ",
       "id": 3
+    },
+    {
+      "travelId": "5",
+      "date": "3/3",
+      "timeFrom": "4:20",
+      "timeTo": "4:20",
+      "place": "sdfa",
+      "detail": "aa",
+      "id": 4
+    },
+    {
+      "travelId": "5",
+      "date": "0/default",
+      "timeFrom": "0:0",
+      "timeTo": "0:0",
+      "place": "aa",
+      "detail": "",
+      "id": 5
     }
   ],
   "info": [
