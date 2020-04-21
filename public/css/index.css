@@ -163,6 +163,7 @@ body {
   background-color: rgb(225, 225, 225);
   padding: 15px;
   border-radius: 13px;
+  cursor: pointer;
   /* transform: translate3d(-120px, 0, 0); */
 }
 
@@ -369,6 +370,7 @@ body {
   line-height: 1.5;
   margin: 0 20px 20px 0;
   background-color: #d4d4d4;
+  cursor: pointer;
 }
 .travel-list li h2 {
   font-size: 24px;
