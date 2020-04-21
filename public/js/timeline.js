@@ -54,4 +54,4 @@ const getSchedules = async () => {
 $dateList.addEventListener('click', ({ target }) => toggleActiveDate(target));
 
 // export
-export { getSchedules };
+export { getSchedules, schedules };
