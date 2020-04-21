@@ -1,7 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
-@import url('https://use.fontawesome.com/releases/v5.5.0/css/all.css');
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap");
+@import url("https://use.fontawesome.com/releases/v5.5.0/css/all.css");
 /* BORDER-BOX */
-body *, body *::before, body *::after {
+body *,
+body *::before,
+body *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -9,14 +11,14 @@ body *, body *::before, body *::after {
 /* MODULE */
 .clearfix::after {
   display: block;
-  content: '';
+  content: "";
   clear: both;
 }
 .float-left {
   float: left;
 }
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   /* font-family: 'Nanum Gothic', sans-serif; */
   padding: 20px;
   background-color: #f4f4f4;
@@ -122,7 +124,7 @@ body {
 /* DATE */
 .date-wrapper {
   position: relative;
-  width: 100%; 
+  width: 100%;
   padding: 10px 20px 10px 45px;
   /* background-color: #f4f4f4; */
 }
@@ -130,7 +132,8 @@ body {
   width: 650px;
   overflow: hidden;
 }
-.date-before-btn, .date-after-btn {
+.date-before-btn,
+.date-after-btn {
   /* float: left; */
   position: absolute;
   top: 5px;
@@ -154,7 +157,6 @@ body {
   height: 100px;
   padding: 5px 20px;
   /* background-color: rgb(220, 220, 220); */
-  
 }
 .date-item {
   /* float: left; */
@@ -269,7 +271,7 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgba(55, 55, 55, .7);
+  background-color: rgba(55, 55, 55, 0.7);
 }
 .new-schedule-popup {
   display: none;
@@ -319,12 +321,8 @@ body {
   padding: 5px;
   margin: 0 5px 10px 5px;
 }
-<<<<<<< HEAD
 .schedule-input-place,
 .schedule-input-detail {
-=======
-.schedule-input-place, .schedule-input-detail {
->>>>>>> eaa5b8a2d618d0b0396b2c99ba9c1da92509d19f
   font-size: 14px;
   padding: 5px;
   margin-bottom: 10px;
@@ -373,10 +371,7 @@ body {
   line-height: 1.5;
   margin: 0 20px 20px 0;
   background-color: #d4d4d4;
-<<<<<<< HEAD
-=======
   cursor: pointer;
->>>>>>> eaa5b8a2d618d0b0396b2c99ba9c1da92509d19f
 }
 .travel-list li h2 {
   font-size: 24px;
@@ -479,14 +474,10 @@ body {
   font-weight: bold;
   padding: 10px;
 }
-<<<<<<< HEAD
 .airline-info1,
 .airline-info2,
 .airline-departure,
 .airline-arrival {
-=======
-.airline-info1, .airline-info2, .airline-departure, .airline-arrival {
->>>>>>> eaa5b8a2d618d0b0396b2c99ba9c1da92509d19f
   float: left;
   padding: 10px;
 }
@@ -497,7 +488,6 @@ body {
 .airline-info2 {
   width: 160px;
 }
-<<<<<<< HEAD
 .airline-departure,
 .airline-arrival {
   width: 180px;
@@ -513,32 +503,15 @@ body {
 }
 .hotel-reservation1,
 .hotel-reservation2 {
-=======
-.airline-departure, .airline-arrival {
-  width: 180px;
-}
-.date, .time {
-  font-size: 26px;
-  font-weight: 400;
-}
-.airlines, .airport {
-  font-size: 16px;
-}
-.hotel-reservation1, .hotel-reservation2 {
->>>>>>> eaa5b8a2d618d0b0396b2c99ba9c1da92509d19f
   width: 80%;
   margin: 20px auto;
   padding: 20px;
   line-height: 1.2;
   background-color: #f4f4f4;
 }
-<<<<<<< HEAD
 .hotel-name,
 .hotel-place,
 .hotel-site {
-=======
-.hotel-name, .hotel-place, .hotel-site {
->>>>>>> eaa5b8a2d618d0b0396b2c99ba9c1da92509d19f
   padding: 50px;
   font-size: 24px;
   font-weight: 400;
@@ -580,15 +553,11 @@ body {
   padding: 5px;
   margin-bottom: 10px;
 }
-<<<<<<< HEAD
 .input-airlines,
 .dep-airlines,
 .arr-airlines,
 .input-place,
 .input-title {
-=======
-.input-airlines, .dep-airlines, .arr-airlines, .input-place, .input-title {
->>>>>>> eaa5b8a2d618d0b0396b2c99ba9c1da92509d19f
   font-size: 14px;
   padding: 5px;
   margin-bottom: 10px;
@@ -600,8 +569,4 @@ body {
   width: 90%;
   color: #fff;
   background-color: #333;
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> eaa5b8a2d618d0b0396b2c99ba9c1da92509d19f
