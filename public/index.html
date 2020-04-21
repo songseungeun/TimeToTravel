@@ -13,7 +13,6 @@
   <script type="module" src="./js/menu-icon.js" defer></script>
   <script type="module" src="./js/travel-list-popup.js" defer></script>
   <script type="module" src="./js/timeline.js" defer></script>
-  <script type="module" src="./js/select-box-date.js" defer></script>
 </head>
 <body>
   <div class="wrapper clearfix">
@@ -30,236 +29,236 @@
       <h2>Travel Schedule</h2>
     </header>
     <div class="main-wrapper">
-      <!-- travel list -->
-      <main class="main-travels main-view" id="main-home">
-        <ul class="travel-list clearfix">
-          <li>
-            <h2>신나는 LA 여행</h2>
-            <em>D-7</em>
-            <div class="travel-info">
-              <span class="travel-place">미국 Los Angeles</span>
-              <span class="travel-date">2020. 04. 14 ~ 2020. 04. 28</span>
-            </div>
-            <div class="travel-remove-btn">X</div>
+      <!-- travel timeline -->
+    <main class="main-schedule main-view" id="main-home">
+      <h2>April, 2020</h2>
+      <div class="date-wrapper clearfix">
+        <div class="date-container">
+          <ul class="date-list">
+            <li class="date-item">
+              <div class="day">17</div>
+              <div class="week">FRI</div>
+            </li>
+            <li class="date-item active">
+              <div class="day">18</div>
+              <div class="week">SAT</div>
+            </li>
+            <li class="date-item">
+              <div class="day">19</div>
+              <div class="week">SUN</div>
+            </li>
+            <li class="date-item">
+              <div class="day">20</div>
+              <div class="week">MON</div>
+            </li>
+            <li class="date-item">
+              <div class="day">21</div>
+              <div class="week">TUE</div>
+            </li>
+            <li class="date-item">
+              <div class="day">22</div>
+              <div class="week">WED</div>
+            </li>
+            <li class="date-item">
+              <div class="day">23</div>
+              <div class="week">THU</div>
+            </li>
+            <li class="date-item">
+              <div class="day">23</div>
+              <div class="week">THU</div>
+            </li>
+            <li class="date-item">
+              <div class="day">23</div>
+              <div class="week">THU</div>
+            </li>
+            <li class="date-item">
+              <div class="day">23</div>
+              <div class="week">THU</div>
+            </li>
+            <li class="date-item">
+              <div class="day">23</div>
+              <div class="week">THU</div>
+            </li>
+            <li class="date-item">
+              <div class="day">23</div>
+              <div class="week">THU</div>
+            </li>
+          </ul>
+        </div>
+        <i class="date-before-btn fas fa-angle-double-left"></i>
+        <i class="date-after-btn fas fa-angle-double-right"></i>
+      </div>
+      <div class="timeline clearfix">
+        <ul class="time-list">
+          <li>07:00</li>
+          <li>08:00</li>
+          <li>09:00</li>
+          <li>10:00</li>
+          <li>11:00</li>
+          <li>12:00</li>
+          <li>13:00</li>
+          <li>14:00</li>
+          <li>15:00</li>
+          <li>16:00</li>
+          <li>17:00</li>
+          <li>18:00</li>
+          <li>19:00</li>
+          <li>20:00</li>
+          <li>21:00</li>
+          <li>22:00</li>
+          <li>23:00</li>
+        </ul>
+        <ul class="schedule-list">
+          <li class="schedule" id="s01">
+            <div class="time">09:20</div>
+            <div class="place">LAX 공항</div>
+            <div class="detail">공항 도착, 렌터카 수령</div>
+            <div class="remove-btn">X</div>
+          </li>
+          <li class="schedule" id="s02">
+            <div class="time">12:00</div>
+            <div class="place">In-N-Out Burger</div>
+            <div class="detail">점심식사</div>
+            <div class="remove-btn">X</div>
           </li>
         </ul>
-        <div class="new-travel-btn">
-          +
+      </div>
+      <div class="new-schedule-btn">
+        +
+      </div>
+      <!-- POPUP -->
+      <div class="new-schedule-popup">
+        <h2>스케줄 입력</h2>
+        <div class="select-date">
+          <label for="month-select" class="float-left">여행날짜:</label>
+          <select name="month" id="month-select" class="month-select float-left">
+            <option value="default">MONTH</option>
+            <option value="month1">APR</option>
+            <option value="month2">MAY</option>
+          </select>
+          <select name="date" id="date-select" class="date-select">
+            <option value="default">DATE</option>
+            <option value="date1">13</option>
+            <option value="date2">14</option>
+          </select>
+          <!-- REMIND: TEXT-HIDDEN 추가 spanid추가 -->
+          <span id="date-warning-label" class="warnning-text text-hidden">날짜를 선택해주세요.</span>
         </div>
-        <!-- POPUP -->
-        <div class="new-travel-popup">
-          <h2>여행일정 입력</h2>
-          <input type="text" class="input-title" placeholder="여행이름" />
-          <span class="warnning-text">여행 이름을 입력해주세요.</span>
-          <input type="text" class="input-place" placeholder="장소" />
-          <span class="warnning-text">여행 장소를 입력해주세요.</span>
-          <label for="date-select" class="float-left">시작:</label>
-          <select name="year" id="year-select" class="float-left">
-            <option value="">YEAR</option>
-            <option value="">2020</option>
-            <option value="">2021</option>
+        <div class="select-start-hour">
+          <label for="start-hour-select" class="float-left">시작시간:</label>
+          <select name="hour" id="start-hour-select" class="float-left">
+            <option value="start-default">HOUR</option>
+            <option value="start-hour1">09</option>
+            <option value="start-hour2">10</option>
           </select>
-          <select name="month" id="month-select" class="float-left">
-            <option value="">MONTH</option>
-            <option value="">APR</option>
-            <option value="">MAY</option>
+          <select name="min" id="start-min-select">
+            <option value="start-default">MINUTE</option>
+            <option value="start-minute1">20</option>
+            <option value="start-minute2">30</option>
           </select>
-          <select name="day" id="day-select">
-            <option value="">DAY</option>
-            <option value="">13</option>
-            <option value="">14</option>
-          </select>
-          <span class="warnning-text">시작 날짜를 선택해주세요.</span>
-          <label for="date-select" class="float-left">종료:</label>
-          <select name="year" id="year-select" class="float-left">
-            <option value="">YEAR</option>
-            <option value="">2020</option>
-            <option value="">2021</option>
-          </select>
-          <select name="month" id="month-select" class="float-left">
-            <option value="">MONTH</option>
-            <option value="">APR</option>
-            <option value="">MAY</option>
-          </select>
-          <select name="day" id="day-select">
-            <option value="">DAY</option>
-            <option value="">13</option>
-            <option value="">14</option>
-          </select>
-          <span class="warnning-text">종료 날짜를 선택해주세요.</span>
-          <button class="add-travel-btn">등록</button>
-          <div class="new-travel-popup-remove-btn">X</div>
+          <span id="start-warning-label" class="warnning-text text-hidden">시작시간을 선택해주세요.</span>
         </div>
-        <div class="new-travel-popup-bg">
+        <div class="select-end-hour">
+          <label for="end-hour-select" class="float-left">종료시간:</label>
+          <select name="hour" id="end-hour-select" class="float-left">
+            <option value="end-default">HOUR</option>
+            <option value="end-hour1">09</option>
+            <option value="end-hour2">10</option>
+          </select>
+          <select name="min" id="end-min-select">
+            <option value="end-default">MINUTE</option>
+            <option value="end-minute1">20</option>
+            <option value="end-minute2">30</option>
+          </select>
+          <span id="end-warning-label" class="warnning-text text-hidden">종료시간을 선택해주세요.</span>
         </div>
-        <!-- Delete Confirm -->
-        <div class="delete-confirm">
-          <strong>스케줄을 <em>삭제</em>하시겠습니까?</strong>
-          <button class="delete-n">취소</button>
-          <button class="delete-y">삭제</button>
-        </div>
-        <div class="delete-popup-bg"></div>
-      </main>
-      <!-- travel timeline -->
-      <main class="main-schedule" id="main-calendar">
-        <h2>April, 2020</h2>
-        <div class="date-wrapper clearfix">
-          <div class="date-container">
-            <ul class="date-list">
-              <li class="date-item">
-                <div class="day">17</div>
-                <div class="week">FRI</div>
-              </li>
-              <li class="date-item active">
-                <div class="day">18</div>
-                <div class="week">SAT</div>
-              </li>
-              <li class="date-item">
-                <div class="day">19</div>
-                <div class="week">SUN</div>
-              </li>
-              <li class="date-item">
-                <div class="day">20</div>
-                <div class="week">MON</div>
-              </li>
-              <li class="date-item">
-                <div class="day">21</div>
-                <div class="week">TUE</div>
-              </li>
-              <li class="date-item">
-                <div class="day">22</div>
-                <div class="week">WED</div>
-              </li>
-              <li class="date-item">
-                <div class="day">23</div>
-                <div class="week">THU</div>
-              </li>
-              <li class="date-item">
-                <div class="day">23</div>
-                <div class="week">THU</div>
-              </li>
-              <li class="date-item">
-                <div class="day">23</div>
-                <div class="week">THU</div>
-              </li>
-              <li class="date-item">
-                <div class="day">23</div>
-                <div class="week">THU</div>
-              </li>
-              <li class="date-item">
-                <div class="day">23</div>
-                <div class="week">THU</div>
-              </li>
-              <li class="date-item">
-                <div class="day">23</div>
-                <div class="week">THU</div>
-              </li>
-            </ul>
+        <!-- REMIND: 수정  -->
+        <input id="schedule-input-place" type="text" class="schedule-input" placeholder="장소" />
+        <span id="place-warning-label" class="warnning-text text-hidden">장소를 입력해주세요.</span>
+        <input id="schedule-input-detail" type="text" class="schedule-input" placeholder="내용" />
+        <span id="detail-warning-label" class="warnning-text text-hidden">내용을 입력해주세요.</span>
+        <button class="add-schedule-btn">등록</button>
+        <div class="popup-remove-btn">X</div>
+      </div>
+      <div class="popup-bg"></div>
+      <!-- Delete Confirm -->
+      <div class="delete-confirm">
+        <strong>스케줄을 <em>삭제</em>하시겠습니까?</strong>
+        <button class="delete-n">취소</button>
+        <button class="delete-y">삭제</button>
+      </div>
+      <div class="delete-popup-bg"></div>
+    </main>
+     <!-- travel list -->
+     <main class="main-travels" id="main-calendar">
+      <ul class="travel-list clearfix">
+        <li>
+          <h2>신나는 LA 여행</h2>
+          <em>D-7</em>
+          <div class="travel-info">
+            <span class="travel-place">미국 Los Angeles</span>
+            <span class="travel-date">2020. 04. 14 ~ 2020. 04. 28</span>
           </div>
-          <i class="date-before-btn fas fa-angle-double-left"></i>
-          <i class="date-after-btn fas fa-angle-double-right"></i>
-        </div>
-        <div class="timeline clearfix">
-          <ul class="time-list">
-            <li>07:00</li>
-            <li>08:00</li>
-            <li>09:00</li>
-            <li>10:00</li>
-            <li>11:00</li>
-            <li>12:00</li>
-            <li>13:00</li>
-            <li>14:00</li>
-            <li>15:00</li>
-            <li>16:00</li>
-            <li>17:00</li>
-            <li>18:00</li>
-            <li>19:00</li>
-            <li>20:00</li>
-            <li>21:00</li>
-            <li>22:00</li>
-            <li>23:00</li>
-          </ul>
-          <ul class="schedule-list">
-            <li class="schedule" id="s01">
-              <div class="time">09:20</div>
-              <div class="place">LAX 공항</div>
-              <div class="detail">공항 도착, 렌터카 수령</div>
-              <div class="remove-btn">X</div>
-            </li>
-            <li class="schedule" id="s02">
-              <div class="time">12:00</div>
-              <div class="place">In-N-Out Burger</div>
-              <div class="detail">점심식사</div>
-              <div class="remove-btn">X</div>
-            </li>
-          </ul>
-        </div>
-        <div class="new-schedule-btn">
-          +
-        </div>
-        <!-- POPUP -->
-        <div class="new-schedule-popup">
-          <h2>스케줄 입력</h2>
-          <div class="select-date">
-            <label for="month-select" class="float-left">여행날짜:</label>
-            <select name="month" id="month-select" class="month-select float-left">
-              <option value="default">MONTH</option>
-              <option value="month1">APR</option>
-              <option value="month2">MAY</option>
-            </select>
-            <select name="date" id="date-select" class="date-select">
-              <option value="default">DATE</option>
-              <option value="date1">13</option>
-              <option value="date2">14</option>
-            </select>
-            <!-- REMIND: TEXT-HIDDEN 추가 spanid추가 -->
-            <span id="date-warning-label" class="warnning-text text-hidden">날짜를 선택해주세요.</span>
-          </div>
-          <div class="select-start-hour">
-            <label for="start-hour-select" class="float-left">시작시간:</label>
-            <select name="hour" id="start-hour-select" class="float-left">
-              <option value="start-default">HOUR</option>
-              <option value="start-hour1">09</option>
-              <option value="start-hour2">10</option>
-            </select>
-            <select name="min" id="start-min-select">
-              <option value="start-default">MINUTE</option>
-              <option value="start-minute1">20</option>
-              <option value="start-minute2">30</option>
-            </select>
-            <span id="start-warning-label" class="warnning-text text-hidden">시작시간을 선택해주세요.</span>
-          </div>
-          <div class="select-end-hour">
-            <label for="end-hour-select" class="float-left">종료시간:</label>
-            <select name="hour" id="end-hour-select" class="float-left">
-              <option value="end-default">HOUR</option>
-              <option value="end-hour1">09</option>
-              <option value="end-hour2">10</option>
-            </select>
-            <select name="min" id="end-min-select">
-              <option value="end-default">MINUTE</option>
-              <option value="end-minute1">20</option>
-              <option value="end-minute2">30</option>
-            </select>
-            <span id="end-warning-label" class="warnning-text text-hidden">종료시간을 선택해주세요.</span>
-          </div>
-          <!-- REMIND: 수정  -->
-          <input id="schedule-input-place" type="text" class="schedule-input" placeholder="장소" />
-          <span id="place-warning-label" class="warnning-text text-hidden">장소를 입력해주세요.</span>
-          <input id="schedule-input-detail" type="text" class="schedule-input" placeholder="내용" />
-          <span id="detail-warning-label" class="warnning-text text-hidden">내용을 입력해주세요.</span>
-          <button class="add-schedule-btn">등록</button>
-          <div class="popup-remove-btn">X</div>
-        </div>
-        <div class="popup-bg"></div>
-        <!-- Delete Confirm -->
-        <div class="delete-confirm">
-          <strong>스케줄을 <em>삭제</em>하시겠습니까?</strong>
-          <button class="delete-n">취소</button>
-          <button class="delete-y">삭제</button>
-        </div>
-        <div class="delete-popup-bg"></div>
-      </main>
+          <div class="travel-remove-btn">X</div>
+        </li>
+      </ul>
+      <div class="new-travel-btn">
+        +
+      </div>
+      <!-- POPUP -->
+      <div class="new-travel-popup">
+        <h2>여행일정 입력</h2>
+        <input type="text" class="input-title" placeholder="여행이름" />
+        <span class="warnning-text">여행 이름을 입력해주세요.</span>
+        <input type="text" class="input-place" placeholder="장소" />
+        <span class="warnning-text">여행 장소를 입력해주세요.</span>
+        <label for="date-select" class="float-left">시작:</label>
+        <select name="year" id="start-year-select" class="float-left">
+          <option value="" selected >YEAR</option>
+          <option value="">2020</option>
+          <option value="">2021</option>
+        </select>
+        <select name="month" id="start-month-select" class="float-left">
+          <option value="" selected>MONTH</option>
+          <option value="">APR</option>
+          <option value="">MAY</option>
+        </select>
+        <select name="day" id="start-day-select">
+          <option value="">DAY</option>
+          <option value="">13</option>
+          <option value="">14</option>
+        </select>
+        <span class="warnning-text">시작 날짜를 선택해주세요.</span>
+        <label for="date-select" class="float-left">종료:</label>
+        <select name="year" id="end-year-select" class="float-left">
+          <option value="">YEAR</option>
+          <option value="">2020</option>
+          <option value="">2021</option>
+        </select>
+        <select name="month" id="end-month-select" class="float-left">
+          <option value="">MONTH</option>
+          <option value="">APR</option>
+          <option value="">MAY</option>
+        </select>
+        <select name="day" id="end-day-select">
+          <option value="">DAY</option>
+          <option value="">13</option>
+          <option value="">14</option>
+        </select>
+        <span class="warnning-text">종료 날짜를 선택해주세요.</span>
+        <button class="add-travel-btn">등록</button>
+        <div class="new-travel-popup-remove-btn">X</div>
+      </div>
+      <div class="new-travel-popup-bg">
+      </div>
+      <!-- Delete Confirm -->
+      <div class="delete-confirm">
+        <strong>스케줄을 <em>삭제</em>하시겠습니까?</strong>
+        <button class="delete-n">취소</button>
+        <button class="delete-y">삭제</button>
+      </div>
+      <div class="delete-popup-bg"></div>
+    </main>
       <!-- travel info -->
       <main class="main-info" id="main-airplane">
         <h2>여행정보</h2>
