@@ -1,8 +1,5 @@
 // import
-import { timelineOf } from './travel-list.js';
-
-// state
-let schedules = [];
+// import { timelineOf } from './travel-list.js';
 
 // DOMs
 const $dateList = document.querySelector('.date-list');
@@ -42,11 +39,7 @@ const renderTimeline = () => {
   // sortTimeline();
 };
 
-const getSchedules = async () => {
-  const { data } = await axios.get(`/schedules/${timelineOf}`);
-  schedules = data;
-  renderTimeline();
-};
+
 
 // events
 // window.onload = getSchedules;
@@ -54,4 +47,4 @@ const getSchedules = async () => {
 $dateList.addEventListener('click', ({ target }) => toggleActiveDate(target));
 
 // export
-export { getSchedules, schedules };
+// export { getSchedules, schedules };
