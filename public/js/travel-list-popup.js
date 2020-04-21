@@ -1,3 +1,6 @@
+// import
+import { timelineOf } from './travel-list.js';
+
 const $newScheduleBtn = document.querySelector(".new-schedule-btn");
 const $newSchedulePopUp = document.querySelector(".new-schedule-popup");
 const $popupBg = document.querySelector(".popup-bg");
@@ -80,6 +83,13 @@ function showWarning(element, defaultValue, warningElement) {
 // };
 
 $addScheduleBtn.onclick = () => {
-  
+  const date = `${$month.value}/${$month.value}`;
+  const timeFrom = `${$startHour.value}:${$startMin.value}`;
+  const timeTo = `${$endHour.value}:${$endMin.value}`;
+  const place = $inputPlace;
+  const detail = $inputDetail;
+
+  const { data } = axios.post(`/schedules/${timelineOf}`, { date, timeFrom, timeTo, place, detail });
+  // schedules = data;
 
 };
