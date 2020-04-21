@@ -16,22 +16,21 @@
 </head>
 <body>
   <div class="wrapper clearfix">
-    <aside class="menu-bar">
-      <nav>
+    <nav class="menu-bar">
         <h1><i class="fab fa-tumblr"></i></h1>
         <ul class="menu-list">
-          <li class="menu-item"><i class="fas fa-home"></i></li>
-          <li class="menu-item"><i class="fas fa-calendar-alt"></i></li>
-          <li class="menu-item"><i class="fas fa-plane-departure"></i></li>
-          <li class="menu-item"><i class="fas fa-dollar-sign"></i></li>
+          <li class="menu-item active" id="home"><i class="fas fa-home"></i></li>
+          <li class="menu-item" id="calendar"><i class="fas fa-calendar-alt"></i></li>
+          <li class="menu-item" id="airplane"><i class="fas fa-plane-departure"></i></li>
+          <li class="menu-item" id="money"><i class="fas fa-dollar-sign"></i></li>
         </ul>
       </nav>
-    </aside>
     <header class="header">
       <h2>Travel Schedule</h2>
     </header>
-  <!-- travel timeline -->
-    <main class="main-schedule">
+    <div class="main-wrapper">
+      <!-- travel timeline -->
+    <main class="main-schedule main-view" id="main-home">
       <h2>April, 2020</h2>
       <div class="date-wrapper clearfix">
         <div class="date-container">
@@ -191,7 +190,7 @@
       <div class="delete-popup-bg"></div>
     </main>
      <!-- travel list -->
-     <main class="main-travels">
+     <main class="main-travels" id="main-calendar">
       <ul class="travel-list clearfix">
         <li>
           <h2>신나는 LA 여행</h2>
@@ -261,7 +260,7 @@
       <div class="delete-popup-bg"></div>
     </main>
       <!-- travel info -->
-      <main class="main-info">
+      <main class="main-info" id="main-airplane">
         <h2>여행정보</h2>
         <div class="airline-ticket">
           <h3>항공권</h3>
@@ -407,5 +406,6 @@
         </div>
       </main>
     </div>
+  </div>
 </body>
 </html>

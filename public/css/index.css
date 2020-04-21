@@ -27,26 +27,15 @@ body {
   border-radius: 20px;
   background-color: #fff;
 }
-/* .timeline-wrapper {
-  display: none;
-}
-.travel-list-wrapper {
-  display: block;
-}
-.travel-info-wrapper {
-  display: none;
-} */
 
-.main-travels {
-  /* display: block; */
-  display: none;
-}
-.main-schedule {
+main.main-view {
   display: block;
-  /* display: none; */
+  z-index: 98;
 }
+
+.main-schedule,
+.main-travels,
 .main-info {
-  /* display: block; */
   display: none;
 }
 
@@ -94,6 +83,7 @@ body {
 .menu-list li {
   /* width: 60px; */
   height: 60px;
+  opacity: 0.5;
   /* margin: 20px; */
   /* background-color: #999; */
 }
@@ -106,6 +96,11 @@ body {
 .menu-list > li > .fa-plane-departure {
   font-size: 20px;
 }
+.menu-list .active {
+  opacity: 1.0;
+}
+
+
 /* ----- timeline ----- */
 /* MAIN */
 .main-schedule {
