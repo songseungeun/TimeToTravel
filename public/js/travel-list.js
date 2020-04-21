@@ -1,5 +1,9 @@
+// import
+import { getSchedules } from './timeline.js'
+
 // state
 let travels = [];
+let timelineOf = '';
 
 // DOMs
 const $travelList = document.querySelector('.travel-list');
@@ -55,7 +59,25 @@ const getTravels = async () => {
 };
 
 const checkValues = target => {
-  target.nextElementSibling.style.display = target.value === '' ? 'block' : 'none';
+  // if (target. === )target.nextElementSibling.style.display = target.value === '' ? 'block' : 'none';
+
+};
+  console.log($startDate.nodeName)
+
+const removeTravel = async target => {
+  if (!target.matches('.travel-list > li > .travel-remove-btn')) return;
+  const id = target.parentNode.id
+
+  await axios.delete(`/travels/${id}`)
+  travels = travels.filter(travel => travel.id !== +id);
+  renderTravelList();
+};
+
+const goToTimeline = target => {
+  if (!target.matches('.travel-list > li')) return;
+
+  timelineOf = target.id;
+  getSchedules(timelineOf);
 };
 
 // event handlers
@@ -74,6 +96,7 @@ $addTravelBtn.onclick = async () => {
   const startDate = `${$startYear.value}/${$startMonth.value}/${$startDate.value}`;
   const endDate = `${$endYear.value}/${$endMonth.value}/${$endDate.value}`;
 
+  console.log($startYear.firstElementChild.selected)
   if (isBlank) return;
 
   const { data } = await axios.post('/travels', { id: generateId(), title, place, startDate, endDate });
@@ -84,13 +107,11 @@ $addTravelBtn.onclick = async () => {
 
   $inputTitle.value = '';
   $inputPlace.value = '';
+
 };
 
-$travelList.onclick = async ({ target }) => {
-  if (!target.matches('.travel-list > li > .travel-remove-btn')) return;
-  const id = target.parentNode.id
+$travelList.addEventListener('click', ({ target }) => removeTravel(target));
+$travelList.addEventListener('click', ({ target }) => goToTimeline(target));
 
-  await axios.delete(`/travels/${id}`)
-  travels = travels.filter(travel => travel.id !== +id);
-  renderTravelList();
-};
+// export
+export { timelineOf };

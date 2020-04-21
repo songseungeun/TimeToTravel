@@ -1,3 +1,6 @@
+// import 
+import { timelineOf } from './travel-list.js';
+
 // state
 let schedules = [];
 
@@ -24,35 +27,36 @@ const toggleActiveDate = target => {
 
 const renderTimeline = () => {
   let html = '';
-  const travel = travels[0].schedule;
+  const dailySchedule = '';
 
-  travel.forEach(({ id, timeFrom, place, detail }) => {
-    html += `<li class="schedule" id="s${id}">
-            <div class="time">${timeFrom}</div>
-            <div class="place">${place}</div>
-            <div class="detail">${detail}</div>
-            <div class="remove-btn">X</div>
-          </li>`;
-  });
+  // dailySchedule.forEach(({ id, timeFrom, place, detail }) => {
+  //   html += `<li class="schedule" id="s${id}">
+  //           <div class="time">${timeFrom}</div>
+  //           <div class="place">${place}</div>
+  //           <div class="detail">${detail}</div>
+  //           <div class="remove-btn">X</div>
+  //         </li>`;
+  // });
 
   $scheduleList.innerHTML = html;
-  sortTimeline(travel);
+  // sortTimeline(travel);
 };
 
 const getSchedules = async () => {
-  const { data } = await axios.get('/schedules');
+  const { data } = await axios.get(`/schedules/${timelineOf}`);
+  schedules = data;
+  renderTimeline();
+  console.log(data);
+};
+
+const removeSchedule = async target => {
+  if (!target.matches('.schedule-list > li > .remove-btn')) return;
+  const id = target.parentNode.id;
+
+  const { data } = await axios.delete(`/schedules/${id}`);
   schedules = data;
   renderTimeline();
 };
-
-// const removeSchedule = async target => {
-//   if (!target.matches('.schedule-list > li > .remove-btn')) return;
-//   const id = target.parentNode.id;
-
-//   // const { data } = await axios.delete(`/travels/`);
-//   travels = data;
-//   renderTimeline();
-// };
 
 // events
 window.onload = getSchedules;
@@ -60,3 +64,6 @@ window.onload = getSchedules;
 $dateList.addEventListener('click', ({ target }) => toggleActiveDate(target));
 
 // $scheduleList.addEventListener('click', ({ target }) => removeSchedule(target));
+
+// export
+export { getSchedules };

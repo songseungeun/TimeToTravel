@@ -1,20 +1,6 @@
 {
   "travels": [
     {
-      "id": 3,
-      "title": "afsdasd",
-      "place": "afsd",
-      "startDate": "2020/APR/13",
-      "endDate": "2020/APR/13"
-    },
-    {
-      "id": 4,
-      "title": "sdf",
-      "place": "fsd",
-      "startDate": "2021/APR/14",
-      "endDate": "2021/APR/13"
-    },
-    {
       "id": 5,
       "title": "fds",
       "place": "fsd",
@@ -22,24 +8,10 @@
       "endDate": "2020/MAY/14"
     },
     {
-      "id": 6,
-      "title": "fdsafdsf",
-      "place": "fds",
-      "startDate": "2020/APR/13",
-      "endDate": "2020/APR/13"
-    },
-    {
       "id": 7,
       "title": "london",
       "place": "harrypotter studio",
       "startDate": "2020/MAY/13",
-      "endDate": "2020/APR/13"
-    },
-    {
-      "id": 8,
-      "title": "fds",
-      "place": "fdsf",
-      "startDate": "2020/MAY/14",
       "endDate": "2020/APR/13"
     }
   ],
