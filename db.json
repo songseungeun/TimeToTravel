@@ -1,81 +1,18 @@
 {
   "travels": [
     {
-      "id": 7,
-      "title": "london",
-      "place": "harrypotter studio",
-      "startDate": "2020/MAY/13",
-      "endDate": "2020/APR/13"
-    },
-    {
-      "id": 10,
-      "title": "dfs",
-      "place": "sdf",
-      "startDate": "default/default/default",
-      "endDate": "default/default/default"
-    },
-    {
-      "id": 11,
-      "title": "ㅇㄹㄴ",
-      "place": "ㄴㅇㄹ",
-      "startDate": "2020/APR/13",
-      "endDate": "2021/MAY/13"
-    },
-    {
-      "id": 12,
-      "title": "ㅇㄹㄴ",
-      "place": "ㄹㄴㅇㄹㄴㅇ",
-      "startDate": "2020/APR/13",
-      "endDate": "2020/MAY/13"
-    },
-    {
-      "id": 13,
-      "title": "ㄹㅇㄴ",
-      "place": "ㄴㅇㄹ",
-      "startDate": "default/default/default",
-      "endDate": "default/default/default"
-    },
-    {
-      "id": 14,
+      "id": 1,
       "title": "",
       "place": "",
-      "startDate": "default/default/default",
-      "endDate": "default/default/default"
+      "startDate": "default/3/0",
+      "endDate": "default/0/default"
     },
     {
-      "id": 15,
+      "id": 2,
       "title": "",
       "place": "",
-      "startDate": "default/default/default",
-      "endDate": "default/default/default"
-    },
-    {
-      "id": 16,
-      "title": "",
-      "place": "",
-      "startDate": "default/default/default",
-      "endDate": "default/default/default"
-    },
-    {
-      "id": 17,
-      "title": "ㅇㄹㄴ",
-      "place": "",
-      "startDate": "default/default/default",
-      "endDate": "default/default/default"
-    },
-    {
-      "id": 18,
-      "title": "",
-      "place": "",
-      "startDate": "default/default/default",
-      "endDate": "default/default/default"
-    },
-    {
-      "id": 19,
-      "title": "ㄴㅇㄹ",
-      "place": "",
-      "startDate": "default/default/default",
-      "endDate": "default/default/default"
+      "startDate": "default/4/7",
+      "endDate": "default/5/7"
     }
   ],
   "schedules": [
@@ -131,6 +68,73 @@
       "place": "ㅇ",
       "detail": "",
       "id": 21
+    },
+    {
+      "id": 2
+    },
+    {
+      "id": 3
+    },
+    {
+      "id": 4
+    },
+    {
+      "id": 5
+    },
+    {
+      "id": 6
+    },
+    {
+      "id": 7
+    },
+    {
+      "id": 8
+    },
+    {
+      "id": 9
+    },
+    {
+      "id": 10
+    },
+    {
+      "date": "2/6",
+      "timeFrom": "6:5",
+      "timeTo": "4:4",
+      "place": "sdffds",
+      "detail": "dsffds",
+      "id": 22
+    },
+    {
+      "date": "2/6",
+      "timeFrom": "6:5",
+      "timeTo": "4:4",
+      "place": "sdffds",
+      "detail": "dsffds",
+      "id": 23
+    },
+    {
+      "date": "2/6",
+      "timeFrom": "6:5",
+      "timeTo": "4:4",
+      "place": "sdffds",
+      "detail": "dsffds",
+      "id": 24
+    },
+    {
+      "date": "2/3",
+      "timeFrom": "3:40",
+      "timeTo": "4:40",
+      "place": "aaa",
+      "detail": "bbb",
+      "id": 25
+    },
+    {
+      "date": "4/11",
+      "timeFrom": "8:60",
+      "timeTo": "3:40",
+      "place": "sfsd",
+      "detail": "fdsfds",
+      "id": 26
     }
   ],
   "info": [
