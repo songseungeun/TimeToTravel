@@ -30,6 +30,7 @@
     <header class="header">
       <h2>Travel Schedule</h2>
     </header>
+
   <!-- travel timeline -->
     <main class="main-schedule">
       <h2>April, 2020</h2>
@@ -59,14 +60,6 @@
             <li class="date-item">
               <div class="day">22</div>
               <div class="week">WED</div>
-            </li>
-            <li class="date-item">
-              <div class="day">23</div>
-              <div class="week">THU</div>
-            </li>
-            <li class="date-item">
-              <div class="day">23</div>
-              <div class="week">THU</div>
             </li>
             <li class="date-item">
               <div class="day">23</div>
@@ -183,6 +176,7 @@
       </div>
       <div class="popup-bg"></div>
     </main>
+    
      <!-- travel list -->
      <main class="main-travels">
       <ul class="travel-list clearfix">
@@ -203,49 +197,84 @@
       <div class="new-travel-popup">
         <h2>여행일정 입력</h2>
         <input type="text" class="input-title" placeholder="여행이름" />
-        <span id = "spot-warning-label"class="warnning-text text-hidden">여행 이름을 입력해주세요.</span>
+        <span class="warnning-text">여행 이름을 입력해주세요.</span>
         <input type="text" class="input-place" placeholder="장소" />
-        <span id="location-warning-label" class="warnning-text text-hidden">여행 장소를 입력해주세요.</span>
+        <span class="warnning-text">여행 장소를 입력해주세요.</span>
         <label for="date-select" class="float-left">시작:</label>
+<<<<<<< HEAD
         <select name="year" id="year-select" class="float-left">
-          <option value="default">YEAR</option>
-          <option value="year1">2020</option>
-          <option value="year2">2021</option>
-        </select>
-        <select name="month" id="month-select" class="float-left">
-          <option value="default" selected>MONTH</option>
-          <option value="month1">APR</option>
-          <option value="month2">MAY</option>
-        </select>
-        <select name="day" id="day-select">
-          <option value="default" selected>DAY</option>
-          <option value="day1">13</option>
-          <option value="day2">14</option>
-        </select>
-        <span id="newstart-warning-label" class="warnning-text text-hidden">시작 날짜를 선택해주세요.</span>
-        <label for="date-select" class="float-left">종료:</label>
-        <select name="year" id="year-select" class="float-left">
-          <option value="" selected>YEAR</option>
+          <option value="">YEAR</option>
           <option value="">2020</option>
           <option value="">2021</option>
         </select>
         <select name="month" id="month-select" class="float-left">
-          <option value="" selected>MONTH</option>
+          <option value="">MONTH</option>
           <option value="">APR</option>
           <option value="">MAY</option>
         </select>
         <select name="day" id="day-select">
-          <option value="" selected>DAY</option>
+          <option value="">DAY</option>
           <option value="">13</option>
           <option value="">14</option>
         </select>
-        <span id ="newend-warning-label" class="warnning-text text-hidden">종료 날짜를 선택해주세요.</span>
+        <span class="warnning-text">시작 날짜를 선택해주세요.</span>
+        <label for="date-select" class="float-left">종료:</label>
+        <select name="year" id="year-select" class="float-left">
+          <option value="">YEAR</option>
+          <option value="">2020</option>
+          <option value="">2021</option>
+        </select>
+        <select name="month" id="month-select" class="float-left">
+          <option value="">MONTH</option>
+          <option value="">APR</option>
+          <option value="">MAY</option>
+        </select>
+        <select name="day" id="day-select">
+          <option value="">DAY</option>
+          <option value="">13</option>
+          <option value="">14</option>
+=======
+        <select name="year" id="start-year-select" class="float-left">
+          <option value="YEAR" selected>YEAR</option>
+          <option value="2020">2020</option>
+          <option value="2021">2021</option>
+        </select>
+        <select name="month" id="start-month-select" class="float-left">
+          <option value="" selected>MONTH</option>
+          <option value="APR">APR</option>
+          <option value="MAY">MAY</option>
+        </select>
+        <select name="day" id="start-day-select">
+          <option value="" selected>DAY</option>
+          <option value="13">13</option>
+          <option value="14">14</option>
+        </select>
+        <span class="warnning-text">시작 날짜를 선택해주세요.</span>
+        <label for="date-select" class="float-left">종료:</label>
+        <select name="year" id="end-year-select" class="float-left">
+          <option value="" selected>YEAR</option>
+          <option value="2020">2020</option>
+          <option value="2021">2021</option>
+        </select>
+        <select name="month" id="end-month-select" class="float-left">
+          <option value="" selected>MONTH</option>
+          <option value="APR">APR</option>
+          <option value="MAY">MAY</option>
+        </select>
+        <select name="day" id="end-day-select">
+          <option value="" selected>DAY</option>
+          <option value="13">13</option>
+          <option value="14">14</option>
+>>>>>>> eaa5b8a2d618d0b0396b2c99ba9c1da92509d19f
+        </select>
+        <span class="warnning-text">종료 날짜를 선택해주세요.</span>
         <button class="add-travel-btn">등록</button>
         <div class="new-travel-popup-remove-btn">X</div>
       </div>
       <div class="new-travel-popup-bg">
       </div>
     </main>
+
       <!-- travel info -->
       <main class="main-info">
         <h2>여행정보</h2>
@@ -269,16 +298,36 @@
                 <span class="airport">LAX</span>
               </div>
             </li>
-            <li class="schedule" id="s02">
-              <div class="time">12:00</div>
-              <div class="place">In-N-Out Burger</div>
-              <div class="detail">점심식사</div>
-              <div class="remove-btn">X</div>
+            <li class="clearfix">
+              <div class="airline-info1">
+                <em>도착</em>
+              </div>
+              <div class="airline-info2">
+                <span class="date">4/3 FRI</span>
+                <span class="airlines">아시아나항공</span>
+              </div>
+              <div class="airline-departure">
+                <span class="time">20:40</span>
+                <span class="airport">ICN</span>
+              </div>
+              <div class="airline-arrival">
+                <span class="time">16:00</span>
+                <span class="airport">LAX</span>
+              </div>
             </li>
-          </ul>
+          </ol>
         </div>
-        <div class="new-schedule-btn">
-          +
+        <div class="hotel-reservation1">
+          <h3>숙소 1</h3>
+          <span class="hotel-name">ACE HOTEL</span>
+          <span class="hotel-place">팜스프링스</span>
+          <span class="hotel-site">AGODA</span>
+        </div>
+        <div class="hotel-reservation2">
+          <h3>숙소 2</h3>
+          <span class="hotel-name">ACE HOTEL</span>
+          <span class="hotel-place">팜스프링스</span>
+          <span class="hotel-site">AGODA</span>
         </div>
       
       <div class="new-info-btn">
@@ -373,5 +422,5 @@
         </div>
       </main>
     </div>
-  </body>
+</body>
 </html>

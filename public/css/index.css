@@ -1,9 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap");
-@import url("https://use.fontawesome.com/releases/v5.5.0/css/all.css");
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+@import url('https://use.fontawesome.com/releases/v5.5.0/css/all.css');
 /* BORDER-BOX */
-body *,
-body *::before,
-body *::after {
+body *, body *::before, body *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -11,14 +9,14 @@ body *::after {
 /* MODULE */
 .clearfix::after {
   display: block;
-  content: "";
+  content: '';
   clear: both;
 }
 .float-left {
   float: left;
 }
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   /* font-family: 'Nanum Gothic', sans-serif; */
   padding: 20px;
   background-color: #f4f4f4;
@@ -29,27 +27,18 @@ body {
   border-radius: 20px;
   background-color: #fff;
 }
-/* .timeline-wrapper {
-  display: none;
-}
-.travel-list-wrapper {
+
+main.main-view {
   display: block;
+  z-index: 98;
 }
-.travel-info-wrapper {
-  display: none;
-} */
-.main-travels {
-  /* display: block; */
-  display: none;
-}
-.main-schedule {
-  display: block;
-  /* display: none; */
-}
+
+.main-schedule,
+.main-travels,
 .main-info {
-  /* display: block; */
   display: none;
 }
+
 /* HEADER */
 .header {
   width: 100%;
@@ -94,6 +83,7 @@ body {
 .menu-list li {
   /* width: 60px; */
   height: 60px;
+  opacity: 0.5;
   /* margin: 20px; */
   /* background-color: #999; */
 }
@@ -106,6 +96,11 @@ body {
 .menu-list > li > .fa-plane-departure {
   font-size: 20px;
 }
+.menu-list .active {
+  opacity: 1.0;
+}
+
+
 /* ----- timeline ----- */
 /* MAIN */
 .main-schedule {
@@ -117,21 +112,20 @@ body {
   padding: 15px;
   font-weight: 700;
   /* text-align: center; */
-  /* background-color: #CDCDCD; */
+  /* background-color: #cdcdcd; */
 }
 /* DATE */
 .date-wrapper {
   position: relative;
-  width: 100%;
+  width: 100%; 
   padding: 10px 20px 10px 45px;
-  /* background-color: #F4F4F4; */
+  /* background-color: #f4f4f4; */
 }
 .date-container {
   width: 650px;
   overflow: hidden;
 }
-.date-before-btn,
-.date-after-btn {
+.date-before-btn, .date-after-btn {
   /* float: left; */
   position: absolute;
   top: 5px;
@@ -139,7 +133,7 @@ body {
   margin-top: 25px;
   font-size: 28px;
   color: rgb(133, 154, 206);
-  /* background-color: #E8E8E8; */
+  /* background-color: #e8e8e8; */
   cursor: pointer;
 }
 .date-before-btn {
@@ -155,6 +149,7 @@ body {
   height: 100px;
   padding: 5px 20px;
   /* background-color: rgb(220, 220, 220); */
+  
 }
 .date-item {
   /* float: left; */
@@ -164,7 +159,9 @@ body {
   padding: 15px;
   border-radius: 13px;
   /* transform: translate3d(-120px, 0, 0); */
+  cursor: pointer;
 }
+
 .date-list .active {
   color: #fff;
   background-color: rgb(133, 154, 206);
@@ -201,7 +198,7 @@ body {
   width: 25px;
   height: 100vh;
   margin-right: 10px;
-  background-color: #E8E8E8;
+  background-color: #e8e8e8;
 } */
 .schedule-list {
   position: absolute;
@@ -209,7 +206,7 @@ body {
   /* width: 80%; */
   /* height: 100vh; */
   padding: 20px;
-  /* background-color: #F4F4F4; */
+  /* background-color: #f4f4f4; */
 }
 .schedule-list li {
   position: absolute;
@@ -238,6 +235,7 @@ body {
   color: #fff;
   background-color: rgb(211, 149, 169);
 }
+
 /* POPUP */
 .new-schedule-btn,
 .new-travel-btn,
@@ -256,7 +254,43 @@ body {
   cursor: pointer;
   font-weight: 200;
 }
+.delete-confirm {
+  /* display: block; */
+  display: none;
+  position: fixed;
+  top: 180px;
+  left: calc(50% - 210px);
+  width: 400px;
+  padding: 30px;
+  margin: 30px;
+  text-align: center;
+  background-color: #fff;
+  z-index: 99;
+}
+.delete-confirm em {
+  font-weight: bold;
+}
+.delete-confirm > button {
+  display: block;
+  float: left;
+  font-size: 16px;
+  padding: 10px;
+  width: calc(50% - 10px);
+  color: #fff;
+  margin: 15px 5px 5px 5px;
+}
+.delete-n {
+  background-color: #b5b5b5;
+}
+.delete-y {
+  font-weight: bold;
+  background-color: #da7676;
+}
+/* main > .delete-popup-bg {
+  display: block;
+} */
 .popup-bg,
+.delete-popup-bg,
 .new-travel-popup-bg {
   /* display: block; */
   display: none;
@@ -265,7 +299,7 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgba(55, 55, 55, 0.7);
+  background-color: rgba(55, 55, 55, .7);
 }
 .new-schedule-popup {
   display: none;
@@ -286,16 +320,20 @@ body {
   margin-bottom: 10px;
   width: 100%;
 }
-
+/* REMIND: text-hidden추가 */
+.text-hidden {
+  display: none;
+}
 .select-date,
 .select-start-hour,
 .select-end-hour {
-  /* background-color: #CDCDCD; */
+  /* background-color: #cdcdcd; */
   padding-left: 13px;
 }
-.new-schedule-popup * {
+
+/* .new-schedule-popup * {
   display: block;
-}
+} */
 .new-schedule-popup h2 {
   font-size: 23px;
   padding: 5px;
@@ -311,8 +349,7 @@ body {
   padding: 5px;
   margin: 0 5px 10px 5px;
 }
-.schedule-input-place,
-.schedule-input-detail {
+.schedule-input-place, .schedule-input-detail {
   font-size: 14px;
   padding: 5px;
   margin-bottom: 10px;
@@ -327,18 +364,12 @@ body {
   cursor: pointer;
 }
 .warnning-text {
-  /* display: block; */
-  display: none;
-  /* width: 350px; */
+  /* display: none; */
   font-size: 14px;
   margin-bottom: 10px;
   color: #e38484;
-  /* background-color: #F4F4F4; */
 }
-/* REMIND: text-hidden추가 */
-.text-hidden {
-  display: none;
-}
+
 .add-schedule-btn {
   font-size: 16px;
   padding: 10px;
@@ -346,7 +377,9 @@ body {
   color: #fff;
   background-color: #333;
 }
+
 /* ----- travel list ----- */
+
 /* MAIN */
 .travel-list {
   width: 88%;
@@ -379,7 +412,7 @@ body {
   width: calc(100% - 20px);
   bottom: 10px;
   right: 10px;
-  /* background-color: #F9F9F9; */
+  /* background-color: #f9f9f9; */
 }
 .travel-place {
   display: block;
@@ -433,6 +466,7 @@ body {
   font-size: 23px;
   cursor: pointer;
 }
+
 .add-travel-btn {
   font-size: 16px;
   padding: 10px;
@@ -440,8 +474,11 @@ body {
   color: #fff;
   background-color: #333;
 }
+
 /* ----- travel info ----- */
+
 /* MAIN */
+
 .main h2 {
   font-size: 24px;
   font-weight: bold;
@@ -463,10 +500,7 @@ body {
   font-weight: bold;
   padding: 10px;
 }
-.airline-info1,
-.airline-info2,
-.airline-departure,
-.airline-arrival {
+.airline-info1, .airline-info2, .airline-departure, .airline-arrival {
   float: left;
   padding: 10px;
 }
@@ -477,30 +511,24 @@ body {
 .airline-info2 {
   width: 160px;
 }
-.airline-departure,
-.airline-arrival {
+.airline-departure, .airline-arrival {
   width: 180px;
 }
-.date,
-.time {
+.date, .time {
   font-size: 26px;
   font-weight: 400;
 }
-.airlines,
-.airport {
+.airlines, .airport {
   font-size: 16px;
 }
-.hotel-reservation1,
-.hotel-reservation2 {
+.hotel-reservation1, .hotel-reservation2 {
   width: 80%;
   margin: 20px auto;
   padding: 20px;
   line-height: 1.2;
   background-color: #f4f4f4;
 }
-.hotel-name,
-.hotel-place,
-.hotel-site {
+.hotel-name, .hotel-place, .hotel-site {
   padding: 50px;
   font-size: 24px;
   font-weight: 400;
@@ -521,6 +549,7 @@ body {
   cursor: pointer;
   font-weight: bold;
 }
+
 .popup-form {
   display: none;
   position: absolute;
@@ -541,11 +570,7 @@ body {
   padding: 5px;
   margin-bottom: 10px;
 }
-.input-airlines,
-.dep-airlines,
-.arr-airlines,
-.input-place,
-.input-title {
+.input-airlines, .dep-airlines, .arr-airlines, .input-place, .input-title {
   font-size: 14px;
   padding: 5px;
   margin-bottom: 10px;
