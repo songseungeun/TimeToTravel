@@ -16,63 +16,28 @@
     },
     {
       "id": 11,
-      "title": "ㅇㄹㄴ",
-      "place": "ㄴㅇㄹ",
-      "startDate": "2020/APR/13",
-      "endDate": "2021/MAY/13"
+      "title": "",
+      "place": "",
+      "startDate": "default/default/default",
+      "endDate": "default/default/default"
     },
     {
       "id": 12,
-      "title": "ㅇㄹㄴ",
-      "place": "ㄹㄴㅇㄹㄴㅇ",
-      "startDate": "2020/APR/13",
-      "endDate": "2020/MAY/13"
+      "title": "",
+      "place": "",
+      "startDate": "default/default/default",
+      "endDate": "default/default/default"
     },
     {
       "id": 13,
-      "title": "ㄹㅇㄴ",
-      "place": "ㄴㅇㄹ",
+      "title": "",
+      "place": "",
       "startDate": "default/default/default",
       "endDate": "default/default/default"
     },
     {
       "id": 14,
       "title": "",
-      "place": "",
-      "startDate": "default/default/default",
-      "endDate": "default/default/default"
-    },
-    {
-      "id": 15,
-      "title": "",
-      "place": "",
-      "startDate": "default/default/default",
-      "endDate": "default/default/default"
-    },
-    {
-      "id": 16,
-      "title": "",
-      "place": "",
-      "startDate": "default/default/default",
-      "endDate": "default/default/default"
-    },
-    {
-      "id": 17,
-      "title": "ㅇㄹㄴ",
-      "place": "",
-      "startDate": "default/default/default",
-      "endDate": "default/default/default"
-    },
-    {
-      "id": 18,
-      "title": "",
-      "place": "",
-      "startDate": "default/default/default",
-      "endDate": "default/default/default"
-    },
-    {
-      "id": 19,
-      "title": "ㄴㅇㄹ",
       "place": "",
       "startDate": "default/default/default",
       "endDate": "default/default/default"
@@ -88,6 +53,14 @@
       "id": 1
     },
     {
+      "id": 11
+    },
+    {
+      "date": "default/default",
+      "timeFrom": "start-default:start-default",
+      "timeTo": "end-default:end-default",
+      "place": "",
+      "detail": "",
       "id": 12
     },
     {
@@ -95,42 +68,6 @@
     },
     {
       "id": 14
-    },
-    {
-      "id": 15
-    },
-    {
-      "date": "default/default",
-      "timeFrom": "start-default:start-default",
-      "timeTo": "end-default:end-default",
-      "place": "",
-      "detail": "",
-      "id": 16
-    },
-    {
-      "id": 17
-    },
-    {
-      "id": 18
-    },
-    {
-      "id": 19
-    },
-    {
-      "date": "default/default",
-      "timeFrom": "start-default:start-default",
-      "timeTo": "end-default:end-default",
-      "place": "",
-      "detail": "",
-      "id": 20
-    },
-    {
-      "date": "default/default",
-      "timeFrom": "start-default:start-default",
-      "timeTo": "end-default:end-default",
-      "place": "ㅇ",
-      "detail": "",
-      "id": 21
     }
   ],
   "info": [
