@@ -1,7 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
-@import url('https://use.fontawesome.com/releases/v5.5.0/css/all.css');
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap");
+@import url("https://use.fontawesome.com/releases/v5.5.0/css/all.css");
 /* BORDER-BOX */
-body *, body *::before, body *::after {
+body *,
+body *::before,
+body *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -9,14 +11,14 @@ body *, body *::before, body *::after {
 /* MODULE */
 .clearfix::after {
   display: block;
-  content: '';
+  content: "";
   clear: both;
 }
 .float-left {
   float: left;
 }
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   /* font-family: 'Nanum Gothic', sans-serif; */
   padding: 20px;
   background-color: #f4f4f4;
@@ -36,8 +38,7 @@ body {
 .travel-info-wrapper {
   display: none;
 } */
-​
-.main-travels {
+​ .main-travels {
   /* display: block; */
   display: none;
 }
@@ -122,7 +123,7 @@ body {
 /* DATE */
 .date-wrapper {
   position: relative;
-  width: 100%; 
+  width: 100%;
   padding: 10px 20px 10px 45px;
   /* background-color: #f4f4f4; */
 }
@@ -130,7 +131,8 @@ body {
   width: 650px;
   overflow: hidden;
 }
-.date-before-btn, .date-after-btn {
+.date-before-btn,
+.date-after-btn {
   /* float: left; */
   position: absolute;
   top: 5px;
@@ -154,7 +156,6 @@ body {
   height: 100px;
   padding: 5px 20px;
   /* background-color: rgb(220, 220, 220); */
-  
 }
 .date-item {
   /* float: left; */
@@ -165,8 +166,7 @@ body {
   border-radius: 13px;
   /* transform: translate3d(-120px, 0, 0); */
 }
-​
-.date-list .active {
+​ .date-list .active {
   color: #fff;
   background-color: rgb(133, 154, 206);
 }
@@ -258,8 +258,7 @@ body {
   cursor: pointer;
   font-weight: 200;
 }
-​
-.popup-bg,
+​ .popup-bg,
 .new-travel-popup-bg {
   /* display: block; */
   display: none;
@@ -268,7 +267,7 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgba(55, 55, 55, .7);
+  background-color: rgba(55, 55, 55, 0.7);
 }
 .new-schedule-popup {
   display: none;
@@ -282,15 +281,13 @@ body {
   background-color: #fff;
   z-index: 99;
 }
-​
-.schedule-input {
+​ .schedule-input {
   font-size: 14px;
   padding: 5px;
   margin-bottom: 10px;
   width: 100%;
 }
-​
-.text-hidden {
+​ .text-hidden {
   display: none;
 }
 .select-date,
@@ -299,8 +296,7 @@ body {
   /* background-color: #cdcdcd; */
   padding-left: 13px;
 }
-​
-.new-schedule-popup * {
+​ .new-schedule-popup * {
   display: block;
 }
 .new-schedule-popup h2 {
@@ -318,7 +314,8 @@ body {
   padding: 5px;
   margin: 0 5px 10px 5px;
 }
-.schedule-input-place, .schedule-input-detail {
+.schedule-input-place,
+.schedule-input-detail {
   font-size: 14px;
   padding: 5px;
   margin-bottom: 10px;
@@ -339,8 +336,7 @@ body {
   margin-bottom: 10px;
   color: #e38484;
 }
-​
-.add-schedule-btn {
+​ .add-schedule-btn {
   font-size: 16px;
   padding: 10px;
   width: 100%;
@@ -435,8 +431,7 @@ body {
   font-size: 23px;
   cursor: pointer;
 }
-​
-.add-travel-btn {
+​ .add-travel-btn {
   font-size: 16px;
   padding: 10px;
   width: 100%;
@@ -469,7 +464,10 @@ body {
   font-weight: bold;
   padding: 10px;
 }
-.airline-info1, .airline-info2, .airline-departure, .airline-arrival {
+.airline-info1,
+.airline-info2,
+.airline-departure,
+.airline-arrival {
   float: left;
   padding: 10px;
 }
@@ -480,24 +478,30 @@ body {
 .airline-info2 {
   width: 160px;
 }
-.airline-departure, .airline-arrival {
+.airline-departure,
+.airline-arrival {
   width: 180px;
 }
-.date, .time {
+.date,
+.time {
   font-size: 26px;
   font-weight: 400;
 }
-.airlines, .airport {
+.airlines,
+.airport {
   font-size: 16px;
 }
-.hotel-reservation1, .hotel-reservation2 {
+.hotel-reservation1,
+.hotel-reservation2 {
   width: 80%;
   margin: 20px auto;
   padding: 20px;
   line-height: 1.2;
   background-color: #f4f4f4;
 }
-.hotel-name, .hotel-place, .hotel-site {
+.hotel-name,
+.hotel-place,
+.hotel-site {
   padding: 50px;
   font-size: 24px;
   font-weight: 400;
@@ -518,8 +522,7 @@ body {
   cursor: pointer;
   font-weight: bold;
 }
-​
-.popup-form {
+​ .popup-form {
   display: none;
   position: absolute;
   width: 800px;
@@ -539,7 +542,11 @@ body {
   padding: 5px;
   margin-bottom: 10px;
 }
-.input-airlines, .dep-airlines, .arr-airlines, .input-place, .input-title {
+.input-airlines,
+.dep-airlines,
+.arr-airlines,
+.input-place,
+.input-title {
   font-size: 14px;
   padding: 5px;
   margin-bottom: 10px;
@@ -551,3 +558,4 @@ body {
   width: 90%;
   color: #fff;
   background-color: #333;
+}
