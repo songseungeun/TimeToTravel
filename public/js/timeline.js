@@ -1,3 +1,5 @@
+// import
+// import { timelineOf } from './travel-list.js';
 
 // DOMs
 const $dateList = document.querySelector('.date-list');
@@ -20,23 +22,29 @@ const toggleActiveDate = target => {
 //   });
 // };
 
-// const render = () => {
-//   let html = '';
-//   const travel = travels[0].schedule;
+const renderTimeline = () => {
+  let html = '';
+  // const dailySchedule = travels[0].schedule;
+  console.log(schedules)
+  // schedules.forEach(({ id, timeFrom, place, detail }) => {
+  //   html += `<li class="schedule" id="s${id}">
+  //           <div class="time">${timeFrom}</div>
+  //           <div class="place">${place}</div>
+  //           <div class="detail">${detail}</div>
+  //           <div class="remove-btn">X</div>
+  //         </li>`;
+  // });
 
-//   travel.forEach(({ id, timeFrom, place, detail }) => {
-//     html += `<li class="schedule" id="s${id}">
-//             <div class="time">${timeFrom}</div>
-//             <div class="place">${place}</div>
-//             <div class="detail">${detail}</div>
-//             <div class="remove-btn">X</div>
-//           </li>`;
-//   });
+  $scheduleList.innerHTML = html;
+  // sortTimeline();
+};
 
-//   $scheduleList.innerHTML = html;
-//   sortTimeline(travel);
-// };
 
+
+// events
+// window.onload = getSchedules;
 
 $dateList.addEventListener('click', ({ target }) => toggleActiveDate(target));
 
+// export
+// export { getSchedules, schedules };

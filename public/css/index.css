@@ -364,7 +364,7 @@ main.main-view {
   cursor: pointer;
 }
 .warnning-text {
-  /* display: none; */
+  display: none;
   font-size: 14px;
   margin-bottom: 10px;
   color: #e38484;
@@ -442,9 +442,7 @@ main.main-view {
   background-color: #fff;
   z-index: 99;
 }
-.new-travel-popup * {
-  /* display: block; */
-}
+
 .new-travel-popup h2 {
   font-size: 23px;
   padding: 5px;

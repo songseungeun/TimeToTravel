@@ -26,12 +26,10 @@ const closePopup = () => {
 };
 
 //+버튼 누르면 팝업창 오픈
-function openPopup() {
+$newScheduleBtn.onclick = () => {
   $newSchedulePopUp.style.display = 'block';
   $popupBg.style.display = 'block';
 };
-
-$newScheduleBtn.addEventListener('click', openPopup);
 
 //x버튼을 누르면 팝업창 종료
 $popupRemoveBtn.addEventListener('click', closePopup);
