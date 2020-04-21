@@ -108,6 +108,10 @@ $addTravelBtn.onclick = async () => {
 
   $inputTitle.value = '';
   $inputPlace.value = '';
+
+  [...$newTravelPopup.children].forEach(child => {
+    if (child.nodeName === 'SELECT') child.firstElementChild.selected = 'selected';
+  });
 };
 
 $travelList.addEventListener("click", ({ target }) => removeTravel(target));
