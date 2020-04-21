@@ -9,132 +9,54 @@
     },
     {
       "id": 2,
+      "title": "sdf",
+      "place": "sdfsd",
+      "startDate": "2021/4/3",
+      "endDate": "default/0/default"
+    },
+    {
+      "id": 3,
       "title": "",
       "place": "",
-      "startDate": "default/4/7",
-      "endDate": "default/5/7"
+      "startDate": "default/0/default",
+      "endDate": "2022/2/2"
+    },
+    {
+      "id": 4,
+      "title": "asdf",
+      "place": "asd",
+      "startDate": "2020/3/3",
+      "endDate": "2021/3/3"
+    },
+    {
+      "id": 5,
+      "title": "zzz",
+      "place": "zzzz",
+      "startDate": "2020/4/22",
+      "endDate": "2020/3/4"
     }
   ],
   "schedules": [
     {
-      "date": "MAY/13",
-      "timeFrom": "10:20",
-      "timeTo": "09:30",
-      "place": "ㄹㅇㄴ",
-      "detail": "ㄹㅇㄴ",
-      "id": 1
-    },
-    {
-      "id": 12
-    },
-    {
-      "id": 13
-    },
-    {
-      "id": 14
-    },
-    {
-      "id": 15
-    },
-    {
-      "date": "default/default",
-      "timeFrom": "start-default:start-default",
-      "timeTo": "end-default:end-default",
-      "place": "",
-      "detail": "",
-      "id": 16
-    },
-    {
-      "id": 17
-    },
-    {
-      "id": 18
-    },
-    {
-      "id": 19
-    },
-    {
-      "date": "default/default",
-      "timeFrom": "start-default:start-default",
-      "timeTo": "end-default:end-default",
-      "place": "",
-      "detail": "",
-      "id": 20
-    },
-    {
-      "date": "default/default",
-      "timeFrom": "start-default:start-default",
-      "timeTo": "end-default:end-default",
-      "place": "ㅇ",
-      "detail": "",
-      "id": 21
-    },
-    {
+      "travelId": 1,
+      "date": "5/4",
+      "timeFrom": "5:50",
+      "timeTo": "5:40",
+      "place": "ㅋㅋㅋㅋ",
+      "detail": "ㅋㅋㅋ",
       "id": 2
     },
     {
+      "travelId": 1,
+      "date": "5/5",
+      "timeFrom": "4:40",
+      "timeTo": "3:20",
+      "place": "ㅇㄴ",
+      "detail": "ㅇㄹㅋㅋㅋㅋ",
       "id": 3
     },
     {
       "id": 4
-    },
-    {
-      "id": 5
-    },
-    {
-      "id": 6
-    },
-    {
-      "id": 7
-    },
-    {
-      "id": 8
-    },
-    {
-      "id": 9
-    },
-    {
-      "id": 10
-    },
-    {
-      "date": "2/6",
-      "timeFrom": "6:5",
-      "timeTo": "4:4",
-      "place": "sdffds",
-      "detail": "dsffds",
-      "id": 22
-    },
-    {
-      "date": "2/6",
-      "timeFrom": "6:5",
-      "timeTo": "4:4",
-      "place": "sdffds",
-      "detail": "dsffds",
-      "id": 23
-    },
-    {
-      "date": "2/6",
-      "timeFrom": "6:5",
-      "timeTo": "4:4",
-      "place": "sdffds",
-      "detail": "dsffds",
-      "id": 24
-    },
-    {
-      "date": "2/3",
-      "timeFrom": "3:40",
-      "timeTo": "4:40",
-      "place": "aaa",
-      "detail": "bbb",
-      "id": 25
-    },
-    {
-      "date": "4/11",
-      "timeFrom": "8:60",
-      "timeTo": "3:40",
-      "place": "sfsd",
-      "detail": "fdsfds",
-      "id": 26
     }
   ],
   "info": [
