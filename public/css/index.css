@@ -246,7 +246,7 @@ main.main-view {
   width: 80px;
   height: 80px;
   border-radius: 20px;
-  background-color: rgb(61, 112, 120);
+  /* background-color: rgb(61, 112, 120); */
   text-align: center;
   line-height: 76px;
   color: #fff;
@@ -254,6 +254,16 @@ main.main-view {
   cursor: pointer;
   font-weight: 200;
 }
+.new-schedule-btn {
+  background-color: #e38484;
+}
+.new-travel-btn {
+  background-color: #88a9da;
+}
+.new-info-btn {
+  background-color: rgb(91, 132, 132);
+}
+
 .delete-confirm {
   /* display: block; */
   display: none;
