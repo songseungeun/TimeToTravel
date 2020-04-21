@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const $newScheduleBtn = document.querySelector('.new-schedule-btn');
 const $newSchedulePopUp = document.querySelector('.new-schedule-popup');
 const $popupBg = document.querySelector('.popup-bg');
@@ -10,6 +11,21 @@ const $startHourSelect = document.querySelector('#start-hour-select');
 const $startMinSelect = document.querySelector('#start-min-select');
 const $endHourSelect = document.querySelector('#end-hour-select');
 const $endMinSelect = document.querySelector('#end-min-select');
+=======
+// DOMs
+const $addScheduleBtn = document.querySelector('.add-schedule-btn');
+const $newScheduleBtn = document.querySelector('.new-schedule-btn');
+const $newSchedulePopUp = document.querySelector('.new-schedule-popup');
+const $popupBg = document.querySelector('.popup-bg');
+const $popupRemoveBtn = document.querySelector('.popup-remove-btn');
+
+const $monthSelect = document.querySelector("#month-select");
+const $dateSelect = document.querySelector("#date-select");
+const $startHourSelect = document.querySelector("#start-hour-select");
+const $startMinSelect = document.querySelector("#start-min-select");
+const $endHourSelect = document.querySelector("#end-hour-select");
+const $endMinSelect = document.querySelector("#end-min-select");
+>>>>>>> 81a03bfbe08de647c5785ac627c1e2aef899ae30
 
 const $inputPlace = document.querySelector('#schedule-input-place');
 const $inputDetail = document.querySelector('#schedule-input-detail');
@@ -25,7 +41,11 @@ const closePopup = () => {
 };
 
 //+버튼 누르면 팝업창 오픈
+<<<<<<< HEAD
 function openPopup() {
+=======
+$newScheduleBtn.onclick = () => {
+>>>>>>> 81a03bfbe08de647c5785ac627c1e2aef899ae30
   $newSchedulePopUp.style.display = 'block';
   $popupBg.style.display = 'block';
 };
@@ -80,3 +100,4 @@ $addScheduleBtn.onclick = () => {
     console.log('validation error');
   }
 };
+

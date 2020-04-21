@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 // state
 let travels = [];
+=======
+// import
+// import { timelineOf } from './travel-list.js';
+>>>>>>> 81a03bfbe08de647c5785ac627c1e2aef899ae30
 
 // DOMs
 const $dateList = document.querySelector('.date-list');
@@ -39,11 +44,15 @@ const render = () => {
   sortTimeline(travel);
 };
 
+<<<<<<< HEAD
 const getSchedules = async () => {
   const { data } = await axios.get('/travels');
   travels = data;
   render();
 };
+=======
+
+>>>>>>> 81a03bfbe08de647c5785ac627c1e2aef899ae30
 
 // events
 window.onload = getSchedules;
@@ -51,4 +60,8 @@ window.onload = getSchedules;
 $dateList.addEventListener('click', ({ target }) => toggleActiveDate(target));
 
 // export
+<<<<<<< HEAD
 export { getSchedules };
+=======
+// export { getSchedules, schedules };
+>>>>>>> 81a03bfbe08de647c5785ac627c1e2aef899ae30
