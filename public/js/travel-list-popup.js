@@ -4,12 +4,12 @@ const $popupBg = document.querySelector(".popup-bg");
 const $addScheduleBtn = document.querySelector(".add-schedule-btn");
 const $popupRemoveBtn = document.querySelector(".popup-remove-btn");
 
-const $monthSelect = document.querySelector("#month-select");
-const $dateSelect = document.querySelector("#date-select");
-const $startHourSelect = document.querySelector("#start-hour-select");
-const $startMinSelect = document.querySelector("#start-min-select");
-const $endHourSelect = document.querySelector("#end-hour-select");
-const $endMinSelect = document.querySelector("#end-min-select");
+const $month = document.querySelector("#month-select");
+const $date = document.querySelector("#date-select");
+const $startHour = document.querySelector("#start-hour-select");
+const $startMin = document.querySelector("#start-min-select");
+const $endHour = document.querySelector("#end-hour-select");
+const $endMin = document.querySelector("#end-min-select");
 
 const $inputPlace = document.querySelector("#schedule-input-place");
 const $inputDetail = document.querySelector("#schedule-input-detail");
@@ -51,30 +51,35 @@ function showWarning(element, defaultValue, warningElement) {
   }
 }
 
+// $addScheduleBtn.onclick = () => {
+//   let errorCount = 0;
+//   errorCount += showWarning($inputPlace, "", $inputPlaceWarning);
+//   errorCount += showWarning($inputDetail, "", $inputDetailWarning);
+//   errorCount += showWarning($monthSelect, "default", $selectDateWarning);
+//   errorCount += showWarning($dateSelect, "default", $selectDateWarning);
+//   errorCount += showWarning(
+//     $startHourSelect,
+//     "start-default",
+//     $selectStartWarning
+//   );
+//   errorCount += showWarning(
+//     $startMinSelect,
+//     "start-default",
+//     $selectStartWarning
+//   );
+//   errorCount += showWarning($endHourSelect, "end-default", $selectEndWarning);
+//   errorCount += showWarning($endMinSelect, "end-default", $selectEndWarning);
+
+//   // 서버로 전송하는 로직
+
+//   if (errorCount === 0) {
+//     console.log("successful");
+//   } else {
+//     console.log("validation error");
+//   }
+// };
+
 $addScheduleBtn.onclick = () => {
-  let errorCount = 0;
-  errorCount += showWarning($inputPlace, "", $inputPlaceWarning);
-  errorCount += showWarning($inputDetail, "", $inputDetailWarning);
-  errorCount += showWarning($monthSelect, "default", $selectDateWarning);
-  errorCount += showWarning($dateSelect, "default", $selectDateWarning);
-  errorCount += showWarning(
-    $startHourSelect,
-    "start-default",
-    $selectStartWarning
-  );
-  errorCount += showWarning(
-    $startMinSelect,
-    "start-default",
-    $selectStartWarning
-  );
-  errorCount += showWarning($endHourSelect, "end-default", $selectEndWarning);
-  errorCount += showWarning($endMinSelect, "end-default", $selectEndWarning);
+  
 
-  // 서버로 전송하는 로직
-
-  if (errorCount === 0) {
-    console.log("successful");
-  } else {
-    console.log("validation error");
-  }
 };

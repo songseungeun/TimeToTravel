@@ -75,6 +75,10 @@ const goToTimeline = (target) => {
   getSchedules(timelineOf);
 };
 
+const makeScheduleData = newId => {
+  axios.post('/schedules', { id: newId });
+};
+
 // event handlers
 window.onload = getTravels;
 
@@ -82,18 +86,15 @@ $newTravelBtn.addEventListener("click", openTravelPopup);
 $popupBg.addEventListener("click", closeTravelPopup);
 $popupRemove.addEventListener("click", closeTravelPopup);
 
-[...$newTravelPopup.children].forEach((child) =>
-  child.addEventListener("change", ({ target }) => checkValues(target))
-);
-
 $addTravelBtn.onclick = async () => {
   const title = $inputTitle.value.trim();
   const place = $inputPlace.value.trim();
   const startDate = `${$startYear.value}/${$startMonth.value}/${$startDate.value}`;
   const endDate = `${$endYear.value}/${$endMonth.value}/${$endDate.value}`;
+  const newId = generateId();
 
   const { data } = await axios.post("/travels", {
-    id: generateId(),
+    id: newId,
     title,
     place,
     startDate,
@@ -103,9 +104,10 @@ $addTravelBtn.onclick = async () => {
 
   closeTravelPopup();
   renderTravelList();
+  makeScheduleData(newId);
 
-  $inputTitle.value = "";
-  $inputPlace.value = "";
+  $inputTitle.value = '';
+  $inputPlace.value = '';
 };
 
 $travelList.addEventListener("click", ({ target }) => removeTravel(target));
