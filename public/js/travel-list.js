@@ -6,14 +6,24 @@ let travels = [];
 let timelineOf = "";
 
 // DOMs
-const $travelList = document.querySelector(".travel-list");
-const $newTravelBtn = document.querySelector(".new-travel-btn");
+const $travelList = document.querySelector('.travel-list');
+const $newTravelBtn = document.querySelector('.new-travel-btn');
 const $addTravelBtn = document.querySelector(".add-travel-btn");
 const $popupBg = document.querySelector(".new-travel-popup-bg");
 const $popupRemove = document.querySelector(".new-travel-popup-remove-btn");
 const $newTravelPopup = document.querySelector(".new-travel-popup");
+
 const $inputTitle = document.querySelector(".input-title");
 const $inputPlace = document.querySelector(".input-place");
+const $spotName = document.querySelector('#spot-warning-label')
+const $locationName = document.querySelector('#location-warning-label')
+const $spotName = document.querySelector('#spot-warning-label')
+const $spotName = document.querySelector('#spot-warning-label')
+
+
+
+
+
 const $startYear = $newTravelPopup.querySelector("#start-year-select");
 const $startMonth = $newTravelPopup.querySelector("#start-month-select");
 const $startDate = $newTravelPopup.querySelector("#start-day-select");
@@ -33,6 +43,12 @@ const openTravelPopup = () => {
 };
 
 //TODO: 경고문구
+
+
+
+
+
+
 
 const generateId = () =>
   travels.length ? Math.max(...travels.map(({ id }) => id)) + 1 : 1;

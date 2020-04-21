@@ -203,26 +203,26 @@
       <div class="new-travel-popup">
         <h2>여행일정 입력</h2>
         <input type="text" class="input-title" placeholder="여행이름" />
-        <span class="warnning-text">여행 이름을 입력해주세요.</span>
+        <span id = "spot-warning-label"class="warnning-text text-hidden">여행 이름을 입력해주세요.</span>
         <input type="text" class="input-place" placeholder="장소" />
-        <span class="warnning-text">여행 장소를 입력해주세요.</span>
+        <span id="location-warning-label" class="warnning-text text-hidden">여행 장소를 입력해주세요.</span>
         <label for="date-select" class="float-left">시작:</label>
         <select name="year" id="year-select" class="float-left">
-          <option value="">YEAR</option>
-          <option value="">2020</option>
-          <option value="">2021</option>
+          <option value="default">YEAR</option>
+          <option value="year1">2020</option>
+          <option value="year2">2021</option>
         </select>
         <select name="month" id="month-select" class="float-left">
-          <option value="">MONTH</option>
-          <option value="">APR</option>
-          <option value="">MAY</option>
+          <option value="default">MONTH</option>
+          <option value="month1">APR</option>
+          <option value="month2">MAY</option>
         </select>
         <select name="day" id="day-select">
-          <option value="">DAY</option>
-          <option value="">13</option>
-          <option value="">14</option>
+          <option value="default">DAY</option>
+          <option value="day1">13</option>
+          <option value="day2">14</option>
         </select>
-        <span class="warnning-text">시작 날짜를 선택해주세요.</span>
+        <span id="newstart-warning-label" class="warnning-text text-hidden">시작 날짜를 선택해주세요.</span>
         <label for="date-select" class="float-left">종료:</label>
         <select name="year" id="year-select" class="float-left">
           <option value="">YEAR</option>
@@ -239,7 +239,7 @@
           <option value="">13</option>
           <option value="">14</option>
         </select>
-        <span class="warnning-text">종료 날짜를 선택해주세요.</span>
+        <span id ="newend-warning-label" class="warnning-text text-hidden">종료 날짜를 선택해주세요.</span>
         <button class="add-travel-btn">등록</button>
         <div class="new-travel-popup-remove-btn">X</div>
       </div>

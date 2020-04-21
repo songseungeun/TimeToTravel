@@ -40,6 +40,7 @@ window.onclick = ({ target }) => {
 
 //경고문구
 //FIXME: &&나 ||로 세트인 아이들을 묶어줄 수 없는지?
+//DEBUG: 경고문구 실행되지 않음 왜???
 
 function showWarning(element, defaultValue, warningElement) {
   if (element.value === defaultValue) {
@@ -71,7 +72,6 @@ $addScheduleBtn.onclick = () => {
   errorCount += showWarning($endMinSelect, "end-default", $selectEndWarning);
 
   // 서버로 전송하는 로직
-
   if (errorCount === 0) {
     console.log("successful");
   } else {
