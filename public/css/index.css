@@ -331,9 +331,9 @@ main.main-view {
   padding-left: 13px;
 }
 
-.new-schedule-popup * {
+/* .new-schedule-popup * {
   display: block;
-}
+} */
 .new-schedule-popup h2 {
   font-size: 23px;
   padding: 5px;
@@ -364,13 +364,10 @@ main.main-view {
   cursor: pointer;
 }
 .warnning-text {
-  /* display: block; */
-  display: none;
-  /* width: 350px; */
+  /* display: none; */
   font-size: 14px;
   margin-bottom: 10px;
   color: #e38484;
-  /* background-color: #f4f4f4; */
 }
 
 .add-schedule-btn {
