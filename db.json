@@ -1,20 +1,5 @@
 {
-  "travels": [
-    {
-      "id": 1,
-      "title": "",
-      "place": "",
-      "startDate": "default/default/default",
-      "endDate": "default/default/default"
-    },
-    {
-      "id": 3,
-      "title": "",
-      "place": "",
-      "startDate": "default/default/default",
-      "endDate": "default/default/default"
-    }
-  ],
+  "travels": [],
   "schedules": [
     {
       "date": "MAY/13",
@@ -74,6 +59,59 @@
     },
     {
       "id": 3
+    },
+    {
+      "id": 4
+    },
+    {
+      "id": 5
+    },
+    {
+      "id": 6
+    },
+    {
+      "id": 7
+    },
+    {
+      "id": 8
+    },
+    {
+      "id": 9
+    },
+    {
+      "id": 10
+    },
+    {
+      "date": "2/6",
+      "timeFrom": "6:5",
+      "timeTo": "4:4",
+      "place": "sdffds",
+      "detail": "dsffds",
+      "id": 22
+    },
+    {
+      "date": "2/6",
+      "timeFrom": "6:5",
+      "timeTo": "4:4",
+      "place": "sdffds",
+      "detail": "dsffds",
+      "id": 23
+    },
+    {
+      "date": "2/6",
+      "timeFrom": "6:5",
+      "timeTo": "4:4",
+      "place": "sdffds",
+      "detail": "dsffds",
+      "id": 24
+    },
+    {
+      "date": "2/3",
+      "timeFrom": "3:40",
+      "timeTo": "4:40",
+      "place": "aaa",
+      "detail": "bbb",
+      "id": 25
     }
   ],
   "info": [
