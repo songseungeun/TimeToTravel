@@ -281,13 +281,15 @@ body {
   background-color: #fff;
   z-index: 99;
 }
-​ .schedule-input {
+/* REMIND: 클래스명 한개로  */
+.schedule-input {
   font-size: 14px;
   padding: 5px;
   margin-bottom: 10px;
   width: 100%;
 }
-​ .text-hidden {
+/* REMIND: text-hidden추가 */
+.text-hidden {
   display: none;
 }
 .select-date,
@@ -332,9 +334,11 @@ body {
 .warnning-text {
   /* display: block; */
   display: none;
+  /* width: 350px; */
   font-size: 14px;
   margin-bottom: 10px;
   color: #e38484;
+  /* background-color: #f4f4f4; */
 }
 ​ .add-schedule-btn {
   font-size: 16px;
@@ -378,6 +382,7 @@ body {
   width: calc(100% - 20px);
   bottom: 10px;
   right: 10px;
+  /* background-color: #f9f9f9; */
 }
 .travel-place {
   display: block;
