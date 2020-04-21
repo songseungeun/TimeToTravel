@@ -1,5 +1,20 @@
 {
-  "travels": [],
+  "travels": [
+    {
+      "id": 1,
+      "title": "",
+      "place": "",
+      "startDate": "default/default/default",
+      "endDate": "default/default/default"
+    },
+    {
+      "id": 2,
+      "title": "sfdsdf",
+      "place": "dsfsfd",
+      "startDate": "2021/APR/13",
+      "endDate": "2020/APR/14"
+    }
+  ],
   "schedules": [
     {
       "date": "MAY/13",
@@ -53,6 +68,136 @@
       "place": "ㅇ",
       "detail": "",
       "id": 21
+    },
+    {
+      "id": 2
+    },
+    {
+      "id": 3
+    },
+    {
+      "id": 4
+    },
+    {
+      "id": 5
+    },
+    {
+      "id": 6
+    },
+    {
+      "id": 7
+    },
+    {
+      "date": "default/default",
+      "timeFrom": "start-default:start-default",
+      "timeTo": "end-default:end-default",
+      "place": "",
+      "detail": "",
+      "id": 22
+    },
+    {
+      "date": "default/default",
+      "timeFrom": "start-default:start-default",
+      "timeTo": "end-default:end-default",
+      "place": "",
+      "detail": "",
+      "id": 23
+    },
+    {
+      "date": "default/default",
+      "timeFrom": "start-default:start-default",
+      "timeTo": "end-default:end-default",
+      "place": "",
+      "detail": "",
+      "id": 24
+    },
+    {
+      "date": "default/default",
+      "timeFrom": "start-default:start-default",
+      "timeTo": "end-default:end-default",
+      "place": "",
+      "detail": "",
+      "id": 25
+    },
+    {
+      "date": "default/default",
+      "timeFrom": "start-default:start-default",
+      "timeTo": "end-default:end-default",
+      "place": "",
+      "detail": "",
+      "id": 26
+    },
+    {
+      "date": "default/default",
+      "timeFrom": "start-default:start-default",
+      "timeTo": "end-default:end-default",
+      "place": "",
+      "detail": "",
+      "id": 27
+    },
+    {
+      "date": "APR/14",
+      "timeFrom": "10:20",
+      "timeTo": "09:20",
+      "place": "sfd",
+      "detail": "sfdfds",
+      "id": 28
+    },
+    {
+      "date": "APR/14",
+      "timeFrom": "10:20",
+      "timeTo": "09:20",
+      "place": "sfd",
+      "detail": "sfdfds",
+      "id": 29
+    },
+    {
+      "date": "APR/14",
+      "timeFrom": "10:20",
+      "timeTo": "09:20",
+      "place": "sfd",
+      "detail": "sfdfds",
+      "id": 30
+    },
+    {
+      "date": "APR/14",
+      "timeFrom": "10:20",
+      "timeTo": "09:20",
+      "place": "sfd",
+      "detail": "sfdfds",
+      "id": 31
+    },
+    {
+      "date": "APR/14",
+      "timeFrom": "10:20",
+      "timeTo": "09:20",
+      "place": "sfd",
+      "detail": "sfdfds",
+      "id": 32
+    },
+    {
+      "date": "APR/14",
+      "timeFrom": "10:20",
+      "timeTo": "09:20",
+      "place": "sfd",
+      "detail": "sfdfds",
+      "id": 33
+    },
+    {
+      "date": "APR/14",
+      "timeFrom": "10:20",
+      "timeTo": "09:20",
+      "place": "sfd",
+      "detail": "sfdfds",
+      "id": 34
+    },
+    {
+      "date": "APR/14",
+      "timeFrom": "10:20",
+      "timeTo": "09:20",
+      "place": "sfd",
+      "detail": "sfdfds",
+      "id": 35
     }
   ],
   "info": [

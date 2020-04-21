@@ -442,9 +442,7 @@ main.main-view {
   background-color: #fff;
   z-index: 99;
 }
-.new-travel-popup * {
-  /* display: block; */
-}
+
 .new-travel-popup h2 {
   font-size: 23px;
   padding: 5px;
