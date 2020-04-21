@@ -283,6 +283,17 @@ body {
   background-color: #fff;
   z-index: 99;
 }
+/* REMIND: 클래스명 한개로  */
+.schedule-input {
+  font-size: 14px;
+  padding: 5px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+/* REMIND: text-hidden추가 */
+.text-hidden {
+  display: none;
+}
 .select-date,
 .select-start-hour,
 .select-end-hour {
@@ -344,7 +355,8 @@ body {
 
 /* MAIN */
 .travel-list {
-  width: 100%;
+  width: 88%;
+  margin-left: 100px;
   padding: 20px;
   background-color: #f9f9f9;
 }

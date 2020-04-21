@@ -1,8 +1,5 @@
-// import 
-import { timelineOf } from './travel-list.js';
-
 // state
-let schedules = [];
+let travels = [];
 
 // DOMs
 const $dateList = document.querySelector('.date-list');
@@ -14,56 +11,41 @@ const toggleActiveDate = target => {
   [...$dateList.children].forEach(date => date.classList.toggle('active', (target === date || target.parentNode === date)));
 };
 
-// const sortTimeline = travel => {
-//   const schedules = $scheduleList.querySelectorAll('.schedule');
+const sortTimeline = travel => {
+  const schedules = $scheduleList.querySelectorAll('.schedule');
 
-//   schedules.forEach(schedule => {
-//     const id = schedule.id[1] - 1;
+  schedules.forEach(schedule => {
+    const id = schedule.id[1] - 1;
 
-//     schedule.style.top = `${75 * (travel[id].timeFrom - 7)}px`;
-//     schedule.style.height = `${75 * (travel[id].timeTo - travel[id].timeFrom)}px`;
-//   });
-// };
+    schedule.style.top = `${75 * (travel[id].timeFrom - 7)}px`;
+    schedule.style.height = `${75 * (travel[id].timeTo - travel[id].timeFrom)}px`;
+  });
+};
 
-const renderTimeline = () => {
+const render = () => {
   let html = '';
-  const dailySchedule = '';
+  const travel = travels[0].schedule;
 
-  // dailySchedule.forEach(({ id, timeFrom, place, detail }) => {
-  //   html += `<li class="schedule" id="s${id}">
-  //           <div class="time">${timeFrom}</div>
-  //           <div class="place">${place}</div>
-  //           <div class="detail">${detail}</div>
-  //           <div class="remove-btn">X</div>
-  //         </li>`;
-  // });
+  travel.forEach(({ id, timeFrom, place, detail }) => {
+    html += `<li class="schedule" id="s${id}">
+            <div class="time">${timeFrom}</div>
+            <div class="place">${place}</div>
+            <div class="detail">${detail}</div>
+            <div class="remove-btn">X</div>
+          </li>`;
+  });
 
   $scheduleList.innerHTML = html;
-  // sortTimeline(travel);
+  sortTimeline(travel);
 };
 
 const getSchedules = async () => {
-  const { data } = await axios.get(`/schedules/${timelineOf}`);
-  schedules = data;
-  renderTimeline();
-  console.log(data);
-};
-
-const removeSchedule = async target => {
-  if (!target.matches('.schedule-list > li > .remove-btn')) return;
-  const id = target.parentNode.id;
-
-  const { data } = await axios.delete(`/schedules/${id}`);
-  schedules = data;
-  renderTimeline();
+  const { data } = await axios.get('/travels');
+  travels = data;
+  render();
 };
 
 // events
 window.onload = getSchedules;
 
 $dateList.addEventListener('click', ({ target }) => toggleActiveDate(target));
-
-// $scheduleList.addEventListener('click', ({ target }) => removeSchedule(target));
-
-// export
-export { getSchedules };
