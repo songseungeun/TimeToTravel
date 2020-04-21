@@ -78,3 +78,8 @@ $addScheduleBtn.onclick = () => {
     console.log("validation error");
   }
 };
+<<<<<<< HEAD:public/travel-list-popup.js
+=======
+
+//test
+>>>>>>> eaa5b8a2d618d0b0396b2c99ba9c1da92509d19f:public/js/travel-list-popup.js
