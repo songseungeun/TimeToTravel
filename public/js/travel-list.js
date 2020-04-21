@@ -60,13 +60,13 @@ const getTravels = async () => {
 
 const checkValues = target => {
   if (target.nodeName === 'INPUT') target.nextElementSibling.style.display = target.value === '' ? 'block' : 'none';
-  if (target.nodeName === 'SELECT') {
+  // if (target.nodeName === 'SELECT') {
     
 
-  }
+  // }
 
 };
-  console.log($startDate.nodeName)
+  // console.log($startDate.nodeName)
 
 const removeTravel = async target => {
   if (!target.matches('.travel-list > li > .travel-remove-btn')) return;
@@ -94,14 +94,15 @@ $popupRemove.addEventListener('click', closeTravelPopup);
 [...$newTravelPopup.children].forEach(child => child.addEventListener('change', ({ target }) => checkValues(target)));
 
 $addTravelBtn.onclick = async () => {
-  const isBlank = [...$newTravelPopup.children].filter(child => child.value === '').length !== 0;
+  // const isBlank = [...$newTravelPopup.children].filter(child => child.value === '').length !== 0;
   const title = $inputTitle.value.trim();
   const place = $inputPlace.value.trim();
   const startDate = `${$startYear.value}/${$startMonth.value}/${$startDate.value}`;
   const endDate = `${$endYear.value}/${$endMonth.value}/${$endDate.value}`;
 
-  console.log($startYear.firstElementChild.selected)
-  if (isBlank) return;
+  console.log('no')
+  // if (isBlank) return;
+  console.log('ok')
 
   const { data } = await axios.post('/travels', { id: generateId(), title, place, startDate, endDate });
   travels = [data, ...travels];
@@ -112,6 +113,7 @@ $addTravelBtn.onclick = async () => {
   $inputTitle.value = '';
   $inputPlace.value = '';
 
+  $startYear.firstElementChild.selected = 'selected';
 };
 
 $travelList.addEventListener('click', ({ target }) => removeTravel(target));
