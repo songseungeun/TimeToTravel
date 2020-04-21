@@ -10,12 +10,33 @@
   ],
   "schedules": [
     {
-      "date": "MAY/13",
-      "timeFrom": "10:20",
-      "timeTo": "09:30",
-      "place": "ㄹㅇㄴ",
-      "detail": "ㄹㅇㄴ",
-      "id": 1
+      "id": 1,
+      "date": "2/3",
+      "timeFrom": "2:30",
+      "timeTo": "5:40",
+      "place": "ㄴㅇㄹ",
+      "detail": "ㄹㄹㄹㄹㄹㄹㄹㄹㄹ"
+    },
+    {
+      "travelId": 1,
+      "date": "5/4",
+      "timeFrom": "5:50",
+      "timeTo": "5:40",
+      "place": "ㅋㅋㅋㅋ",
+      "detail": "ㅋㅋㅋ",
+      "id": 2
+    },
+    {
+      "travelId": 1,
+      "date": "5/5",
+      "timeFrom": "4:40",
+      "timeTo": "3:20",
+      "place": "ㅇㄴ",
+      "detail": "ㅇㄹㅋㅋㅋㅋ",
+      "id": 3
+    },
+    {
+      "id": 4
     }
   ],
   "info": [

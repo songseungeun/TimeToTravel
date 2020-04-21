@@ -15,6 +15,7 @@ const $endHour = document.querySelector('#end-hour-select');
 const $endMin = document.querySelector('#end-min-select');
 const $addScheduleBtn = document.querySelector('.add-schedule-btn');
 const $newTravelPopup = document.querySelector('.new-travel-popup');
+const $newSchedulePopup = document.querySelector('.new-schedule-popup');
 const $inputTravelTitle = document.querySelector('.input-title');
 const $inputTravelPlace = document.querySelector('.input-place');
 const $inputSchedulePlace = document.querySelector('#schedule-input-place');
@@ -27,20 +28,24 @@ const $endMonth = $newTravelPopup.querySelector('#end-month-select');
 const $endDate = $newTravelPopup.querySelector('#end-day-select');
 const $travelList = document.querySelector('.travel-list');
 const $addTravelBtn = document.querySelector('.add-travel-btn');
-const $popupBg = document.querySelector('.new-travel-popup-bg');
+const $travelPopupBg = document.querySelector('.new-travel-popup-bg');
+const $newSchedulePopUp = document.querySelector('.new-schedule-popup');
+const $schedulePopupBg = document.querySelector('.popup-bg');
+const $scheduleList = document.querySelector('.schedule-list');
 
 // functions
-const getSchedules = async () => {
-  const { data } = await axios.get(`/schedules/${travelId}`);
-  schedules = data;
-  // renderTimeline();
+// popups
+const closeSchedulePopup = () => {
+  $newSchedulePopUp.style.display = 'none';
+  $schedulePopupBg.style.display = 'none';
 };
 
 const closeTravelPopup = () => {
-  $popupBg.style.display = 'none';
+  $travelPopupBg.style.display = 'none';
   $newTravelPopup.style.display = 'none';
 };
 
+// travel list
 const generateId = () => travels.length ? Math.max(...travels.map(({ id }) => id)) + 1 : 1;
 
 const renderTravelList = () => {
@@ -76,31 +81,72 @@ const removeTravel = async (target) => {
   renderTravelList();
 };
 
-const goToTimeline = (target) => {
-  if (!target.matches('.travel-list > li')) return;
+// schedule time line
+const sortTimeline = schedule => {
+  const schedules = $scheduleList.querySelectorAll('.schedule');
 
-  travelId = target.id;
-  getSchedules(travelId);
+  schedules.forEach(schedule => {
+    const id = schedule.id[1] - 1;
+
+    schedule.style.top = `${75 * (travel[id].timeFrom - 7)}px`;
+    schedule.style.height = `${75 * (travel[id].timeTo - travel[id].timeFrom)}px`;
+  });
 };
 
-const makeScheduleData = newId => {
-  axios.post('/schedules', { id: newId });
+const renderTimeline = schedules => {
+  let html = '';
+
+  schedules.forEach(({ travelId, timeFrom, place, detail, id }) => {
+    html += `<li class="schedule" id="${travelId}-${id}">
+            <div class="time">${timeFrom}</div>
+            <div class="place">${place}</div>
+            <div class="detail">${detail}</div>
+            <div class="remove-btn">X</div>
+          </li>`;
+  });
+
+  $scheduleList.innerHTML = html;
+  // sortTimeline();
 };
 
-const addSchedule = () => {
+const getSchedules = async () => {
+  const { data } = await axios.get(`/schedules?travelId=${travelId}`);
+  const timeline = document.getElementById('main-calendar');
+  const home = document.getElementById('main-home');
+  schedules = data;
+
+  timeline.classList.add('main-view');
+  home.classList.remove('main-view');
+  renderTimeline(schedules);
+};
+
+const addSchedule = async () => {
   const date = `${$month.value}/${$date.value}`;
   const timeFrom = `${$startHour.value}:${$startMin.value}`;
   const timeTo = `${$endHour.value}:${$endMin.value}`;
   const place = $inputSchedulePlace.value;
   const detail = $inputScheduleDetail.value;
+  const travelId = 1;
 
-  console.log(date)
-  console.log(timeFrom)
-  console.log(place)
+  const { data } = await axios.post('/schedules', { travelId, date, timeFrom, timeTo, place, detail });
+  schedules = [data, ...schedules];
 
-  // console.log(axios.post('/schedules', { date, timeFrom, timeTo, place, detail }));
-  const { data } = axios.post('/schedules', { date, timeFrom, timeTo, place, detail });
-  console.log(data);
+  closeSchedulePopup();
+  renderTimeline();
+  console.log('addSchedule', schedules)
+
+  $inputSchedulePlace.value = '';
+  $inputScheduleDetail.value = '';
+  [...$newSchedulePopup.children].forEach(child => {
+    if (child.nodeName === 'SELECT') child.firstElementChild.selected = 'selected';
+  });
+};
+
+const goToTimeline = (target) => {
+  if (!target.matches('.travel-list > li')) return;
+
+  travelId = target.id;
+  getSchedules(travelId);
 };
 
 // event handlers
