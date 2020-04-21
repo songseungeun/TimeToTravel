@@ -286,10 +286,7 @@ body {
   margin-bottom: 10px;
   width: 100%;
 }
-/* REMIND: text-hidden추가 */
-.text-hidden {
-  display: none;
-}
+
 .select-date,
 .select-start-hour,
 .select-end-hour {
@@ -337,6 +334,10 @@ body {
   margin-bottom: 10px;
   color: #e38484;
   /* background-color: #F4F4F4; */
+}
+/* REMIND: text-hidden추가 */
+.text-hidden {
+  display: none;
 }
 .add-schedule-btn {
   font-size: 16px;

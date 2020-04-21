@@ -15,13 +15,10 @@ const $newTravelPopup = document.querySelector(".new-travel-popup");
 
 const $inputTitle = document.querySelector(".input-title");
 const $inputPlace = document.querySelector(".input-place");
-const $spotName = document.querySelector('#spot-warning-label')
-const $locationName = document.querySelector('#location-warning-label')
-const $spotName = document.querySelector('#spot-warning-label')
-const $spotName = document.querySelector('#spot-warning-label')
-
-
-
+const $inputSpotWarning = document.querySelector('#spot-warning-label')
+const $inputlocationWarning = document.querySelector('#location-warning-label')
+const $selectNewWarning = document.querySelector('#newstart-warning-label')
+const $selectEndWarning = document.querySelector('#newend-warning-label')
 
 
 const $startYear = $newTravelPopup.querySelector("#start-year-select");
