@@ -9,31 +9,24 @@
     },
     {
       "id": 2,
-      "title": "sdf",
-      "place": "sdfsd",
-      "startDate": "2021/4/3",
+      "title": "asdf",
+      "place": "asdf",
+      "startDate": "2021/2/1",
       "endDate": "default/0/default"
     },
     {
       "id": 3,
-      "title": "",
+      "title": "asdf",
       "place": "",
-      "startDate": "default/0/default",
-      "endDate": "2022/2/2"
+      "startDate": "2020/5/5",
+      "endDate": "2020/3/2"
     },
     {
       "id": 4,
       "title": "asdf",
-      "place": "asd",
-      "startDate": "2020/3/3",
-      "endDate": "2021/3/3"
-    },
-    {
-      "id": 5,
-      "title": "zzz",
-      "place": "zzzz",
-      "startDate": "2020/4/22",
-      "endDate": "2020/3/4"
+      "place": "sdf",
+      "startDate": "2021/2/2",
+      "endDate": "2021/3/1"
     }
   ],
   "schedules": [
@@ -54,9 +47,6 @@
       "place": "ㅇㄴ",
       "detail": "ㅇㄹㅋㅋㅋㅋ",
       "id": 3
-    },
-    {
-      "id": 4
     }
   ],
   "info": [
