@@ -49,3 +49,6 @@ const getSchedules = async () => {
 window.onload = getSchedules;
 
 $dateList.addEventListener('click', ({ target }) => toggleActiveDate(target));
+
+// export
+export { getSchedules };

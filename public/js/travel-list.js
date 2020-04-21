@@ -59,7 +59,11 @@ const getTravels = async () => {
 };
 
 const checkValues = target => {
-  // if (target. === )target.nextElementSibling.style.display = target.value === '' ? 'block' : 'none';
+  if (target.nodeName === 'INPUT') target.nextElementSibling.style.display = target.value === '' ? 'block' : 'none';
+  if (target.nodeName === 'SELECT') {
+    
+
+  }
 
 };
   console.log($startDate.nodeName)
