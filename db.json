@@ -1,20 +1,5 @@
 {
-  "travels": [
-    {
-      "id": 5,
-      "title": "fds",
-      "place": "fsd",
-      "startDate": "2020/MAY/14",
-      "endDate": "2020/MAY/14"
-    },
-    {
-      "id": 7,
-      "title": "london",
-      "place": "harrypotter studio",
-      "startDate": "2020/MAY/13",
-      "endDate": "2020/APR/13"
-    }
-  ],
+  "travels": [],
   "schedules": [
     {
       "id": 1,

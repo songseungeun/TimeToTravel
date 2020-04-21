@@ -164,6 +164,7 @@ body {
   padding: 15px;
   border-radius: 13px;
   /* transform: translate3d(-120px, 0, 0); */
+  cursor: pointer;
 }
 
 .date-list .active {
@@ -258,8 +259,43 @@ body {
   cursor: pointer;
   font-weight: 200;
 }
-
+.delete-confirm {
+  /* display: block; */
+  display: none;
+  position: fixed;
+  top: 180px;
+  left: calc(50% - 210px);
+  width: 400px;
+  padding: 30px;
+  margin: 30px;
+  text-align: center;
+  background-color: #fff;
+  z-index: 99;
+}
+.delete-confirm em {
+  font-weight: bold;
+}
+.delete-confirm > button {
+  display: block;
+  float: left;
+  font-size: 16px;
+  padding: 10px;
+  width: calc(50% - 10px);
+  color: #fff;
+  margin: 15px 5px 5px 5px;
+}
+.delete-n {
+  background-color: #b5b5b5;
+}
+.delete-y {
+  font-weight: bold;
+  background-color: #da7676;
+}
+/* main > .delete-popup-bg {
+  display: block;
+} */
 .popup-bg,
+.delete-popup-bg,
 .new-travel-popup-bg {
   /* display: block; */
   display: none;
