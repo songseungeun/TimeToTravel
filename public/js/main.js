@@ -54,7 +54,7 @@ const generateDday = startDate => {
   dDay = new Date(startDate).getTime();
   dDay = Math.ceil((dDay - today) / 86400000) + 1;
 
-  return dDay > 0 ? `D-${dDay}` : (dDay === 0 ? `D-Day` : '');
+  return dDay > 0 ? `D-${dDay}` : (dDay === 0 ? 'D-Day' : '');
 };
 
 const generateId = () => travels.length ? Math.max(...travels.map(({ id }) => id)) + 1 : 1;
@@ -75,7 +75,6 @@ const renderTravelList = () => {
   });
 
   $travelList.innerHTML = html;
-
 };
 
 const getTravels = async () => {
@@ -123,6 +122,7 @@ const getSchedules = async (travelId, date) => {
   const { data } = await axios.get(`/schedules?travelId=${travelId}&date=${date}`);
   schedules = data;
 
+  console.log(schedules);
   renderTimeline(schedules);
 };
 
@@ -147,15 +147,18 @@ const addSchedule = async () => {
   });
 };
 
-const goToTimeline = (target) => {
+const goToTimeline = async (target) => {
   if (!target.matches('.travel-list > li')) return;
   const timeline = document.getElementById('main-calendar');
   const home = document.getElementById('main-home');
+  travelId = target.id;
+
+  const { data: {startDate, endDate }} = await axios.get(`/travels/${travelId}`);
+  console.log(startDate, endDate);
 
   timeline.classList.add('main-view');
   home.classList.remove('main-view');
 
-  travelId = target.id;
   getSchedules(travelId);
 };
 
