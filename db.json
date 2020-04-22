@@ -79,6 +79,15 @@
       "place": "aa",
       "detail": "",
       "id": 5
+    },
+    {
+      "travelId": "1",
+      "date": "4/2",
+      "timeFrom": "2:20",
+      "timeTo": "2:10",
+      "place": "aa",
+      "detail": "aa",
+      "id": 6
     }
   ],
   "info": [
