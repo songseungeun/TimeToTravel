@@ -2,37 +2,41 @@
   "travels": [
     {
       "id": 1,
-      "title": "Paris",
-      "place": "프랑스 파리",
-      "startDate": "2022/5/7",
-      "endDate": "2022/5/11"
+      "title": "ㄴㅇㄻㄴㅇㄹㄴㅇㄹ",
+      "place": "ㄴㅇㄹㄴㅇㄹ",
+      "startDate": "2022/11/3",
+      "endDate": "2022/12/2"
     },
     {
       "id": 2,
-      "title": "m`a",
-      "place": "dsfdsffds",
-      "startDate": "2021/4/6",
-      "endDate": "2021/6/11"
+      "title": "ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ",
+      "place": "ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ",
+      "startDate": "2019/4/3",
+      "endDate": "2019/8/1"
     },
     {
       "id": 3,
-      "title": "dsfsfd",
-      "place": "sdfsdf",
-      "startDate": "2020/5/10",
-      "endDate": "2020/5/20"
-    }
-  ],
-  "schedules": [
+      "title": "ㅁㄴㄹㄴㅇㅇㄹㄴ",
+      "place": "ㅇㅁㄴㄹㄻㄴㅇ",
+      "startDate": "2022/1/2",
+      "endDate": "2022/6/3"
+    },
     {
-      "travelId": "3",
-      "date": "5/10",
-      "timeFrom": "0:-10",
-      "timeTo": "0:-10",
-      "place": "sdffds",
-      "detail": "dsffds",
-      "id": 1
+      "id": 4,
+      "title": "ㄴㅇㄻㅋ",
+      "place": "ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ",
+      "startDate": "2023/5/3",
+      "endDate": "2023/6/3"
+    },
+    {
+      "id": 5,
+      "title": "로로로",
+      "place": "ㅗ로로로ㅗ로로",
+      "startDate": "2020/2/2",
+      "endDate": "2020/2/3"
     }
   ],
+  "schedules": [],
   "info": [
     {
       "id": 1,
