@@ -1,24 +1,10 @@
 {
   "travels": [
     {
-      "id": 4,
-      "title": "sdfdsfsdf",
-      "place": "sdfsdfsdf",
-      "startDate": "2021/3/7",
-      "endDate": "2021/7/3"
-    },
-    {
-      "id": 5,
-      "title": "sfdfsd",
+      "id": 1,
+      "title": "sdffsd",
       "place": "dsfdsf",
-      "startDate": "2022/3/5",
-      "endDate": "2022/4/3"
-    },
-    {
-      "id": 6,
-      "title": "dfssfd",
-      "place": "sdfsdf",
-      "startDate": "2021/2/4",
+      "startDate": "2022/2/3",
       "endDate": "2022/3/3"
     },
     {
@@ -88,6 +74,7 @@
       "id": 5
     }
   ],
+  "schedules": [],
   "info": [
     {
       "id": 1,
