@@ -46,6 +46,7 @@ function printDate({ target }) {
   let date2 = Array.from({ length: date + 1 }, function (v, i) { return i; });
   date2.splice(0, 1);
   date2 = ['DATE', ...date2];
+
   date2.forEach((element, key) => {
     target.nextElementSibling[key] = new Option(element, key, true);
   });

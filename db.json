@@ -56,6 +56,24 @@
       "place": "ㄱㅎㄷㄷㄳ",
       "detail": "ㄷㄳ",
       "id": 3
+    },
+    {
+      "travelId": "1",
+      "date": "8/6",
+      "timeFrom": "14:30",
+      "timeTo": "15:10",
+      "place": "야야야야야야",
+      "detail": "야야야야야야",
+      "id": 4
+    },
+    {
+      "travelId": "1",
+      "date": "8/6",
+      "timeFrom": "19:40",
+      "timeTo": "21:00",
+      "place": "ㅇㄹ너ㅑㅇ러ㅑ",
+      "detail": "ㅇ러ㅑㅇ러",
+      "id": 5
     }
   ],
   "info": [

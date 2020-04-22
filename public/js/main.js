@@ -4,8 +4,6 @@ let travels = [];
 let travelId = '';
 
 // DOMs
-const $month = document.querySelector('#month-select');
-const $date = document.querySelector('#date-select');
 const $startHour = document.querySelector('#start-hour-select');
 const $startMin = document.querySelector('#start-min-select');
 const $endHour = document.querySelector('#end-hour-select');
@@ -46,14 +44,8 @@ const $timelineTitle = document.querySelector('.timeline-travel-title');
 // functions
 // popups
 const resetSchedulePopup = () => {
-  const date = document.querySelector('.select-date');
-
   $inputSchedulePlace.value = '';
   $inputScheduleDetail.value = '';
-
-  [...date.children].forEach(child => {
-    if (child.nodeName === 'SELECT') child.firstElementChild.selected = 'selected';
-  });
 };
 
 const resetTravelPopup = () => {
@@ -217,7 +209,9 @@ const getSchedules = async travelId => {
 };
 
 const addSchedule = async () => {
-  const date = `${$month.value}/${$date.value}`;
+  const mm = $dateList.querySelector('.active').firstElementChild.classList[2];
+  const dd = $dateList.querySelector('.active').firstElementChild.textContent;
+  const date = `${mm}/${dd}`;
   const timeFrom = `${$startHour.value}:${$startMin.value}`;
   const timeTo = `${$endHour.value}:${$endMin.value}`;
   const place = $inputSchedulePlace.value;
@@ -333,6 +327,7 @@ $timelineCancleBtn.onclick = () => {
   $timelineAlertPopup.style.display = 'none';
 };
 
+// month/date/time test
 const $monthSelects = document.querySelectorAll('.month-select');
 const $hourSelects = document.querySelectorAll('.hour-select');
 const $minuteSelects = document.querySelectorAll('.min-select');
@@ -368,7 +363,7 @@ const printMonthTime = () => {
       if (element === 'MIN') minuteSelect[key] = new Option(element, '0', true);
       if (element === '00') minuteSelect[key] = new Option(element, '00', true);
       else minuteSelect[key] = new Option(element, (key - 1) * 10, true);
-      console.log(minuteSelect[key]);
+      // console.log(minuteSelect[key]); MIN의 value 값이 -10이에요ㅠㅠ
     });
   });
 };
@@ -381,6 +376,7 @@ function printDate({ target }) {
   let date2 = Array.from({ length: date + 1 }, function (v, i) { return i; });
   date2.splice(0, 1);
   date2 = ['DATE', ...date2];
+
   date2.forEach((element, key) => {
     target.nextElementSibling[key] = new Option(element, key, true);
   });
