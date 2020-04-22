@@ -2,10 +2,21 @@
   "travels": [
     {
       "id": 1,
-      "title": "sdfdsf",
-      "place": "dsfsdf",
-      "startDate": "2021/4/4",
-      "endDate": "2022/4/4"
+      "title": "제주도 여행",
+      "place": "제주도",
+      "startDate": "2020/5/3",
+      "endDate": "2020/5/10"
+    }
+  ],
+  "schedules": [
+    {
+      "travelId": "1",
+      "date": "5/3",
+      "timeFrom": "3:20",
+      "timeTo": "7:10",
+      "place": "우도",
+      "detail": "가자",
+      "id": 1
     }
   ],
   "schedules": [],
