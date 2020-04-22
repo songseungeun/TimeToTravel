@@ -398,7 +398,7 @@ main.main-view {
   line-height: 1.2;
   background-color: #f4f4f4;
 }
-.airline-schedule * {
+.airline-schedule *{
   display: block;
   text-align: center;
 }
