@@ -6,7 +6,6 @@ let travelId = '';
 // DOMs
 const $menuBar = document.querySelector('.menu-bar');
 const $header = document.querySelector('.header h2');
-
 const $startHour = document.querySelector('#start-hour-select');
 const $startMin = document.querySelector('#start-min-select');
 const $endHour = document.querySelector('#end-hour-select');
@@ -140,12 +139,13 @@ const resetSchedulePopup = () => {
 };
 
 const resetTravelPopup = () => {
+  const selectWrappers = document.querySelectorAll('.select-wrapper');
+  const selects = [...selectWrappers].map(select => select.firstElementChild);
+
   $inputTravelTitle.value = '';
   $inputTravelPlace.value = '';
-  [...$newTravelPopup.children].forEach(child => {
-    if (child.nodeName === 'SELECT')
-      child.firstElementChild.selected = 'selected';
-  });
+
+  selects.forEach(child => (child.firstElementChild.selected = 'selected'));
 };
 
 const closeSchedulePopup = () => {
@@ -178,10 +178,22 @@ const generateDday = startDate => {
 const generateId = () =>
   travels.length ? Math.max(...travels.map(({ id }) => id)) + 1 : 1;
 
+const sortTravels = travels => {
+  travels.sort((trav1, trav2) =>
+    trav2.startDate > trav1.startDate
+      ? 1
+      : trav1.startDate > trav2.startDate
+      ? -1
+      : 0
+  );
+};
+
 const renderTravelList = () => {
   let html = '';
 
   $travelNoneText.style.display = travels.length === 0 ? 'block' : 'none';
+
+  sortTravels(travels);
 
   travels.forEach(({ id, title, place, startDate, endDate }) => {
     html += ` <li id=t-${id}>
@@ -205,13 +217,19 @@ const getTravels = async () => {
   renderTravelList();
 };
 
-const removeTravel = async id => {
-  await axios.delete(`/travels/${id}`);
-  travels = travels.filter(travel => travel.id !== +id);
+const removeTravel = async removeId => {
+  console.log(removeId);
+
+  await axios.delete(`/travels/${removeId}`);
+  travels = travels.filter(travel => travel.id !== +removeId);
   renderTravelList();
 
   $alertPopupBg.style.display = 'none';
   $alertPopup.style.display = 'none';
+
+  console.log(removeId);
+  removeId = '';
+  console.log(removeId);
 };
 
 // time line
@@ -259,9 +277,17 @@ const renderMonthYear = (month, year) => {
   $monthYearBox.textContent = `${months[month - 1]}, ${year}`;
 };
 
+// 날짜 세서 렌더하는 기능
+let travelPeriod = 0;
+
+const dateList = document.querySelector('.date-list');
+const beforeBtn = document.querySelector('.date-before-btn');
+const afterBtn = document.querySelector('.date-after-btn');
+
+let dateItemMove = 0;
+
 const renderDateBox = (startDate, endDate) => {
   let html = '';
-  let travelPeriod = 0;
   const oneDay = 86400000;
 
   travelPeriod = new Date(endDate).getTime() - new Date(startDate).getTime();
@@ -292,8 +318,40 @@ const renderDateBox = (startDate, endDate) => {
   });
 
   $dateList.innerHTML = html;
+
+  beforeBtn.style.opacity = '0.3';
   $dateList.firstElementChild.classList.add('active');
 };
+
+// 날짜 화살표 클릭 시 이동하는 기능
+
+function moveDatetoPrev({ target }) {
+  console.log(travelPeriod);
+  if (!target.matches('.date-before-btn')) return;
+  dateItemMove -= 83;
+  if (dateItemMove <= 0) {
+    dateItemMove = 0;
+    beforeBtn.style.opacity = '0.3';
+  }
+  dateList.style.transform = `translate3D(-${dateItemMove}px, 0, 0)`;
+  dateList.style.transition = 'all 0.3s ease-out';
+}
+
+function moveDatetoNext({ target }) {
+  beforeBtn.style.opacity = '1';
+
+  let moveLimit = (travelPeriod - 9) * 83;
+  if (travelPeriod < 8) return;
+  if (!target.matches('.date-after-btn')) return;
+  dateItemMove += 83;
+
+  if (dateItemMove > moveLimit) dateItemMove = moveLimit;
+  dateList.style.transform = `translate3D(-${dateItemMove}px, 0, 0)`;
+  dateList.style.transition = 'all 0.3s ease-out';
+}
+
+beforeBtn.addEventListener('click', moveDatetoPrev);
+afterBtn.addEventListener('click', moveDatetoNext);
 
 const renderTimeline = schedules => {
   let html = '';
@@ -377,9 +435,11 @@ const toggleActiveDate = target => {
   );
 };
 
-const removeSchedule = async id => {
-  await axios.delete(`/schedules/${id}`);
-  schedules = schedules.filter(schedule => schedule.id !== parseInt(id));
+const removeSchedule = async removeId => {
+  console.log(removeId);
+
+  await axios.delete(`/schedules/${removeId}`);
+  schedules = schedules.filter(schedule => schedule.id !== parseInt(removeId));
   renderTimeline(schedules);
 
   $timeAlertPopupBg.style.display = 'none';
@@ -426,6 +486,8 @@ $addTravelBtn.onclick = async () => {
   const endDate = `${$endYear.value}/${$endMonth.value}/${$endDate.value}`;
   const newId = generateId();
 
+  // console.log(travels);
+
   const { data } = await axios.post('/travels', {
     id: newId,
     title,
@@ -435,6 +497,7 @@ $addTravelBtn.onclick = async () => {
   });
   travels = [data, ...travels];
 
+  // console.log(travels);
   closeTravelPopup();
   renderTravelList();
   resetTravelPopup();
@@ -447,13 +510,13 @@ $travelList.addEventListener('click', ({ target }) => goToTimeline(target));
 
 $travelList.onclick = ({ target }) => {
   if (!target.matches('.travel-list > li > .travel-remove-btn')) return;
-  const id = target.parentNode.id.split('-')[1];
+  const removeId = target.parentNode.id.split('-')[1];
+  console.log(removeId);
 
   $alertPopupBg.style.display = 'block';
   $alertPopup.style.display = 'block';
 
-  $alertDeleteBtn.addEventListener('click', () => removeTravel(id));
-  console.log(target);
+  $alertDeleteBtn.addEventListener('click', () => removeTravel(removeId));
 };
 
 $alertCancleBtn.onclick = () => {
@@ -464,6 +527,7 @@ $alertCancleBtn.onclick = () => {
 $scheduleList.onclick = ({ target }) => {
   if (!target.matches('.schedule-list > li > .remove-btn')) return;
   const scheduleId = target.parentNode.id.split('-')[1];
+  console.log(scheduleId);
 
   $timeAlertPopupBg.style.display = 'block';
   $timelineAlertPopup.style.display = 'block';
@@ -519,8 +583,8 @@ const printMonthTime = () => {
     minute.forEach((element, key) => {
       if (element === 'MIN') minuteSelect[key] = new Option(element, '0', true);
       if (element === '00') minuteSelect[key] = new Option(element, '00', true);
-      else minuteSelect[key] = new Option(element, (key - 1) * 10, true);
-      // console.log(minuteSelect[key]); MIN의 value 값이 -10이에요ㅠㅠ
+      if (element !== 'MIN' && element !== '00')
+        minuteSelect[key] = new Option(element, (key - 1) * 10, true);
     });
   });
 };
