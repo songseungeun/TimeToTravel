@@ -63,7 +63,7 @@ const generateDday = startDate => {
   dDay = new Date(startDate).getTime();
   dDay = Math.ceil((dDay - today) / 86400000) + 1;
 
-  return dDay > 0 ? `D-${dDay}` : (dDay === 0 ? `D-Day` : '');
+  return dDay > 0 ? `D-${dDay}` : (dDay === 0 ? 'D-Day' : '');
 };
 
 const generateId = () => travels.length ? Math.max(...travels.map(({ id }) => id)) + 1 : 1;
@@ -103,7 +103,6 @@ const removeTravel = async (id) => {
   $alertPopupBg.style.display = 'none';
   $alertPopup.style.display = 'none';
 };
-
 
 // time line
 const sortTimeline = schedules => {
@@ -148,7 +147,6 @@ const renderDateBox = (startDate, endDate) => {
   });
 
   $dateList.innerHTML = html;
-
 };
 
 const renderTimeline = schedules => {
@@ -169,12 +167,9 @@ const renderTimeline = schedules => {
 
 const getSchedules = async (travelId, date) => {
   const { data } = await axios.get(`/schedules?travelId=${travelId}&date=${date}`);
-  console.log(data);
   schedules = data;
 
-  timeline.classList.add('main-view');
-  home.classList.remove('main-view');
-  
+  console.log(schedules);
   renderTimeline(schedules);
 };
 
@@ -203,12 +198,14 @@ const goToTimeline = async (target) => {
   if (!target.matches('.travel-list > li')) return;
   const timeline = document.getElementById('main-calendar');
   const home = document.getElementById('main-home');
+  travelId = target.id;
+
+  const { data: {startDate, endDate }} = await axios.get(`/travels/${travelId}`);
+  console.log(startDate, endDate);
 
   timeline.classList.add('main-view');
   home.classList.remove('main-view');
 
-  travelId = target.id;
-  const { data: {startDate, endDate }} = await axios.get(`/travels/${travelId}`);
   getSchedules(travelId);
   renderDateBox(startDate, endDate);
 };
