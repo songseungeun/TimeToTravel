@@ -624,7 +624,7 @@ main.main-view {
   padding: 5px;
   margin-bottom: 10px;
 }
-.input-airlines, .dep-airlines, .arr-airlines, .input-place, .input-title {
+.input-airlines, .dep-airlines, .arr-airlines, .input-lodging-location, .input-lodging-name {
   font-size: 14px;
   padding: 5px;
   margin-bottom: 10px;

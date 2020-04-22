@@ -1,25 +1,18 @@
 {
   "travels": [
     {
-      "id": 9,
-      "title": "sdffds",
-      "place": "fsdfds",
-      "startDate": "2021/3/4",
-      "endDate": "2021/4/3"
-    },
-    {
-      "id": 10,
-      "title": "fsfsd",
-      "place": "dfssdf",
-      "startDate": "2022/2/4",
-      "endDate": "2022/3/4"
-    },
-    {
       "id": 11,
       "title": "fdsfds",
       "place": "sfdfsd",
       "startDate": "2022/3/4",
       "endDate": "2022/4/3"
+    },
+    {
+      "id": 12,
+      "title": "ㄹ",
+      "place": "ㄹ",
+      "startDate": "2020/1/1",
+      "endDate": "2021/3/20"
     }
   ],
   "schedules": [],
