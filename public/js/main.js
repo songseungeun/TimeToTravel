@@ -263,7 +263,7 @@ const removeSchedule = async (id) => {
 const goToTimeline = async target => {
   if (!target.matches('travel-list > em') && !target.matches('travel-list > h2') && !target.matches('.travel-list > li') && !target.matches('travel-list > span') ) return;
 
-  travelId = target.id;
+  travelId = target.id.split('-')[1];
   const timeline = document.getElementById('main-calendar');
   const home = document.getElementById('main-home');
   const { data: { startDate, endDate, title }} = await axios.get(`/travels/${travelId}`);
@@ -303,7 +303,7 @@ $dateList.addEventListener('click', ({ target }) => tabDate(target));
 $travelList.addEventListener('click', ({ target }) => goToTimeline(target));
 
 $travelList.onclick = ({ target }) => {
-  if (!target.matches('.travel-list > li > .travel-remove-btn')) return
+  if (!target.matches('.travel-list > li > .travel-remove-btn')) return;
   const id = target.parentNode.id.split('-')[1];
 
   $alertPopupBg.style.display = 'block';
@@ -318,7 +318,7 @@ $alertCancleBtn.onclick = () => {
 };
 
 $scheduleList.onclick = ({ target }) => {
-  if (!target.matches('.schedule-list > li > .remove-btn')) return
+  if (!target.matches('.schedule-list > li > .remove-btn')) return;
   const scheduleId = target.parentNode.id.split('-')[1];
 
   $timeAlertPopupBg.style.display = 'block';
