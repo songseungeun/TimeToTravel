@@ -122,9 +122,6 @@ const getTravels = async () => {
 };
 
 const removeTravel = async (id) => {
-  
-  //if (!target.matches('.travel-list > li > .travel-remove-btn')) return;
-  
   await axios.delete(`/travels/${id}`);
   travels = travels.filter((travel) => travel.id !== +id);
   renderTravelList();
@@ -259,14 +256,12 @@ const toggleActiveDate = target => {
 };
 
 const removeSchedule = async (id) => {
-  
   await axios.delete(`/schedules/${id}`);
   schedules = schedules.filter((schedule) => schedule.id !== parseInt(id));
   renderTimeline(schedules);
   
-  
   $timeAlertPopupBg.style.display = 'none';
-  $timelineAlertPopup.style.display = 'none';  
+  $timelineAlertPopup.style.display = 'none';
 };
 
 const goToTimeline = async target => {
@@ -307,39 +302,37 @@ $addTravelBtn.onclick = async () => {
   resetTravelPopup();
 };
 
-$travelList.addEventListener('click', ({ target }) => removeTravel(target));
-$travelList.addEventListener('click', ({ target }) => goToTimeline(target));
-
 $dateList.addEventListener('click', ({ target }) => toggleActiveDate(target));
 $dateList.addEventListener('click', ({ target }) => tabDate(target));
 
-$travelList.onclick = ({target}) => {
+$travelList.addEventListener('click', ({ target }) => goToTimeline(target));
+
+$travelList.onclick = ({ target }) => {
   if (!target.matches('.travel-list > li > .travel-remove-btn')) return
   const id = target.parentNode.id;
 
   $alertPopupBg.style.display = 'block';
   $alertPopup.style.display = 'block';
 
-  $alertDeleteBtn.addEventListener('click', e => removeTravel(id));
+  $alertDeleteBtn.addEventListener('click', () => removeTravel(id));
 };
 
-$alertCancleBtn.onclick = () =>{
+$alertCancleBtn.onclick = () => {
   $alertPopupBg.style.display = 'none';
   $alertPopup.style.display = 'none';
-}
+};
 
-
-$scheduleList.onclick = ({target})=>{
+$scheduleList.onclick = ({ target }) => {
   if (!target.matches('.schedule-list > li > .remove-btn')) return
   const scheduleId = target.parentNode.id.split('-')[1]
 
   $timeAlertPopupBg.style.display = 'block';
   $timelineAlertPopup.style.display = 'block';
 
-  $timelineDeleteBtn.addEventListener('click', e => removeSchedule(scheduleId));
-}
+  $timelineDeleteBtn.addEventListener('click', () => removeSchedule(scheduleId));
+};
 
-$timelineCancleBtn.onclick = () =>{
+$timelineCancleBtn.onclick = () => {
   $timeAlertPopupBg.style.display = 'none';
   $timelineAlertPopup.style.display = 'none';
-}
+};
