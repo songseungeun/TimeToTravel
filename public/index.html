@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="./css/index.css">
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script type="module" src="./js/main.js" defer></script>
-  <script type="module" src="./js/date-btn.js" defer></script>
+  <!-- <script type="module" src="./js/date-btn.js" defer></script> -->
   <script type="module" src="./js/travel-list.js" defer></script>
   <script type="module" src="./js/menu-icon.js" defer></script>
   <script type="module" src="./js/travel-list-popup.js" defer></script>
@@ -119,6 +119,7 @@
         </div>
         <!-- Delete Confirm -->
         <div class="delete-confirm alert-popup">
+          <i class="delete-icon fas fa-exclamation-circle"></i>
           <strong>스케줄을 <em>삭제</em>하시겠습니까?</strong>
           <button class="delete-n alert-cancel-btn">취소</button>
           <button class="delete-y alert-delete-btn">삭제</button>
@@ -130,79 +131,82 @@
         <header class="header">
           <h2>Travel <strong>Time Line</strong></h2>
         </header>
-        <h3>April, 2020</h3>
-        <div class="date-wrapper clearfix">
-          <div class="date-container">
-            <ul class="date-list">
-              <!-- <li class="date-item">
-                <div class="day">17</div>
-                <div class="week">FRI</div>
+        <div class="timeline-wrapper">
+          <h3>April, 2020</h3>
+          <div class="date-wrapper clearfix">
+            <div class="date-container">
+              <ul class="date-list">
+                <!-- <li class="date-item">
+                  <div class="day">17</div>
+                  <div class="week">FRI</div>
+                </li>
+                <li class="date-item active">
+                  <div class="day">18</div>
+                  <div class="week">SAT</div>
+                </li>
+                <li class="date-item">
+                  <div class="day">19</div>
+                  <div class="week">SUN</div>
+                </li>
+                <li class="date-item">
+                  <div class="day">20</div>
+                  <div class="week">MON</div>
+                </li>
+                <li class="date-item">
+                  <div class="day">21</div>
+                  <div class="week">TUE</div>
+                </li>
+                <li class="date-item">
+                  <div class="day">22</div>
+                  <div class="week">WED</div>
+                </li>
+                <li class="date-item">
+                  <div class="day">23</div>
+                  <div class="week">THU</div>
+                </li> -->
+              </ul>
+            </div>
+            <i class="date-before-btn fas fa-angle-double-left"></i>
+            <i class="date-after-btn fas fa-angle-double-right"></i>
+          </div>
+          <div class="timeline-travel-title">Travel title</div>
+          <div class="timeline clearfix">
+            <ul class="time-list">
+              <li>07:00</li>
+              <li>08:00</li>
+              <li>09:00</li>
+              <li>10:00</li>
+              <li>11:00</li>
+              <li>12:00</li>
+              <li>13:00</li>
+              <li>14:00</li>
+              <li>15:00</li>
+              <li>16:00</li>
+              <li>17:00</li>
+              <li>18:00</li>
+              <li>19:00</li>
+              <li>20:00</li>
+              <li>21:00</li>
+              <li>22:00</li>
+              <li>23:00</li>
+            </ul>
+            <ul class="schedule-list">
+              <!-- <li class="schedule" id="s01">
+                <div class="time">09:20</div>
+                <div class="place">LAX 공항</div>
+                <div class="detail">공항 도착, 렌터카 수령</div>
+                <div class="remove-btn">X</div>
               </li>
-              <li class="date-item active">
-                <div class="day">18</div>
-                <div class="week">SAT</div>
-              </li>
-              <li class="date-item">
-                <div class="day">19</div>
-                <div class="week">SUN</div>
-              </li>
-              <li class="date-item">
-                <div class="day">20</div>
-                <div class="week">MON</div>
-              </li>
-              <li class="date-item">
-                <div class="day">21</div>
-                <div class="week">TUE</div>
-              </li>
-              <li class="date-item">
-                <div class="day">22</div>
-                <div class="week">WED</div>
-              </li>
-              <li class="date-item">
-                <div class="day">23</div>
-                <div class="week">THU</div>
+              <li class="schedule" id="s02">
+                <div class="time">12:00</div>
+                <div class="place">In-N-Out Burger</div>
+                <div class="detail">점심식사</div>
+                <div class="remove-btn">X</div>
               </li> -->
             </ul>
           </div>
-          <i class="date-before-btn fas fa-angle-double-left"></i>
-          <i class="date-after-btn fas fa-angle-double-right"></i>
         </div>
-        <div class="timeline-travel-title">Travel title</div>
-        <div class="timeline clearfix">
-          <ul class="time-list">
-            <li>07:00</li>
-            <li>08:00</li>
-            <li>09:00</li>
-            <li>10:00</li>
-            <li>11:00</li>
-            <li>12:00</li>
-            <li>13:00</li>
-            <li>14:00</li>
-            <li>15:00</li>
-            <li>16:00</li>
-            <li>17:00</li>
-            <li>18:00</li>
-            <li>19:00</li>
-            <li>20:00</li>
-            <li>21:00</li>
-            <li>22:00</li>
-            <li>23:00</li>
-          </ul>
-          <ul class="schedule-list">
-            <!-- <li class="schedule" id="s01">
-              <div class="time">09:20</div>
-              <div class="place">LAX 공항</div>
-              <div class="detail">공항 도착, 렌터카 수령</div>
-              <div class="remove-btn">X</div>
-            </li>
-            <li class="schedule" id="s02">
-              <div class="time">12:00</div>
-              <div class="place">In-N-Out Burger</div>
-              <div class="detail">점심식사</div>
-              <div class="remove-btn">X</div>
-            </li> -->
-          </ul>
-        </div>
+        
         <div class="new-schedule-btn">
           +
         </div>
@@ -266,6 +270,7 @@
         <div class="popup-bg"></div>
         <!-- Delete Confirm -->
         <div class="delete-confirm timeline-popup">
+          <i class="delete-icon fas fa-exclamation-circle"></i>
           <strong>스케줄을 <em>삭제</em>하시겠습니까?</strong>
           <button class="delete-n timeline-cancle-btn">취소</button>
           <button class="delete-y timeline-delete-btn">삭제</button>
