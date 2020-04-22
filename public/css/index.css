@@ -377,7 +377,7 @@ main.main-view {
   line-height: 1.2;
   background-color: #f4f4f4;
 }
-.airline-schedule * {
+.airline-schedule *{
   display: block;
   text-align: center;
 }
@@ -599,12 +599,8 @@ main.main-view {
   margin-bottom: 10px;
   color: #e38484;
 }
-<<<<<<< HEAD
-.input-airlines, .dep-airlines, .arr-airlines, .input-lodging-location, .input-lodging-name {
-=======
 
 .input-airlines, .dep-airlines, .arr-airlines, .input-place, .input-title {
->>>>>>> b1fa0a2e92e7edf0e6c208ec1ba68f2a824d0e0d
   font-size: 14px;
   padding: 5px;
   margin-bottom: 10px;

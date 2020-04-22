@@ -1,20 +1,6 @@
 {
   "travels": [
     {
-<<<<<<< HEAD
-      "id": 11,
-      "title": "fdsfds",
-      "place": "sfdfsd",
-      "startDate": "2022/3/4",
-      "endDate": "2022/4/3"
-    },
-    {
-      "id": 12,
-      "title": "ㄹ",
-      "place": "ㄹ",
-      "startDate": "2020/1/1",
-      "endDate": "2021/3/20"
-=======
       "id": 1,
       "title": "하하하ㅏ",
       "place": "커ㅏㅏㅣ카카ㅣ",
@@ -88,7 +74,6 @@
       "place": "ㅇㄹ너ㅑㅇ러ㅑ",
       "detail": "ㅇ러ㅑㅇ러",
       "id": 5
->>>>>>> b1fa0a2e92e7edf0e6c208ec1ba68f2a824d0e0d
     }
   ],
   "info": [
