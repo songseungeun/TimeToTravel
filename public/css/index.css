@@ -377,6 +377,7 @@ main.main-view {
   width: 100%;
   color: #fff;
   background-color: #333;
+  cursor: pointer;
 }
 
 /* ----- travel list ----- */
@@ -398,6 +399,7 @@ main.main-view {
   line-height: 1.5;
   margin: 0 20px 20px 0;
   background-color: #d4d4d4;
+  cursor: pointer;
 }
 .travel-list li h2 {
   font-size: 24px;
@@ -466,12 +468,13 @@ main.main-view {
   cursor: pointer;
 }
 
-.add-travel-btn-hidden {
+.add-travel-btn-hidden,
+.add-schedule-btn-hidden {
   position: absolute;
-  bottm: 10px;
-  left: 15px;
-  width: 440px;
-  height: 50px;
+  bottom: 18px;
+  left: 0;
+  width: 100%;
+  height: 55px;
   z-index: 95;
   background-color: rgba(255, 255, 255, 0.9)
 }
@@ -481,8 +484,13 @@ main.main-view {
   width: 100%;
   color: #fff;
   background-color: #333;
+  cursor: pointer;
 }
 
+.add-travel-btn:hover,
+.add-schedule-btn:hover {
+  background-color: #4b638c;
+}
 /* ----- travel info ----- */
 
 /* MAIN */

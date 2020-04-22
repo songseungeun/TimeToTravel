@@ -1,29 +1,66 @@
 {
   "travels": [
     {
-      "id": 1,
-      "title": "제주도 여행",
-      "place": "제주도",
-      "startDate": "2020/5/3",
-      "endDate": "2020/5/10"
+      "id": 4,
+      "title": "sdfdsfsdf",
+      "place": "sdfsdfsdf",
+      "startDate": "2021/3/7",
+      "endDate": "2021/7/3"
     },
     {
-      "id": 2,
-      "title": "sfdsfd",
+      "id": 5,
+      "title": "sfdfsd",
+      "place": "dsfdsf",
+      "startDate": "2022/3/5",
+      "endDate": "2022/4/3"
+    },
+    {
+      "id": 6,
+      "title": "dfssfd",
       "place": "sdfsdf",
-      "startDate": "2023/2/4",
-      "endDate": "2022/4/7"
+      "startDate": "2021/2/4",
+      "endDate": "2022/3/3"
+    },
+    {
+      "id": 7,
+      "title": "dsfdsf",
+      "place": "sdfsdf",
+      "startDate": "2021/3/4",
+      "endDate": "2021/3/4"
+    },
+    {
+      "id": 9,
+      "title": "sdffds",
+      "place": "fsdfds",
+      "startDate": "2021/3/4",
+      "endDate": "2021/4/3"
+    },
+    {
+      "id": 10,
+      "title": "fsfsd",
+      "place": "dfssdf",
+      "startDate": "2022/2/4",
+      "endDate": "2022/3/4"
     }
   ],
   "schedules": [
     {
-      "travelId": "1",
-      "date": "3/4",
-      "timeFrom": "3:20",
-      "timeTo": "2:50",
-      "place": "ㅇㄴㄹㄹㅇㄴ",
-      "detail": "ㄹㅇㄴㄹㅇㄴ",
-      "id": 1
+      "travelId": "4",
+      "date": "3/5",
+      "timeFrom": "5:40",
+      "timeTo": "5:30",
+      "place": "sdffsd",
+      "detail": "dfsdsfsdfsdf",
+      "id": 2
+    },
+    {
+      "travelId": "5",
+      "date": "3/5",
+      "timeFrom": "4:30",
+      "timeTo": "3:40",
+      "place": "fssdf",
+      "detail": "dfsfds",
+      "id": 3
     }
   ],
   "info": [

@@ -77,10 +77,20 @@ const generateDday = startDate => {
 
 const generateId = () => travels.length ? Math.max(...travels.map(({ id }) => id)) + 1 : 1;
 
+
 const renderTravelList = () => {
   let html = '';
 
   travels.forEach(({ id, title, place, startDate, endDate }) => {
+    const generateDday = startDate => {
+      let dDay = 0;
+      let today = new Date();
+      today = today.getTime();
+      dDay = new Date(startDate).getTime();
+      dDay = Math.ceil((dDay - today) / 86400000) + 1;
+      return dDay > 0 ? `D-${dDay}` : (dDay === 0 ? 'D-Day' : '');
+    };
+
     html += ` <li id=${id}>
           <h2>${title}</h2>
           <em>${generateDday(startDate)}</em>

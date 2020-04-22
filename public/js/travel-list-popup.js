@@ -20,7 +20,6 @@ const $selectEndWarning = document.querySelector('#end-warning-label');
 const $inputDetailWarning = document.querySelector('#detail-warning-label');
 const $inputPlaceWarning = document.querySelector('#place-warning-label');
 
-
 const closePopup = () => {
   $newSchedulePopUp.style.display = 'none';
   $popupBg.style.display = 'none';
