@@ -276,9 +276,14 @@ const removeSchedule = async removeId => {
 };
 
 const goToTimeline = async target => {
-  if (!target.matches('.travel-list > li > em') && !target.matches('.travel-list > li > h2') && !target.matches('.travel-list > li') && !target.matches('.travel-list > li > span')) return;
+  const nodeNames = ['LI', 'EM', 'SPAN', 'DIV', 'H2'];
+  const targetNode = nodeNames.filter(node => node === target.nodeName)[0]
+  if (!targetNode) return;
 
-  travelId = target.nodeName === 'LI' ? target.id.split('-')[1] : target.parentNode.id.split('-')[1];
+  if (targetNode === 'LI') travelId = target.id.split('-')[1];
+  if (targetNode === 'SPAN') travelId = target.parentNode.parentNode.id.split('-')[1];
+  if (targetNode !== 'LI' && targetNode !== 'SPAN') travelId = target.parentNode.id.split('-')[1];
+
   const timeline = document.getElementById('main-calendar');
   const home = document.getElementById('main-home');
   const { data: { startDate, endDate, title }} = await axios.get(`/travels/${travelId}`);
@@ -359,7 +364,7 @@ const $minuteSelects = document.querySelectorAll('.min-select');
 
 const printMonthTime = () => {
   let month = Array.from({ length: 13 }, function (v, i) { return i; });
-  console.log(month);
+  // console.log(month);
 
   month.splice(0, 1);
   month = ['MONTH', ...month];
@@ -370,17 +375,20 @@ const printMonthTime = () => {
     });
   });
 
-  let hour = Array.from({ length: 25 }, function (v, i) { return i; });
-  hour.splice(0, 1);
+  let hour = Array.from({ length: 24 }, function (v, i) { return i; });
+  console.log(hour);
+  hour.splice(0, 7);
+  console.log(hour);
   hour = ['HOUR', ...hour];
+  console.log(hour);
   $hourSelects.forEach(hourSelect => {
     hour.forEach((element, key) => {
       hourSelect[key] = new Option(element, key, true);
+  console.log(hour[key]);
     });
   });
 
   let minute = Array.from({ length: 6 }, function (v, i) { return i * 10; });
-
   minute.splice(0, 1);
   minute = ['MIN', '00', ...minute];
   $minuteSelects.forEach(minuteSelect => {
