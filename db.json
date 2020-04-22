@@ -2,17 +2,10 @@
   "travels": [
     {
       "id": 1,
-      "title": "햐뱌",
-      "place": "랴랴",
-      "startDate": "2020/5/3",
-      "endDate": "2020/5/11"
-    },
-    {
-      "id": 2,
-      "title": "라라라라",
-      "place": "호호",
-      "startDate": "2020/6/29",
-      "endDate": "2020/7/7"
+      "title": "하하하ㅏ",
+      "place": "커ㅏㅏㅣ카카ㅣ",
+      "startDate": "2020/8/6",
+      "endDate": "2020/9/3"
     }
   ],
   "schedules": [],

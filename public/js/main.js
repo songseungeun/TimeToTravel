@@ -131,7 +131,6 @@ const sortTimeline = schedules => {
   const timelineBlocks = $scheduleList.querySelectorAll('.schedule');
   let i = 0;
 
-  console.log(schedules);
   timelineBlocks.forEach(block => {
     const hhFrom = +schedules[i].timeFrom.split(':')[0];
     const mmFrom = +schedules[i].timeFrom.split(':')[1];
@@ -262,9 +261,8 @@ const removeSchedule = async (id) => {
 
 const goToTimeline = async target => {
   if (!target.matches('.travel-list > li > em') && !target.matches('.travel-list > li > h2') && !target.matches('.travel-list > li') && !target.matches('.travel-list > li > span')) return;
-  if (target.nodeName === 'LI') travelId = target.id.split('-')[1];
-  if (target.nodeName !== 'LI') travelId = target.parentNode.id.split('-')[1];
 
+  travelId = target.nodeName === 'LI' ? target.id.split('-')[1] : target.parentNode.id.split('-')[1];
   const timeline = document.getElementById('main-calendar');
   const home = document.getElementById('main-home');
   const { data: { startDate, endDate, title }} = await axios.get(`/travels/${travelId}`);
