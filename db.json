@@ -1,20 +1,6 @@
 {
   "travels": [
     {
-      "id": 1,
-      "title": "sdffsd",
-      "place": "dsfdsf",
-      "startDate": "2022/2/3",
-      "endDate": "2022/3/3"
-    },
-    {
-      "id": 7,
-      "title": "dsfdsf",
-      "place": "sdfsdf",
-      "startDate": "2021/3/4",
-      "endDate": "2021/3/4"
-    },
-    {
       "id": 9,
       "title": "sdffds",
       "place": "fsdfds",
@@ -34,44 +20,6 @@
       "place": "sfdfsd",
       "startDate": "2022/3/4",
       "endDate": "2022/4/3"
-    }
-  ],
-  "schedules": [
-    {
-      "travelId": "4",
-      "date": "3/5",
-      "timeFrom": "5:40",
-      "timeTo": "5:30",
-      "place": "sdffsd",
-      "detail": "dfsdsfsdfsdf",
-      "id": 2
-    },
-    {
-      "travelId": "5",
-      "date": "3/5",
-      "timeFrom": "4:30",
-      "timeTo": "3:40",
-      "place": "fssdf",
-      "detail": "dfsfds",
-      "id": 3
-    },
-    {
-      "travelId": "4",
-      "date": "4/3",
-      "timeFrom": "3:30",
-      "timeTo": "3:30",
-      "place": "dfsdfs",
-      "detail": "dsfsfd",
-      "id": 4
-    },
-    {
-      "travelId": "4",
-      "date": "3/3",
-      "timeFrom": "3:30",
-      "timeTo": "4:40",
-      "place": "sfdfs",
-      "detail": "dsffsd",
-      "id": 5
     }
   ],
   "schedules": [],
