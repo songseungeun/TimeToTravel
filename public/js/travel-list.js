@@ -27,9 +27,9 @@ const $endDate = $newTravelPopup.querySelector('#end-day-select');
 
 //const $alertDeleteBtn = document.querySelector('.delete-y')
 //const $alertcancleBtn = document.querySelector('.delete-x')
-const $alertPopup = document.querySelector('.delete-confirm')
-const $alertPopupBg = document.querySelector('.delete-popup-bg')
-const $travelList = document.querySelector('.travel-list');
+//const $alertPopup = document.querySelector('.delete-confirm')
+//const $alertPopupBg = document.querySelector('.delete-popup-bg')
+//const $travelList = document.querySelector('.travel-list');
 
 
 // functions

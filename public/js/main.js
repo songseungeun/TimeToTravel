@@ -35,11 +35,19 @@ const $schedulePopupBg = document.querySelector('.popup-bg');
 const $scheduleList = document.querySelector('.schedule-list');
 const $dateList = document.querySelector('.date-list');
 
-const $alertDeleteBtn = document.querySelector('.delete-y')
-const $alertcancleBtn = document.querySelector('.delete-n')
-const $alertPopup = document.querySelector('.delete-confirm')
-const $alertPopupBg = document.querySelector('.delete-popup-bg')
+const $alertDeleteBtn = document.querySelector('.alert-delete-btn')
+const $alertCancleBtn = document.querySelector('.alert-cancel-btn')
+const $alertPopup = document.querySelector('.alert-popup')
+const $alertPopupBg = document.querySelector('.alert-popup-bg')
+
 const $newTravelBtn = document.querySelector('.new-travel-btn');
+const $newScheduleBtn = document.querySelector('.new-schedule-btn');
+
+const $timelineDeleteBtn = document.querySelector('.timeline-delete-btn')
+const $timelineCancleBtn = document.querySelector('.timeline-cancle-btn')
+const $timelineAlertPopup = document.querySelector('.timeline-popup')
+const $timeAlertPopupBg = document.querySelector('.timeline-popup-bg')
+
 
 
 // functions
@@ -54,7 +62,7 @@ const closeTravelPopup = () => {
   $newTravelPopup.style.display = 'none';
 };
 
-// travel list
+// NOTE:travel list
 const generateDday = startDate => {
   let dDay = 0;
   let today = new Date();
@@ -104,7 +112,7 @@ const removeTravel = async (id) => {
   $alertPopup.style.display = 'none';
 };
 
-// time line
+// NOTE:time line
 const sortTimeline = schedules => {
   const timelineBlocks = $scheduleList.querySelectorAll('.schedule');
 
@@ -194,6 +202,19 @@ const addSchedule = async () => {
   });
 };
 
+const removeSchedule = async (id) => {
+  
+  await axios.delete(`/schedules/${id}`);
+  schedules = schedules.filter((schedule) => schedule.id !== parseInt(id));
+  renderTimeline(schedules);
+  
+  
+  $timeAlertPopupBg.style.display = 'none';
+  $timelineAlertPopup.style.display = 'none';  
+};
+
+
+
 const goToTimeline = async (target) => {
   if (!target.matches('.travel-list > li')) return;
   const timeline = document.getElementById('main-calendar');
@@ -244,6 +265,7 @@ $travelList.addEventListener('click', ({ target }) => goToTimeline(target));
 
 
 $travelList.onclick = ({target}) => {
+  if (!target.matches('.travel-list > li > .travel-remove-btn')) return
   const id = target.parentNode.id;
 
   $alertPopupBg.style.display = 'block';
@@ -253,16 +275,24 @@ $travelList.onclick = ({target}) => {
   alertCheck = null;
 };
 
-const alertClosePopup = ()=>{
-  //$alertcancleBtn.onclick = () =>{
+$alertCancleBtn.onclick = () =>{
   $alertPopupBg.style.display = 'none';
   $alertPopup.style.display = 'none';
 }
 
-window.onclick = ({ target }) => {
-  if (target !== $alertPopupBg || target === $newTravelBtn) return;
-  alertClosePopup();
-};
 
+$scheduleList.onclick = ({target})=>{
+  if (!target.matches('.schedule-list > li > .remove-btn')) return
+  const scheduleId = target.parentNode.id.split('-')[1]
 
+  $timeAlertPopupBg.style.display = 'block';
+  $timelineAlertPopup.style.display = 'block';
+
+  $timelineDeleteBtn.addEventListener('click', e => removeSchedule(scheduleId));
+}
+
+$timelineCancleBtn.onclick = () =>{
+  $timeAlertPopupBg.style.display = 'none';
+  $timelineAlertPopup.style.display = 'none';
+}
 
