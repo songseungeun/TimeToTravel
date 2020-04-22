@@ -34,6 +34,7 @@ const closeTravelPopup = () => {
 
 const openTravelPopup = () => {
   $popupBg.style.display = 'block';
+  // $newTravelPopup.style.box-shadow: 8px 8px 10px 5px rgba(0, 0, 0, .3);
   $newTravelPopup.style.display = 'block';
   $travelHiddenBtn.style.display = 'block';
 };
