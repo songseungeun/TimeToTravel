@@ -1,42 +1,28 @@
 {
   "travels": [
     {
-      "id": 1,
-      "title": "ㅋㅋ",
-      "place": "ㅋㅋ",
-      "startDate": "2020/5/5",
-      "endDate": "2020/5/12"
-    }
-  ],
-  "schedules": [
-    {
-      "travelId": "1",
-      "date": "5/5",
-      "timeFrom": "13:50",
-      "timeTo": "18:20",
-      "place": "ㅋㅋ",
-      "detail": "ㅋㅋ",
-      "id": 1
+      "id": 9,
+      "title": "sdffds",
+      "place": "fsdfds",
+      "startDate": "2021/3/4",
+      "endDate": "2021/4/3"
     },
     {
-      "travelId": "1",
-      "date": "5/7",
-      "timeFrom": "14:50",
-      "timeTo": "17:30",
-      "place": "ㅋㅋ",
-      "detail": "ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ",
-      "id": 2
+      "id": 10,
+      "title": "fsfsd",
+      "place": "dfssdf",
+      "startDate": "2022/2/4",
+      "endDate": "2022/3/4"
     },
     {
-      "travelId": "1",
-      "date": "5/11",
-      "timeFrom": "16:10",
-      "timeTo": "18:60",
-      "place": "ㅣ미미미",
-      "detail": "미미밈",
-      "id": 3
+      "id": 11,
+      "title": "fdsfds",
+      "place": "sfdfsd",
+      "startDate": "2022/3/4",
+      "endDate": "2022/4/3"
     }
   ],
+  "schedules": [],
   "info": [
     {
       "id": 1,
