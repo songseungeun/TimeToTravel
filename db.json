@@ -34,6 +34,13 @@
       "place": "ㅁㄴㅇㄹ",
       "startDate": "2021/2/4",
       "endDate": "2023/4/2"
+    },
+    {
+      "id": 6,
+      "title": "aaaaaaaaaaaaaaaaa",
+      "place": "a",
+      "startDate": "2020/3/3",
+      "endDate": "2020/3/9"
     }
   ],
   "schedules": [

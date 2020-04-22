@@ -32,6 +32,7 @@ const $travelPopupBg = document.querySelector('.new-travel-popup-bg');
 const $newSchedulePopUp = document.querySelector('.new-schedule-popup');
 const $schedulePopupBg = document.querySelector('.popup-bg');
 const $scheduleList = document.querySelector('.schedule-list');
+const $dateList = document.querySelector('.date-list');
 
 // functions
 // popups
@@ -102,6 +103,41 @@ const sortTimeline = schedules => {
   });
 };
 
+const renderDateBox = (startDate, endDate) => {
+  let html = '';
+
+  let travelPeriod = 0;
+  const oneDay = 86400000;
+  travelPeriod = new Date(endDate).getTime() - new Date(startDate).getTime();
+  travelPeriod = Math.ceil(travelPeriod / oneDay) + 1;
+
+  const newDate = startDate.split('/');
+
+  const travelArr = Array.from({ length: travelPeriod }, function (v, i) {
+    let newDay = new Date(startDate);
+    newDay = newDay.getDate() + i;
+    newDate[2] = `${newDay}`;
+    const newDate2 = newDate.join('/');
+    return newDate2;
+  });
+
+  travelArr.forEach(travel => {
+    const today = new Date(travel);
+    const date = today.getDate();
+    const dayNames = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
+    const day = dayNames[today.getDay()];
+
+    html += `
+      <li class="date-item">
+        <div class="day">${date}</div>
+        <div class="week">${day}</div>
+      </li>
+    `;
+  });
+
+  $dateList.innerHTML = html;
+};
+
 const renderTimeline = schedules => {
   let html = '';
 
@@ -160,6 +196,7 @@ const goToTimeline = async (target) => {
   home.classList.remove('main-view');
 
   getSchedules(travelId);
+  renderDateBox(startDate, endDate);
 };
 
 // event handlers
