@@ -4,7 +4,6 @@
 // state
 let schedules = [];
 let travels = [];
-let travelId = '';
 
 // DOMs
 const $month = document.querySelector('#month-select');
@@ -44,6 +43,24 @@ const closeSchedulePopup = () => {
 const closeTravelPopup = () => {
   $travelPopupBg.style.display = 'none';
   $newTravelPopup.style.display = 'none';
+};
+
+const resetSchedulePopup = () => {
+  $inputSchedulePlace.value = '';
+  $inputScheduleDetail.value = '';
+
+  [...$newSchedulePopup.children].forEach(child => {
+    if (child.nodeName === 'SELECT') child.firstElementChild.selected = 'selected';
+  });
+};
+
+const resetTravelPopup = () => {
+  $inputTravelTitle.value = '';
+  $inputTravelPlace.value = '';
+
+  [...$newTravelPopup.children].forEach(child => {
+    if (child.nodeName === 'SELECT') child.firstElementChild.selected = 'selected';
+  });
 };
 
 // travel list
@@ -103,11 +120,18 @@ const sortTimeline = schedules => {
   });
 };
 
+const renderMonthYear = (month, year) => {
+  const $monthYearBox = document.querySelector('#main-calendar > h2');
+  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+  $monthYearBox.textContent = `${months[month - 1]}, ${year}`;
+};
+
 const renderDateBox = (startDate, endDate) => {
   let html = '';
-
   let travelPeriod = 0;
   const oneDay = 86400000;
+
   travelPeriod = new Date(endDate).getTime() - new Date(startDate).getTime();
   travelPeriod = Math.ceil(travelPeriod / oneDay) + 1;
 
@@ -123,19 +147,21 @@ const renderDateBox = (startDate, endDate) => {
 
   travelArr.forEach(travel => {
     const today = new Date(travel);
+    const year = travel.split('/')[0];
+    const month = travel.split('/')[1];
     const date = today.getDate();
     const dayNames = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
     const day = dayNames[today.getDay()];
 
-    html += `
-      <li class="date-item">
-        <div class="day">${date}</div>
-        <div class="week">${day}</div>
+    html += `<li class="date-item">
+        <div class="day ${year} ${month}">${date}</div>
+        <div class="week ${year} ${month}">${day}</div>
       </li>
     `;
   });
 
   $dateList.innerHTML = html;
+  $dateList.firstElementChild.classList.add('active');
 };
 
 const renderTimeline = schedules => {
@@ -154,11 +180,11 @@ const renderTimeline = schedules => {
   sortTimeline(schedules);
 };
 
-const getSchedules = async (travelId, date) => {
+const getSchedules = async travelId => {
+  const date = '';
   const { data } = await axios.get(`/schedules?travelId=${travelId}&date=${date}`);
   schedules = data;
 
-  console.log(schedules);
   renderTimeline(schedules);
 };
 
@@ -168,35 +194,48 @@ const addSchedule = async () => {
   const timeTo = `${$endHour.value}:${$endMin.value}`;
   const place = $inputSchedulePlace.value;
   const detail = $inputScheduleDetail.value;
-  // const travelId = 1;
 
   const { data } = await axios.post('/schedules', { travelId, date, timeFrom, timeTo, place, detail });
   schedules = [data, ...schedules];
 
   closeSchedulePopup();
   renderTimeline(schedules);
+  resetSchedulePopup();
+};
 
-  $inputSchedulePlace.value = '';
-  $inputScheduleDetail.value = '';
-  [...$newSchedulePopup.children].forEach(child => {
-    if (child.nodeName === 'SELECT') child.firstElementChild.selected = 'selected';
-  });
+const tabDate = target => {
+  if (target.nodeName === 'LI') {
+    const year = target.firstElementChild.classList[1];
+    const month = target.firstElementChild.classList[2];
+    renderMonthYear(month, year);
+  }
+
+  if (target.nodeName === 'DIV') {
+    const year = target.classList[1];
+    const month = target.classList[2];
+    renderMonthYear(month, year);
+  }
+};
+
+const toggleActiveDate = target => {
+  if (!target.matches('.date-list > li') && !target.matches('.date-list > li > div')) return;
+  [...$dateList.children].forEach(date => date.classList.toggle('active', (target === date || target.parentNode === date)));
+
+  tabDate(target);
 };
 
 const goToTimeline = async (target) => {
   if (!target.matches('.travel-list > li')) return;
+  const travelId = target.id;
   const timeline = document.getElementById('main-calendar');
   const home = document.getElementById('main-home');
-  travelId = target.id;
-
   const { data: {startDate, endDate }} = await axios.get(`/travels/${travelId}`);
-  console.log(startDate, endDate);
 
   timeline.classList.add('main-view');
   home.classList.remove('main-view');
 
-  getSchedules(travelId);
   renderDateBox(startDate, endDate);
+  getSchedules(travelId);
 };
 
 // event handlers
@@ -218,14 +257,10 @@ $addTravelBtn.onclick = async () => {
 
   closeTravelPopup();
   renderTravelList();
-
-  $inputTravelTitle.value = '';
-  $inputTravelPlace.value = '';
-
-  [...$newTravelPopup.children].forEach(child => {
-    if (child.nodeName === 'SELECT') child.firstElementChild.selected = 'selected';
-  });
+  resetTravelPopup();
 };
 
 $travelList.addEventListener('click', ({ target }) => removeTravel(target));
 $travelList.addEventListener('click', ({ target }) => goToTimeline(target));
+
+$dateList.addEventListener('click', ({ target }) => toggleActiveDate(target));
