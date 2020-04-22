@@ -175,17 +175,10 @@ const generateDday = startDate => {
   return dDay > 0 ? `D-${dDay}` : dDay === 0 ? 'D-Day' : '';
 };
 
-const generateId = () =>
-  travels.length ? Math.max(...travels.map(({ id }) => id)) + 1 : 1;
+const generateId = () => (travels.length ? Math.max(...travels.map(({ id }) => id)) + 1 : 1);
 
 const sortTravels = travels => {
-  travels.sort((trav1, trav2) =>
-    trav2.startDate > trav1.startDate
-      ? 1
-      : trav1.startDate > trav2.startDate
-      ? -1
-      : 0
-  );
+  travels.sort((trav1, trav2) => (trav2.startDate > trav1.startDate ? 1 : trav1.startDate > trav2.startDate ? -1 : 0));
 };
 
 const renderTravelList = () => {
@@ -246,12 +239,8 @@ const sortTimeline = schedules => {
     const mmDiff = mmFrom > mmTo ? 60 - (mmFrom - mmTo) : mmTo - mmFrom;
     const hhDiff = mmFrom > mmTo ? hhTo - hhFrom - 1 : hhTo - hhFrom;
 
-    block.style.top = `${
-      hourHeight * (hhFrom - 7) + (hourHeight / 6) * (mmFrom / 10)
-    }px`;
-    block.style.height = `${
-      hourHeight * hhDiff + (hourHeight / 6) * (mmDiff / 10)
-    }px`;
+    block.style.top = `${hourHeight * (hhFrom - 7) + (hourHeight / 6) * (mmFrom / 10)}px`;
+    block.style.height = `${hourHeight * hhDiff + (hourHeight / 6) * (mmDiff / 10)}px`;
 
     i++;
   });
@@ -259,20 +248,7 @@ const sortTimeline = schedules => {
 
 const renderMonthYear = (month, year) => {
   const $monthYearBox = document.querySelector('#main-calendar > h3');
-  const months = [
-    'Jan',
-    'Feb',
-    'Mar',
-    'Apr',
-    'May',
-    'Jun',
-    'Jul',
-    'Aug',
-    'Sep',
-    'Oct',
-    'Nov',
-    'Dec',
-  ];
+  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
   $monthYearBox.textContent = `${months[month - 1]}, ${year}`;
 };
@@ -370,12 +346,9 @@ const renderTimeline = schedules => {
 };
 
 const getSchedules = async travelId => {
-  const month = $dateList.querySelector('.active').firstElementChild
-    .classList[2];
+  const month = $dateList.querySelector('.active').firstElementChild.classList[2];
   const date = $dateList.querySelector('.active').firstElementChild.textContent;
-  const { data } = await axios.get(
-    `/schedules?travelId=${travelId}&date=${month}/${date}`
-  );
+  const { data } = await axios.get(`/schedules?travelId=${travelId}&date=${month}/${date}`);
   schedules = data;
 
   renderTimeline(schedules);
@@ -422,17 +395,8 @@ const tabDate = target => {
 };
 
 const toggleActiveDate = target => {
-  if (
-    !target.matches('.date-list > li') &&
-    !target.matches('.date-list > li > div')
-  )
-    return;
-  [...$dateList.children].forEach(date =>
-    date.classList.toggle(
-      'active',
-      target === date || target.parentNode === date
-    )
-  );
+  if (!target.matches('.date-list > li') && !target.matches('.date-list > li > div')) return;
+  [...$dateList.children].forEach(date => date.classList.toggle('active', target === date || target.parentNode === date));
 };
 
 const removeSchedule = async removeId => {
@@ -447,18 +411,9 @@ const removeSchedule = async removeId => {
 };
 
 const goToTimeline = async target => {
-  if (
-    !target.matches('.travel-list > li > em') &&
-    !target.matches('.travel-list > li > h2') &&
-    !target.matches('.travel-list > li') &&
-    !target.matches('.travel-list > li > span')
-  )
-    return;
+  if (!target.matches('.travel-list > li > em') && !target.matches('.travel-list > li > h2') && !target.matches('.travel-list > li') && !target.matches('.travel-list > li > span')) return;
 
-  travelId =
-    target.nodeName === 'LI'
-      ? target.id.split('-')[1]
-      : target.parentNode.id.split('-')[1];
+  travelId = target.nodeName === 'LI' ? target.id.split('-')[1] : target.parentNode.id.split('-')[1];
   const timeline = document.getElementById('main-calendar');
   const home = document.getElementById('main-home');
   const {
@@ -532,9 +487,7 @@ $scheduleList.onclick = ({ target }) => {
   $timeAlertPopupBg.style.display = 'block';
   $timelineAlertPopup.style.display = 'block';
 
-  $timelineDeleteBtn.addEventListener('click', () =>
-    removeSchedule(scheduleId)
-  );
+  $timelineDeleteBtn.addEventListener('click', () => removeSchedule(scheduleId));
 };
 
 $timelineCancleBtn.onclick = () => {
@@ -583,8 +536,7 @@ const printMonthTime = () => {
     minute.forEach((element, key) => {
       if (element === 'MIN') minuteSelect[key] = new Option(element, '0', true);
       if (element === '00') minuteSelect[key] = new Option(element, '00', true);
-      if (element !== 'MIN' && element !== '00')
-        minuteSelect[key] = new Option(element, (key - 1) * 10, true);
+      if (element !== 'MIN' && element !== '00') minuteSelect[key] = new Option(element, (key - 1) * 10, true);
     });
   });
 };
