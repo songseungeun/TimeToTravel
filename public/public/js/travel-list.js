@@ -24,7 +24,6 @@ const $startDate = $newTravelPopup.querySelector('#start-day-select');
 const $endYear = $newTravelPopup.querySelector('#end-year-select');
 const $endMonth = $newTravelPopup.querySelector('#end-month-select');
 const $endDate = $newTravelPopup.querySelector('#end-day-select');
-const $travelHiddenBtn = document.querySelector('.add-travel-btn-hidden');
 
 // functions
 const closeTravelPopup = () => {
@@ -35,7 +34,6 @@ const closeTravelPopup = () => {
 const openTravelPopup = () => {
   $popupBg.style.display = 'block';
   $newTravelPopup.style.display = 'block';
-  $travelHiddenBtn.style.display = 'block';
 };
 
 // event handlers

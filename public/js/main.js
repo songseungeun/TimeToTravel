@@ -30,6 +30,16 @@ const $newSchedulePopUp = document.querySelector('.new-schedule-popup');
 const $schedulePopupBg = document.querySelector('.popup-bg');
 const $scheduleList = document.querySelector('.schedule-list');
 const $dateList = document.querySelector('.date-list');
+const $alertDeleteBtn = document.querySelector('.alert-delete-btn')
+const $alertCancleBtn = document.querySelector('.alert-cancel-btn')
+const $alertPopup = document.querySelector('.alert-popup')
+const $alertPopupBg = document.querySelector('.alert-popup-bg')
+const $newTravelBtn = document.querySelector('.new-travel-btn');
+const $newScheduleBtn = document.querySelector('.new-schedule-btn');
+const $timelineDeleteBtn = document.querySelector('.timeline-delete-btn')
+const $timelineCancleBtn = document.querySelector('.timeline-cancle-btn')
+const $timelineAlertPopup = document.querySelector('.timeline-popup')
+const $timeAlertPopupBg = document.querySelector('.timeline-popup-bg')
 
 // functions
 // popups
@@ -77,10 +87,20 @@ const generateDday = startDate => {
 
 const generateId = () => travels.length ? Math.max(...travels.map(({ id }) => id)) + 1 : 1;
 
+
 const renderTravelList = () => {
   let html = '';
 
   travels.forEach(({ id, title, place, startDate, endDate }) => {
+    const generateDday = startDate => {
+      let dDay = 0;
+      let today = new Date();
+      today = today.getTime();
+      dDay = new Date(startDate).getTime();
+      dDay = Math.ceil((dDay - today) / 86400000) + 1;
+      return dDay > 0 ? `D-${dDay}` : (dDay === 0 ? 'D-Day' : '');
+    };
+
     html += ` <li id=${id}>
           <h2>${title}</h2>
           <em>${generateDday(startDate)}</em>
@@ -101,13 +121,16 @@ const getTravels = async () => {
   renderTravelList();
 };
 
-const removeTravel = async target => {
-  if (!target.matches('.travel-list > li > .travel-remove-btn')) return;
-  const id = target.parentNode.id;
-
+const removeTravel = async (id) => {
+  
+  //if (!target.matches('.travel-list > li > .travel-remove-btn')) return;
+  
   await axios.delete(`/travels/${id}`);
-  travels = travels.filter(travel => travel.id !== +id);
+  travels = travels.filter((travel) => travel.id !== +id);
   renderTravelList();
+
+  $alertPopupBg.style.display = 'none';
+  $alertPopup.style.display = 'none';
 };
 
 // time line
@@ -235,6 +258,17 @@ const toggleActiveDate = target => {
   [...$dateList.children].forEach(date => date.classList.toggle('active', (target === date || target.parentNode === date)));
 };
 
+const removeSchedule = async (id) => {
+  
+  await axios.delete(`/schedules/${id}`);
+  schedules = schedules.filter((schedule) => schedule.id !== parseInt(id));
+  renderTimeline(schedules);
+  
+  
+  $timeAlertPopupBg.style.display = 'none';
+  $timelineAlertPopup.style.display = 'none';  
+};
+
 const goToTimeline = async target => {
   if (!target.matches('travel-list > em') && !target.matches('travel-list > h2') && !target.matches('.travel-list > li') && !target.matches('travel-list > span') ) return;
 
@@ -278,3 +312,34 @@ $travelList.addEventListener('click', ({ target }) => goToTimeline(target));
 
 $dateList.addEventListener('click', ({ target }) => toggleActiveDate(target));
 $dateList.addEventListener('click', ({ target }) => tabDate(target));
+
+$travelList.onclick = ({target}) => {
+  if (!target.matches('.travel-list > li > .travel-remove-btn')) return
+  const id = target.parentNode.id;
+
+  $alertPopupBg.style.display = 'block';
+  $alertPopup.style.display = 'block';
+
+  $alertDeleteBtn.addEventListener('click', e => removeTravel(id));
+};
+
+$alertCancleBtn.onclick = () =>{
+  $alertPopupBg.style.display = 'none';
+  $alertPopup.style.display = 'none';
+}
+
+
+$scheduleList.onclick = ({target})=>{
+  if (!target.matches('.schedule-list > li > .remove-btn')) return
+  const scheduleId = target.parentNode.id.split('-')[1]
+
+  $timeAlertPopupBg.style.display = 'block';
+  $timelineAlertPopup.style.display = 'block';
+
+  $timelineDeleteBtn.addEventListener('click', e => removeSchedule(scheduleId));
+}
+
+$timelineCancleBtn.onclick = () =>{
+  $timeAlertPopupBg.style.display = 'none';
+  $timelineAlertPopup.style.display = 'none';
+}
