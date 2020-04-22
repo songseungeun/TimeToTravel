@@ -6,7 +6,6 @@ let travelId = '';
 // DOMs
 const $menuBar = document.querySelector('.menu-bar');
 const $header = document.querySelector('.header h2');
-
 const $startHour = document.querySelector('#start-hour-select');
 const $startMin = document.querySelector('#start-min-select');
 const $endHour = document.querySelector('#end-hour-select');
@@ -369,8 +368,6 @@ const printMonthTime = () => {
       if (element === 'MIN') minuteSelect[key] = new Option(element, '0', true);
       if (element === '00') minuteSelect[key] = new Option(element, '00', true);
       if (element !== 'MIN' && element !== '00') minuteSelect[key] = new Option(element, (key - 1) * 10, true);
-      console.log(minuteSelect[key]); 
-      // MIN의 value 값이 -10이에요ㅠㅠ
     });
   });
 };
