@@ -321,9 +321,9 @@ main.main-view {
   width: 100%;
 }
 /* REMIND: text-hidden추가 */
-.text-hidden {
+/* .text-hidden {
   display: none;
-}
+} */
 .select-date,
 .select-start-hour,
 .select-end-hour {
@@ -363,6 +363,7 @@ main.main-view {
   font-size: 23px;
   cursor: pointer;
 }
+
 .warnning-text {
   display: none;
   font-size: 14px;
@@ -465,6 +466,15 @@ main.main-view {
   cursor: pointer;
 }
 
+.add-travel-btn-hidden {
+  position: absolute;
+  bottm: 10px;
+  left: 15px;
+  width: 440px;
+  height: 50px;
+  z-index: 95;
+  background-color: rgba(255, 255, 255, 0.9)
+}
 .add-travel-btn {
   font-size: 16px;
   padding: 10px;
