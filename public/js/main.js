@@ -4,6 +4,9 @@ let travels = [];
 let travelId = '';
 
 // DOMs
+const $menuBar = document.querySelector('.menu-bar');
+const $header = document.querySelector('.header h2');
+
 const $startHour = document.querySelector('#start-hour-select');
 const $startMin = document.querySelector('#start-min-select');
 const $endHour = document.querySelector('#end-hour-select');
@@ -64,6 +67,9 @@ const closeSchedulePopup = () => {
 };
 
 const closeTravelPopup = () => {
+  $menuBar.style.filter = 'blur(0px)';
+  $header.style.filter = 'blur(0px)';
+  $travelList.style.filter = 'blur(0px)';
   $travelPopupBg.style.display = 'none';
   $newTravelPopup.style.display = 'none';
   resetTravelPopup();
@@ -141,7 +147,7 @@ const sortTimeline = schedules => {
 };
 
 const renderMonthYear = (month, year) => {
-  const $monthYearBox = document.querySelector('#main-calendar > h2');
+  const $monthYearBox = document.querySelector('#main-calendar > h3');
   const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
   $monthYearBox.textContent = `${months[month - 1]}, ${year}`;
