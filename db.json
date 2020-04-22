@@ -6,20 +6,26 @@
       "place": "제주도",
       "startDate": "2020/5/3",
       "endDate": "2020/5/10"
+    },
+    {
+      "id": 2,
+      "title": "sfdsfd",
+      "place": "sdfsdf",
+      "startDate": "2023/2/4",
+      "endDate": "2022/4/7"
     }
   ],
   "schedules": [
     {
       "travelId": "1",
-      "date": "5/3",
+      "date": "3/4",
       "timeFrom": "3:20",
-      "timeTo": "7:10",
-      "place": "우도",
-      "detail": "가자",
+      "timeTo": "2:50",
+      "place": "ㅇㄴㄹㄹㅇㄴ",
+      "detail": "ㄹㅇㄴㄹㅇㄴ",
       "id": 1
     }
   ],
-  "schedules": [],
   "info": [
     {
       "id": 1,
