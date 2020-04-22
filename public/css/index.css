@@ -392,13 +392,17 @@ main.main-view {
   text-align: center;
 }
 .airline-ticket {
-  width: 80%;
+  width: 100%;
   margin: 20px auto;
   padding: 20px;
   line-height: 1.2;
-  background-color: #f4f4f4;
+  /* background-color: #f4f4f4; */
 }
-.airline-schedule *{
+.airline-schedule li {
+  background-color: #f4f4f4;
+  margin-bottom: 10px;
+}
+.airline-schedule li * {
   display: block;
   text-align: center;
 }
@@ -429,7 +433,7 @@ main.main-view {
   font-size: 16px;
 }
 .hotel-reservation1, .hotel-reservation2 {
-  width: 80%;
+  width: 100%;
   margin: 20px auto;
   padding: 20px;
   line-height: 1.2;
@@ -575,8 +579,11 @@ main.main-view {
 
 .new-info-popup {
   width: 500px;
-  display: block;
-  top:0;
+  /* display: block; */
+  top: 10px;
+}
+.new-info-popup input {
+  width: 50%;
 }
 /* REMIND: 클래스명 한개로  */
 .schedule-input {
