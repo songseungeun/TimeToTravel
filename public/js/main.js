@@ -376,15 +376,12 @@ const printMonthTime = () => {
   });
 
   let hour = Array.from({ length: 24 }, function (v, i) { return i; });
-  console.log(hour);
   hour.splice(0, 7);
-  console.log(hour);
   hour = ['HOUR', ...hour];
-  console.log(hour);
   $hourSelects.forEach(hourSelect => {
     hour.forEach((element, key) => {
-      hourSelect[key] = new Option(element, key, true);
-  console.log(hour[key]);
+      hourSelect[key] = new Option(`${element} 시`, element, true);
+      if (element === 'HOUR') hourSelect[key] = new Option(element, '0', true);
     });
   });
 
@@ -393,9 +390,9 @@ const printMonthTime = () => {
   minute = ['MIN', '00', ...minute];
   $minuteSelects.forEach(minuteSelect => {
     minute.forEach((element, key) => {
-      if (element === 'MIN') minuteSelect[key] = new Option(element, '0', true);
-      if (element === '00') minuteSelect[key] = new Option(element, '00', true);
-      if (element !== 'MIN' && element !== '00') minuteSelect[key] = new Option(element, (key - 1) * 10, true);
+      minuteSelect[key] = new Option(`${element}분`, (key - 1) * 10, true);
+      if (element === 'MIN') minuteSelect[key] = new Option(`${element}`, '0', true);
+      if (element === '00') minuteSelect[key] = new Option(`${element} 분`, '00', true);
     });
   });
 };
