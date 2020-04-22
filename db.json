@@ -17,6 +17,24 @@
       "place": "ㅋㅋ",
       "detail": "ㅋㅋ",
       "id": 1
+    },
+    {
+      "travelId": "1",
+      "date": "5/7",
+      "timeFrom": "14:50",
+      "timeTo": "17:30",
+      "place": "ㅋㅋ",
+      "detail": "ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ",
+      "id": 2
+    },
+    {
+      "travelId": "1",
+      "date": "5/11",
+      "timeFrom": "16:10",
+      "timeTo": "18:60",
+      "place": "ㅣ미미미",
+      "detail": "미미밈",
+      "id": 3
     }
   ],
   "info": [
