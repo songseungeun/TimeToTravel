@@ -90,7 +90,7 @@ const generateDday = startDate => {
 const generateId = () => travels.length ? Math.max(...travels.map(({ id }) => id)) + 1 : 1;
 
 const sortTravels = travels => {
-  travels.sort((trav1, trav2) => trav1.startDate > trav2.startDate ? 1 : (trav2.startDate > trav1.startDate ? -1 : 0));
+  travels.sort((trav1, trav2) => trav2.startDate > trav1.startDate ? 1 : (trav1.startDate > trav2.startDate ? -1 : 0));
 };
 
 const renderTravelList = () => {
@@ -304,9 +304,12 @@ $addTravelBtn.onclick = async () => {
   const endDate = `${$endYear.value}/${$endMonth.value}/${$endDate.value}`;
   const newId = generateId();
 
+  // console.log(travels);
+
   const { data } = await axios.post('/travels', { id: newId, title, place, startDate, endDate });
   travels = [data, ...travels];
 
+  // console.log(travels);
   closeTravelPopup();
   renderTravelList();
   resetTravelPopup();
