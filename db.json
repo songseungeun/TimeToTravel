@@ -24,6 +24,24 @@
       "place": "ㅋㅋ",
       "detail": "ㅋㅋㅋ",
       "id": 3
+    },
+    {
+      "travelId": "5",
+      "date": "2/2",
+      "timeFrom": "9:00",
+      "timeTo": "9:30",
+      "place": "ㅋ",
+      "detail": "ㄹㅇㄴ",
+      "id": 4
+    },
+    {
+      "travelId": "5",
+      "date": "2/3",
+      "timeFrom": "13:20",
+      "timeTo": "16:30",
+      "place": "로ㅓㅏㅇ로ㅓㅏㄴㅇㄹ",
+      "detail": "ㄹ오ㅓㅏㄴㅇ러ㅏㅣㄹㅇ너ㅏㅣ;",
+      "id": 5
     }
   ],
   "info": [

@@ -357,24 +357,11 @@ $timelineCancleBtn.onclick = () => {
   $timelineAlertPopup.style.display = 'none';
 };
 
-// month/date/time test
-const $monthSelects = document.querySelectorAll('.month-select');
+// time test
 const $hourSelects = document.querySelectorAll('.hour-select');
 const $minuteSelects = document.querySelectorAll('.min-select');
 
-const printMonthTime = () => {
-  let month = Array.from({ length: 13 }, function (v, i) { return i; });
-  // console.log(month);
-
-  month.splice(0, 1);
-  month = ['MONTH', ...month];
-
-  $monthSelects.forEach(monthSelect => {
-    month.forEach((element, key) => {
-      monthSelect[key] = new Option(element, key, true);
-    });
-  });
-
+const printTime = () => {
   let hour = Array.from({ length: 24 }, function (v, i) { return i; });
   hour.splice(0, 7);
   hour = ['HOUR', ...hour];
@@ -397,22 +384,7 @@ const printMonthTime = () => {
   });
 };
 
-function printDate({ target }) {
-  if (!target.matches('.month-select')) return;
-  let date = 0;
-  const monthDate = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-  date = monthDate[target.value - 1];
-  let date2 = Array.from({ length: date + 1 }, function (v, i) { return i; });
-  date2.splice(0, 1);
-  date2 = ['DATE', ...date2];
-
-  date2.forEach((element, key) => {
-    target.nextElementSibling[key] = new Option(element, key, true);
-  });
-}
-
-$newScheduleBtn.addEventListener('click', printMonthTime);
-$newSchedulePopup.addEventListener('change', printDate);
+$newScheduleBtn.addEventListener('click', printTime);
 
 // export
 export { resetSchedulePopup, resetTravelPopup };
