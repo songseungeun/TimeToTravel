@@ -12,10 +12,10 @@
     {
       "travelId": "1",
       "date": "5/3",
-      "timeFrom": "3:20",
-      "timeTo": "7:10",
-      "place": "우도",
-      "detail": "가자",
+      "timeFrom": "12:20",
+      "timeTo": "14:10",
+      "place": "캬캬",
+      "detail": "쿠쿠",
       "id": 1
     }
   ],
