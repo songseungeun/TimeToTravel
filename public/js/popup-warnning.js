@@ -22,6 +22,7 @@ function actBtn() {
 
 $travelPopupInput.forEach(input => {
   input.addEventListener('blur', actBtn);
+  input.addEventListener('keyup', actBtn);
 });
 $travelPopupSelect.forEach(select => {
   select.addEventListener('change', actBtn);
@@ -44,6 +45,7 @@ function actScheduleBtn() {
 
 $schedulePopupInput.forEach(input => {
   input.addEventListener('blur', actScheduleBtn);
+  input.addEventListener('keyup', actScheduleBtn);
 });
 $schedulePopupSelect.forEach(select => {
   select.addEventListener('change', actScheduleBtn);

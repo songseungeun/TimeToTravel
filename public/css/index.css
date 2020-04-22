@@ -27,7 +27,10 @@ body {
   border-radius: 20px;
   background-color: #fff;
 }
-
+.main-wrapper {
+  width: calc(100% - 90px);
+  float: right;
+}
 main.main-view {
   display: block;
   z-index: 98;
@@ -107,7 +110,7 @@ main.main-view {
 /* ----- timeline ----- */
 /* MAIN */
 .main-schedule {
-  width: 830px;
+  width: 100%;
   float: right;
 }
 .main-schedule h3 {
@@ -117,15 +120,19 @@ main.main-view {
   /* text-align: center; */
   /* background-color: #cdcdcd; */
 }
+.timeline-wrapper {
+  padding: 0 30px;
+}
 /* DATE */
 .date-wrapper {
   position: relative;
   width: 100%; 
-  padding: 10px 20px 10px 45px;
+  margin-left: -18px;
+  padding: 10px 50px 10px 45px;
   /* background-color: #f4f4f4; */
 }
 .date-container {
-  width: 650px;
+  width: calc(100% + 18px);
   overflow: hidden;
 }
 .date-before-btn, .date-after-btn {
@@ -150,14 +157,14 @@ main.main-view {
   left: 0px;
 }
 .date-after-btn {
-  right: 80px;
+  right: -15px;
 }
 .date-list {
   /* float: left; */
   display: flex;
   width: 660px;
   height: 100px;
-  padding: 5px 20px;
+  padding: 5px 0;
   /* background-color: rgb(220, 220, 220); */
   
 }
@@ -210,13 +217,7 @@ main.main-view {
   font-size: 15px;
   border-bottom: 1px solid #dcdcdc;
 }
-/* .timeline-point {
-  float: left;
-  width: 25px;
-  height: 100vh;
-  margin-right: 10px;
-  background-color: #e8e8e8;
-} */
+
 .schedule-list {
   position: absolute;
   float: left;
@@ -235,6 +236,23 @@ main.main-view {
   line-height: 1.4;
   left: 80px;
 }
+/* 2, 5, 8, 11 */
+.schedule-list li:nth-child( 3n+2 ) {
+  background-color: thistle;
+}
+/* 3, 6, 9, 12 */
+.schedule-list li:nth-child( 3n ) {
+  background-color: rgb(127, 116, 183);
+}
+/* 3, 6, 9, 12 */
+.schedule-list li:nth-child( 4n ) {
+  background-color: rgb(73, 138, 134);
+}
+/* 1 */
+.schedule-list li:first-child {
+  background-color: rgb(220, 139, 151);
+}
+
 .remove-btn {
   position: absolute;
   top: 8px;
@@ -266,20 +284,20 @@ main.main-view {
 
 /* MAIN */
 .travel-list {
-  width: 88%;
-  margin-left: 100px;
-  padding: 20px;
+  width: 100%;
+  /* margin-left: 100px; */
+  padding: 5px 30px;
   /* background-color: #f9f9f9; */
 }
 .travel-list li {
   position: relative;
   float: left;
-  width: calc((100% - 40px) / 2);
+  width: calc((100% - 20px) / 2);
   height: 260px;
   border-radius: 15px 15px 0px 15px;
   padding: 20px;
   line-height: 1.5;
-  margin: 0 15px 15px 0;
+  margin-bottom: 20px;
   background-color: #d4d4d4;
   cursor: pointer;
   color: #fff;
@@ -289,6 +307,9 @@ main.main-view {
   background-position: center;
   transition: box-shadow 0.5s, transform 0.5s, opacity 0.3s;
 
+}
+.travel-list li:nth-child(odd) {
+  margin-right: 20px;
 }
 .travel-list li:hover {
   box-shadow: 2px 2px 7px 1px rgba(0, 0, 0, .2);
@@ -371,13 +392,17 @@ main.main-view {
   text-align: center;
 }
 .airline-ticket {
-  width: 80%;
+  width: 100%;
   margin: 20px auto;
   padding: 20px;
   line-height: 1.2;
-  background-color: #f4f4f4;
+  /* background-color: #f4f4f4; */
 }
-.airline-schedule * {
+.airline-schedule li {
+  background-color: #f4f4f4;
+  margin-bottom: 10px;
+}
+.airline-schedule li * {
   display: block;
   text-align: center;
 }
@@ -408,7 +433,7 @@ main.main-view {
   font-size: 16px;
 }
 .hotel-reservation1, .hotel-reservation2 {
-  width: 80%;
+  width: 100%;
   margin: 20px auto;
   padding: 20px;
   line-height: 1.2;
@@ -426,7 +451,6 @@ main.main-view {
   position: fixed;
   top: 120px;
   padding: 30px;
-  margin: 30px;
   text-align: center;
   background-color: rgb(72, 101, 154);
   z-index: 99;
@@ -540,7 +564,7 @@ main.main-view {
   padding: 5px;
 }
 .new-travel-popup select {
-  width: 25%;
+  width: 22%;
 }
 
 /* 타임라인팝업 */
@@ -550,6 +574,16 @@ main.main-view {
 }
 .new-schedule-popup select {
   width: 30%;
+}
+/* 여행정보팝업 */
+
+.new-info-popup {
+  width: 500px;
+  /* display: block; */
+  top: 10px;
+}
+.new-info-popup input {
+  width: 50%;
 }
 /* REMIND: 클래스명 한개로  */
 .schedule-input {
@@ -591,6 +625,7 @@ main.main-view {
   right: 13px;
   font-size: 23px;
   cursor: pointer;
+  padding: 5px;
 }
 
 .warnning-text {
@@ -609,8 +644,6 @@ main.main-view {
 }
 
 /* 팝업띄우는버튼 */
-
-
 
 .new-schedule-btn,
 .new-travel-btn,
@@ -664,6 +697,13 @@ main.main-view {
   text-align: center;
   background-color: #fff;
   z-index: 99;
+  border-radius: 5px;
+}
+.delete-icon {
+  display: block;
+  color: #ed7373;
+  font-size: 40px;
+  margin-bottom: 15px;
 }
 .delete-confirm em {
   font-weight: bold;
@@ -671,16 +711,25 @@ main.main-view {
 .delete-confirm > button {
   display: block;
   float: left;
-  font-size: 16px;
+  font-size: 17px;
   padding: 10px;
   width: calc(50% - 10px);
   color: #fff;
   margin: 15px 5px 5px 5px;
+  border: 0px;
+  cursor: pointer;
+  outline: transparent;
 }
 .delete-n {
-  background-color: #b5b5b5;
+  background-color: #9b9b9b;
 }
 .delete-y {
   font-weight: bold;
-  background-color: #da7676;
+  background-color: #c66f6f;
+}
+.delete-n:hover {
+  background-color: #c2c2c2;
+}
+.delete-y:hover {
+  background-color: #ed7373;
 }
