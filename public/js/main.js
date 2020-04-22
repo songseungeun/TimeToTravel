@@ -117,13 +117,15 @@ const sortTimeline = schedules => {
 
   console.log(schedules);
   timelineBlocks.forEach(block => {
-    const hhFrom = schedules[i].timeFrom.split(':')[0];
-    const mmFrom = schedules[i].timeFrom.split(':')[1];
-    const hhTo = schedules[i].timeTo.split(':')[0];
-    const mmTo = schedules[i].timeTo.split(':')[1];
+    const hhFrom = +schedules[i].timeFrom.split(':')[0];
+    const mmFrom = +schedules[i].timeFrom.split(':')[1];
+    const hhTo = +schedules[i].timeTo.split(':')[0];
+    const mmTo = +schedules[i].timeTo.split(':')[1];
+    const mmDiff = mmFrom > mmTo ? 60 - (mmFrom - mmTo) : mmTo - mmFrom;
+    const hhDiff = mmFrom > mmTo ? hhTo - hhFrom - 1 : hhTo - hhFrom;
 
     block.style.top = `${(75 * (hhFrom - 7)) + ((75 / 6) * (mmFrom / 10))}px`;
-    block.style.height = `${(75 * (hhTo - hhFrom))}px`;
+    block.style.height = `${(75 * (hhDiff)) + ((75 / 6) * (mmDiff / 10))}px`;
 
     i++;
   });

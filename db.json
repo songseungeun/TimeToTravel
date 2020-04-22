@@ -17,6 +17,15 @@
       "place": "캬캬",
       "detail": "쿠쿠",
       "id": 1
+    },
+    {
+      "travelId": "1",
+      "date": "5/3",
+      "timeFrom": "17:50",
+      "timeTo": "19:50",
+      "place": "우도",
+      "detail": "가자",
+      "id": 2
     }
   ],
   "info": [
