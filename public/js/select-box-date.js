@@ -1,14 +1,11 @@
 const $newScheduleBtn = document.querySelector('.new-schedule-btn');
 const $newTravelBtn = document.querySelector('.new-travel-btn');
 const $newInfoBtn = document.querySelector('.new-info-btn');
-
-const $monthSelects = document.querySelectorAll('.month-select');
-
 const $newTravelPopup = document.querySelector('.new-travel-popup');
 const $newSchedulePopup = document.querySelector('.new-schedule-popup');
 const $newInfoPopup = document.querySelector('.new-travel-popup');
-
 // const $dateSelect = document.querySelector('.date-select');
+const $monthSelects = document.querySelectorAll('.month-select');
 const $hourSelects = document.querySelectorAll('.hour-select');
 const $minuteSelects = document.querySelectorAll('.min-select');
 
@@ -49,15 +46,17 @@ function printDate({ target }) {
   let date2 = Array.from({ length: date + 1 }, function (v, i) { return i; });
   date2.splice(0, 1);
   date2 = ['DATE', ...date2];
+
   date2.forEach((element, key) => {
-    target.nextElementSibling[key] = new Option(element, key, true);
+    target.parentNode.nextElementSibling.children[0][key] = new Option(element, key, true);
   });
 }
 
 $newTravelBtn.addEventListener('click', printMonthTime);
-$newScheduleBtn.addEventListener('click', printMonthTime);
-$newInfoBtn.addEventListener('click', printMonthTime);
-
 $newTravelPopup.addEventListener('change', printDate);
-$newSchedulePopup.addEventListener('change', printDate);
+
+// $newScheduleBtn.addEventListener('click', printMonthTime);
+// $newSchedulePopup.addEventListener('change', printDate);
+
+$newInfoBtn.addEventListener('click', printMonthTime);
 $newInfoPopup.addEventListener('change', printDate);

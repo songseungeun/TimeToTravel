@@ -1,3 +1,6 @@
+// import
+import { resetSchedulePopup } from './main.js';
+
 // DOMs
 const $addScheduleBtn = document.querySelector(".add-schedule-btn");
 const $newScheduleBtn = document.querySelector(".new-schedule-btn");
@@ -21,8 +24,9 @@ const $inputDetailWarning = document.querySelector("#detail-warning-label");
 const $inputPlaceWarning = document.querySelector("#place-warning-label");
 
 const closePopup = () => {
-  $newSchedulePopUp.style.display = "none";
-  $popupBg.style.display = "none";
+  $newSchedulePopUp.style.display = 'none';
+  $popupBg.style.display = 'none';
+  resetSchedulePopup();
 };
 
 //+버튼 누르면 팝업창 오픈
@@ -37,6 +41,7 @@ $popupRemoveBtn.addEventListener("click", closePopup);
 window.onclick = ({ target }) => {
   if (target !== $popupBg || target === $newScheduleBtn) return;
   closePopup();
+  resetSchedulePopup();
 };
 
 //경고문구

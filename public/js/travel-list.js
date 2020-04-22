@@ -1,7 +1,10 @@
 // import
-// import { getSchedules, schedules } from './timeline.js';
+import { resetTravelPopup } from './main.js';
 
 // DOMs
+const $menuBar = document.querySelector('.menu-bar');
+const $header = document.querySelector('.header h2');
+const $travelList = document.querySelector('.travel-list');
 
 const $newTravelBtn = document.querySelector('.new-travel-btn');
 const $popupBg = document.querySelector('.new-travel-popup-bg');
@@ -28,12 +31,19 @@ const $travelHiddenBtn = document.querySelector('.add-travel-btn-hidden');
 
 // functions
 const closeTravelPopup = () => {
+  $menuBar.style.filter = 'blur(0px)';
+  $header.style.filter = 'blur(0px)';
+  $travelList.style.filter = 'blur(0px)';
   $popupBg.style.display = 'none';
   $newTravelPopup.style.display = 'none';
+  resetTravelPopup();
 };
 
 const openTravelPopup = () => {
   $popupBg.style.display = 'block';
+  $menuBar.style.filter = 'blur(3px)';
+  $header.style.filter = 'blur(3px)';
+  $travelList.style.filter = 'blur(3px)';
   $newTravelPopup.style.display = 'block';
   $travelHiddenBtn.style.display = 'block';
 };

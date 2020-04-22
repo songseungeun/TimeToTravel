@@ -50,11 +50,14 @@ main.main-view {
 }
 .header h2 {
   width: 93%;
-  font-size: 25px;
+  font-size: 28px;
   text-align: center;
   font-weight: 400;
   font-style: italic;
   /* background-color: #ccc; */
+}
+.header strong {
+  font-weight: 600;
 }
 /* LEFT SIDE MENU */
 .menu-bar {
@@ -107,7 +110,7 @@ main.main-view {
   width: 830px;
   float: right;
 }
-.main-schedule h2 {
+.main-schedule h3 {
   font-size: 24px;
   padding: 15px;
   font-weight: 700;
@@ -250,151 +253,6 @@ main.main-view {
   background-color: rgb(211, 149, 169);
 }
 
-/* POPUP */
-.new-schedule-btn,
-.new-travel-btn,
-.new-info-btn {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  width: 80px;
-  height: 80px;
-  border-radius: 20px;
-  background-color: rgb(61, 112, 120);
-  text-align: center;
-  line-height: 76px;
-  color: #fff;
-  font-size: 50px;
-  cursor: pointer;
-  font-weight: 200;
-  transition: transform 0.3s;
-  transform: scale(1);
-}
-.new-schedule-btn:hover,
-.new-travel-btn:hover,
-.new-info-btn:hover {
-  background-color: #3f8594;
-  transition: transform 0.3s;
-  transform: scale(1.05);
-}
-
-.delete-confirm {
-  /* display: block; */
-  display: none;
-  position: fixed;
-  top: 180px;
-  left: calc(50% - 210px);
-  width: 400px;
-  padding: 30px;
-  margin: 30px;
-  text-align: center;
-  background-color: #fff;
-  z-index: 99;
-}
-.delete-confirm em {
-  font-weight: bold;
-}
-.delete-confirm > button {
-  display: block;
-  float: left;
-  font-size: 16px;
-  padding: 10px;
-  width: calc(50% - 10px);
-  color: #fff;
-  margin: 15px 5px 5px 5px;
-}
-.delete-n {
-  background-color: #b5b5b5;
-}
-.delete-y {
-  font-weight: bold;
-  background-color: #da7676;
-}
-/* main > .delete-popup-bg {
-  display: block;
-} */
-.popup-bg,
-.delete-popup-bg,
-.new-travel-popup-bg {
-  /* display: block; */
-  display: none;
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: rgba(55, 55, 55, .7);
-}
-.new-schedule-popup {
-  display: none;
-  position: fixed;
-  top: 120px;
-  left: calc(50% - 210px);
-  width: 400px;
-  padding: 30px;
-  margin: 30px;
-  text-align: center;
-  background-color: #fff;
-  z-index: 99;
-}
-/* REMIND: 클래스명 한개로  */
-.schedule-input {
-  font-size: 14px;
-  padding: 5px;
-  margin-bottom: 10px;
-  width: 100%;
-}
-/* REMIND: text-hidden추가 */
-/* .text-hidden {
-  display: none;
-} */
-.select-date,
-.select-start-hour,
-.select-end-hour {
-  /* background-color: #cdcdcd; */
-  padding-left: 13px;
-}
-
-/* .new-schedule-popup * {
-  display: block;
-} */
-.new-schedule-popup h2 {
-  font-size: 23px;
-  padding: 5px;
-  margin-bottom: 10px;
-}
-.new-schedule-popup label {
-  padding: 9px 10px;
-}
-.new-schedule-popup select,
-.new-travel-popup select {
-  font-size: 15px;
-  width: 110px;
-  padding: 5px;
-  margin: 0 5px 10px 5px;
-}
-.schedule-input-place, .schedule-input-detail {
-  font-size: 14px;
-  padding: 5px;
-  margin-bottom: 10px;
-  width: 100%;
-}
-.popup-remove-btn,
-.new-travel-popup-remove-btn {
-  position: absolute;
-  top: 10px;
-  right: 13px;
-  font-size: 23px;
-  cursor: pointer;
-}
-
-.warnning-text {
-  display: none;
-  font-size: 14px;
-  margin-bottom: 10px;
-  color: #e38484;
-}
-
 .add-schedule-btn {
   font-size: 16px;
   padding: 10px;
@@ -411,22 +269,54 @@ main.main-view {
   width: 88%;
   margin-left: 100px;
   padding: 20px;
-  background-color: #f9f9f9;
+  /* background-color: #f9f9f9; */
 }
 .travel-list li {
   position: relative;
   float: left;
-  width: calc((100% - 60px) / 3);
-  height: 280px;
-  border-radius: 10px;
-  padding: 15px;
+  width: calc((100% - 40px) / 2);
+  height: 260px;
+  border-radius: 15px 15px 0px 15px;
+  padding: 20px;
   line-height: 1.5;
-  margin: 0 20px 20px 0;
+  margin: 0 15px 15px 0;
   background-color: #d4d4d4;
   cursor: pointer;
+  color: #fff;
+  background-color: rgba(83, 103, 104, 0.6);
+  background-blend-mode: multiply; 
+  background-size: cover;
+  background-position: center;
+  transition: box-shadow 0.5s, transform 0.5s, opacity 0.3s;
+
 }
+.travel-list li:hover {
+  box-shadow: 2px 2px 7px 1px rgba(0, 0, 0, .2);
+  transform: translate(-2px, -2px);
+  /* opacity: 0.9; */
+  transition: box-shadow 0.5s, transform 0.5s, opacity 0.3s;
+}
+#t-1, #t-8 {
+  /* filter: blur(3px); */
+  filter: grayscale(40%);
+  background-image: url('../img/bg-paris.jpeg');
+}
+#t-2, #t-5, #t-9 {
+  /* filter: blur(1px); */
+  filter: grayscale(40%);
+  background-image: url('../img/bg-greece.jpg');
+}
+#t-4, #t-6, #t-10 {
+  filter: grayscale(40%);
+  background-image: url('../img/bg-positano.jpg');
+}
+#t-3, #t-8 {
+  filter: grayscale(40%);
+  background-image: url('../img/bg-maldives.jpg');
+}
+
 .travel-list li h2 {
-  font-size: 24px;
+  font-size: 28px;
   font-weight: bold;
 }
 .travel-list li em {
@@ -436,18 +326,22 @@ main.main-view {
 }
 .travel-info {
   position: absolute;
-  width: calc(100% - 20px);
-  bottom: 10px;
-  right: 10px;
-  /* background-color: #f9f9f9; */
+  width: calc(100% - 30px);
+  bottom: 15px;
+  right: 15px;
+  padding: 7px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 5px;
+  font-weight: 500;
+  letter-spacing: 2px;
 }
 .travel-place {
   display: block;
-  font-size: 18px;
+  font-size: 15px;
 }
 .travel-date {
   display: block;
-  font-size: 16px;
+  font-size: 15px;
 }
 .travel-remove-btn {
   position: absolute;
@@ -456,6 +350,9 @@ main.main-view {
   font-size: 20px;
   cursor: pointer;
 }
+.travel-remove-btn:hover {
+  opacity: .8;
+}
 /* list 비어있을때 나타나는 문구 */
 .travel-none-text {
   display: none;
@@ -463,71 +360,6 @@ main.main-view {
   top: 300px;
   left: calc(50% - 90px);
   font-size: 20px;
-}
-/* POP UP */
-.new-travel-popup {
-  display: none;
-  position: fixed;
-  top: 120px;
-  left: calc(50% - 260px);
-  width: 480px;
-  padding: 30px;
-  margin: 30px;
-  text-align: center;
-  background-color: #fff;
-  z-index: 99;
-  border-radius: 10px;
-  box-shadow: 12px 12px 5px 1px rgba(0, 0, 0, .5);
-}
-
-.new-travel-popup h2 {
-  font-size: 23px;
-  padding: 5px;
-  margin-bottom: 10px;
-}
-.new-travel-popup label {
-  padding: 9px 10px;
-}
-.new-travel-popup input {
-  font-size: 14px;
-  padding: 5px;
-  margin-bottom: 10px;
-  width: 100%;
-}
-.new-travel-popup-remove-btn,
-.popup-remove-btn {
-  position: absolute;
-  top: 15px;
-  right: 18px;
-  font-size: 28px;
-  cursor: pointer;
-}
-.new-travel-popup-remove-btn:hover,
-.popup-remove-btn:hover {
-  opacity: 0.7;
-}
-.add-travel-btn-hidden,
-.add-schedule-btn-hidden {
-  position: absolute;
-  bottom: 18px;
-  left: 0;
-  width: 100%;
-  height: 55px;
-  z-index: 95;
-  background-color: rgba(255, 255, 255, 0.9)
-}
-.add-travel-btn {
-  font-size: 16px;
-  padding: 10px;
-  width: 100%;
-  color: #fff;
-  background-color: #333;
-  cursor: pointer;
-}
-
-.add-travel-btn:hover,
-.add-schedule-btn:hover {
-  background-color: #4b638c;
 }
 /* ----- travel info ----- */
 
@@ -587,55 +419,272 @@ main.main-view {
   font-size: 24px;
   font-weight: 400;
 }
-/* POP UP */
-.popup-btn {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  width: 60px;
-  height: 60px;
-  border-radius: 60px;
-  background-color: #666;
-  text-align: center;
-  line-height: 65px;
-  color: #fff;
-  font-size: 40px;
-  cursor: pointer;
-  font-weight: bold;
-}
 
-.popup-form {
+/* ----- POP UP ----- */
+.popup-style {
   display: none;
-  position: absolute;
-  width: 800px;
-  height: 400px;
+  position: fixed;
+  top: 120px;
   padding: 30px;
   margin: 30px;
-  top: 800px;
   text-align: center;
-  background-color: #fff;
+  background-color: rgb(72, 101, 154);
+  z-index: 99;
+  border-radius: 10px;
+  box-shadow: 8px 8px 10px 5px rgba(0, 0, 0, .3);
 }
-.popup-form h2 {
+.popup-style label{
+  padding: 9px 10px;
+  color: #15233e;
+}
+.popup-style h2 {
   font-size: 23px;
   padding: 5px;
+  margin-bottom: 10px;
+  color: #dcdcdc;
 }
-.popup-form select {
+.popup-style input {
+  font-size: 16px;
+  padding: 13px 10px 5px 10px;
+  margin-bottom: 15px;
+  width: 100%;
+  border: 0px;
+  border-bottom: 1px solid #15233e;
+  background-color: transparent;
+  color: #a3c5ff;
+}
+.popup-style input:hover,
+.popup-style input:focus {
+  outline: transparent;
+  border-bottom: 1px solid #a3c5ff;
+}
+.popup-style input::placeholder {
+  color: #15233e;
+}
+.popup-style select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 15px;
+  border: 0px;
+  border-bottom: 1px solid #000;
+  border-radius: 0px;
+}
+.popup-style select:hover {
+  background-color: rgb(92, 120, 172);
+}
+.popup-style select:focus {
+  outline: transparent;
+}
+.new-travel-popup-remove-btn,
+.popup-remove-btn {
+  position: absolute;
+  top: 15px;
+  right: 18px;
+  font-size: 28px;
+  cursor: pointer;
+}
+.new-travel-popup-remove-btn:hover,
+.popup-remove-btn:hover {
+  opacity: 0.7;
+}
+.add-travel-btn-hidden,
+.add-schedule-btn-hidden {
+  position: absolute;
+  bottom: 18px;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  z-index: 95;
+  background-color: rgba(72, 101, 154, .7);
+}
+.popup-style button {
+  margin-top: 10px;
+  font-size: 18px;
+  padding: 13px;
+  width: 100%;
+  color: #4a6eac;
+  background-color: #112851;
+  border: 0px;
+  cursor: pointer;
+}
+.popup-style button:hover {
+  background-color: #1c3e78;
+}
+/* 셀렉트 랩, 화살표 */
+.select-wrapper {
+  position: relative;
+  display: inline;
+}
+.select-arrow {
+  position: absolute;
+  top: calc(50% - 4px);
+  right: 16px;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  border-style: solid;
+  border-width: 8px 5px 0 5px;
+  border-color: rgb(0, 0, 0) transparent transparent transparent;
+}
+/* 여행목록팝업 */
+.new-travel-popup {
+  left: calc(50% - 260px);
+  width: 480px;
+}
+.start-date,
+.end-date {
+  margin: 5px;
+  padding: 5px;
+}
+.new-travel-popup select {
+  width: 25%;
+}
+
+/* 타임라인팝업 */
+.new-schedule-popup {
+  left: calc(50% - 210px);
+  width: 400px;
+}
+.new-schedule-popup select {
+  width: 30%;
+}
+/* REMIND: 클래스명 한개로  */
+.schedule-input {
   font-size: 14px;
   padding: 5px;
   margin-bottom: 10px;
+  width: 100%;
 }
+/* REMIND: text-hidden추가 */
+/* .text-hidden {
+  display: none;
+} */
+.select-date,
+.select-start-hour,
+.select-end-hour {
+  /* background-color: #cdcdcd; */
+  padding-left: 13px;
+}
+
+.new-schedule-popup h2 {
+  font-size: 23px;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+.new-schedule-popup label {
+  padding: 9px 10px;
+}
+
+.schedule-input-place, .schedule-input-detail {
+  font-size: 14px;
+  padding: 5px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+.popup-remove-btn,
+.new-travel-popup-remove-btn {
+  position: absolute;
+  top: 10px;
+  right: 13px;
+  font-size: 23px;
+  cursor: pointer;
+}
+
+.warnning-text {
+  display: none;
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #e38484;
+}
+<<<<<<< HEAD
 .input-airlines, .dep-airlines, .arr-airlines, .input-lodging-location, .input-lodging-name {
+=======
+
+.input-airlines, .dep-airlines, .arr-airlines, .input-place, .input-title {
+>>>>>>> b1fa0a2e92e7edf0e6c208ec1ba68f2a824d0e0d
   font-size: 14px;
   padding: 5px;
   margin-bottom: 10px;
   width: 100px;
-  border-radius: 3px;
-  border: 1px solid #
+  
 }
-.popup-form button {
+
+/* 팝업띄우는버튼 */
+
+
+
+.new-schedule-btn,
+.new-travel-btn,
+.new-info-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 80px;
+  height: 80px;
+  border-radius: 20px;
+  background-color: rgb(61, 112, 120);
+  text-align: center;
+  line-height: 76px;
+  color: #fff;
+  font-size: 50px;
+  cursor: pointer;
+  font-weight: 200;
+  transition: transform 0.3s;
+  transform: scale(1);
+}
+.new-schedule-btn:hover,
+.new-travel-btn:hover,
+.new-info-btn:hover {
+  background-color: #3f8594;
+  transition: transform 0.3s;
+  transform: scale(1.05);
+}
+/* 팝업 모달효과 배경 */
+.popup-bg,
+.delete-popup-bg,
+.new-travel-popup-bg {
+  /* display: block; */
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+/* 경고팝업 */
+.delete-confirm {
+  /* display: block; */
+  display: none;
+  position: fixed;
+  top: 180px;
+  left: calc(50% - 210px);
+  width: 400px;
+  padding: 30px;
+  margin: 30px;
+  text-align: center;
+  background-color: #fff;
+  z-index: 99;
+}
+.delete-confirm em {
+  font-weight: bold;
+}
+.delete-confirm > button {
+  display: block;
+  float: left;
   font-size: 16px;
   padding: 10px;
-  width: 90%;
+  width: calc(50% - 10px);
   color: #fff;
-  background-color: #333;
+  margin: 15px 5px 5px 5px;
+}
+.delete-n {
+  background-color: #b5b5b5;
+}
+.delete-y {
+  font-weight: bold;
+  background-color: #da7676;
 }
