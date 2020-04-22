@@ -24,13 +24,7 @@ const $startDate = $newTravelPopup.querySelector('#start-day-select');
 const $endYear = $newTravelPopup.querySelector('#end-year-select');
 const $endMonth = $newTravelPopup.querySelector('#end-month-select');
 const $endDate = $newTravelPopup.querySelector('#end-day-select');
-
-//const $alertDeleteBtn = document.querySelector('.delete-y')
-//const $alertcancleBtn = document.querySelector('.delete-x')
-//const $alertPopup = document.querySelector('.delete-confirm')
-//const $alertPopupBg = document.querySelector('.delete-popup-bg')
-//const $travelList = document.querySelector('.travel-list');
-
+const $travelHiddenBtn = document.querySelector('.add-travel-btn-hidden');
 
 // functions
 const closeTravelPopup = () => {
@@ -41,6 +35,7 @@ const closeTravelPopup = () => {
 const openTravelPopup = () => {
   $popupBg.style.display = 'block';
   $newTravelPopup.style.display = 'block';
+  $travelHiddenBtn.style.display = 'block';
 };
 
 // event handlers
@@ -66,7 +61,6 @@ function showWarning(element, defaultValue, warningElement) {
 }
 
 // const checkTravelPopup = () => {
-//   $addTravelBtn.onclick=() =>{
 //   let errorCount = 0;
 //   errorCount += showWarning($inputTitle, '', $inputSpotWarning);
 //   errorCount += showWarning($inputPlace, '', $inputlocationWarning);
@@ -76,11 +70,9 @@ function showWarning(element, defaultValue, warningElement) {
 //   errorCount += showWarning($endYear, 'default', $selectEndWarning);
 //   errorCount += showWarning($endMonth, 'default', $selectEndWarning);
 //   errorCount += showWarning($endDate, 'default', $selectEndWarning);
-//   }
+
 //   // return errorCount;
 // };
-
-// checkTravelPopup();
 
 //TODO: 여행이름/여행날짜/시작날짜/종료날짜
 
@@ -89,4 +81,3 @@ function showWarning(element, defaultValue, warningElement) {
 // let rejectAddTravel = checkTravelPopup();
 // export { rejectAddTravel };
 
-//삭제 경고창

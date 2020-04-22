@@ -42,41 +42,41 @@ window.onclick = ({ target }) => {
 //경고문구
 //FIXME: &&나 ||로 세트인 아이들을 묶어줄 수 없는지?
 
-function showWarning(element, defaultValue, warningElement) {
-  if (element.value === defaultValue) {
-    warningElement.classList.remove('text-hidden');
-    return 1;
-  } else {
-    warningElement.classList.add('text-hidden');
-    return 0;
-  }
-}
+// function showWarning(element, defaultValue, warningElement) {
+//   if (element.value === defaultValue) {
+//     warningElement.classList.remove('text-hidden');
+//     return 1;
+//   } else {
+//     warningElement.classList.add('text-hidden');
+//     return 0;
+//   }
+// }
 
-$addScheduleBtn.onclick = () => {
-  let errorCount = 0;
-  errorCount += showWarning($inputPlace, '', $inputPlaceWarning);
-  errorCount += showWarning($inputDetail, '', $inputDetailWarning);
-  errorCount += showWarning($monthSelect, 'default', $selectDateWarning);
-  errorCount += showWarning($dateSelect, 'default', $selectDateWarning);
-  errorCount += showWarning(
-    $startHourSelect,
-    'start-default',
-    $selectStartWarning
-  );
-  errorCount += showWarning(
-    $startMinSelect,
-    'start-default',
-    $selectStartWarning
-  );
-  errorCount += showWarning($endHourSelect, 'end-default', $selectEndWarning);
-  errorCount += showWarning($endMinSelect, 'end-default', $selectEndWarning);
+// $addScheduleBtn.onclick = () => {
+//   let errorCount = 0;
+//   errorCount += showWarning($inputPlace, '', $inputPlaceWarning);
+//   errorCount += showWarning($inputDetail, '', $inputDetailWarning);
+//   errorCount += showWarning($monthSelect, 'default', $selectDateWarning);
+//   errorCount += showWarning($dateSelect, 'default', $selectDateWarning);
+//   errorCount += showWarning(
+//     $startHourSelect,
+//     'start-default',
+//     $selectStartWarning
+//   );
+//   errorCount += showWarning(
+//     $startMinSelect,
+//     'start-default',
+//     $selectStartWarning
+//   );
+//   errorCount += showWarning($endHourSelect, 'end-default', $selectEndWarning);
+//   errorCount += showWarning($endMinSelect, 'end-default', $selectEndWarning);
 
   // 서버로 전송하는 로직
 
-  if (errorCount === 0) {
-    console.log('successful');
-  } else {
-    console.log('validation error');
-  }
-};
+//   if (errorCount === 0) {
+//     console.log('successful');
+//   } else {
+//     console.log('validation error');
+//   }
+// };
 

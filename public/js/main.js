@@ -1,11 +1,7 @@
-// import
-// import { rejectAddTravel } from './travel-list.js';
-
 // state
 let schedules = [];
 let travels = [];
 let travelId = '';
-let alertCheck;
 
 // DOMs
 const $month = document.querySelector('#month-select');
@@ -34,35 +30,50 @@ const $newSchedulePopUp = document.querySelector('.new-schedule-popup');
 const $schedulePopupBg = document.querySelector('.popup-bg');
 const $scheduleList = document.querySelector('.schedule-list');
 const $dateList = document.querySelector('.date-list');
-
 const $alertDeleteBtn = document.querySelector('.alert-delete-btn')
 const $alertCancleBtn = document.querySelector('.alert-cancel-btn')
 const $alertPopup = document.querySelector('.alert-popup')
 const $alertPopupBg = document.querySelector('.alert-popup-bg')
-
 const $newTravelBtn = document.querySelector('.new-travel-btn');
 const $newScheduleBtn = document.querySelector('.new-schedule-btn');
-
 const $timelineDeleteBtn = document.querySelector('.timeline-delete-btn')
 const $timelineCancleBtn = document.querySelector('.timeline-cancle-btn')
 const $timelineAlertPopup = document.querySelector('.timeline-popup')
 const $timeAlertPopupBg = document.querySelector('.timeline-popup-bg')
 
-
-
 // functions
 // popups
+const resetSchedulePopup = () => {
+  $inputSchedulePlace.value = '';
+  $inputScheduleDetail.value = '';
+
+  // [...div].forEach(child => {
+  //   if (child.nodeName === 'SELECT') child.firstElementChild.selected = 'selected';
+  //   console.log(child.nodeName);
+  // });
+};
+
+const resetTravelPopup = () => {
+  $inputTravelTitle.value = '';
+  $inputTravelPlace.value = '';
+
+  [...$newTravelPopup.children].forEach(child => {
+    if (child.nodeName === 'SELECT') child.firstElementChild.selected = 'selected';
+  });
+};
+
 const closeSchedulePopup = () => {
   $newSchedulePopUp.style.display = 'none';
   $schedulePopupBg.style.display = 'none';
+  resetSchedulePopup();
 };
 
 const closeTravelPopup = () => {
   $travelPopupBg.style.display = 'none';
   $newTravelPopup.style.display = 'none';
+  resetTravelPopup();
 };
-
-// NOTE:travel list
+// travel list
 const generateDday = startDate => {
   let dDay = 0;
   let today = new Date();
@@ -76,10 +87,20 @@ const generateDday = startDate => {
 
 const generateId = () => travels.length ? Math.max(...travels.map(({ id }) => id)) + 1 : 1;
 
+
 const renderTravelList = () => {
   let html = '';
-  //console.log(travels)
+
   travels.forEach(({ id, title, place, startDate, endDate }) => {
+    const generateDday = startDate => {
+      let dDay = 0;
+      let today = new Date();
+      today = today.getTime();
+      dDay = new Date(startDate).getTime();
+      dDay = Math.ceil((dDay - today) / 86400000) + 1;
+      return dDay > 0 ? `D-${dDay}` : (dDay === 0 ? 'D-Day' : '');
+    };
+
     html += ` <li id=${id}>
           <h2>${title}</h2>
           <em>${generateDday(startDate)}</em>
@@ -112,7 +133,7 @@ const removeTravel = async (id) => {
   $alertPopup.style.display = 'none';
 };
 
-// NOTE:time line
+// time line
 const sortTimeline = schedules => {
   const timelineBlocks = $scheduleList.querySelectorAll('.schedule');
 
@@ -122,11 +143,18 @@ const sortTimeline = schedules => {
   });
 };
 
+const renderMonthYear = (month, year) => {
+  const $monthYearBox = document.querySelector('#main-calendar > h2');
+  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+  $monthYearBox.textContent = `${months[month - 1]}, ${year}`;
+};
+
 const renderDateBox = (startDate, endDate) => {
   let html = '';
-
   let travelPeriod = 0;
   const oneDay = 86400000;
+
   travelPeriod = new Date(endDate).getTime() - new Date(startDate).getTime();
   travelPeriod = Math.ceil(travelPeriod / oneDay) + 1;
 
@@ -142,19 +170,21 @@ const renderDateBox = (startDate, endDate) => {
 
   travelArr.forEach(travel => {
     const today = new Date(travel);
+    const year = travel.split('/')[0];
+    const month = travel.split('/')[1];
     const date = today.getDate();
     const dayNames = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
     const day = dayNames[today.getDay()];
 
-    html += `
-      <li class="date-item">
-        <div class="day">${date}</div>
-        <div class="week">${day}</div>
+    html += `<li class="date-item">
+        <div class="day ${year} ${month}">${date}</div>
+        <div class="week ${year} ${month}">${day}</div>
       </li>
     `;
   });
 
   $dateList.innerHTML = html;
+  $dateList.firstElementChild.classList.add('active');
 };
 
 const renderTimeline = schedules => {
@@ -173,11 +203,12 @@ const renderTimeline = schedules => {
   sortTimeline(schedules);
 };
 
-const getSchedules = async (travelId, date) => {
-  const { data } = await axios.get(`/schedules?travelId=${travelId}&date=${date}`);
+const getSchedules = async travelId => {
+  const month = $dateList.querySelector('.active').firstElementChild.classList[2];
+  const date = $dateList.querySelector('.active').firstElementChild.textContent;
+  const { data } = await axios.get(`/schedules?travelId=${travelId}&date=${month}/${date}`);
   schedules = data;
 
-  console.log(schedules);
   renderTimeline(schedules);
 };
 
@@ -187,19 +218,34 @@ const addSchedule = async () => {
   const timeTo = `${$endHour.value}:${$endMin.value}`;
   const place = $inputSchedulePlace.value;
   const detail = $inputScheduleDetail.value;
-  // const travelId = 1;
 
   const { data } = await axios.post('/schedules', { travelId, date, timeFrom, timeTo, place, detail });
   schedules = [data, ...schedules];
 
   closeSchedulePopup();
   renderTimeline(schedules);
+  resetSchedulePopup();
+};
 
-  $inputSchedulePlace.value = '';
-  $inputScheduleDetail.value = '';
-  [...$newSchedulePopup.children].forEach(child => {
-    if (child.nodeName === 'SELECT') child.firstElementChild.selected = 'selected';
-  });
+const tabDate = target => {
+  if (target.nodeName === 'LI') {
+    const year = target.firstElementChild.classList[1];
+    const month = target.firstElementChild.classList[2];
+    renderMonthYear(month, year);
+  }
+
+  if (target.nodeName === 'DIV') {
+    const year = target.classList[1];
+    const month = target.classList[2];
+    renderMonthYear(month, year);
+  }
+
+  getSchedules(travelId);
+};
+
+const toggleActiveDate = target => {
+  if (!target.matches('.date-list > li') && !target.matches('.date-list > li > div')) return;
+  [...$dateList.children].forEach(date => date.classList.toggle('active', (target === date || target.parentNode === date)));
 };
 
 const removeSchedule = async (id) => {
@@ -213,22 +259,22 @@ const removeSchedule = async (id) => {
   $timelineAlertPopup.style.display = 'none';  
 };
 
-
-
-const goToTimeline = async (target) => {
+const goToTimeline = async target => {
   if (!target.matches('.travel-list > li')) return;
+
+  travelId = target.id;
   const timeline = document.getElementById('main-calendar');
   const home = document.getElementById('main-home');
-  travelId = target.id;
-
-  const { data: {startDate, endDate }} = await axios.get(`/travels/${travelId}`);
-  console.log(startDate, endDate);
+  const { data: { startDate, endDate }} = await axios.get(`/travels/${travelId}`);
+  const month = startDate.split('/')[1];
+  const year = startDate.split('/')[0];
 
   timeline.classList.add('main-view');
   home.classList.remove('main-view');
 
-  getSchedules(travelId);
   renderDateBox(startDate, endDate);
+  getSchedules(travelId);
+  renderMonthYear(month, year);
 };
 
 // event handlers
@@ -250,19 +296,14 @@ $addTravelBtn.onclick = async () => {
 
   closeTravelPopup();
   renderTravelList();
-
-  $inputTravelTitle.value = '';
-  $inputTravelPlace.value = '';
-
-  [...$newTravelPopup.children].forEach(child => {
-    if (child.nodeName === 'SELECT') child.firstElementChild.selected = 'selected';
-  });
+  resetTravelPopup();
 };
 
+$travelList.addEventListener('click', ({ target }) => removeTravel(target));
 $travelList.addEventListener('click', ({ target }) => goToTimeline(target));
 
-//REMIND: 희진작업-삭제경고창 페이지 1
-
+$dateList.addEventListener('click', ({ target }) => toggleActiveDate(target));
+$dateList.addEventListener('click', ({ target }) => tabDate(target));
 
 $travelList.onclick = ({target}) => {
   if (!target.matches('.travel-list > li > .travel-remove-btn')) return
@@ -272,7 +313,6 @@ $travelList.onclick = ({target}) => {
   $alertPopup.style.display = 'block';
 
   $alertDeleteBtn.addEventListener('click', e => removeTravel(id));
-  alertCheck = null;
 };
 
 $alertCancleBtn.onclick = () =>{
@@ -295,4 +335,3 @@ $timelineCancleBtn.onclick = () =>{
   $timeAlertPopupBg.style.display = 'none';
   $timelineAlertPopup.style.display = 'none';
 }
-

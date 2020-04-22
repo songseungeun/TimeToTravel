@@ -14,6 +14,7 @@
   <script type="module" src="./js/travel-list-popup.js" defer></script>
   <script type="module" src="./js/timeline.js" defer></script>
   <script type="module" src="./js/select-box-date.js" defer></script>
+  <script type="module" src="./js/popup-warnning.js" defer></script>
 </head>
 <body>
   <div class="wrapper clearfix">
@@ -50,39 +51,40 @@
         <div class="new-travel-popup">
          <h2>여행일정 입력</h2>
           <input type="text" class="input-title" placeholder="여행이름" />
-          <span id = "spot-warning-label"class="warnning-text text-hidden">여행 이름을 입력해주세요.</span>
+          <span id ="spot-warning-label"class="warnning-text text-hidden">여행 이름을 입력해주세요.</span>
           <input type="text" class="input-place" placeholder="장소" />
           <span id="location-warning-label" class="warnning-text text-hidden">여행 장소를 입력해주세요.</span>
           <label for="date-select" class="float-left">시작:</label>
           <select name="year" id="start-year-select" class="float-left">
-            <option value="default" selected>YEAR</option>
+            <option value="0" selected>YEAR</option>
             <option value="2020">2020</option>
             <option value="2021">2021</option>
             <option value="2022">2022</option>
             <option value="2023">2023</option>
           </select>
           <select name="month" id="start-month-select" class="month-select float-left">
-            <option value="default" selected>MONTH</option>
+            <option value="0" selected>MONTH</option>
           </select>
           <select name="day" id="start-day-select">
-            <option value="default" selected>DAY</option>
+            <option value="0" selected>DAY</option>
           </select>
           <span id="newstart-warning-label" class="warnning-text text-hidden">시작 날짜를 선택해주세요.</span>
           <label for="date-select" class="float-left">종료:</label>
           <select name="year" id="end-year-select" class="float-left">
-            <option value="default" selected>YEAR</option>
+            <option value="0" selected>YEAR</option>
             <option value="2020">2020</option>
             <option value="2021">2021</option>
             <option value="2022">2022</option>
             <option value="2023">2023</option>
           </select>
           <select name="month" id="end-month-select" class="month-select float-left">
-            <option value="default" selected>MONTH</option>
+            <option value="0" selected>MONTH</option>
           </select>
           <select name="day" id="end-day-select">
-            <option value="default" selected>DAY</option>
+            <option value="0" selected>DAY</option>
           </select>
-          <span id="newend-warning-label" class="warnning-text text-hidden">종료 날짜를 선택해주세요.</span>
+          <span id="newend-warning-label" class="warnning-text text-hidden warnning-act">종료 날짜를 선택해주세요.</span>
+          <div class="add-travel-btn-hidden"></div>
           <button class="add-travel-btn">등록</button>
           <div class="new-travel-popup-remove-btn">X</div>
         </div>
@@ -102,7 +104,7 @@
         <div class="date-wrapper clearfix">
           <div class="date-container">
             <ul class="date-list">
-              <li class="date-item">
+              <!-- <li class="date-item">
                 <div class="day">17</div>
                 <div class="week">FRI</div>
               </li>
@@ -129,7 +131,7 @@
               <li class="date-item">
                 <div class="day">23</div>
                 <div class="week">THU</div>
-              </li>
+              </li> -->
             </ul>
           </div>
           <i class="date-before-btn fas fa-angle-double-left"></i>
@@ -210,6 +212,7 @@
           <span id="place-warning-label" class="warnning-text text-hidden">장소를 입력해주세요.</span>
           <input id="schedule-input-detail" type="text" class="schedule-input" placeholder="내용" />
           <span id="detail-warning-label" class="warnning-text text-hidden">내용을 입력해주세요.</span>
+          <div class="add-schedule-btn-hidden"></div>
           <button class="add-schedule-btn">등록</button>
           <div class="popup-remove-btn">X</div>
         </div>
