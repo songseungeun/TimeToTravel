@@ -159,7 +159,7 @@ const sortTimeline = schedules => {
 };
 
 const renderMonthYear = (month, year) => {
-  const $monthYearBox = document.querySelector('#main-calendar > h3');
+  const $monthYearBox = document.querySelector('.timeline-wrapper > h3');
   const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
   $monthYearBox.textContent = `${months[month - 1]}, ${year}`;
