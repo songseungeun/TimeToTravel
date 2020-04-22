@@ -1,5 +1,5 @@
 // import
-// import { getSchedules, schedules } from './timeline.js';
+import { resetTravelPopup } from './main.js';
 
 // DOMs
 
@@ -30,6 +30,7 @@ const $travelHiddenBtn = document.querySelector('.add-travel-btn-hidden');
 const closeTravelPopup = () => {
   $popupBg.style.display = 'none';
   $newTravelPopup.style.display = 'none';
+  resetTravelPopup();
 };
 
 const openTravelPopup = () => {

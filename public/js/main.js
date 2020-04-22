@@ -30,29 +30,30 @@ const $newSchedulePopUp = document.querySelector('.new-schedule-popup');
 const $schedulePopupBg = document.querySelector('.popup-bg');
 const $scheduleList = document.querySelector('.schedule-list');
 const $dateList = document.querySelector('.date-list');
-const $alertDeleteBtn = document.querySelector('.alert-delete-btn')
-const $alertCancleBtn = document.querySelector('.alert-cancel-btn')
-const $alertPopup = document.querySelector('.alert-popup')
-const $alertPopupBg = document.querySelector('.alert-popup-bg')
+const $alertDeleteBtn = document.querySelector('.alert-delete-btn');
+const $alertCancleBtn = document.querySelector('.alert-cancel-btn');
+const $alertPopup = document.querySelector('.alert-popup');
+const $alertPopupBg = document.querySelector('.alert-popup-bg');
 const $newTravelBtn = document.querySelector('.new-travel-btn');
 const $newScheduleBtn = document.querySelector('.new-schedule-btn');
-const $timelineDeleteBtn = document.querySelector('.timeline-delete-btn')
-const $timelineCancleBtn = document.querySelector('.timeline-cancle-btn')
-const $timelineAlertPopup = document.querySelector('.timeline-popup')
-const $timeAlertPopupBg = document.querySelector('.timeline-popup-bg')
-const $travelNoneText = document.querySelector('.travel-none-text')
-const $timelineTitle = document.querySelector('.timeline-travel-title')
+const $timelineDeleteBtn = document.querySelector('.timeline-delete-btn');
+const $timelineCancleBtn = document.querySelector('.timeline-cancle-btn');
+const $timelineAlertPopup = document.querySelector('.timeline-popup');
+const $timeAlertPopupBg = document.querySelector('.timeline-popup-bg');
+const $travelNoneText = document.querySelector('.travel-none-text');
+const $timelineTitle = document.querySelector('.timeline-travel-title');
 
 // functions
 // popups
 const resetSchedulePopup = () => {
+  const date = document.querySelector('.select-date');
+
   $inputSchedulePlace.value = '';
   $inputScheduleDetail.value = '';
 
-  // [...div].forEach(child => {
-  //   if (child.nodeName === 'SELECT') child.firstElementChild.selected = 'selected';
-  //   console.log(child.nodeName);
-  // });
+  [...date.children].forEach(child => {
+    if (child.nodeName === 'SELECT') child.firstElementChild.selected = 'selected';
+  });
 };
 
 const resetTravelPopup = () => {
@@ -132,6 +133,7 @@ const sortTimeline = schedules => {
   let i = 0;
 
   timelineBlocks.forEach(block => {
+    const hourHeight = 76
     const hhFrom = +schedules[i].timeFrom.split(':')[0];
     const mmFrom = +schedules[i].timeFrom.split(':')[1];
     const hhTo = +schedules[i].timeTo.split(':')[0];
@@ -139,8 +141,8 @@ const sortTimeline = schedules => {
     const mmDiff = mmFrom > mmTo ? 60 - (mmFrom - mmTo) : mmTo - mmFrom;
     const hhDiff = mmFrom > mmTo ? hhTo - hhFrom - 1 : hhTo - hhFrom;
 
-    block.style.top = `${(75 * (hhFrom - 7)) + ((75 / 6) * (mmFrom / 10))}px`;
-    block.style.height = `${(75 * (hhDiff)) + ((75 / 6) * (mmDiff / 10))}px`;
+    block.style.top = `${(hourHeight * (hhFrom - 7)) + ((hourHeight / 6) * (mmFrom / 10))}px`;
+    block.style.height = `${(hourHeight * (hhDiff)) + ((hourHeight / 6) * (mmDiff / 10))}px`;
 
     i++;
   });
@@ -330,3 +332,62 @@ $timelineCancleBtn.onclick = () => {
   $timeAlertPopupBg.style.display = 'none';
   $timelineAlertPopup.style.display = 'none';
 };
+
+const $monthSelects = document.querySelectorAll('.month-select');
+const $hourSelects = document.querySelectorAll('.hour-select');
+const $minuteSelects = document.querySelectorAll('.min-select');
+
+const printMonthTime = () => {
+  let month = Array.from({ length: 13 }, function (v, i) { return i; });
+  console.log(month);
+
+  month.splice(0, 1);
+  month = ['MONTH', ...month];
+
+  $monthSelects.forEach(monthSelect => {
+    month.forEach((element, key) => {
+      monthSelect[key] = new Option(element, key, true);
+    });
+  });
+
+  let hour = Array.from({ length: 25 }, function (v, i) { return i; });
+  hour.splice(0, 1);
+  hour = ['HOUR', ...hour];
+  $hourSelects.forEach(hourSelect => {
+    hour.forEach((element, key) => {
+      hourSelect[key] = new Option(element, key, true);
+    });
+  });
+
+  let minute = Array.from({ length: 6 }, function (v, i) { return i * 10; });
+
+  minute.splice(0, 1);
+  minute = ['MIN', '00', ...minute];
+  $minuteSelects.forEach(minuteSelect => {
+    minute.forEach((element, key) => {
+      if (element === 'MIN') minuteSelect[key] = new Option(element, '0', true);
+      if (element === '00') minuteSelect[key] = new Option(element, '00', true);
+      else minuteSelect[key] = new Option(element, (key - 1) * 10, true);
+      console.log(minuteSelect[key]);
+    });
+  });
+};
+
+function printDate({ target }) {
+  if (!target.matches('.month-select')) return;
+  let date = 0;
+  const monthDate = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+  date = monthDate[target.value - 1];
+  let date2 = Array.from({ length: date + 1 }, function (v, i) { return i; });
+  date2.splice(0, 1);
+  date2 = ['DATE', ...date2];
+  date2.forEach((element, key) => {
+    target.nextElementSibling[key] = new Option(element, key, true);
+  });
+}
+
+$newScheduleBtn.addEventListener('click', printMonthTime);
+$newSchedulePopup.addEventListener('change', printDate);
+
+// export
+export { resetSchedulePopup, resetTravelPopup };
