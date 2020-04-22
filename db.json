@@ -74,6 +74,15 @@
       "place": "ㅇㄹ너ㅑㅇ러ㅑ",
       "detail": "ㅇ러ㅑㅇ러",
       "id": 5
+    },
+    {
+      "travelId": "1",
+      "date": "8/7",
+      "timeFrom": "18:20",
+      "timeTo": "19:30",
+      "place": "ㅋㅋㅎㄱㅎㅇㅎㅇㅎㅇ",
+      "detail": "꺄",
+      "id": 6
     }
   ],
   "info": [

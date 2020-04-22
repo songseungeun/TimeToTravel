@@ -362,8 +362,9 @@ const printMonthTime = () => {
     minute.forEach((element, key) => {
       if (element === 'MIN') minuteSelect[key] = new Option(element, '0', true);
       if (element === '00') minuteSelect[key] = new Option(element, '00', true);
-      else minuteSelect[key] = new Option(element, (key - 1) * 10, true);
-      // console.log(minuteSelect[key]); MIN의 value 값이 -10이에요ㅠㅠ
+      if (element !== 'MIN' && element !== '00') minuteSelect[key] = new Option(element, (key - 1) * 10, true);
+      console.log(minuteSelect[key]); 
+      // MIN의 value 값이 -10이에요ㅠㅠ
     });
   });
 };
