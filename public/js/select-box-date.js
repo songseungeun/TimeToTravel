@@ -50,7 +50,7 @@ function printDate({ target }) {
   date2.splice(0, 1);
   date2 = ['DATE', ...date2];
   date2.forEach((element, key) => {
-    target.nextElementSibling[key] = new Option(element, key, true);
+    target.parentNode.nextElementSibling.children[0][key] = new Option(element, key, true);
   });
 }
 

@@ -4,6 +4,9 @@ let travels = [];
 let travelId = '';
 
 // DOMs
+const $menuBar = document.querySelector('.menu-bar');
+const $header = document.querySelector('.header h2');
+
 const $month = document.querySelector('#month-select');
 const $date = document.querySelector('#date-select');
 const $startHour = document.querySelector('#start-hour-select');
@@ -40,6 +43,8 @@ const $timelineDeleteBtn = document.querySelector('.timeline-delete-btn')
 const $timelineCancleBtn = document.querySelector('.timeline-cancle-btn')
 const $timelineAlertPopup = document.querySelector('.timeline-popup')
 const $timeAlertPopupBg = document.querySelector('.timeline-popup-bg')
+const $travelNoneText = document.querySelector('.travel-none-text')
+const $timelineTitle = document.querySelector('.timeline-travel-title')
 
 // functions
 // popups
@@ -69,10 +74,14 @@ const closeSchedulePopup = () => {
 };
 
 const closeTravelPopup = () => {
+  $menuBar.style.filter = 'blur(0px)';
+  $header.style.filter = 'blur(0px)';
+  $travelList.style.filter = 'blur(0px)';
   $travelPopupBg.style.display = 'none';
   $newTravelPopup.style.display = 'none';
   resetTravelPopup();
 };
+
 // travel list
 const generateDday = startDate => {
   let dDay = 0;
@@ -87,21 +96,13 @@ const generateDday = startDate => {
 
 const generateId = () => travels.length ? Math.max(...travels.map(({ id }) => id)) + 1 : 1;
 
-
 const renderTravelList = () => {
   let html = '';
 
-  travels.forEach(({ id, title, place, startDate, endDate }) => {
-    const generateDday = startDate => {
-      let dDay = 0;
-      let today = new Date();
-      today = today.getTime();
-      dDay = new Date(startDate).getTime();
-      dDay = Math.ceil((dDay - today) / 86400000) + 1;
-      return dDay > 0 ? `D-${dDay}` : (dDay === 0 ? 'D-Day' : '');
-    };
+  $travelNoneText.style.display = travels.length === 0 ? 'block' : 'none';
 
-    html += ` <li id=${id}>
+  travels.forEach(({ id, title, place, startDate, endDate }) => {
+    html += ` <li id=t-${id}>
           <h2>${title}</h2>
           <em>${generateDday(startDate)}</em>
           <div class="travel-info">
@@ -118,12 +119,13 @@ const renderTravelList = () => {
 const getTravels = async () => {
   const { data } = await axios.get('/travels');
   travels = data;
+
   renderTravelList();
 };
 
-const removeTravel = async (id) => {
+const removeTravel = async id => {
   await axios.delete(`/travels/${id}`);
-  travels = travels.filter((travel) => travel.id !== +id);
+  travels = travels.filter(travel => travel.id !== +id);
   renderTravelList();
 
   $alertPopupBg.style.display = 'none';
@@ -152,7 +154,7 @@ const sortTimeline = schedules => {
 };
 
 const renderMonthYear = (month, year) => {
-  const $monthYearBox = document.querySelector('#main-calendar > h2');
+  const $monthYearBox = document.querySelector('#main-calendar > h3');
   const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
   $monthYearBox.textContent = `${months[month - 1]}, ${year}`;
@@ -267,15 +269,14 @@ const removeSchedule = async (id) => {
 const goToTimeline = async target => {
   if (!target.matches('travel-list > em') && !target.matches('travel-list > h2') && !target.matches('.travel-list > li') && !target.matches('travel-list > span') ) return;
 
-  travelId = target.id;
+  travelId = target.id.split('-')[1];
   const timeline = document.getElementById('main-calendar');
   const home = document.getElementById('main-home');
-  const { data: { startDate, endDate }} = await axios.get(`/travels/${travelId}`);
-  // const month = startDate.split('/')[1];
-  // const year = startDate.split('/')[0];
+  const { data: { startDate, endDate, title }} = await axios.get(`/travels/${travelId}`);
 
   timeline.classList.add('main-view');
   home.classList.remove('main-view');
+  $timelineTitle.textContent = title;
 
   renderDateBox(startDate, endDate);
   getSchedules(travelId);
@@ -309,7 +310,7 @@ $travelList.addEventListener('click', ({ target }) => goToTimeline(target));
 
 $travelList.onclick = ({ target }) => {
   if (!target.matches('.travel-list > li > .travel-remove-btn')) return
-  const id = target.parentNode.id;
+  const id = target.parentNode.id.split('-')[1];
 
   $alertPopupBg.style.display = 'block';
   $alertPopup.style.display = 'block';
@@ -324,7 +325,7 @@ $alertCancleBtn.onclick = () => {
 
 $scheduleList.onclick = ({ target }) => {
   if (!target.matches('.schedule-list > li > .remove-btn')) return
-  const scheduleId = target.parentNode.id.split('-')[1]
+  const scheduleId = target.parentNode.id.split('-')[1];
 
   $timeAlertPopupBg.style.display = 'block';
   $timelineAlertPopup.style.display = 'block';
