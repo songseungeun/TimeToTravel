@@ -47,24 +47,26 @@ const closeTravelPopup = () => {
 };
 
 // travel list
+const generateDday = startDate => {
+  let dDay = 0;
+  let today = new Date();
+
+  today = today.getTime();
+  dDay = new Date(startDate).getTime();
+  dDay = Math.ceil((dDay - today) / 86400000) + 1;
+
+  return dDay > 0 ? `D-${dDay}` : (dDay === 0 ? 'D-Day' : '');
+};
+
 const generateId = () => travels.length ? Math.max(...travels.map(({ id }) => id)) + 1 : 1;
 
 const renderTravelList = () => {
   let html = '';
 
   travels.forEach(({ id, title, place, startDate, endDate }) => {
-    const generateDday = () => {
-      let dDay = 0;
-      let today = new Date();
-      today = today.getTime();
-      dDay = new Date(startDate).getTime();
-      dDay = Math.ceil((dDay - today) / 86400000) + 1;
-      return dDay;
-    };
-
     html += ` <li id=${id}>
           <h2>${title}</h2>
-          <em>D-${generateDday()}</em>
+          <em>${generateDday(startDate)}</em>
           <div class="travel-info">
             <span class="travel-place">${place}</span>
             <span class="travel-date">${startDate} ~ ${endDate}</span>
@@ -91,15 +93,13 @@ const removeTravel = async (target) => {
   renderTravelList();
 };
 
-// schedule time line
-const sortTimeline = schedule => {
-  const schedules = $scheduleList.querySelectorAll('.schedule');
+// time line
+const sortTimeline = schedules => {
+  const timelineBlocks = $scheduleList.querySelectorAll('.schedule');
 
-  schedules.forEach(schedule => {
-    const id = schedule.id[1] - 1;
-
-    schedule.style.top = `${75 * (travel[id].timeFrom - 7)}px`;
-    schedule.style.height = `${75 * (travel[id].timeTo - travel[id].timeFrom)}px`;
+  timelineBlocks.forEach(block => {
+    block.style.top = `${75 * (schedules.timeFrom - 7)}px`;
+    block.style.height = `${75 * (schedules.timeTo - schedules.timeFrom)}px`;
   });
 };
 
@@ -136,7 +136,6 @@ const renderDateBox = (startDate, endDate) => {
   });
 
   $dateList.innerHTML = html;
-
 };
 
 const renderTimeline = schedules => {
@@ -152,18 +151,14 @@ const renderTimeline = schedules => {
   });
 
   $scheduleList.innerHTML = html;
-  // sortTimeline();
+  sortTimeline(schedules);
 };
 
-const getSchedules = async () => {
-  const { data } = await axios.get(`/schedules?travelId=${travelId}`);
-  const timeline = document.getElementById('main-calendar');
-  const home = document.getElementById('main-home');
+const getSchedules = async (travelId, date) => {
+  const { data } = await axios.get(`/schedules?travelId=${travelId}&date=${date}`);
   schedules = data;
 
-  timeline.classList.add('main-view');
-  home.classList.remove('main-view');
-  
+  console.log(schedules);
   renderTimeline(schedules);
 };
 
@@ -173,14 +168,13 @@ const addSchedule = async () => {
   const timeTo = `${$endHour.value}:${$endMin.value}`;
   const place = $inputSchedulePlace.value;
   const detail = $inputScheduleDetail.value;
-  const travelId = 1;
+  // const travelId = 1;
 
   const { data } = await axios.post('/schedules', { travelId, date, timeFrom, timeTo, place, detail });
   schedules = [data, ...schedules];
 
   closeSchedulePopup();
-  renderTimeline();
-  console.log('addSchedule', schedules)
+  renderTimeline(schedules);
 
   $inputSchedulePlace.value = '';
   $inputScheduleDetail.value = '';
@@ -191,9 +185,16 @@ const addSchedule = async () => {
 
 const goToTimeline = async (target) => {
   if (!target.matches('.travel-list > li')) return;
-
+  const timeline = document.getElementById('main-calendar');
+  const home = document.getElementById('main-home');
   travelId = target.id;
+
   const { data: {startDate, endDate }} = await axios.get(`/travels/${travelId}`);
+  console.log(startDate, endDate);
+
+  timeline.classList.add('main-view');
+  home.classList.remove('main-view');
+
   getSchedules(travelId);
   renderDateBox(startDate, endDate);
 };

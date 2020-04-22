@@ -4,34 +4,90 @@
       "id": 1,
       "title": "",
       "place": "",
-      "startDate": "2020/6/8",
-      "endDate": "2020/6/14"
-    },
-    {
-      "id": 2,
-      "title": "",
-      "place": "",
-      "startDate": "2020/3/4",
-      "endDate": "2020/6/5"
-    },
-    {
-      "id": 3,
-      "title": "",
-      "place": "",
-      "startDate": "default/0/default",
+      "startDate": "default/3/0",
       "endDate": "default/0/default"
     },
     {
-      "id": 4,
-      "title": "",
+      "id": 2,
+      "title": "asdf",
+      "place": "asdf",
+      "startDate": "2021/2/1",
+      "endDate": "default/0/default"
+    },
+    {
+      "id": 3,
+      "title": "asdf",
       "place": "",
-      "startDate": "2020/1/1",
-      "endDate": "2020/1/30"
+      "startDate": "2020/5/5",
+      "endDate": "2020/3/2"
+    },
+    {
+      "id": 4,
+      "title": "asdf",
+      "place": "sdf",
+      "startDate": "2021/2/2",
+      "endDate": "2021/3/1"
+    },
+    {
+      "id": 5,
+      "title": "ㅁㄴㅇㄹㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ",
+      "place": "ㅁㄴㅇㄹ",
+      "startDate": "2021/2/4",
+      "endDate": "2023/4/2"
+    },
+    {
+      "id": 6,
+      "title": "aaaaaaaaaaaaaaaaa",
+      "place": "a",
+      "startDate": "2020/3/3",
+      "endDate": "2020/3/9"
     }
   ],
   "schedules": [
     {
+      "travelId": 1,
+      "date": "5/4",
+      "timeFrom": "5:50",
+      "timeTo": "5:40",
+      "place": "ㅋㅋㅋㅋ",
+      "detail": "ㅋㅋㅋ",
+      "id": 2
+    },
+    {
+      "travelId": 1,
+      "date": "5/5",
+      "timeFrom": "4:40",
+      "timeTo": "3:20",
+      "place": "ㅇㄴ",
+      "detail": "ㅇㄹㅋㅋㅋㅋ",
+      "id": 3
+    },
+    {
+      "travelId": "5",
+      "date": "3/3",
+      "timeFrom": "4:20",
+      "timeTo": "4:20",
+      "place": "sdfa",
+      "detail": "aa",
       "id": 4
+    },
+    {
+      "travelId": "5",
+      "date": "0/default",
+      "timeFrom": "0:0",
+      "timeTo": "0:0",
+      "place": "aa",
+      "detail": "",
+      "id": 5
+    },
+    {
+      "travelId": "1",
+      "date": "4/2",
+      "timeFrom": "2:20",
+      "timeTo": "2:10",
+      "place": "aa",
+      "detail": "aa",
+      "id": 6
     }
   ],
   "info": [
