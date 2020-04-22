@@ -7,8 +7,6 @@ let travelId = '';
 const $menuBar = document.querySelector('.menu-bar');
 const $header = document.querySelector('.header h2');
 
-const $month = document.querySelector('#month-select');
-const $date = document.querySelector('#date-select');
 const $startHour = document.querySelector('#start-hour-select');
 const $startMin = document.querySelector('#start-min-select');
 const $endHour = document.querySelector('#end-hour-select');
@@ -266,11 +264,7 @@ const removeSchedule = async (id) => {
 const goToTimeline = async target => {
   if (!target.matches('.travel-list > li > em') && !target.matches('.travel-list > li > h2') && !target.matches('.travel-list > li') && !target.matches('.travel-list > li > span')) return;
 
-<<<<<<< HEAD
-  travelId = target.id.split('-')[1];
-=======
   travelId = target.nodeName === 'LI' ? target.id.split('-')[1] : target.parentNode.id.split('-')[1];
->>>>>>> 3db0360f298937b79278c5b5fb52a761356dfa25
   const timeline = document.getElementById('main-calendar');
   const home = document.getElementById('main-home');
   const { data: { startDate, endDate, title }} = await axios.get(`/travels/${travelId}`);
