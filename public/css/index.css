@@ -551,6 +551,13 @@ main.main-view {
 .new-schedule-popup select {
   width: 30%;
 }
+/* 여행정보팝업 */
+
+.new-info-popup {
+  width: 500px;
+  display: block;
+  top:0;
+}
 /* REMIND: 클래스명 한개로  */
 .schedule-input {
   font-size: 14px;
@@ -609,8 +616,6 @@ main.main-view {
 }
 
 /* 팝업띄우는버튼 */
-
-
 
 .new-schedule-btn,
 .new-travel-btn,
