@@ -1,6 +1,24 @@
 {
-  "travels": [],
-  "schedules": [],
+  "travels": [
+    {
+      "id": 1,
+      "title": "ㅋㅋ",
+      "place": "ㅋㅋ",
+      "startDate": "2020/5/5",
+      "endDate": "2020/5/12"
+    }
+  ],
+  "schedules": [
+    {
+      "travelId": "1",
+      "date": "5/5",
+      "timeFrom": "13:50",
+      "timeTo": "18:20",
+      "place": "ㅋㅋ",
+      "detail": "ㅋㅋ",
+      "id": 1
+    }
+  ],
   "info": [
     {
       "id": 1,

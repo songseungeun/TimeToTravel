@@ -122,9 +122,6 @@ const getTravels = async () => {
 };
 
 const removeTravel = async (id) => {
-  
-  //if (!target.matches('.travel-list > li > .travel-remove-btn')) return;
-  
   await axios.delete(`/travels/${id}`);
   travels = travels.filter((travel) => travel.id !== +id);
   renderTravelList();
@@ -136,10 +133,21 @@ const removeTravel = async (id) => {
 // time line
 const sortTimeline = schedules => {
   const timelineBlocks = $scheduleList.querySelectorAll('.schedule');
+  let i = 0;
 
+  console.log(schedules);
   timelineBlocks.forEach(block => {
-    block.style.top = `${75 * (schedules.timeFrom - 7)}px`;
-    block.style.height = `${75 * (schedules.timeTo - schedules.timeFrom)}px`;
+    const hhFrom = +schedules[i].timeFrom.split(':')[0];
+    const mmFrom = +schedules[i].timeFrom.split(':')[1];
+    const hhTo = +schedules[i].timeTo.split(':')[0];
+    const mmTo = +schedules[i].timeTo.split(':')[1];
+    const mmDiff = mmFrom > mmTo ? 60 - (mmFrom - mmTo) : mmTo - mmFrom;
+    const hhDiff = mmFrom > mmTo ? hhTo - hhFrom - 1 : hhTo - hhFrom;
+
+    block.style.top = `${(75 * (hhFrom - 7)) + ((75 / 6) * (mmFrom / 10))}px`;
+    block.style.height = `${(75 * (hhDiff)) + ((75 / 6) * (mmDiff / 10))}px`;
+
+    i++;
   });
 };
 
@@ -179,8 +187,7 @@ const renderDateBox = (startDate, endDate) => {
     html += `<li class="date-item">
         <div class="day ${year} ${month}">${date}</div>
         <div class="week ${year} ${month}">${day}</div>
-      </li>
-    `;
+      </li>`;
   });
 
   $dateList.innerHTML = html;
@@ -249,32 +256,30 @@ const toggleActiveDate = target => {
 };
 
 const removeSchedule = async (id) => {
-  
   await axios.delete(`/schedules/${id}`);
   schedules = schedules.filter((schedule) => schedule.id !== parseInt(id));
   renderTimeline(schedules);
   
-  
   $timeAlertPopupBg.style.display = 'none';
-  $timelineAlertPopup.style.display = 'none';  
+  $timelineAlertPopup.style.display = 'none';
 };
 
 const goToTimeline = async target => {
-  if (!target.matches('.travel-list > li')) return;
+  if (!target.matches('travel-list > em') && !target.matches('travel-list > h2') && !target.matches('.travel-list > li') && !target.matches('travel-list > span') ) return;
 
   travelId = target.id;
   const timeline = document.getElementById('main-calendar');
   const home = document.getElementById('main-home');
   const { data: { startDate, endDate }} = await axios.get(`/travels/${travelId}`);
-  const month = startDate.split('/')[1];
-  const year = startDate.split('/')[0];
+  // const month = startDate.split('/')[1];
+  // const year = startDate.split('/')[0];
 
   timeline.classList.add('main-view');
   home.classList.remove('main-view');
 
   renderDateBox(startDate, endDate);
   getSchedules(travelId);
-  renderMonthYear(month, year);
+  renderMonthYear(startDate.split('/')[1], startDate.split('/')[0]);
 };
 
 // event handlers
@@ -289,8 +294,6 @@ $addTravelBtn.onclick = async () => {
   const endDate = `${$endYear.value}/${$endMonth.value}/${$endDate.value}`;
   const newId = generateId();
 
-  // if (rejectAddTravel !== 0) return;
-
   const { data } = await axios.post('/travels', { id: newId, title, place, startDate, endDate });
   travels = [data, ...travels];
 
@@ -299,39 +302,37 @@ $addTravelBtn.onclick = async () => {
   resetTravelPopup();
 };
 
-$travelList.addEventListener('click', ({ target }) => removeTravel(target));
-$travelList.addEventListener('click', ({ target }) => goToTimeline(target));
-
 $dateList.addEventListener('click', ({ target }) => toggleActiveDate(target));
 $dateList.addEventListener('click', ({ target }) => tabDate(target));
 
-$travelList.onclick = ({target}) => {
+$travelList.addEventListener('click', ({ target }) => goToTimeline(target));
+
+$travelList.onclick = ({ target }) => {
   if (!target.matches('.travel-list > li > .travel-remove-btn')) return
   const id = target.parentNode.id;
 
   $alertPopupBg.style.display = 'block';
   $alertPopup.style.display = 'block';
 
-  $alertDeleteBtn.addEventListener('click', e => removeTravel(id));
+  $alertDeleteBtn.addEventListener('click', () => removeTravel(id));
 };
 
-$alertCancleBtn.onclick = () =>{
+$alertCancleBtn.onclick = () => {
   $alertPopupBg.style.display = 'none';
   $alertPopup.style.display = 'none';
-}
+};
 
-
-$scheduleList.onclick = ({target})=>{
+$scheduleList.onclick = ({ target }) => {
   if (!target.matches('.schedule-list > li > .remove-btn')) return
   const scheduleId = target.parentNode.id.split('-')[1]
 
   $timeAlertPopupBg.style.display = 'block';
   $timelineAlertPopup.style.display = 'block';
 
-  $timelineDeleteBtn.addEventListener('click', e => removeSchedule(scheduleId));
-}
+  $timelineDeleteBtn.addEventListener('click', () => removeSchedule(scheduleId));
+};
 
-$timelineCancleBtn.onclick = () =>{
+$timelineCancleBtn.onclick = () => {
   $timeAlertPopupBg.style.display = 'none';
   $timelineAlertPopup.style.display = 'none';
-}
+};
