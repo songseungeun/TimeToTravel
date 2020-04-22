@@ -1,5 +1,5 @@
 // import
-// import { getSchedules, schedules } from './timeline.js';
+import { resetTravelPopup } from './main.js';
 
 // DOMs
 const $menuBar = document.querySelector('.menu-bar');
@@ -36,7 +36,7 @@ const closeTravelPopup = () => {
   $travelList.style.filter = 'blur(0px)';
   $popupBg.style.display = 'none';
   $newTravelPopup.style.display = 'none';
-  
+  resetTravelPopup();
 };
 
 const openTravelPopup = () => {
