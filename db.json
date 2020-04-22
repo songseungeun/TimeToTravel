@@ -34,6 +34,13 @@
       "place": "fsdfds",
       "startDate": "2021/3/4",
       "endDate": "2021/4/3"
+    },
+    {
+      "id": 10,
+      "title": "fsfsd",
+      "place": "dfssdf",
+      "startDate": "2022/2/4",
+      "endDate": "2022/3/4"
     }
   ],
   "schedules": [
@@ -45,6 +52,15 @@
       "place": "sdffsd",
       "detail": "dfsdsfsdfsdf",
       "id": 2
+    },
+    {
+      "travelId": "5",
+      "date": "3/5",
+      "timeFrom": "4:30",
+      "timeTo": "3:40",
+      "place": "fssdf",
+      "detail": "dfsfds",
+      "id": 3
     }
   ],
   "info": [
