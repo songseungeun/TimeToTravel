@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="./css/index.css">
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script type="module" src="./js/main.js" defer></script>
-  <script type="module" src="./js/date-btn.js" defer></script>
+  <!-- <script type="module" src="./js/date-btn.js" defer></script> -->
   <script type="module" src="./js/travel-list.js" defer></script>
   <script type="module" src="./js/menu-icon.js" defer></script>
   <script type="module" src="./js/travel-list-popup.js" defer></script>
@@ -119,6 +119,7 @@
         </div>
         <!-- Delete Confirm -->
         <div class="delete-confirm alert-popup">
+          <i class="delete-icon fas fa-exclamation-circle"></i>
           <strong>스케줄을 <em>삭제</em>하시겠습니까?</strong>
           <button class="delete-n alert-cancel-btn">취소</button>
           <button class="delete-y alert-delete-btn">삭제</button>
@@ -130,79 +131,82 @@
         <header class="header">
           <h2>Travel <strong>Time Line</strong></h2>
         </header>
-        <h3>April, 2020</h3>
-        <div class="date-wrapper clearfix">
-          <div class="date-container">
-            <ul class="date-list">
-              <!-- <li class="date-item">
-                <div class="day">17</div>
-                <div class="week">FRI</div>
+        <div class="timeline-wrapper">
+          <h3>April, 2020</h3>
+          <div class="date-wrapper clearfix">
+            <div class="date-container">
+              <ul class="date-list">
+                <!-- <li class="date-item">
+                  <div class="day">17</div>
+                  <div class="week">FRI</div>
+                </li>
+                <li class="date-item active">
+                  <div class="day">18</div>
+                  <div class="week">SAT</div>
+                </li>
+                <li class="date-item">
+                  <div class="day">19</div>
+                  <div class="week">SUN</div>
+                </li>
+                <li class="date-item">
+                  <div class="day">20</div>
+                  <div class="week">MON</div>
+                </li>
+                <li class="date-item">
+                  <div class="day">21</div>
+                  <div class="week">TUE</div>
+                </li>
+                <li class="date-item">
+                  <div class="day">22</div>
+                  <div class="week">WED</div>
+                </li>
+                <li class="date-item">
+                  <div class="day">23</div>
+                  <div class="week">THU</div>
+                </li> -->
+              </ul>
+            </div>
+            <i class="date-before-btn fas fa-angle-double-left"></i>
+            <i class="date-after-btn fas fa-angle-double-right"></i>
+          </div>
+          <div class="timeline-travel-title">Travel title</div>
+          <div class="timeline clearfix">
+            <ul class="time-list">
+              <li>07:00</li>
+              <li>08:00</li>
+              <li>09:00</li>
+              <li>10:00</li>
+              <li>11:00</li>
+              <li>12:00</li>
+              <li>13:00</li>
+              <li>14:00</li>
+              <li>15:00</li>
+              <li>16:00</li>
+              <li>17:00</li>
+              <li>18:00</li>
+              <li>19:00</li>
+              <li>20:00</li>
+              <li>21:00</li>
+              <li>22:00</li>
+              <li>23:00</li>
+            </ul>
+            <ul class="schedule-list">
+              <!-- <li class="schedule" id="s01">
+                <div class="time">09:20</div>
+                <div class="place">LAX 공항</div>
+                <div class="detail">공항 도착, 렌터카 수령</div>
+                <div class="remove-btn">X</div>
               </li>
-              <li class="date-item active">
-                <div class="day">18</div>
-                <div class="week">SAT</div>
-              </li>
-              <li class="date-item">
-                <div class="day">19</div>
-                <div class="week">SUN</div>
-              </li>
-              <li class="date-item">
-                <div class="day">20</div>
-                <div class="week">MON</div>
-              </li>
-              <li class="date-item">
-                <div class="day">21</div>
-                <div class="week">TUE</div>
-              </li>
-              <li class="date-item">
-                <div class="day">22</div>
-                <div class="week">WED</div>
-              </li>
-              <li class="date-item">
-                <div class="day">23</div>
-                <div class="week">THU</div>
+              <li class="schedule" id="s02">
+                <div class="time">12:00</div>
+                <div class="place">In-N-Out Burger</div>
+                <div class="detail">점심식사</div>
+                <div class="remove-btn">X</div>
               </li> -->
             </ul>
           </div>
-          <i class="date-before-btn fas fa-angle-double-left"></i>
-          <i class="date-after-btn fas fa-angle-double-right"></i>
         </div>
-        <div class="timeline-travel-title">Travel title</div>
-        <div class="timeline clearfix">
-          <ul class="time-list">
-            <li>07:00</li>
-            <li>08:00</li>
-            <li>09:00</li>
-            <li>10:00</li>
-            <li>11:00</li>
-            <li>12:00</li>
-            <li>13:00</li>
-            <li>14:00</li>
-            <li>15:00</li>
-            <li>16:00</li>
-            <li>17:00</li>
-            <li>18:00</li>
-            <li>19:00</li>
-            <li>20:00</li>
-            <li>21:00</li>
-            <li>22:00</li>
-            <li>23:00</li>
-          </ul>
-          <ul class="schedule-list">
-            <!-- <li class="schedule" id="s01">
-              <div class="time">09:20</div>
-              <div class="place">LAX 공항</div>
-              <div class="detail">공항 도착, 렌터카 수령</div>
-              <div class="remove-btn">X</div>
-            </li>
-            <li class="schedule" id="s02">
-              <div class="time">12:00</div>
-              <div class="place">In-N-Out Burger</div>
-              <div class="detail">점심식사</div>
-              <div class="remove-btn">X</div>
-            </li> -->
-          </ul>
-        </div>
+        
         <div class="new-schedule-btn">
           +
         </div>
@@ -266,6 +270,7 @@
         <div class="popup-bg"></div>
         <!-- Delete Confirm -->
         <div class="delete-confirm timeline-popup">
+          <i class="delete-icon fas fa-exclamation-circle"></i>
           <strong>스케줄을 <em>삭제</em>하시겠습니까?</strong>
           <button class="delete-n timeline-cancle-btn">취소</button>
           <button class="delete-y timeline-delete-btn">삭제</button>
@@ -278,56 +283,56 @@
         <div class="airline-ticket">
           <h3>항공권</h3>
           <ol class="airline-schedule">
-            <li class="clearfix">
-              <div class="airline-info1">
+            <li class="airline-schedule-detail clearfix">
+              <div class="airline-info1 airline-departure">
                 <em>출발</em>
               </div>
-              <div class="airline-info2">
+              <div class="airline-info2 departure-info-date">
                 <span class="date">4/3 FRI</span>
                 <span class="airlines">아시아나항공</span>
               </div>
-              <div class="airline-departure">
+              <div class="airline-departure departure-airline-time">
                 <span class="time">20:40</span>
                 <span class="airport">ICN</span>
               </div>
-              <div class="airline-arrival">
+              <div class="airline-arrival departure-arrival-time">
                 <span class="time">16:00</span>
                 <span class="airport">LAX</span>
               </div>
             </li>
             <li class="clearfix">
-              <div class="airline-info1">
+              <div class="airline-info1 airline-arrival">
                 <em>도착</em>
               </div>
-              <div class="airline-info2">
+              <div class="airline-info2 arrival-info-date">
                 <span class="date">4/3 FRI</span>
                 <span class="airlines">아시아나항공</span>
               </div>
-              <div class="airline-departure">
+              <div class="airline-departure arrival-airline-time">
                 <span class="time">20:40</span>
                 <span class="airport">ICN</span>
               </div>
-              <div class="airline-arrival">
+              <div class="airline-arrival arrival-airline-time">
                 <span class="time">16:00</span>
                 <span class="airport">LAX</span>
               </div>
             </li>
           </ol>
         </div>
-        <div class="hotel-reservation1">
+        <div class="hotel-reservation1 lodging-name">
           <h3>숙소 1</h3>
           <span class="hotel-name">ACE HOTEL</span>
           <span class="hotel-place">팜스프링스</span>
           <span class="hotel-site">AGODA</span>
         </div>
-        <div class="hotel-reservation2">
+        <div class="hotel-reservation2 lodging-name">
           <h3>숙소 2</h3>
           <span class="hotel-name">ACE HOTEL</span>
           <span class="hotel-place">팜스프링스</span>
           <span class="hotel-site">AGODA</span>
         </div>
       
-      <div class="new-info-btn">
+      <div class="airline new-info-btn">
         +
       </div>
       <!-- POPUP -->
@@ -336,44 +341,44 @@
           <h2>여행정보 입력</h2>
   
           <label for="date-select">출발:</label>
-          <select name="month" id="month-select">
-            <option value="">MONTH</option>
-            <option value="">APR</option>
-            <option value="">MAY</option>
+          <select name="month" id="airline-month-select">
+            <option value="MONTH">MONTH</option>
+            <option value="APR">APR</option>
+            <option value="MAY">MAY</option>
           </select>
-          <select name="day" id="day-select">
-            <option value="">DAY</option>
-            <option value="">13</option>
-            <option value="">14</option>
+          <select name="day" id="airline-day-select">
+            <option value="DAY">DAY</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
           </select>
           <input type="text" class="input-airlines" placeholder="항공사" />
           <br />
-          <select name="hour" id="hour-select">
-            <option value="">HOUR</option>
-            <option value="">09</option>
-            <option value="">10</option>
+          <select name="hour" id="airline-hour-select">
+            <option value="HOUR">HOUR</option>
+            <option value="09">09</option>
+            <option value="10">10</option>
           </select>
-          <select name="min" id="min-select">
-            <option value="">MINUTE</option>
-            <option value="">20</option>
-            <option value="">30</option>
+          <select name="min" id="airline-min-select">
+            <option value="MINUTE">MINUTE</option>
+            <option value="20">20</option>
+            <option value="30">30</option>
           </select>
           <input type="text" class="dep-airlines" placeholder="출발공항" />
     
-          <select name="hour" id="hour-select">
-            <option value="">HOUR</option>
-            <option value="">09</option>
-            <option value="">10</option>
+          <select name="hour" id="airline-hour-select">
+            <option value="HOUR">HOUR</option>
+            <option value="09">09</option>
+            <option value="10">10</option>
           </select>
-          <select name="min" id="min-select">
-            <option value="">MINUTE</option>
-            <option value="">20</option>
-            <option value="">30</option>
+          <select name="min" id="airline-min-select">
+            <option value="MINUTE">MINUTE</option>
+            <option value="20">20</option>
+            <option value="30">30</option>
           </select>
           <input type="text" class="arr-airlines" placeholder="도착공항" />
           <br />
           <label for="date-select">도착:</label>
-          <select name="month" id="month-select">
+          <select name="month" id="arrival-month-select">
             <option value="">MONTH</option>
             <option value="">APR</option>
             <option value="">MAY</option>
@@ -385,24 +390,24 @@
           </select>
           <input type="text" class="input-airlines" placeholder="항공사" />
           <br />
-          <select name="hour" id="hour-select">
+          <select name="hour" id="arrival-hour-select">
             <option value="">HOUR</option>
             <option value="">09</option>
             <option value="">10</option>
           </select>
-          <select name="min" id="min-select">
+          <select name="min" id="arrival-min-select">
             <option value="">MINUTE</option>
             <option value="">20</option>
             <option value="">30</option>
           </select>
           <input type="text" class="dep-airlines" placeholder="출발공항" />
     
-          <select name="hour" id="hour-select">
+          <select name="hour" id="arrival-hour-select">
             <option value="">HOUR</option>
             <option value="">09</option>
             <option value="">10</option>
           </select>
-          <select name="min" id="min-select">
+          <select name="min" id="arrival-min-select">
             <option value="">MINUTE</option>
             <option value="">20</option>
             <option value="">30</option>
@@ -414,8 +419,8 @@
           <input type="text" class="input-place" placeholder="장소" />
           <input type="text" class="input-site" placeholder="예약사이트" />
           <br />
-          <button class="add-schedule-btn">등록</button>
-          <div class="popup-remove-btn">X</div>
+          <button class="airline add-schedule-btn">등록</button>
+          <div class="airline popup-remove-btn">X</div>
         </div>
       </main>
     </div>

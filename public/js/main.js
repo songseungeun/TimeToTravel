@@ -153,9 +153,17 @@ const renderMonthYear = (month, year) => {
   $monthYearBox.textContent = `${months[month - 1]}, ${year}`;
 };
 
+// 날짜 세서 렌더하는 기능
+let travelPeriod = 0;
+
+const dateList = document.querySelector(".date-list");
+const beforeBtn = document.querySelector(".date-before-btn");
+const afterBtn = document.querySelector(".date-after-btn");
+
+let dateItemMove = 0;
+
 const renderDateBox = (startDate, endDate) => {
   let html = '';
-  let travelPeriod = 0;
   const oneDay = 86400000;
 
   travelPeriod = new Date(endDate).getTime() - new Date(startDate).getTime();
@@ -186,8 +194,41 @@ const renderDateBox = (startDate, endDate) => {
   });
 
   $dateList.innerHTML = html;
+
+  beforeBtn.style.opacity = '0.3';
   $dateList.firstElementChild.classList.add('active');
 };
+
+// 날짜 화살표 클릭 시 이동하는 기능
+
+
+function moveDatetoPrev({ target }) {
+  console.log(travelPeriod);
+  if (!target.matches(".date-before-btn")) return;
+  dateItemMove -= 83;
+  if (dateItemMove <= 0) {
+    dateItemMove = 0;
+    beforeBtn.style.opacity = '0.3';
+  }
+  dateList.style.transform = `translate3D(-${dateItemMove}px, 0, 0)`;
+  dateList.style.transition = "all 0.3s ease-out";
+}
+
+function moveDatetoNext({ target }) {
+  beforeBtn.style.opacity = '1';
+
+  let moveLimit = (travelPeriod - 9) * 83;
+  if (travelPeriod < 8) return; 
+  if (!target.matches(".date-after-btn")) return;
+  dateItemMove += 83;
+  
+  if (dateItemMove > moveLimit) dateItemMove = moveLimit;
+  dateList.style.transform = `translate3D(-${dateItemMove}px, 0, 0)`;
+  dateList.style.transition = "all 0.3s ease-out";
+}
+
+beforeBtn.addEventListener('click', moveDatetoPrev);
+afterBtn.addEventListener('click', moveDatetoNext);
 
 const renderTimeline = schedules => {
   let html = '';

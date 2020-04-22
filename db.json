@@ -2,78 +2,35 @@
   "travels": [
     {
       "id": 1,
-      "title": "하하하ㅏ",
-      "place": "커ㅏㅏㅣ카카ㅣ",
-      "startDate": "2020/8/6",
-      "endDate": "2020/9/3"
+      "title": "Paris",
+      "place": "프랑스 파리",
+      "startDate": "2022/5/7",
+      "endDate": "2022/5/11"
     },
     {
       "id": 2,
-      "title": "ㅋㅇㄴ",
-      "place": "ㅁㄴㅇㄹ",
-      "startDate": "2023/4/8",
-      "endDate": "2023/5/6"
+      "title": "m`a",
+      "place": "dsfdsffds",
+      "startDate": "2021/4/6",
+      "endDate": "2021/6/11"
     },
     {
       "id": 3,
-      "title": "ㅋㅋ",
-      "place": "ㄳㄷㄱㅂㅎㅅ곧ㅅ죧숃ㅅ",
-      "startDate": "2021/3/3",
-      "endDate": "2021/7/7"
-    },
-    {
-      "id": 4,
-      "title": "ㅋㅋㅋ",
-      "place": "ㄹㄴㅇㅎㅈㄷㅎㅈㄷㅂㅎㄷㅈㅎㅈ",
-      "startDate": "2021/3/2",
-      "endDate": "2021/3/6"
+      "title": "dsfsfd",
+      "place": "sdfsdf",
+      "startDate": "2020/5/10",
+      "endDate": "2020/5/20"
     }
   ],
   "schedules": [
     {
-      "travelId": "1",
-      "date": "8/3",
-      "timeFrom": "15:00",
-      "timeTo": "16:50",
-      "place": "ㄴㅇㄻ",
-      "detail": "ㄻㄴㅇ",
+      "travelId": "3",
+      "date": "5/10",
+      "timeFrom": "0:-10",
+      "timeTo": "0:-10",
+      "place": "sdffds",
+      "detail": "dsffds",
       "id": 1
-    },
-    {
-      "travelId": "1",
-      "date": "8/6",
-      "timeFrom": "12:00",
-      "timeTo": "13:50",
-      "place": "ㅀㅇㅇㅀㄹㅇ",
-      "detail": "ㅀㅇㅎㅇㄹㄹㅇㅇㅀ",
-      "id": 2
-    },
-    {
-      "travelId": "1",
-      "date": "8/6",
-      "timeFrom": "7:00",
-      "timeTo": "8:50",
-      "place": "ㄱㅎㄷㄷㄳ",
-      "detail": "ㄷㄳ",
-      "id": 3
-    },
-    {
-      "travelId": "1",
-      "date": "8/6",
-      "timeFrom": "14:30",
-      "timeTo": "15:10",
-      "place": "야야야야야야",
-      "detail": "야야야야야야",
-      "id": 4
-    },
-    {
-      "travelId": "1",
-      "date": "8/6",
-      "timeFrom": "19:40",
-      "timeTo": "21:00",
-      "place": "ㅇㄹ너ㅑㅇ러ㅑ",
-      "detail": "ㅇ러ㅑㅇ러",
-      "id": 5
     }
   ],
   "info": [
