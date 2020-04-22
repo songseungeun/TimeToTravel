@@ -61,6 +61,15 @@
       "place": "fssdf",
       "detail": "dfsfds",
       "id": 3
+    },
+    {
+      "travelId": "4",
+      "date": "4/3",
+      "timeFrom": "3:30",
+      "timeTo": "3:30",
+      "place": "dfsdfs",
+      "detail": "dsfsfd",
+      "id": 4
     }
   ],
   "info": [
