@@ -25,8 +25,8 @@ const $endYear = $newTravelPopup.querySelector('#end-year-select');
 const $endMonth = $newTravelPopup.querySelector('#end-month-select');
 const $endDate = $newTravelPopup.querySelector('#end-day-select');
 
-const $alertDeleteBtn = document.querySelector('.delete-y')
-const $alertcancleBtn = document.querySelector('.delete-x')
+//const $alertDeleteBtn = document.querySelector('.delete-y')
+//const $alertcancleBtn = document.querySelector('.delete-x')
 const $alertPopup = document.querySelector('.delete-confirm')
 const $alertPopupBg = document.querySelector('.delete-popup-bg')
 const $travelList = document.querySelector('.travel-list');
@@ -90,9 +90,3 @@ function showWarning(element, defaultValue, warningElement) {
 // export { rejectAddTravel };
 
 //삭제 경고창
-$travelList.onclick = (e)=>{
-  const id = e.target.parentNode.lastElementChild;
-  console.log(id)
-  if(e.target.matches(".travel-list>li>.travel-remove-btn"))
-  travelList = travelList.filter(element => element.id !== parseInt('.travel-remove-btn'))
-}

@@ -1,73 +1,11 @@
 {
   "travels": [
     {
-      "id": 9,
-      "title": "dd",
-      "place": "dd",
-      "startDate": "2021/2/3",
-      "endDate": "2021/2/15"
-    },
-    {
-      "id": 10,
-      "title": "",
-      "place": "",
-<<<<<<< HEAD
-      "startDate": "default/0/default",
-      "endDate": "default/0/default"
-    },
-    {
-      "id": 11,
-      "title": "",
-      "place": "",
-      "startDate": "default/0/default",
-      "endDate": "default/0/default"
-    },
-    {
-      "id": 12,
-      "title": "",
-      "place": "",
-      "startDate": "default/0/default",
-      "endDate": "default/0/default"
-=======
-      "startDate": "2020/6/8",
-      "endDate": "2020/6/14"
-    },
-    {
-      "id": 2,
-      "title": "",
-      "place": "",
-      "startDate": "2020/3/4",
-      "endDate": "2020/6/5"
->>>>>>> ba48717d24f1b01c0dd170592b0d7ee176781d86
-    },
-    {
-      "id": 13,
-      "title": "",
-      "place": "",
-      "startDate": "default/0/default",
-      "endDate": "default/0/default"
-    },
-    {
-<<<<<<< HEAD
-      "id": 14,
-      "title": "",
-      "place": "",
-      "startDate": "default/0/default",
-      "endDate": "default/0/default"
-    },
-    {
-      "id": 15,
-      "title": "",
-      "place": "",
-      "startDate": "default/0/default",
-      "endDate": "default/0/default"
-=======
-      "id": 4,
-      "title": "",
-      "place": "",
-      "startDate": "2020/1/1",
-      "endDate": "2020/1/30"
->>>>>>> ba48717d24f1b01c0dd170592b0d7ee176781d86
+      "id": 1,
+      "title": "f",
+      "place": "f",
+      "startDate": "2021/3/5",
+      "endDate": "2022/6/18"
     }
   ],
   "schedules": [

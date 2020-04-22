@@ -5,6 +5,7 @@
 let schedules = [];
 let travels = [];
 let travelId = '';
+let alertCheck;
 
 // DOMs
 const $month = document.querySelector('#month-select');
@@ -34,6 +35,13 @@ const $schedulePopupBg = document.querySelector('.popup-bg');
 const $scheduleList = document.querySelector('.schedule-list');
 const $dateList = document.querySelector('.date-list');
 
+const $alertDeleteBtn = document.querySelector('.delete-y')
+const $alertcancleBtn = document.querySelector('.delete-n')
+const $alertPopup = document.querySelector('.delete-confirm')
+const $alertPopupBg = document.querySelector('.delete-popup-bg')
+const $newTravelBtn = document.querySelector('.new-travel-btn');
+
+
 // functions
 // popups
 const closeSchedulePopup = () => {
@@ -62,7 +70,7 @@ const generateId = () => travels.length ? Math.max(...travels.map(({ id }) => id
 
 const renderTravelList = () => {
   let html = '';
-
+  //console.log(travels)
   travels.forEach(({ id, title, place, startDate, endDate }) => {
     html += ` <li id=${id}>
           <h2>${title}</h2>
@@ -84,14 +92,18 @@ const getTravels = async () => {
   renderTravelList();
 };
 
-const removeTravel = async (target) => {
-  if (!target.matches('.travel-list > li > .travel-remove-btn')) return;
-  const id = target.parentNode.id;
-
+const removeTravel = async (id) => {
+  
+  //if (!target.matches('.travel-list > li > .travel-remove-btn')) return;
+  
   await axios.delete(`/travels/${id}`);
   travels = travels.filter((travel) => travel.id !== +id);
   renderTravelList();
+
+  $alertPopupBg.style.display = 'none';
+  $alertPopup.style.display = 'none';
 };
+
 
 // time line
 const sortTimeline = schedules => {
@@ -157,6 +169,7 @@ const renderTimeline = schedules => {
 
 const getSchedules = async (travelId, date) => {
   const { data } = await axios.get(`/schedules?travelId=${travelId}&date=${date}`);
+  console.log(data);
   schedules = data;
 
   timeline.classList.add('main-view');
@@ -177,7 +190,7 @@ const addSchedule = async () => {
   schedules = [data, ...schedules];
 
   closeSchedulePopup();
-  renderTimeline();
+  renderTimeline(schedules);
 
   $inputSchedulePlace.value = '';
   $inputScheduleDetail.value = '';
@@ -228,5 +241,31 @@ $addTravelBtn.onclick = async () => {
   });
 };
 
-$travelList.addEventListener('click', ({ target }) => removeTravel(target));
 $travelList.addEventListener('click', ({ target }) => goToTimeline(target));
+
+//REMIND: 희진작업-삭제경고창 페이지 1
+
+
+$travelList.onclick = ({target}) => {
+  const id = target.parentNode.id;
+
+  $alertPopupBg.style.display = 'block';
+  $alertPopup.style.display = 'block';
+
+  $alertDeleteBtn.addEventListener('click', e => removeTravel(id));
+  alertCheck = null;
+};
+
+const alertClosePopup = ()=>{
+  //$alertcancleBtn.onclick = () =>{
+  $alertPopupBg.style.display = 'none';
+  $alertPopup.style.display = 'none';
+}
+
+window.onclick = ({ target }) => {
+  if (target !== $alertPopupBg || target === $newTravelBtn) return;
+  alertClosePopup();
+};
+
+
+
