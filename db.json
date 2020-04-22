@@ -41,6 +41,13 @@
       "place": "dfssdf",
       "startDate": "2022/2/4",
       "endDate": "2022/3/4"
+    },
+    {
+      "id": 11,
+      "title": "fdsfds",
+      "place": "sfdfsd",
+      "startDate": "2022/3/4",
+      "endDate": "2022/4/3"
     }
   ],
   "schedules": [
@@ -70,6 +77,15 @@
       "place": "dfsdfs",
       "detail": "dsfsfd",
       "id": 4
+    },
+    {
+      "travelId": "4",
+      "date": "3/3",
+      "timeFrom": "3:30",
+      "timeTo": "4:40",
+      "place": "sfdfs",
+      "detail": "dsffsd",
+      "id": 5
     }
   ],
   "info": [
