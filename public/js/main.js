@@ -261,9 +261,10 @@ const removeSchedule = async (id) => {
 };
 
 const goToTimeline = async target => {
-  if (!target.matches('travel-list > em') && !target.matches('travel-list > h2') && !target.matches('.travel-list > li') && !target.matches('travel-list > span') ) return;
+  if (!target.matches('.travel-list > li > em') && !target.matches('.travel-list > li > h2') && !target.matches('.travel-list > li') && !target.matches('.travel-list > li > span')) return;
+  if (target.nodeName === 'LI') travelId = target.id.split('-')[1];
+  if (target.nodeName !== 'LI') travelId = target.parentNode.id.split('-')[1];
 
-  travelId = target.id.split('-')[1];
   const timeline = document.getElementById('main-calendar');
   const home = document.getElementById('main-home');
   const { data: { startDate, endDate, title }} = await axios.get(`/travels/${travelId}`);
