@@ -17,13 +17,13 @@
   ],
   "schedules": [
     {
-      "travelId": "15",
-      "date": "2/18",
-      "timeFrom": "9:20",
-      "timeTo": "10:20",
+      "travelId": "17",
+      "date": "2/2",
+      "timeFrom": "8:10",
+      "timeTo": "8:10",
       "place": "ㄴㅇㄹ",
       "detail": "ㄴㅇㄹ",
-      "id": 1
+      "id": 2
     }
   ],
   "airlines": [
