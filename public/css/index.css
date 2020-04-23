@@ -108,9 +108,11 @@ main.main-view {
   opacity: 1;
 }
 
-#calendar, #airplane, #money {
+#calendar,
+#airplane,
+#money {
   display: none;
-} 
+}
 
 /* ----- timeline ----- */
 /* MAIN */
@@ -611,7 +613,7 @@ main.main-view {
 /* 여행정보팝업 */
 .new-info-popup {
   width: 500px;
-  display: block;
+  display: none;
   top: 10px;
 }
 .new-info-popup input {
@@ -629,7 +631,7 @@ main.main-view {
 }
 .new-info-popup2 {
   width: 500px;
-  /* display: block; */
+  display: none;
   top: 10px;
 }
 
@@ -694,6 +696,15 @@ main.main-view {
   transform: scale(1.05);
 }
 /* 여행정보입력 팝업 추가 버튼 */
+.detail-btn-wrapper {
+  position: fixed;
+  right: 30px;
+  width: 90px;
+  height: 200px;
+  /* background-color: #ddd; */
+  bottom: 110px;
+  display: none;
+}
 .new-info-detail-btn {
   position: fixed;
   right: 30px;
@@ -720,7 +731,7 @@ main.main-view {
 .new-info-detail-btn:hover {
   transition: transform 0.3s;
   transform: scale(1.05);
-  opacity: .9;
+  opacity: 0.9;
 }
 /* 팝업 모달효과 배경 */
 .popup-bg,

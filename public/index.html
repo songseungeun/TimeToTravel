@@ -334,16 +334,20 @@
 
             <ol class="lodging-schedule airline-schedule">
             </ol>
+            
           <!-- POPUP BUTTON -->
           <div class="airline new-info-btn">
             +
           </div>
-          <div class="airline-btn new-info-detail-btn">
-            <i class="fas fa-plane"></i>
+          <div class="detail-btn-wrapper">
+            <div class="airline-btn new-info-detail-btn">
+              <i class="fas fa-plane"></i>
+            </div>
+            <div class="hotel-btn new-info-detail-btn">
+              <i class="fas fa-hotel"></i>
+            </div>
           </div>
-          <div class="hotel-btn new-info-detail-btn">
-            <i class="fas fa-hotel"></i>
-          </div>
+
           <!-- POPUP -->
           <div class="airlineBg popup-bg"></div>
           <div class="new-info-popup popup-style">
@@ -443,20 +447,19 @@
                 <option value="">30</option>
               </select>
               <input type="text" class="arr-airlines" placeholder="도착공항" />
-              
             </div>
             <button class="airlineAddBtn add-schedule-btn">등록</button>
-            <div class="airlineRemoveBtn popup-remove-btn">X</div>
+            <div class="airlineRemoveBtn popup-remove-btn">X</div>            
           </div>
+          <div class="hotelBg popup-bg"></div>
           <div class="new-info-popup2 popup-style">
             <h2>숙소 정보 추가</h2>
             <label for="">숙소정보:</label>
             <input type="text" class="input-title" placeholder="숙소이름" />
             <input type="text" class="input-place" placeholder="장소" />
             <input type="text" class="input-site" placeholder="예약사이트" />
-
-            <button class="airlineAddBtn add-schedule-btn">등록</button>
-            <div class="airlineRemoveBtn popup-remove-btn">X</div>
+            <button class="hotelAddBtn add-schedule-btn">등록</button>
+            <div class="hotelRemoveBtn popup-remove-btn">X</div>
           </div>
         </main>
       </div>
