@@ -41,6 +41,13 @@
       "place": "dsffsd",
       "startDate": "2021/3/4",
       "endDate": "2023/4/4"
+    },
+    {
+      "id": 12,
+      "title": "ㅅㄷㄴㅅ",
+      "place": "`````",
+      "startDate": "2020/7/10",
+      "endDate": "2020/2/5"
     }
   ],
   "schedules": [
@@ -79,6 +86,24 @@
       "place": "sfdfds",
       "detail": "dsffds",
       "id": 8
+    },
+    {
+      "travelId": "10",
+      "date": "4/1",
+      "timeFrom": "11:10",
+      "timeTo": "9:10",
+      "place": "ㅛㅕ",
+      "detail": "ㅕㄱㄸㄱ쇼ㅕ",
+      "id": 9
+    },
+    {
+      "travelId": "10",
+      "date": "4/1",
+      "timeFrom": "10:10",
+      "timeTo": "9:10",
+      "place": "ㄹㄴㅇ",
+      "detail": "ㄴㅇㄹ",
+      "id": 10
     }
   ],
   "airlines": [

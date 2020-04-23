@@ -217,28 +217,20 @@ const renderDateBox = (startDate, endDate) => {
   travelPeriod = new Date(endDate).getTime() - new Date(startDate).getTime();
   travelPeriod = Math.ceil(travelPeriod / oneDay) + 1;
 
-  const newDate = startDate.split('/');
-
   const travelArr = Array.from({ length: travelPeriod }, function (v, i) {
     let newDay = new Date(startDate);
-    newDay = newDay.getDate() + i;
-    newDate[2] = `${newDay}`;
-    const newDate2 = newDate.join('/');
-    return newDate2;
+    newDay = new Date(newDay.getTime() + (oneDay * i));
+
+    return [...new String(newDay)];
   });
 
   travelArr.forEach(travel => {
-    const year = travel.split('/')[0];
-    const month = travel.split('/')[1];
-
-    const today = new Date(travel);
-    const date = today.getDate();
-
-    const dayNames = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
-    const day = dayNames[today.getDay()];
-
-
-
+    const day = travel.splice(0, 3).join('');
+    const month = travel.splice(1, 3).join('');
+    console.log(travel);
+    const date = travel[2] === '0' ? travel[3] : travel.splice(2, 2).join('');
+    const year = travel.splice(1, 4).join('');
+    console.log(date)
     html += `<li class="date-item">
         <div class="day ${year} ${month}">${date}</div>
         <div class="week ${year} ${month}">${day}</div>
@@ -314,14 +306,7 @@ const addSchedule = async () => {
   const place = $inputSchedulePlace.value;
   const detail = $inputScheduleDetail.value;
 
-  const { data } = await axios.post('/schedules', {
-    travelId,
-    date,
-    timeFrom,
-    timeTo,
-    place,
-    detail,
-  });
+  const { data } = await axios.post('/schedules', { travelId, date, timeFrom, timeTo, place, detail });
   schedules = [data, ...schedules];
 
   closeSchedulePopup();
@@ -482,31 +467,21 @@ const $endMinuteSelects = document.querySelectorAll('.select-end-hour > .select-
 const $startMinuteSelects = document.querySelectorAll('.select-start-hour > .select-wrapper > .min-select');
 
 const printStartTime = () => {
-  let hour = [
-    'HOUR',
-    ...Array.from({ length: 17 }, function (v, i) {
-      return i + 7;
-    }),
-  ];
-  let minute = [
-    'MIN',
-    ...Array.from({ length: 6 }, function (v, i) {
-      return i * 10;
-    }),
-  ];
+  let hour = ['HOUR',...Array.from({ length: 17 }, function (v, i) { return i + 7; })];
+  let minute = ['MIN', ...Array.from({ length: 6 }, function (v, i) { return i * 10; })];
 
   $startHourSelects.forEach(hourSelect => {
     hour.forEach((element, key) => {
-      hourSelect[key] = new Option(`${element} 시`, element, true);
-      if (element === 'HOUR') hourSelect[key] = new Option(element, '0', true);
+      hourSelect[key] = new Option(`${element} 시`, element);
+      if (element === 'HOUR') hourSelect[key] = new Option(element, '0');
     });
   });
 
   $startMinuteSelects.forEach(minuteSelect => {
     minute.forEach((element, key) => {
-      minuteSelect[key] = new Option(`${element}분`, (key - 1) * 10, true);
-      if (element === 'MIN') minuteSelect[key] = new Option(`${element}`, '0', true);
-      if (element === '00') minuteSelect[key] = new Option(`${element} 분`, '00', true);
+      minuteSelect[key] = new Option(`${element}분`, (key - 1) * 10);
+      if (element === 'MIN') minuteSelect[key] = new Option(`${element}`, '0');
+      if (element === '00') minuteSelect[key] = new Option(`${element} 분`, '00');
     });
   });
 };
@@ -516,18 +491,8 @@ const printEndTime = target => {
   console.log([...target.children].map(child => child.selected));
   // console.log(target.children);
 
-  let hour = [
-    'HOUR',
-    ...Array.from({ length: 17 }, function (v, i) {
-      return i + 7;
-    }),
-  ];
-  let minute = [
-    'MIN',
-    ...Array.from({ length: 6 }, function (v, i) {
-      return i * 10;
-    }),
-  ];
+  let hour = ['HOUR',...Array.from({ length: 17 }, function (v, i) { return i + 7; })];
+  let minute = ['MIN', ...Array.from({ length: 6 }, function (v, i) { return i * 10; })];
 
   $endHourSelects.forEach(hourSelect => {
     hour.forEach((element, key) => {
@@ -545,8 +510,6 @@ const printEndTime = target => {
     });
   });
 };
-
-console.log($startHourSelects);
 
 $newScheduleBtn.addEventListener('click', printStartTime);
 $startHourSelects.forEach(selects => selects.addEventListener('change', ({ target }) => printEndTime(target)));
