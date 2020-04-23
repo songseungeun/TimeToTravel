@@ -206,9 +206,12 @@ const sortTimeline = schedules => {
     const mmTo = +schedules[i].timeTo.split(':')[1];
     const mmDiff = mmFrom > mmTo ? 60 - (mmFrom - mmTo) : mmTo - mmFrom;
     const hhDiff = mmFrom > mmTo ? hhTo - hhFrom - 1 : hhTo - hhFrom;
+    const top = hourHeight * (hhFrom - 7) + (hourHeight / 6) * (mmFrom / 10);
+    const height = hourHeight * hhDiff + (hourHeight / 6) * (mmDiff / 10);
 
-    block.style.top = `${hourHeight * (hhFrom - 7) + (hourHeight / 6) * (mmFrom / 10)}px`;
-    block.style.height = `${hourHeight * hhDiff + (hourHeight / 6) * (mmDiff / 10)}px`;
+    block.style.top = `${top}px`;
+    block.style.height = height < 38 ? '38px' : `${height}px`;
+    [...block.children].forEach(child => child.style.display =  height < 38 ? 'inline' : 'block');
 
     i++;
   });
