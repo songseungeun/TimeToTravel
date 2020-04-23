@@ -14,7 +14,10 @@ const $minuteSelects = document.querySelectorAll('.min-select');
 const today = new Date();
 const year = today.getFullYear();
 const month = today.getMonth() + 1;
-const date = today.getDate();
+const todayDate = today.getDate();
+
+let date = 0;
+const monthDate = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
 function printYearMonth() {
 
@@ -40,8 +43,9 @@ function printYearMonth() {
     });
   });
 
-  let date = 0;
-  const monthDate = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+  i = 0;
+
   date = monthDate[month - 1];
 
   let dateArr = Array.from({ length: date + 1 }, function (v, i) { return i; });
@@ -50,7 +54,10 @@ function printYearMonth() {
   $dateSelects.forEach(dateSelect => {
     dateArr.forEach((element, key) => {
       dateSelect[key] = new Option(`${element} 일`, element);
-
+      if (dateSelect.id === 'start-day-select') {
+        if (+dateSelect.options[i].value === todayDate) dateSelect.options[todayDate - 1].setAttribute('selected','selected');
+      }
+      i++;
     });
   });
   
@@ -59,8 +66,8 @@ function printYearMonth() {
 
 function printDate({ target }) {
   if (!target.matches('.month-select')) return;
-  let date = 0;
-  const monthDate = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+  // let date = 0;
+  // const monthDate = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
   date = monthDate[target.value - 1];
   let date2 = Array.from({ length: date + 1 }, function (v, i) { return i; });
   date2.splice(0, 1);
