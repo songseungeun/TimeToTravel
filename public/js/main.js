@@ -210,7 +210,7 @@ const sortTimeline = schedules => {
     const height = hourHeight * hhDiff + (hourHeight / 6) * (mmDiff / 10);
 
     block.style.top = `${top}px`;
-    block.style.height = height < 38 ? '38px' : `${height}px`;
+    block.style.height = height < 38 ? '48px' : `${height}px`;
     [...block.children].forEach(child => child.style.display =  height < 38 ? 'inline' : 'block');
 
     i++;
