@@ -325,31 +325,25 @@ main.main-view {
   /* opacity: 0.9; */
   transition: box-shadow 0.5s, transform 0.5s, opacity 0.3s;
 }
-#t-1,
-#t-8 {
+.bg-0 {
+  /* filter: blur(3px); */
+  filter: grayscale(40%);
+  background-image: url('../img/bg-maldives.jpg');
+}
+.bg-1 {
   /* filter: blur(3px); */
   filter: grayscale(40%);
   background-image: url('../img/bg-paris.jpeg');
 }
-#t-2,
-#t-5,
-#t-9 {
+.bg-2 {
   /* filter: blur(1px); */
   filter: grayscale(40%);
   background-image: url('../img/bg-greece.jpg');
 }
-#t-4,
-#t-6,
-#t-10 {
+.bg-3 {
   filter: grayscale(40%);
   background-image: url('../img/bg-positano.jpg');
 }
-#t-3,
-#t-8 {
-  filter: grayscale(40%);
-  background-image: url('../img/bg-maldives.jpg');
-}
-
 .travel-list li h2 {
   font-size: 28px;
   font-weight: bold;
