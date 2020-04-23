@@ -1,5 +1,5 @@
 // import { getAirlineData, getLodgingData } from './travel-info.js';
-import { $menuList, $mainList, $timelineTitle, changeNav } from './main.js';
+// import { $menuList, $mainList, $timelineTitle, changeNav } from './main.js';
 
 
 
