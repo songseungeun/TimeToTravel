@@ -98,6 +98,16 @@ const closeTravelPopup = () => {
   resetTravelPopup();
 };
 
+const closeTravelAlertPopup = () => {
+  $alertPopup.style.display = 'none';
+  $alertPopupBg.style.display = 'none';
+};
+
+const closeScheduleAlertPopup = () => {
+  $timelineAlertPopup.style.display = 'none';
+  $timeAlertPopupBg.style.display = 'none';
+};
+
 // travel list
 const generateDday = startDate => {
   let dDay = 0;
@@ -377,6 +387,14 @@ $popupRemoveBtn.addEventListener('click', closePopup);
 $popupBg.onclick = () => {
   closePopup();
   resetSchedulePopup();
+};
+
+$alertPopupBg.onclick = () => {
+  closeTravelAlertPopup();
+};
+
+$timeAlertPopupBg.onclick = () => {
+  closeScheduleAlertPopup();
 };
 
 $newScheduleBtn.onclick = () => {

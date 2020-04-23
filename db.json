@@ -81,6 +81,15 @@
       "place": "ff",
       "detail": "ff",
       "id": 8
+    },
+    {
+      "travelId": "8",
+      "date": "2/5",
+      "timeFrom": "11:40",
+      "timeTo": "11:50",
+      "place": "fff",
+      "detail": "fff",
+      "id": 9
     }
   ],
   "airlines": [
