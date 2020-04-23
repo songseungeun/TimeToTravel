@@ -1,11 +1,11 @@
 {
   "travels": [
     {
-      "id": 15,
-      "title": "신나는 LA여행",
-      "place": "로스앤젤레스",
-      "startDate": "2020/2/4",
-      "endDate": "2022/4/6"
+      "id": 2,
+      "title": "ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ",
+      "place": "ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ",
+      "startDate": "2019/4/3",
+      "endDate": "2019/8/1"
     },
     {
       "id": 7,
@@ -22,13 +22,6 @@
       "endDate": "2021/5/4"
     },
     {
-      "id": 12,
-      "title": "ㅅㄷㄴㅅ",
-      "place": "`````",
-      "startDate": "2020/7/10",
-      "endDate": "2020/2/5"
-    },
-    {
       "id": 13,
       "title": "안녕",
       "place": "화이팅",
@@ -36,110 +29,63 @@
       "endDate": "2021/4/19"
     },
     {
-      "id": 14,
-      "title": "유럽가고싶다",
-      "place": "아아아아아",
-      "startDate": "2020/1/18",
-      "endDate": "2020/6/0"
-    },
-    {
       "id": 15,
       "title": "가갸거겨",
       "place": "라랴러려",
       "startDate": "2020/2/18",
       "endDate": "2020/3/3"
+    },
+    {
+      "id": 16,
+      "title": "sfsfd",
+      "place": "sdffds",
+      "startDate": "2020/4/23",
+      "endDate": "2020/4/23"
+    },
+    {
+      "id": 17,
+      "title": "dsffds",
+      "place": "dfsdsf",
+      "startDate": "2020/6/4",
+      "endDate": "2020/6/10"
     }
   ],
   "schedules": [
     {
-      "travelId": "16",
-      "date": "9/12",
-      "timeFrom": "8:10",
+      "travelId": "13",
+      "date": "9/22",
+      "timeFrom": "9:20",
       "timeTo": "9:20",
-      "place": "호텔",
-      "detail": "체크인",
+      "place": "sfdsdf",
+      "detail": "sdfsdf",
       "id": 1
     },
     {
-      "travelId": "16",
-      "date": "9/12",
-      "timeFrom": "11:10",
-      "timeTo": "11:50",
-      "place": "수영장",
-      "detail": "자유수영",
+      "travelId": "13",
+      "date": "9/22",
+      "timeFrom": "9:30",
+      "timeTo": "9:40",
+      "place": "fsdsfd",
+      "detail": "dsfsdf",
       "id": 2
     },
     {
-      "travelId": "13",
-      "date": "9/23",
-      "timeFrom": "8:10",
-      "timeTo": "8:10",
-      "place": "ㄹㅇㄴ",
-      "detail": "ㅇㄹㄴ",
-      "id": 4
-    },
-    {
-      "travelId": "8",
-      "date": "2/8",
-      "timeFrom": "8:00",
-      "timeTo": "9:00",
-      "place": "ㅁㄴㅇㄹ",
-      "detail": "ㄴㅇㄹ",
-      "id": 8
-    },
-    {
       "travelId": "16",
-      "date": "9/12",
-      "timeFrom": "0:0",
-      "timeTo": "13:20",
-      "place": "sfdfsd",
-      "detail": "dfssdf",
-      "id": 9
-    },
-    {
-      "travelId": "16",
-      "date": "9/12",
-      "timeFrom": "0:0",
-      "timeTo": "13:20",
-      "place": "sfdfsd",
-      "detail": "dfssdf",
-      "id": 10
-    },
-    {
-      "travelId": "8",
-      "date": "2/5",
-      "timeFrom": "11:40",
-      "timeTo": "11:50",
-      "place": "dfs",
-      "detail": "fsdfsddsf",
-      "id": 11
-    },
-    {
-      "travelId": "8",
-      "date": "2/5",
-      "timeFrom": "12:30",
-      "timeTo": "12:50",
-      "place": "dfs",
-      "detail": "fsdfsddsf",
-      "id": 12
-    },
-    {
-      "travelId": "8",
-      "date": "2/8",
-      "timeFrom": "12:30",
-      "timeTo": "10:40",
-      "place": "sfddsf",
-      "detail": "sdfdsf",
-      "id": 13
+      "date": "4/23",
+      "timeFrom": "9:20",
+      "timeTo": "8:20",
+      "place": "dsffs",
+      "detail": "sadasdasd",
+      "id": 3
     },
     {
       "travelId": "7",
       "date": "1/30",
-      "timeFrom": "11:50",
-      "timeTo": "11:30",
-      "place": "dsfdsf",
-      "detail": "sdfsdf",
-      "id": 14
+      "timeFrom": "7:00",
+      "timeTo": "7:00",
+      "place": "svdfdgsfgfd",
+      "detail": "dfgfdggfd",
+      "id": 4
     }
   ],
   "airlines": [

@@ -10,7 +10,7 @@
     <script type="module" src="./js/main.js" defer></script>
     <script type="module" src="./js/date-btn.js" defer></script>
     <script type="module" src="./js/travel-list.js" defer></script>
-    <script type="module" src="./js/menu-icon.js" defer></script>
+    <!-- <script type="module" src="./js/menu-icon.js" defer></script> -->
     <script type="module" src="./js/travel-list-popup.js" defer></script>
     <script type="module" src="./js/timeline.js" defer></script>
     <script type="module" src="./js/select-box-date.js" defer></script>
@@ -56,7 +56,7 @@
           <div class="travel-none-text">
             + 버튼을 눌러 여행일정을 입력해주세요.
           </div>
-          <div class="new-travel-btn">
+          <div class="new-travel-btn" id="newTravelBtn">
             +
           </div>
           <!-- POPUP -->
@@ -85,7 +85,7 @@
                 <div class="select-arrow"></div>
               </div>
               <div class="select-wrapper">
-                <select name="day" id="start-day-select">
+                <select name="day" id="start-day-select" class="date-select">
                   <!-- <option value="0" selected>DATE</option> -->
                 </select>
                 <div class="select-arrow"></div>
@@ -112,8 +112,8 @@
                 <div class="select-arrow"></div>
               </div>
               <div class="select-wrapper">
-                <select name="day" id="end-day-select">
-                  <option value="0" selected disabled hidden>DATE</option>
+                <select name="day" id="end-day-select" class="date-select">
+                  <!-- <option value="0" selected disabled hidden>DATE</option> -->
                 </select>
                 <div class="select-arrow"></div>
               </div>
@@ -370,18 +370,18 @@
               <h3>출발정보</h3>
               <!-- <label for="date-select">출발:</label> -->
               <div class="select-wrapper">
-                <select name="month" id="airline-month-select">
-                  <option value="MONTH">MONTH</option>
+                <select name="month" id="airline-month-select" class="month-select">
+                  <!-- <option value="MONTH">MONTH</option>
                   <option value="APR">APR</option>
-                  <option value="MAY">MAY</option>
+                  <option value="MAY">MAY</option> -->
                 </select>
                 <div class="select-arrow"></div>
               </div>
               <div class="select-wrapper">
-                <select name="day" id="airline-day-select">
-                  <option value="DAY">DAY</option>
+                <select name="day" id="airline-day-select" class="date-select">
+                  <!-- <option value="DAY">DAY</option>
                   <option value="13">13</option>
-                  <option value="14">14</option>
+                  <option value="14">14</option> -->
                 </select>
                 <div class="select-arrow"></div>
               </div>
@@ -426,18 +426,18 @@
               <h3>도착정보</h3>
               <!-- <label for="date-select">도착:</label> -->
               <div class="select-wrapper">
-                <select name="month" id="arrival-month-select">
-                  <option value="">MONTH</option>
+                <select name="month" id="arrival-month-select" class="month-select">
+                  <!-- <option value="">MONTH</option>
                   <option value="">APR</option>
-                  <option value="">MAY</option>
+                  <option value="">MAY</option> -->
                 </select>
                 <div class="select-arrow"></div>
               </div>
               <div class="select-wrapper">
-                <select name="day" id="day-select">
-                  <option value="">DAY</option>
+                <select name="day" id="arrival-day-select" class="date-select">
+                  <!-- <option value="">DAY</option>
                   <option value="">13</option>
-                  <option value="">14</option>
+                  <option value="">14</option> -->
                 </select>
                 <div class="select-arrow"></div>
               </div>
