@@ -1,31 +1,14 @@
 {
   "travels": [
     {
-      "id": 15,
-      "title": "가갸거겨",
-      "place": "라랴러려",
-      "startDate": "2020/2/18",
-      "endDate": "2020/3/3"
-    },
-    {
-      "id": 17,
-      "title": "룰루랄라",
-      "place": "롤로로로롤",
-      "startDate": "2020/2/2",
-      "endDate": "2020/3/1"
+      "id": 1,
+      "title": "sdffds",
+      "place": "dsfdsf",
+      "startDate": "2020/6/5",
+      "endDate": "2020/8/5"
     }
   ],
-  "schedules": [
-    {
-      "travelId": "17",
-      "date": "2/2",
-      "timeFrom": "8:10",
-      "timeTo": "8:10",
-      "place": "ㄴㅇㄹ",
-      "detail": "ㄴㅇㄹ",
-      "id": 2
-    }
-  ],
+  "schedules": [],
   "airlines": [
     {
       "id": 1,
