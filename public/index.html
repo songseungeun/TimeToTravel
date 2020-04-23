@@ -332,24 +332,11 @@
           </div>
           <div class="hotel-info lodging-name">
             <h3>예약 숙소 정보</h3>
-            <ol class="lodging-schedule hotel-schedule">
-              <li class="hotel-reservation1">
-                <em>숙소 1</em>
-                <span class="hotel-name">ACE HOTEL</span>
-                <span class="hotel-place">팜스프링스</span>
-                <span class="hotel-site">AGODA</span>
-              </li>
-              <li class="hotel-reservation2">
-                <em>숙소 2</em>
-                <span class="hotel-name">ACE HOTEL</span>
-                <span class="hotel-place">팜스프링스</span>
-                <span class="hotel-site">AGODA</span>
-              </li>
-            </ol>
+            <ol class="lodging-schedule hotel-schedule"></ol>
           </div>
-            
+
           <!-- POPUP BUTTON -->
-          
+
           <div class="detail-btn-wrapper">
             <div class="airline new-info-btn">
               +
@@ -405,16 +392,16 @@
               </div>
               <input type="text" class="dep-airlines" placeholder="출발공항" />
               <div class="select-wrapper">
-                <select name="hour" id="airline-hour-select">
-                  <option value="HOUR">HOUR</option>
+                <select name="hour" id="dep-airline-hour-select">
+                  <option value="HOUR" selected>HOUR</option>
                   <option value="09">09</option>
                   <option value="10">10</option>
                 </select>
                 <div class="select-arrow"></div>
               </div>
               <div class="select-wrapper">
-                <select name="min" id="airline-min-select">
-                  <option value="MINUTE">MINUTE</option>
+                <select name="min" id="dep-airline-min-select">
+                  <option value="MINUTE" selected>MINUTE</option>
                   <option value="20">20</option>
                   <option value="30">30</option>
                 </select>
@@ -479,7 +466,7 @@
               <input type="text" class="arr-airlines" placeholder="도착공항" />
             </div>
             <button class="airlineAddBtn add-schedule-btn">등록</button>
-            <div class="airlineRemoveBtn popup-remove-btn">X</div>            
+            <div class="airlineRemoveBtn popup-remove-btn">X</div>
           </div>
           <div class="hotelBg popup-bg"></div>
           <div class="new-info-popup2 popup-style">
