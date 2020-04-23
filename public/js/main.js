@@ -44,7 +44,21 @@ const $timelineTitle = document.querySelector('.timeline-travel-title');
 
 const $popupBg = document.querySelector('.popup-bg');
 const $popupRemoveBtn = document.querySelector('.popup-remove-btn');
+const $monthSelect = document.querySelector('#month-select');
+const $dateSelect = document.querySelector('#date-select');
+const $startHourSelect = document.querySelector('#start-hour-select');
+const $startMinSelect = document.querySelector('#start-min-select');
+const $endHourSelect = document.querySelector('#end-hour-select');
+const $endMinSelect = document.querySelector('#end-min-select');
 
+const $inputPlace = document.querySelector('#schedule-input-place');
+const $inputDetail = document.querySelector('#schedule-input-detail');
+const $selectDateWarning = document.querySelector('#date-warning-label');
+const $selectStartWarning = document.querySelector('#start-warning-label');
+const $selectEndWarning = document.querySelector('#end-warning-label');
+const $inputDetailWarning = document.querySelector('#detail-warning-label');
+const $inputPlaceWarning = document.querySelector('#place-warning-label');
+const $deleteConfirmModal = document.querySelector('.delete-confirm-modal');
 // functions
 // popups
 //+버튼 누르면 팝업창 오픈
@@ -221,7 +235,6 @@ const renderDateBox = (startDate, endDate) => {
 };
 
 // 날짜 화살표 클릭 시 이동하는 기능
-
 function moveDatetoPrev({ target }) {
   console.log(travelPeriod);
   if (!target.matches('.date-before-btn')) return;

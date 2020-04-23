@@ -79,6 +79,15 @@
       "place": "dsfd",
       "detail": "fsddf",
       "id": 6
+    },
+    {
+      "travelId": "2",
+      "date": "4/3",
+      "timeFrom": "10:10",
+      "timeTo": "9:30",
+      "place": "sdfd",
+      "detail": "sdfdfs",
+      "id": 7
     }
   ],
   "airlines": [
