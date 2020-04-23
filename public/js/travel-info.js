@@ -5,6 +5,7 @@ const $airlineTicket = document.querySelector('.airline-ticket');
 const $airlineSchedule = document.querySelector('.airline-schedule');
 const $airlineScheduleDetail = document.querySelector('.airline-schedule-detail');
 const $airlineScheduleList = document.querySelector('.airline-schedule');
+const $lodgingScheduleList = document.querySelector('.lodging-schedule');
 const $airlineBtn = document.querySelector('.airline');
 const $airlineBg = document.querySelector('.airlineBg');
 const $airlinePopup = document.querySelector('.new-info-popup');
@@ -56,7 +57,7 @@ const renderLodgingInfo = () => {
             <span class="hotel-site">${hotelsite}</span>
           </div>`;
   });
-  $airlineScheduleList.innerHTML = html;
+  $lodgingScheduleList.innerHTML = html;
 };
 
 export const getLodgingData = async () => {
@@ -88,4 +89,4 @@ $airlineAddBtn.onclick = e => {
 /**
  * NOTE:
  * HTML에 OL태그 추가 필요
- * /
+*/
