@@ -8,11 +8,46 @@
       "endDate": "2022/4/6"
     },
     {
-      "id": 16,
-      "title": "힐링여행",
-      "place": "발리",
-      "startDate": "2020/9/12",
-      "endDate": "2020/10/1"
+      "id": 7,
+      "title": "큐큐큐큐ㅠ큐",
+      "place": "ㅠㅠ큐큐큐큐ㅠㅋ",
+      "startDate": "2021/1/30",
+      "endDate": "2021/2/5"
+    },
+    {
+      "id": 8,
+      "title": "fdfsd",
+      "place": "fdssdf",
+      "startDate": "2021/2/5",
+      "endDate": "2021/5/4"
+    },
+    {
+      "id": 12,
+      "title": "ㅅㄷㄴㅅ",
+      "place": "`````",
+      "startDate": "2020/7/10",
+      "endDate": "2020/2/5"
+    },
+    {
+      "id": 13,
+      "title": "안녕",
+      "place": "화이팅",
+      "startDate": "2020/9/22",
+      "endDate": "2021/4/19"
+    },
+    {
+      "id": 14,
+      "title": "유럽가고싶다",
+      "place": "아아아아아",
+      "startDate": "2020/1/18",
+      "endDate": "2020/6/0"
+    },
+    {
+      "id": 15,
+      "title": "가갸거겨",
+      "place": "라랴러려",
+      "startDate": "2020/2/18",
+      "endDate": "2020/3/3"
     }
   ],
   "schedules": [
@@ -69,6 +104,42 @@
       "place": "sfdfsd",
       "detail": "dfssdf",
       "id": 10
+    },
+    {
+      "travelId": "8",
+      "date": "2/5",
+      "timeFrom": "11:40",
+      "timeTo": "11:50",
+      "place": "dfs",
+      "detail": "fsdfsddsf",
+      "id": 11
+    },
+    {
+      "travelId": "8",
+      "date": "2/5",
+      "timeFrom": "12:30",
+      "timeTo": "12:50",
+      "place": "dfs",
+      "detail": "fsdfsddsf",
+      "id": 12
+    },
+    {
+      "travelId": "8",
+      "date": "2/8",
+      "timeFrom": "12:30",
+      "timeTo": "10:40",
+      "place": "sfddsf",
+      "detail": "sdfdsf",
+      "id": 13
+    },
+    {
+      "travelId": "7",
+      "date": "1/30",
+      "timeFrom": "11:50",
+      "timeTo": "11:30",
+      "place": "dsfdsf",
+      "detail": "sdfsdf",
+      "id": 14
     }
   ],
   "airlines": [

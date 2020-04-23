@@ -256,12 +256,7 @@ h1 {
   margin-bottom: 10px;
   margin-left: 55px;
   line-height: 1.4;
-<<<<<<< HEAD
-  left: 80px;
-  /* display: flex; */
-=======
-  /* left: 80px; */
->>>>>>> song
+  min-height: 48px;
 }
 /* 2, 5, 8, 11 */
 .schedule-list li:nth-child(3n + 2) {
@@ -287,16 +282,12 @@ h1 {
   background: none;
   border: none;
   cursor: pointer;
-<<<<<<< HEAD
-  outline: none;
-=======
   padding: 5px;
   font-size: 15px;
   outline: transparent;
 }
 .remove-btn:hover {
   opacity: .7;
->>>>>>> song
 }
 #s01 {
   top: 75px;
@@ -480,10 +471,14 @@ h1 {
 .hotel-schedule li em {
   line-height: 50px;
 }
+.schedule .place,
+.schedule .detail {
+  font-size: 14px;
+}
 .date,
 .time {
   display: block;
-  font-size: 26px;
+  font-size: 20px;
   font-weight: 400;
   margin-bottom: 5px;
 }
