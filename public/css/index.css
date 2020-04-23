@@ -694,6 +694,14 @@ main.main-view {
   transform: scale(1.05);
 }
 /* 여행정보입력 팝업 추가 버튼 */
+.detail-btn-wrapper {
+  position: fixed;
+  right: 30px;
+  width: 90px;
+  height: 200px;
+  /* background-color: #ddd; */
+  bottom: 110px;
+}
 .new-info-detail-btn {
   position: fixed;
   right: 30px;
