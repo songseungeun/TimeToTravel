@@ -7,19 +7,22 @@ const $airlineSchedule = document.querySelector('.airline-schedule');
 const $airlineScheduleDetail = document.querySelector('.airline-schedule-detail');
 const $airlineScheduleList = document.querySelector('.airline-schedule');
 const $lodgingScheduleList = document.querySelector('.lodging-schedule');
-const $allBtn = document.querySelector('.airline');
+
 const $airlinePopupBg = document.querySelector('.airlineBg');
 const $hotelPopup = document.querySelector('.new-info-popup2');
 const $airlinePopup = document.querySelector('.new-info-popup');
 const $airlineAddBtn = document.querySelector('.airlineAddBtn');
 const $airlinePopupRemove = document.querySelector('.airlineRemoveBtn');
 const $airlineMonthSelect = document.querySelector('#airline-month-select');
-const $allMoreBtn = document.querySelector('.detail-btn-wrapper');
+
 const $hotelBtn = document.querySelector('.hotel-btn');
 const $airlineBtn = document.querySelector('.airline-btn');
 const $hotelPopupRemove = document.querySelector('.hotelRemoveBtn');
 const $hotelAddBtn = document.querySelector('.hotelAddBtn ');
 const $hotelPopupBg = document.querySelector('.hotelBg');
+
+const $newInfoBtn = document.querySelector('.new-info-btn');
+const $allMoreBtn = document.querySelector('.detail-btn-wrapper');
 
 //RENDER
 const renderAirlineInfo = () => {
@@ -78,18 +81,22 @@ export const getLodgingData = async () => {
 
 //EVENT HANDLER
 
-//MODAL OPEN
-$allBtn.addEventListener('mouseenter', e => {
-  $allMoreBtn.style.display = 'block';
-});
-$allMoreBtn.addEventListener('mouseenter', e => {
-  $allMoreBtn.style.display = 'block';
-});
+// MODAL OPEN
 
-$allBtn.addEventListener('mouseleave', e => {
-  $allMoreBtn.style.display = 'none';
-  $allMoreBtn.style.display = 'none';
-});
+function openDetailBtn() {
+  $airlineBtn.classList.toggle('btn-act');
+  $hotelBtn.classList.toggle('btn-act2');
+}
+
+function closeDetailBtn() {
+  $airlineBtn.classList.remove('btn-act');
+  $hotelBtn.classList.remove('btn-act2');
+}
+
+
+$newInfoBtn.addEventListener('click', openDetailBtn);
+// $allMoreBtn.addEventListener('mouseenter', openDetailBtn);
+$allMoreBtn.addEventListener('mouseleave', closeDetailBtn);
 
 //HOTEL정보 입력 MODAL
 $hotelBtn.onclick = () => {
