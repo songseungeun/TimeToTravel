@@ -181,6 +181,7 @@ const getTravels = async () => {
 };
 
 const removeTravel = async removeId => {
+  console.log('이벤트리스너가 호출한 리무브트래블이 전달한 아이디값',removeId);
   await axios.delete(`/travels/${removeId}`);
   travels = travels.filter(travel => travel.id !== +removeId);
   renderTravelList();
@@ -188,9 +189,8 @@ const removeTravel = async removeId => {
   $alertPopupBg.style.display = 'none';
   $alertPopup.style.display = 'none';
 
-  console.log(removeId);
   removeId = '';
-  console.log(removeId);
+  console.log('삭제 후 리무브아이디', removeId);
 };
 
 // time line
@@ -480,9 +480,12 @@ $travelList.onclick = ({ target }) => {
   if (!target.matches('.travel-list > li > .travel-remove-btn')) return;
   const removeId = target.parentNode.id.split('-')[1];
 
+
+
   $alertPopupBg.style.display = 'block';
   $alertPopup.style.display = 'block';
 
+  console.log('이벤트 리스너가 id값 가져옴',removeId);
   $alertDeleteBtn.addEventListener('click', () => removeTravel(removeId));
 };
 
