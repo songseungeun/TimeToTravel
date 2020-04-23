@@ -9,31 +9,13 @@ const $monthSelects = document.querySelectorAll('.month-select');
 const $hourSelects = document.querySelectorAll('.hour-select');
 const $minuteSelects = document.querySelectorAll('.min-select');
 
-function printMonthTime() {
+function printMonth() {
   let month = Array.from({ length: 13 }, function (v, i) { return i; });
   month.splice(0, 1);
   month = ['MONTH', ...month];
   $monthSelects.forEach(monthSelect => {
     month.forEach((element, key) => {
       monthSelect[key] = new Option(element, key, true);
-    });
-  });
-
-  let hour = Array.from({ length: 25 }, function (v, i) { return i; });
-  hour.splice(0, 1);
-  hour = ['HOUR', ...hour];
-  $hourSelects.forEach(hourSelect => {
-    hour.forEach((element, key) => {
-      hourSelect[key] = new Option(element, key, true);
-    });
-  });
-
-  let minute = Array.from({ length: 7 }, function (v, i) { return i * 10; });
-  minute.splice(0, 1);
-  minute = ['MIN', ...minute];
-  $minuteSelects.forEach(minuteSelect => {
-    minute.forEach((element, key) => {
-      minuteSelect[key] = new Option(element, key * 10, true);
     });
   });
 }
@@ -52,11 +34,8 @@ function printDate({ target }) {
   });
 }
 
-$newTravelBtn.addEventListener('click', printMonthTime);
+$newTravelBtn.addEventListener('click', printMonth);
 $newTravelPopup.addEventListener('change', printDate);
 
-// $newScheduleBtn.addEventListener('click', printMonthTime);
-// $newSchedulePopup.addEventListener('change', printDate);
-
-$newInfoBtn.addEventListener('click', printMonthTime);
+$newInfoBtn.addEventListener('click', printMonth);
 $newInfoPopup.addEventListener('change', printDate);
