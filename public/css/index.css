@@ -108,6 +108,10 @@ main.main-view {
   opacity: 1;
 }
 
+#calendar, #airplane, #money {
+  display: none;
+} 
+
 /* ----- timeline ----- */
 /* MAIN */
 .main-schedule {
@@ -258,6 +262,8 @@ main.main-view {
   position: absolute;
   top: 8px;
   right: 13px;
+  background: none;
+  border: none;
   cursor: pointer;
 }
 #s01 {
