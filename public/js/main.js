@@ -226,11 +226,16 @@ const renderDateBox = (startDate, endDate) => {
 
   travelArr.forEach(travel => {
     const day = travel.splice(0, 3).join('');
-    const month = travel.splice(1, 3).join('');
-    console.log(travel);
-    const date = travel[2] === '0' ? travel[3] : travel.splice(2, 2).join('');
-    const year = travel.splice(1, 4).join('');
-    console.log(date)
+    let month = travel.splice(1, 3).join('');
+    const date = travel[2] === '0' ? travel.splice(2, 2)[1] : travel.splice(2, 2).join('');
+    const year = travel.splice(3, 4).join('');
+
+    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    month = months.findIndex(mm => mm === month) + 1;
+
+    console.log(year)
+    console.log(month)
+
     html += `<li class="date-item">
         <div class="day ${year} ${month}">${date}</div>
         <div class="week ${year} ${month}">${day}</div>

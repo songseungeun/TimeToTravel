@@ -104,6 +104,15 @@
       "place": "ㄹㄴㅇ",
       "detail": "ㄴㅇㄹ",
       "id": 10
+    },
+    {
+      "travelId": "10",
+      "date": "Apr/1",
+      "timeFrom": "12:20",
+      "timeTo": "10:10",
+      "place": "ㄹㅎㅇ",
+      "detail": "ㅇㄹㅎ",
+      "id": 11
     }
   ],
   "airlines": [
