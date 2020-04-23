@@ -118,14 +118,8 @@ const closeScheduleAlertPopup = () => {
 let navState = 'home';
 
 const changeNav = target => {
-  console.log('before', target);
-  console.log(navState);
-  console.log($menuList.children);
   if (!target.matches('.menu-list i')) return;
   navState = target.matches('i.fa-home') ? 'home' : target.parentNode.id;
-
-  console.log(target);
-  console.log(navState);
 
   [...$menuList.children].forEach(menuItem => menuItem.classList.toggle('active', menuItem.id === target.parentNode.id));
   [...$mainList.children].forEach(main => main.classList.toggle('main-view', main.id === 'main-' + target.parentNode.id));
@@ -266,6 +260,7 @@ const renderDateBox = (startDate, endDate) => {
 
   $dateList.innerHTML = html;
 
+  afterBtn.style.opacity = travelPeriod <= 9 ? '0.3' : '1';
   beforeBtn.style.opacity = '0.3';
   $dateList.firstElementChild.classList.add('active');
 };
@@ -273,7 +268,9 @@ const renderDateBox = (startDate, endDate) => {
 // 날짜 화살표 클릭 시 이동하는 기능
 function moveDatetoPrev({ target }) {
   if (!target.matches('.date-before-btn')) return;
+  if (travelPeriod > 9) afterBtn.style.opacity = '1';
   dateItemMove -= 83;
+
   if (dateItemMove <= 0) {
     dateItemMove = 0;
     beforeBtn.style.opacity = '0.3';
@@ -283,14 +280,16 @@ function moveDatetoPrev({ target }) {
 }
 
 function moveDatetoNext({ target }) {
-  beforeBtn.style.opacity = '1';
-
-  let moveLimit = (travelPeriod - 9) * 83;
   if (travelPeriod < 8) return;
   if (!target.matches('.date-after-btn')) return;
+  let moveLimit = (travelPeriod - 9) * 83;
   dateItemMove += 83;
+  beforeBtn.style.opacity = '1';
 
-  if (dateItemMove > moveLimit) dateItemMove = moveLimit;
+  if (dateItemMove > moveLimit) {
+    dateItemMove = moveLimit;
+    afterBtn.style.opacity = '0.3';
+  }
   dateList.style.transform = `translate3D(-${dateItemMove}px, 0, 0)`;
   dateList.style.transition = 'all 0.3s ease-out';
 }
