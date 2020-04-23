@@ -413,6 +413,18 @@ const goToTimeline = async target => {
   renderMonthYear(startDate.split('/')[1], startDate.split('/')[0]);
 };
 
+const $timeWarningText = document.querySelector('#end-warning-label');
+const $dateWarningText = document.querySelector('#newend-warning-label');
+
+const warnDate = () => {
+  const start = new Date(`${$startYear.value}/${$startMonth.value}/${$startDate.value}`);
+  const end = new Date(`${$endYear.value}/${$endMonth.value}/${$endDate.value}`);
+  const isValid = end.getTime() - start.getTime() > 0
+
+  $dateWarningText.style.display = isValid ? 'block' : 'none';
+  return isValid;
+};
+
 // event handlers
 window.onload = getTravels;
 
@@ -569,5 +581,10 @@ $startMinSelect.addEventListener('change', changeEndMin);
 // $startHourSelects.forEach(selects => selects.addEventListener('change', ({ target }) => printEndTime(target)));
 // $startMinuteSelects.forEach(selects => selects.addEventListener('change', ({ target }) => printEndTime(target)));
 
+
+
+
+
+
 // export
-export { changeNav, resetSchedulePopup, resetTravelPopup, $mainList, $menuList, $travelList, $timelineTitle };
+export { warnDate, changeNav, resetSchedulePopup, resetTravelPopup, $mainList, $menuList, $travelList, $timelineTitle };

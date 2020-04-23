@@ -1,3 +1,5 @@
+import { warnDate } from './main.js'
+
 const $travelPopupInput = document.querySelectorAll('.new-travel-popup input');
 const $travelPopupSelect = document.querySelectorAll('.new-travel-popup select');
 const $travelHiddenBtn = document.querySelector('.add-travel-btn-hidden');
@@ -9,6 +11,7 @@ const $scheduleHiddenBtn = document.querySelector('.add-schedule-btn-hidden');
 function actBtn() {
   const arr = [];
   const arr2 = [];
+  const isValid = warnDate();
   $travelPopupInput.forEach(input => {
     arr.push(input.value !== '');
   });
@@ -17,7 +20,8 @@ function actBtn() {
   });
 
   $travelHiddenBtn.style.display = 'block';
-  if (![...arr, ...arr2].every(arr => arr)) return;
+  console.log(isValid);
+  if (![...arr, ...arr2].every(arr => arr) && isValid) return;
   $travelHiddenBtn.style.display = 'none';
 }
 
