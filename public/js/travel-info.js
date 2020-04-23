@@ -19,7 +19,7 @@ const $allMoreBtn = document.querySelector('.detail-btn-wrapper');
 const $hotelBtn = document.querySelector('.hotel-btn');
 const $airlineBtn = document.querySelector('.airline-btn');
 const $hotelPopupRemove = document.querySelector('.hotelRemoveBtn');
-const $hotelAddBtn = document.querySelector('.hotelAddBtn ');
+const $hotelAddBtn = document.querySelector('.hotelAddBtn');
 const $hotelPopupBg = document.querySelector('.hotelBg');
 const $departureSec = document.querySelector('.departure-section');
 const $arrivalSec = document.querySelector('.arrival-section');
@@ -33,9 +33,10 @@ const $inputDepAirport = document.querySelector('.dep-airlines');
 const $depArrMinSelect = document.querySelector('#dep-airline-min-select');
 const $depArrHourSelect = document.querySelector('#dep-airline-hour-select');
 const $inputDepArrAirport = document.querySelector('.arr-airlines');
-const $travelInfoList = document.querySelector('.start-airline');
 const $selectWrappers = document.querySelectorAll('.select-wrapper');
-const $dateList = document.querySelector('.date-list');
+const $inputHotelName = document.querySelector('.input-title');
+const $inputHotelPlace = document.querySelector('.input-place');
+const $inputHotelSite = document.querySelector('.input-site');
 
 //RENDER
 const renderAirlineInfo = () => {
@@ -90,14 +91,13 @@ const closeAirlinePopup = () => {
 //post
 const addAirlineInfo = async () => {
   const startMonth = `${$depMonthSelect.value}/${$depDaySelect.value}`;
-  const inputAirName = $inputAirline.value;
+  const inputAirName = $inputAirline.value.trim();
   const departureTime = `${$depHourSelect}:${$depMinSelect}`;
-  const departureAirport = $inputDepAirport.value;
+  const departureAirport = $inputDepAirport.value.trim();
   const arrivalTime = `${$depArrHourSelect}:${$depArrMinSelect}`;
-  const arrivalAirport = $inputDepArrAirport.value;
+  const arrivalAirport = $inputDepArrAirport.value.trim();
 
   const { data } = await axios.post('/airlines', { travelId, type: 'departure', date: startMonth, airplaneName: inputAirName, departureTime, departureAirport, arrivalTime, arrivalAirport });
-  console.log(airlines);
   airlines = [data, ...airlines];
 
   closeAirlinePopup();
@@ -108,13 +108,13 @@ const addAirlineInfo = async () => {
 const renderLodgingInfo = () => {
   let html = '';
 
-  lodgings = lodgings.forEach(({ lodgingNumber, hotelName, hotelPlace, hotelsite }) => {
-    html += `<div class="hotel-reservation1 lodging-name">
-            <h3>${lodgingNumber}</h3>
+  lodgings.forEach(({ id, hotelName, hotelPlace, hotelsite }) => {
+    html += `<li class="hotel-reservation lodging-name">
+            <h3>${id}</h3>
             <span class="hotel-name">${hotelName}</span>
             <span class="hotel-place">${hotelPlace}</span>
             <span class="hotel-site">${hotelsite}</span>
-          </div>`;
+          </li>`;
   });
   $lodgingScheduleList.innerHTML = html;
 };
@@ -122,22 +122,40 @@ const renderLodgingInfo = () => {
 export const getLodgingData = async () => {
   const { data } = await axios.get('/lodgings');
   lodgings = data;
+  console.log(lodgings);
 
   renderLodgingInfo();
 };
 
 const resetLodgingPopup = () => {
-  const selects = [...$selectWrappers].map(select => select.firstElementChild);
-  selects.forEach(child => (child.firstElementChild.selected = 'selected'));
-
-  $inputAirline.value = '';
-  $inputDepAirport.value = '';
-  $inputDepArrAirport.value = '';
+  $inputHotelName.value = '';
+  $inputHotelPlace.value = '';
+  $inputHotelSite.value = '';
 };
 
 const closeLodgingPopup = () => {
   $hotelPopup.style.display = 'none';
   $hotelPopupBg.style.display = 'none';
+  resetLodgingPopup();
+};
+
+const generateId = () => {
+  return lodgings.length ? Math.max(...lodgings.map(({ id }) => id)) + 1 : 1;
+};
+
+//post
+const addHotelInfo = async () => {
+  console.log(lodgings);
+  const lodgingNumber = generateId();
+  const hotelName = $inputHotelName.value.trim();
+  const hotelPlace = $inputHotelPlace.value.trim();
+  const hotelsite = $inputHotelSite.value.trim();
+
+  const { data } = await axios.post('/lodgings', { id: lodgingNumber, hotelName, hotelPlace, hotelsite });
+  lodgings = [data, ...lodgings];
+
+  closeLodgingPopup();
+  renderLodgingInfo(lodgings);
   resetLodgingPopup();
 };
 
@@ -201,4 +219,13 @@ $airlineAddBtn.onclick = () => {
   addAirlineInfo();
   // $airlineBg.style.display = 'none';
   // $airlinePopup.style.display = 'none';
+};
+
+$hotelAddBtn.onclick = () => {
+  console.log(lodgings);
+  addHotelInfo();
+};
+
+$airlineAddBtn.onclick = () => {
+  addAirlineInfo();
 };

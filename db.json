@@ -85,16 +85,28 @@
   ],
   "lodgings": [
     {
-      "lodgingNumber": 1,
+      "id": 1,
       "hotelName": "63빌딩",
       "hotelPlace": "서울",
       "hotelsite": "agoda"
     },
     {
-      "lodgingNumber": 2,
+      "id": 2,
       "hotelName": "63빌딩",
       "hotelPlace": "서울",
       "hotelsite": "agoda"
+    },
+    {
+      "id": 3,
+      "hotelName": "",
+      "hotelPlace": "",
+      "hotelsite": "ㄹㄹㄹ"
+    },
+    {
+      "id": 4,
+      "hotelName": "",
+      "hotelPlace": "",
+      "hotelsite": "ㄹ"
     }
   ]
 }
