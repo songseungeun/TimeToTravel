@@ -70,6 +70,51 @@
       "place": "ㅇㄹㄴㄹㅇㄴ",
       "detail": "ㄴㅇㄹㄴㅇㄹ",
       "id": 3
+    },
+    {
+      "travelId": "13",
+      "date": "9/23",
+      "timeFrom": "8:10",
+      "timeTo": "8:10",
+      "place": "ㄹㅇㄴ",
+      "detail": "ㅇㄹㄴ",
+      "id": 4
+    },
+    {
+      "travelId": "8",
+      "date": "2/5",
+      "timeFrom": "8:10",
+      "timeTo": "8:20",
+      "place": "ㅋㅋ",
+      "detail": "ㅋㅋ",
+      "id": 5
+    },
+    {
+      "travelId": "8",
+      "date": "2/5",
+      "timeFrom": "9:10",
+      "timeTo": "10:20",
+      "place": "시작시간",
+      "detail": "종료시간",
+      "id": 6
+    },
+    {
+      "travelId": "8",
+      "date": "2/5",
+      "timeFrom": "11:20",
+      "timeTo": "11:30",
+      "place": "할일추가",
+      "detail": "할거 많다",
+      "id": 7
+    },
+    {
+      "travelId": "8",
+      "date": "2/8",
+      "timeFrom": "8:00",
+      "timeTo": "9:00",
+      "place": "ㅁㄴㅇㄹ",
+      "detail": "ㄴㅇㄹ",
+      "id": 8
     }
   ],
   "airlines": [

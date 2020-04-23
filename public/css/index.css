@@ -45,6 +45,9 @@ main.main-view {
 }
 
 /* HEADER */
+h1 {
+  cursor: pointer;
+}
 .header {
   width: 100%;
   height: 70px;
@@ -242,6 +245,7 @@ main.main-view {
   margin-bottom: 10px;
   line-height: 1.4;
   left: 80px;
+  /* display: flex; */
 }
 /* 2, 5, 8, 11 */
 .schedule-list li:nth-child(3n + 2) {

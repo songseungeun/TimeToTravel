@@ -7,7 +7,7 @@ let travelId = '';
 
 const $menuList = document.querySelector('.menu-list');
 const $mainList = document.querySelector('.main-wrapper');
-
+const $logo = document.querySelector('h1');
 const $menuBar = document.querySelector('.menu-bar');
 const $header = document.querySelector('.header h2');
 const $startHour = document.querySelector('#start-hour-select');
@@ -112,6 +112,29 @@ const closeTravelAlertPopup = () => {
 const closeScheduleAlertPopup = () => {
   $timelineAlertPopup.style.display = 'none';
   $timeAlertPopupBg.style.display = 'none';
+};
+
+// nav bar
+let navState = 'home';
+
+const changeNav = target => {
+  console.log('before', target);
+  console.log(navState);
+  console.log($menuList.children);
+  if (!target.matches('.menu-list i')) return;
+  navState = target.matches('i.fa-home') ? 'home' : target.parentNode.id;
+
+  console.log(target);
+  console.log(navState);
+
+  [...$menuList.children].forEach(menuItem => menuItem.classList.toggle('active', menuItem.id === target.parentNode.id));
+  [...$mainList.children].forEach(main => main.classList.toggle('main-view', main.id === 'main-' + target.parentNode.id));
+
+  if (navState === 'home') {
+    const [homeMenu, ...removeMenus] = [...$menuList.children];
+    removeMenus.forEach(menuIcon => menuIcon.style.display = 'none');
+    $timelineTitle.classList = 'timeline-travel-title';
+  }
 };
 
 // travel list
@@ -387,10 +410,15 @@ const goToTimeline = async target => {
 // event handlers
 window.onload = getTravels;
 
-$addScheduleBtn.addEventListener('click', addSchedule);
+$logo.addEventListener('click', getTravels);
+$logo.addEventListener('click', ({ target }) => {
+  if (target.matches('h1 > i') || target.matches('h1')) changeNav(document.querySelector('i.fa-home'));
+});
+
 
 //x버튼을 누르면 팝업창 종료
 $popupRemoveBtn.addEventListener('click', closePopup);
+$addScheduleBtn.addEventListener('click', addSchedule);
 
 $popupBg.onclick = () => {
   closePopup();
@@ -489,9 +517,9 @@ const printStartTime = () => {
 
   $startMinuteSelects.forEach(minuteSelect => {
     minute.forEach((element, key) => {
-      minuteSelect[key] = new Option(`${element}분`, (key - 1) * 10);
-      if (element === 'MIN') minuteSelect[key] = new Option(`${element}`, '0');
-      if (element === '00') minuteSelect[key] = new Option(`${element} 분`, '00');
+      minuteSelect[key] = new Option(`${element} 분`, (key - 1) * 10, true);
+      if (element === 'MIN') minuteSelect[key] = new Option(`${element}`, '0', true);
+      if (element === 0) minuteSelect[key] = new Option(`${element}0 분`, '00', true);
     });
   });
 };
@@ -508,15 +536,14 @@ const printEndTime = target => {
     hour.forEach((element, key) => {
       hourSelect[key] = new Option(`${element} 시`, element, true);
       if (element === 'HOUR') hourSelect[key] = new Option(element, '0', true);
-      console.log(hourSelect[key]);
     });
   });
 
   $endMinuteSelects.forEach(minuteSelect => {
     minute.forEach((element, key) => {
-      minuteSelect[key] = new Option(`${element}분`, (key - 1) * 10, true);
+      minuteSelect[key] = new Option(`${element} 분`, (key - 1) * 10, true);
       if (element === 'MIN') minuteSelect[key] = new Option(`${element}`, '0', true);
-      if (element === '00') minuteSelect[key] = new Option(`${element} 분`, '00', true);
+      if (element === 0) minuteSelect[key] = new Option(`${element}0 분`, '00', true);
     });
   });
 };
@@ -526,4 +553,4 @@ $startHourSelects.forEach(selects => selects.addEventListener('change', ({ targe
 $startMinuteSelects.forEach(selects => selects.addEventListener('change', ({ target }) => printEndTime(target)));
 
 // export
-export { resetSchedulePopup, resetTravelPopup, $mainList, $menuList, $travelList, $timelineTitle };
+export { changeNav, resetSchedulePopup, resetTravelPopup, $mainList, $menuList, $travelList, $timelineTitle };
