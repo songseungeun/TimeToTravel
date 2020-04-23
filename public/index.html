@@ -15,7 +15,7 @@
     <script type="module" src="./js/timeline.js" defer></script>
     <script type="module" src="./js/select-box-date.js" defer></script>
     <script type="module" src="./js/popup-warnning.js" defer></script>
-    <script type="module" src="./js/travel-info.js" defer></script>
+    <!-- <script type="module" src="./js/travel-info.js" defer></script> -->
   </head>
   <body>
     <div class="wrapper clearfix">
@@ -288,52 +288,64 @@
         <!-- travel info -->
         <main class="main-info" id="main-airplane">
           <header class="header">
-            <h2>travel <strong>Info</strong></h2>
+            <h2>Travel <strong>Info</strong></h2>
           </header>
           <div class="airline-ticket">
-            <h3>항공권</h3>
+            <h3>예약 항공권</h3>
             <ol class="airline-schedule">
-              <!-- <li id="air1" class="airline-schedule-detail clearfix">
-                <div class="airline-info1 airline-departure">
+              <li id="air1" class="airline-schedule-detail">
+                <div class="airline-departure">
                   <em>출발</em>
                 </div>
-                <div class="airline-info2 departure-info-date">
+                <div class="departure-info-date">
                   <span class="date">4/3 FRI</span>
                   <span class="airlines">아시아나항공</span>
                 </div>
-                <div class="airline-departure departure-airline-time">
+                <div class="departure-airline-time">
                   <span class="time">20:40</span>
                   <span class="airport">ICN</span>
                 </div>
-                <div class="airline-arrival departure-arrival-time">
+                <div class="departure-arrival-time">
                   <span class="time">16:00</span>
                   <span class="airport">LAX</span>
                 </div>
               </li>
-              <li class="clearfix">
-                <div class="airline-info1 airline-arrival">
+              <li>
+                <div class="airline-arrival">
                   <em>도착</em>
                 </div>
-                <div class="airline-info2 arrival-info-date">
+                <div class="arrival-info-date">
                   <span class="date">4/3 FRI</span>
                   <span class="airlines">아시아나항공</span>
                 </div>
-                <div class="airline-departure arrival-airline-time">
+                <div class="arrival-airline-time">
                   <span class="time">20:40</span>
                   <span class="airport">ICN</span>
                 </div>
-                <div class="airline-arrival arrival-airline-time">
+                <div class="arrival-airline-time">
                   <span class="time">16:00</span>
                   <span class="airport">LAX</span>
-                </div> -->
+                </div>
               </li>
             </ol>
           </div>
-          <div class="hotel-reservation1 lodging-name">
-            <h3>숙소 1</h3>
-
-            <ol class="lodging-schedule airline-schedule">
+          <div class="hotel-info lodging-name">
+            <h3>예약 숙소 정보</h3>
+            <ol class="lodging-schedule hotel-schedule">
+              <li class="hotel-reservation1">
+                <em>숙소 1</em>
+                <span class="hotel-name">ACE HOTEL</span>
+                <span class="hotel-place">팜스프링스</span>
+                <span class="hotel-site">AGODA</span>
+              </li>
+              <li class="hotel-reservation2">
+                <em>숙소 2</em>
+                <span class="hotel-name">ACE HOTEL</span>
+                <span class="hotel-place">팜스프링스</span>
+                <span class="hotel-site">AGODA</span>
+              </li>
             </ol>
+          </div>
             
           <!-- POPUP BUTTON -->
           <div class="airline new-info-btn">
@@ -412,49 +424,64 @@
             <div class="end-airline">
               <h3>도착정보</h3>
               <!-- <label for="date-select">도착:</label> -->
-              <select name="month" id="arrival-month-select">
-                <option value="">MONTH</option>
-                <option value="">APR</option>
-                <option value="">MAY</option>
-              </select>
-              <select name="day" id="day-select">
-                <option value="">DAY</option>
-                <option value="">13</option>
-                <option value="">14</option>
-              </select>
+              <div class="select-wrapper">
+                <select name="month" id="arrival-month-select">
+                  <option value="">MONTH</option>
+                  <option value="">APR</option>
+                  <option value="">MAY</option>
+                </select>
+                <div class="select-arrow"></div>
+              </div>
+              <div class="select-wrapper">
+                <select name="day" id="day-select">
+                  <option value="">DAY</option>
+                  <option value="">13</option>
+                  <option value="">14</option>
+                </select>
+                <div class="select-arrow"></div>
+              </div>
               <input type="text" class="input-airlines" placeholder="항공사" />
-
-              <select name="hour" id="arrival-hour-select">
-                <option value="">HOUR</option>
-                <option value="">09</option>
-                <option value="">10</option>
-              </select>
-              <select name="min" id="arrival-min-select">
-                <option value="">MINUTE</option>
-                <option value="">20</option>
-                <option value="">30</option>
-              </select>
+              <div class="select-wrapper">
+                <select name="hour" id="arrival-hour-select">
+                  <option value="">HOUR</option>
+                  <option value="">09</option>
+                  <option value="">10</option>
+                </select>
+                <div class="select-arrow"></div>
+              </div>
+              <div class="select-wrapper">
+                <select name="min" id="arrival-min-select">
+                  <option value="">MINUTE</option>
+                  <option value="">20</option>
+                  <option value="">30</option>
+                </select>
+                <div class="select-arrow"></div>
+              </div>
               <input type="text" class="dep-airlines" placeholder="출발공항" />
-
-              <select name="hour" id="arrival-hour-select">
-                <option value="">HOUR</option>
-                <option value="">09</option>
-                <option value="">10</option>
-              </select>
-              <select name="min" id="arrival-min-select">
-                <option value="">MINUTE</option>
-                <option value="">20</option>
-                <option value="">30</option>
-              </select>
+              <div class="select-wrapper">
+                <select name="hour" id="arrival-hour-select">
+                  <option value="">HOUR</option>
+                  <option value="">09</option>
+                  <option value="">10</option>
+                </select>
+                <div class="select-arrow"></div>
+              </div>
+              <div class="select-wrapper">
+                <select name="min" id="arrival-min-select">
+                  <option value="">MINUTE</option>
+                  <option value="">20</option>
+                  <option value="">30</option>
+                </select>
+                <div class="select-arrow"></div>
+              </div>
               <input type="text" class="arr-airlines" placeholder="도착공항" />
-              
             </div>
             <button class="airlineAddBtn add-schedule-btn">등록</button>
             <div class="airlineRemoveBtn popup-remove-btn">X</div>
           </div>
           <div class="new-info-popup2 popup-style">
             <h2>숙소 정보 추가</h2>
-            <label for="">숙소정보:</label>
+            <!-- <label for="">숙소정보:</label> -->
             <input type="text" class="input-title" placeholder="숙소이름" />
             <input type="text" class="input-place" placeholder="장소" />
             <input type="text" class="input-site" placeholder="예약사이트" />
