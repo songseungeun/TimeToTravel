@@ -103,6 +103,16 @@ const closeTravelPopup = () => {
   resetTravelPopup();
 };
 
+const closeTravelAlertPopup = () => {
+  $alertPopup.style.display = 'none';
+  $alertPopupBg.style.display = 'none';
+};
+
+const closeScheduleAlertPopup = () => {
+  $timelineAlertPopup.style.display = 'none';
+  $timeAlertPopupBg.style.display = 'none';
+};
+
 // travel list
 const generateDday = startDate => {
   let dDay = 0;
@@ -218,12 +228,16 @@ const renderDateBox = (startDate, endDate) => {
   });
 
   travelArr.forEach(travel => {
-    const today = new Date(travel);
     const year = travel.split('/')[0];
     const month = travel.split('/')[1];
+
+    const today = new Date(travel);
     const date = today.getDate();
+
     const dayNames = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
     const day = dayNames[today.getDay()];
+
+
 
     html += `<li class="date-item">
         <div class="day ${year} ${month}">${date}</div>
@@ -349,7 +363,7 @@ const removeSchedule = async removeId => {
 
 const goToTimeline = async target => {
   const nodeNames = ['LI', 'EM', 'SPAN', 'DIV', 'H2'];
-  const targetNode = nodeNames.filter(node => node === target.nodeName)[0]
+  const targetNode = nodeNames.filter(node => node === target.nodeName)[0];
   if (!targetNode) return;
 
   if (targetNode === 'LI') travelId = target.id.split('-')[1];
@@ -358,14 +372,16 @@ const goToTimeline = async target => {
 
   const timeline = document.getElementById('main-calendar');
   const home = document.getElementById('main-home');
-  const { data: { startDate, endDate, title }} = await axios.get(`/travels/${travelId}`);
+  const {
+    data: { startDate, endDate, title },
+  } = await axios.get(`/travels/${travelId}`);
 
   timeline.classList.add('main-view');
   home.classList.remove('main-view');
   $timelineTitle.textContent = title;
   [...$menuList.children].forEach(icon => {
     icon.style.display = 'block';
-    icon.classList.toggle('active', icon.id === 'calendar'); 
+    icon.classList.toggle('active', icon.id === 'calendar');
   });
 
   renderDateBox(startDate, endDate);
@@ -384,6 +400,14 @@ $popupRemoveBtn.addEventListener('click', closePopup);
 $popupBg.onclick = () => {
   closePopup();
   resetSchedulePopup();
+};
+
+$alertPopupBg.onclick = () => {
+  closeTravelAlertPopup();
+};
+
+$timeAlertPopupBg.onclick = () => {
+  closeScheduleAlertPopup();
 };
 
 $newScheduleBtn.onclick = () => {
@@ -458,8 +482,18 @@ const $endMinuteSelects = document.querySelectorAll('.select-end-hour > .select-
 const $startMinuteSelects = document.querySelectorAll('.select-start-hour > .select-wrapper > .min-select');
 
 const printStartTime = () => {
-  let hour = ['HOUR', ...Array.from({ length: 17 }, function (v, i) { return (i + 7); })];
-  let minute = ['MIN', ...Array.from({ length: 6 }, function (v, i) { return i * 10; })];
+  let hour = [
+    'HOUR',
+    ...Array.from({ length: 17 }, function (v, i) {
+      return i + 7;
+    }),
+  ];
+  let minute = [
+    'MIN',
+    ...Array.from({ length: 6 }, function (v, i) {
+      return i * 10;
+    }),
+  ];
 
   $startHourSelects.forEach(hourSelect => {
     hour.forEach((element, key) => {
@@ -482,10 +516,18 @@ const printEndTime = target => {
   console.log([...target.children].map(child => child.selected));
   // console.log(target.children);
 
-  let hour = ['HOUR', ...Array.from({ length: 17 }, function (v, i) { return (i + 7); })];
-  let minute = ['MIN', ...Array.from({ length: 6 }, function (v, i) { return i * 10; })];
-
-
+  let hour = [
+    'HOUR',
+    ...Array.from({ length: 17 }, function (v, i) {
+      return i + 7;
+    }),
+  ];
+  let minute = [
+    'MIN',
+    ...Array.from({ length: 6 }, function (v, i) {
+      return i * 10;
+    }),
+  ];
 
   $endHourSelects.forEach(hourSelect => {
     hour.forEach((element, key) => {

@@ -1,6 +1,7 @@
 let airlines = [];
 let lodgings = [];
 
+//DOM
 const $airlineTicket = document.querySelector('.airline-ticket');
 const $airlineSchedule = document.querySelector('.airline-schedule');
 const $airlineScheduleDetail = document.querySelector('.airline-schedule-detail');
@@ -13,6 +14,7 @@ const $airlineAddBtn = document.querySelector('.airlineAddBtn');
 const $airlinePopupRemove = document.querySelector('.airlineRemoveBtn');
 const $airlineMonthSelect = document.querySelector('#airline-month-select');
 
+//RENDER
 const renderAirlineInfo = () => {
   let html = '';
 
@@ -67,6 +69,7 @@ export const getLodgingData = async () => {
   renderLodgingInfo();
 };
 
+//EVENT HANDLER
 $airlineBtn.onclick = () => {
   $airlineBg.style.display = 'block';
   $airlinePopup.style.display = 'block';
@@ -85,8 +88,8 @@ $airlineAddBtn.onclick = e => {
   $airlinePopup.style.display = 'none';
 };
 
-//FIXME: 호텔이랑 비행기 순서 정리
-/**
- * NOTE:
- * HTML에 OL태그 추가 필요
-*/
+//post
+// $airlineAddBtn.onclick = async () =>{
+// const title = $in
+
+// }
