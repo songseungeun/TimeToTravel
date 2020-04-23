@@ -7,7 +7,7 @@ let travelId = '';
 
 const $menuList = document.querySelector('.menu-list');
 const $mainList = document.querySelector('.main-wrapper');
-
+const $logo = document.querySelector('h1');
 const $menuBar = document.querySelector('.menu-bar');
 const $header = document.querySelector('.header h2');
 const $startHour = document.querySelector('#start-hour-select');
@@ -63,10 +63,10 @@ const $selectEndWarning = document.querySelector('#end-warning-label');
 const $inputDetailWarning = document.querySelector('#detail-warning-label');
 const $inputPlaceWarning = document.querySelector('#place-warning-label');
 const $deleteConfirmModal = document.querySelector('.delete-confirm-modal');
+const $selectWrappers = document.querySelectorAll('.select-wrapper');
 
 // functions
 // popups
-//+버튼 누르면 팝업창 오픈
 const closePopup = () => {
   $newSchedulePopUp.style.display = 'none';
   $popupBg.style.display = 'none';
@@ -74,18 +74,19 @@ const closePopup = () => {
 };
 
 const resetSchedulePopup = () => {
+  const selects = [...$selectWrappers].map(select => select.firstElementChild);
+  selects.forEach(child => (child.firstElementChild.selected = 'selected'));
+
   $inputSchedulePlace.value = '';
   $inputScheduleDetail.value = '';
 };
 
 const resetTravelPopup = () => {
-  const selectWrappers = document.querySelectorAll('.select-wrapper');
-  const selects = [...selectWrappers].map(select => select.firstElementChild);
+  const selects = [...$selectWrappers].map(select => select.firstElementChild);
+  selects.forEach(child => (child.firstElementChild.selected = 'selected'));
 
   $inputTravelTitle.value = '';
   $inputTravelPlace.value = '';
-
-  selects.forEach(child => (child.firstElementChild.selected = 'selected'));
 };
 
 const closeSchedulePopup = () => {
@@ -113,6 +114,29 @@ const closeScheduleAlertPopup = () => {
   $timeAlertPopupBg.style.display = 'none';
 };
 
+// nav bar
+let navState = 'home';
+
+const changeNav = target => {
+  console.log('before', target);
+  console.log(navState);
+  console.log($menuList.children);
+  if (!target.matches('.menu-list i')) return;
+  navState = target.matches('i.fa-home') ? 'home' : target.parentNode.id;
+
+  console.log(target);
+  console.log(navState);
+
+  [...$menuList.children].forEach(menuItem => menuItem.classList.toggle('active', menuItem.id === target.parentNode.id));
+  [...$mainList.children].forEach(main => main.classList.toggle('main-view', main.id === 'main-' + target.parentNode.id));
+
+  if (navState === 'home') {
+    const [homeMenu, ...removeMenus] = [...$menuList.children];
+    removeMenus.forEach(menuIcon => menuIcon.style.display = 'none');
+    $timelineTitle.classList = 'timeline-travel-title';
+  }
+};
+
 // travel list
 const generateDday = startDate => {
   let dDay = 0;
@@ -133,13 +157,15 @@ const sortTravels = travels => {
 
 const renderTravelList = () => {
   let html = '';
+  let bg = 0;
 
   $travelNoneText.style.display = travels.length === 0 ? 'block' : 'none';
 
   sortTravels(travels);
 
   travels.forEach(({ id, title, place, startDate, endDate }) => {
-    html += ` <li id=t-${id}>
+    bg++
+    html += ` <li id=t-${id} class="bg-${bg % 4}">
           <h2>${title}</h2>
           <em>${generateDday(startDate)}</em>
           <div class="travel-info">
@@ -203,12 +229,11 @@ const renderMonthYear = (month, year) => {
 
 // 날짜 세서 렌더하는 기능
 let travelPeriod = 0;
+let dateItemMove = 0;
 
 const dateList = document.querySelector('.date-list');
 const beforeBtn = document.querySelector('.date-before-btn');
 const afterBtn = document.querySelector('.date-after-btn');
-
-let dateItemMove = 0;
 
 const renderDateBox = (startDate, endDate) => {
   let html = '';
@@ -233,9 +258,6 @@ const renderDateBox = (startDate, endDate) => {
     const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
     month = months.findIndex(mm => mm === month) + 1;
 
-    console.log(year)
-    console.log(month)
-
     html += `<li class="date-item">
         <div class="day ${year} ${month}">${date}</div>
         <div class="week ${year} ${month}">${day}</div>
@@ -250,7 +272,6 @@ const renderDateBox = (startDate, endDate) => {
 
 // 날짜 화살표 클릭 시 이동하는 기능
 function moveDatetoPrev({ target }) {
-  console.log(travelPeriod);
   if (!target.matches('.date-before-btn')) return;
   dateItemMove -= 83;
   if (dateItemMove <= 0) {
@@ -273,6 +294,11 @@ function moveDatetoNext({ target }) {
   dateList.style.transform = `translate3D(-${dateItemMove}px, 0, 0)`;
   dateList.style.transition = 'all 0.3s ease-out';
 }
+
+$travelList.addEventListener('click', () => {
+  dateList.style.transform = `translate3D(0, 0, 0)`
+  dateItemMove = 0;
+});
 
 beforeBtn.addEventListener('click', moveDatetoPrev);
 afterBtn.addEventListener('click', moveDatetoNext);
@@ -369,6 +395,8 @@ const goToTimeline = async target => {
   timeline.classList.add('main-view');
   home.classList.remove('main-view');
   $timelineTitle.textContent = title;
+  $timelineTitle.classList.add(target.classList[0]);
+
   [...$menuList.children].forEach(icon => {
     icon.style.display = 'block';
     icon.classList.toggle('active', icon.id === 'calendar');
@@ -382,10 +410,16 @@ const goToTimeline = async target => {
 // event handlers
 window.onload = getTravels;
 
-$addScheduleBtn.addEventListener('click', addSchedule);
+$menuList.addEventListener('click', ({ target }) => changeNav(target));
+
+$logo.addEventListener('click', getTravels);
+$logo.addEventListener('click', ({ target }) => {
+  if (target.matches('h1 > i') || target.matches('h1')) changeNav(document.querySelector('i.fa-home'));
+});
 
 //x버튼을 누르면 팝업창 종료
 $popupRemoveBtn.addEventListener('click', closePopup);
+$addScheduleBtn.addEventListener('click', addSchedule);
 
 $popupBg.onclick = () => {
   closePopup();
@@ -484,9 +518,9 @@ const printStartTime = () => {
 
   $startMinuteSelects.forEach(minuteSelect => {
     minute.forEach((element, key) => {
-      minuteSelect[key] = new Option(`${element}분`, (key - 1) * 10);
-      if (element === 'MIN') minuteSelect[key] = new Option(`${element}`, '0');
-      if (element === '00') minuteSelect[key] = new Option(`${element} 분`, '00');
+      minuteSelect[key] = new Option(`${element} 분`, (key - 1) * 10, true);
+      if (element === 'MIN') minuteSelect[key] = new Option(`${element}`, '0', true);
+      if (element === 0) minuteSelect[key] = new Option(`${element}0 분`, '00', true);
     });
   });
 };
@@ -503,15 +537,14 @@ const printEndTime = target => {
     hour.forEach((element, key) => {
       hourSelect[key] = new Option(`${element} 시`, element, true);
       if (element === 'HOUR') hourSelect[key] = new Option(element, '0', true);
-      console.log(hourSelect[key]);
     });
   });
 
   $endMinuteSelects.forEach(minuteSelect => {
     minute.forEach((element, key) => {
-      minuteSelect[key] = new Option(`${element}분`, (key - 1) * 10, true);
+      minuteSelect[key] = new Option(`${element} 분`, (key - 1) * 10, true);
       if (element === 'MIN') minuteSelect[key] = new Option(`${element}`, '0', true);
-      if (element === '00') minuteSelect[key] = new Option(`${element} 분`, '00', true);
+      if (element === 0) minuteSelect[key] = new Option(`${element}0 분`, '00', true);
     });
   });
 };
@@ -521,4 +554,4 @@ $startHourSelects.forEach(selects => selects.addEventListener('change', ({ targe
 $startMinuteSelects.forEach(selects => selects.addEventListener('change', ({ target }) => printEndTime(target)));
 
 // export
-export { resetSchedulePopup, resetTravelPopup, $mainList, $menuList };
+export { changeNav, resetSchedulePopup, resetTravelPopup, $mainList, $menuList, $travelList, $timelineTitle };
