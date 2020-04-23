@@ -40,15 +40,6 @@
     {
       "travelId": "5",
       "date": "2/2",
-      "timeFrom": "12:30",
-      "timeTo": "15:30",
-      "place": "ㅋㅋ",
-      "detail": "ㅋㅋㅋ",
-      "id": 3
-    },
-    {
-      "travelId": "5",
-      "date": "2/2",
       "timeFrom": "9:00",
       "timeTo": "9:30",
       "place": "ㅋ",
