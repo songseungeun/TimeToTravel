@@ -22,25 +22,11 @@
       "endDate": "2021/5/4"
     },
     {
-      "id": 12,
-      "title": "ㅅㄷㄴㅅ",
-      "place": "`````",
-      "startDate": "2020/7/10",
-      "endDate": "2020/2/5"
-    },
-    {
       "id": 13,
       "title": "안녕",
       "place": "화이팅",
       "startDate": "2020/9/22",
       "endDate": "2021/4/19"
-    },
-    {
-      "id": 14,
-      "title": "유럽가고싶다",
-      "place": "아아아아아",
-      "startDate": "2020/1/18",
-      "endDate": "2020/6/0"
     },
     {
       "id": 15,
@@ -122,6 +108,15 @@
       "place": "ㅗㄹㅎ",
       "detail": "ㅗㄹㅎ",
       "id": 9
+    },
+    {
+      "travelId": "8",
+      "date": "2/5",
+      "timeFrom": "7:10",
+      "timeTo": "10:20",
+      "place": "ㄴㅇㄹ",
+      "detail": "ㄴㅇㄹ",
+      "id": 10
     }
   ],
   "airlines": [
