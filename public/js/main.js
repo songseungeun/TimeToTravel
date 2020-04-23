@@ -513,6 +513,17 @@ const $startMinSelect = document.getElementById('start-min-select');
 const $endHourSelect = document.getElementById('end-hour-select');
 const $endMinSelect = document.getElementById('end-min-select');
 
+const $newAirlineBtn = document.querySelector('.airline-btn');
+
+const $airlineHourSelect = document.getElementById('airline-hour-select');
+const $airlineMinSelect = document.getElementById('airline-min-select');
+const $depAirlineHourSelect = document.getElementById('dep-airline-hour-select');
+const $depAirlineMinSelect = document.getElementById('dep-airline-min-select');
+const $arrivalHourSelect = document.getElementById('arrival-hour-select');
+const $arrivalMinSelect = document.getElementById('arrival-min-select');
+const $depArrivalHourSelect = document.getElementById('dep-arrival-hour-select');
+const $depArrivalMinSelect = document.getElementById('dep-arrival-min-select');
+
 const changeEndHour = () => {
   [...$endHourSelect.options].forEach(opt => {
     if (opt.value === $startHourSelect.value) opt.setAttribute('selected','selected');
@@ -562,11 +573,36 @@ const printEndTime = target => {
   });
 };
 
+// const changeAirlineEndHour = () => {
+//   // console.log([...$depAirlineHourSelect.options]);
+//   [...$depAirlineHourSelect.options].forEach(opt => {
+//     console.log(opt);
+//     if (opt.value === $startHourSelect.value) opt.setAttribute('selected','selected');
+//   });
+// };
+
+// const changeAirlineEndMin = () => {
+//   [...$depAirlineMinSelect.options].forEach(opt => {
+//     if (opt.value === $startMinSelect.value) opt.setAttribute('selected','selected');
+//   });
+// };
+
 $newScheduleBtn.addEventListener('click', printStartTime);
 $newScheduleBtn.addEventListener('click', printEndTime);
 
+$newAirlineBtn.addEventListener('click', printStartTime);
+$newAirlineBtn.addEventListener('click', printEndTime);
+
 $startHourSelect.addEventListener('change', changeEndHour);
 $startMinSelect.addEventListener('change', changeEndMin);
+
+// $airlineHourSelect.addEventListener('change', changeAirlineEndHour);
+// $airlineMinSelect.addEventListener('change', changeAirlineEndMin);
+
+// $arrivalHourSelect.addEventListener('change', changeEndHour);
+// $arrivalMinSelect.addEventListener('change', changeEndMin);
+
+
 // $startHourSelects.forEach(selects => selects.addEventListener('change', ({ target }) => printEndTime(target)));
 // $startMinuteSelects.forEach(selects => selects.addEventListener('change', ({ target }) => printEndTime(target)));
 

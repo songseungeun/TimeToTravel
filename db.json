@@ -78,88 +78,53 @@
       "endDate": "2020/4/8"
     }
   ],
-  "schedules": [],
+  "schedules": [
+    {
+      "travelId": "1",
+      "date": "6/9",
+      "timeFrom": "10:20",
+      "timeTo": "8:20",
+      "place": "ㄹㄴㅇㄹ",
+      "detail": "ㄹㅇㄴㄴㄹㅇ",
+      "id": 1
+    }
+  ],
   "airlines": [
     {
-      "id": 1,
-      "travelId": 1,
+      "travelId": "",
       "type": "departure",
-      "date": "5/16",
-      "airplaneName": "아메리칸항공",
-      "departureTime": "18:10",
-      "departureAirport": "ICN",
-      "arrivalTime": "18:10",
-      "arrivalAirport": "ICN"
-    },
-    {
-      "id": 2,
-      "travelId": 2,
-      "type": "arrival",
-      "date": "5/16",
-      "airplaneName": "프랑스항공",
-      "departureTime": "18:10",
-      "departureAirport": "ICN",
-      "arrivalTime": "18:10",
-      "arrivalAirport": "ICN"
-    },
-    {
-      "id": 3,
-      "travelId": 3,
-      "type": "departure",
-      "date": "5/16",
-      "airplaneName": "델타항공",
-      "departureTime": "18:10",
-      "departureAirport": "ICN",
-      "arrivalTime": "18:10",
-      "arrivalAirport": "ICN"
+      "date": "4/24",
+      "airplaneName": "aaa",
+      "departureTime": "[object HTMLSelectElement]:[object HTMLSelectElement]",
+      "departureAirport": "ff",
+      "arrivalTime": "[object HTMLSelectElement]:[object HTMLSelectElement]",
+      "arrivalAirport": "fff",
+      "id": 1
     },
     {
       "travelId": "",
       "type": "departure",
-      "date": "APR/13",
-      "airplaneName": "ㅌㅊㅌ",
+      "date": "4/24",
+      "airplaneName": "aaa",
       "departureTime": "[object HTMLSelectElement]:[object HTMLSelectElement]",
-      "departureAirport": "ㅌㅊ",
+      "departureAirport": "ff",
       "arrivalTime": "[object HTMLSelectElement]:[object HTMLSelectElement]",
-      "arrivalAirport": "ㅊㅊ",
-      "id": 4
-    },
-    {
-      "travelId": "",
-      "type": "departure",
-      "date": "APR/14",
-      "airplaneName": "ㄹ",
-      "departureTime": "[object HTMLSelectElement]:[object HTMLSelectElement]",
-      "departureAirport": "ㄹ",
-      "arrivalTime": "[object HTMLSelectElement]:[object HTMLSelectElement]",
-      "arrivalAirport": "ㄹ",
-      "id": 5
+      "arrivalAirport": "fff",
+      "id": 2
     }
   ],
   "lodgings": [
     {
       "id": 1,
-      "hotelName": "63빌딩",
-      "hotelPlace": "서울",
-      "hotelsite": "agoda"
+      "hotelName": "",
+      "hotelPlace": "",
+      "hotelsite": "ㅇㄹㄴㄴㄹㅇ"
     },
     {
       "id": 2,
-      "hotelName": "63빌딩",
-      "hotelPlace": "서울",
-      "hotelsite": "agoda"
-    },
-    {
-      "id": 3,
       "hotelName": "",
       "hotelPlace": "",
-      "hotelsite": "ㄹㄹㄹ"
-    },
-    {
-      "id": 4,
-      "hotelName": "",
-      "hotelPlace": "",
-      "hotelsite": "ㄹ"
+      "hotelsite": "sdfsfd"
     }
   ]
 }
