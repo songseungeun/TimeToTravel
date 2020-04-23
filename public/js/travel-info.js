@@ -1,5 +1,6 @@
 let airlines = [];
 let lodgings = [];
+let travelId = '';
 
 //DOM
 const $airlineTicket = document.querySelector('.airline-ticket');
@@ -24,7 +25,7 @@ const $departureSec = document.querySelector('.departure-section');
 const $arrivalSec = document.querySelector('.arrival-section');
 
 const $depMonthSelect = document.querySelector('#airline-month-select');
-const $depDaySelcet = document.querySelector('#airline-day-select');
+const $depDaySelect = document.querySelector('#airline-day-select');
 const $inputAirline = document.querySelector('.input-airlines');
 const $depHourSelect = document.querySelector('#airline-hour-select');
 const $depMinSelect = document.querySelector('#airline-min-select');
@@ -34,12 +35,14 @@ const $depArrHourSelect = document.querySelector('#dep-airline-hour-select');
 const $inputDepArrAirport = document.querySelector('.arr-airlines');
 const $travelInfoList = document.querySelector('.start-airline');
 const $selectWrappers = document.querySelectorAll('.select-wrapper');
+const $dateList = document.querySelector('.date-list');
 
 //RENDER
 const renderAirlineInfo = () => {
+  console.log(airlines);
   let html = '';
 
-  airlines = airlines.forEach(({ travelId, type, id, date, airplaneName, depatureTime, departureAirport, arrivalTime, arrivalAirport }) => {
+  airlines = airlines.forEach(({ travelId, type, id, date, airplaneName, departureTime, departureAirport, arrivalTime, arrivalAirport }) => {
     html += `<li id=${travelId}-${id} class="airline-schedule-detail clearfix">
     <div class="airline-info1 airline-departure">
       <em>${type === 'departure' ? '출발' : '도착'}</em>
@@ -49,7 +52,7 @@ const renderAirlineInfo = () => {
       <span class="airlines">${airplaneName}</span>
     </div>
     <div class="airline-departure departure-airline-time">
-      <span class="time">${depatureTime}</span>
+      <span class="time">${departureTime}</span>
       <span class="airport">${departureAirport}</span>
     </div>
     <div class="airline-arrival departure-arrival-time">
@@ -85,15 +88,16 @@ const closeAirlinePopup = () => {
 };
 
 //post
-const addAirlieneInfo = async () => {
-  const startMonth = `${$depMonthSelect.value}/${$depDaySelcet.value}`;
-  const inputAirName = $travelInfoList.querySelector('.active').firstElementChild.textContent;
+const addAirlineInfo = async () => {
+  const startMonth = `${$depMonthSelect.value}/${$depDaySelect.value}`;
+  const inputAirName = $inputAirline.value;
   const departureTime = `${$depHourSelect}:${$depMinSelect}`;
-  const departureAirport = $travelInfoList.querySelector('.active').firstElementChild.textContent;
+  const departureAirport = $inputDepAirport.value;
   const arrivalTime = `${$depArrHourSelect}:${$depArrMinSelect}`;
-  const arrivalAirport = $travelInfoList.querySelector('.active').firstElementChild.textContent;
+  const arrivalAirport = $inputDepArrAirport.value;
 
-  const { data } = await axios.post('/airlines', { travelId, type, id, date, airplaneName, depatureTime, departureAirport, arrivalTime, arrivalAirport });
+  const { data } = await axios.post('/airlines', { travelId, type: 'departure', date: startMonth, airplaneName: inputAirName, departureTime, departureAirport, arrivalTime, arrivalAirport });
+  console.log(airlines);
   airlines = [data, ...airlines];
 
   closeAirlinePopup();
@@ -120,6 +124,21 @@ export const getLodgingData = async () => {
   lodgings = data;
 
   renderLodgingInfo();
+};
+
+const resetLodgingPopup = () => {
+  const selects = [...$selectWrappers].map(select => select.firstElementChild);
+  selects.forEach(child => (child.firstElementChild.selected = 'selected'));
+
+  $inputAirline.value = '';
+  $inputDepAirport.value = '';
+  $inputDepArrAirport.value = '';
+};
+
+const closeLodgingPopup = () => {
+  $hotelPopup.style.display = 'none';
+  $hotelPopupBg.style.display = 'none';
+  resetLodgingPopup();
 };
 
 //EVENT HANDLER
@@ -178,9 +197,8 @@ $airlinePopupBg.onclick = () => {
 };
 
 //TODO: 등록 버튼 팅김 처리
-// $airlineAddBtn.onclick = e => {
-//   console.log(e.target);
-//   if ($airlineMonthSelect === 'MONTH') return;
-//   $airlineBg.style.display = 'none';
-//   $airlinePopup.style.display = 'none';
-// };
+$airlineAddBtn.onclick = () => {
+  addAirlineInfo();
+  // $airlineBg.style.display = 'none';
+  // $airlinePopup.style.display = 'none';
+};
