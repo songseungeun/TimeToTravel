@@ -372,6 +372,8 @@ const goToTimeline = async target => {
   timeline.classList.add('main-view');
   home.classList.remove('main-view');
   $timelineTitle.textContent = title;
+  $timelineTitle.classList.add(target.classList[0]);
+
   [...$menuList.children].forEach(icon => {
     icon.style.display = 'block';
     icon.classList.toggle('active', icon.id === 'calendar');
