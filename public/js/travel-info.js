@@ -85,7 +85,8 @@ $airlineAddBtn.onclick = e => {
 };
 
 //FIXME: 호텔이랑 비행기 순서 정리
+
 /**
  * NOTE:
  * HTML에 OL태그 추가 필요
- * /
+ */
