@@ -6,8 +6,11 @@ let travels = [];
 let travelId = '';
 let removeTId = '';
 let removeSId = '';
+let navState = 'home';
 
 // DOMs
+const $timeWarningText = document.querySelector('#end-warning-label');
+const $dateWarningText = document.querySelector('#newend-warning-label');
 const $menuList = document.querySelector('.menu-list');
 const $mainList = document.querySelector('.main-wrapper');
 const $logo = document.querySelector('h1');
@@ -48,12 +51,10 @@ const $timelineAlertPopup = document.querySelector('.timeline-popup');
 const $timeAlertPopupBg = document.querySelector('.timeline-popup-bg');
 const $travelNoneText = document.querySelector('.travel-none-text');
 const $timelineTitle = document.querySelector('.timeline-travel-title');
-
 const $popupBg = document.querySelector('.popup-bg');
 const $popupRemoveBtn = document.querySelector('.popup-remove-btn');
 const $monthSelect = document.querySelector('#month-select');
 const $dateSelect = document.querySelector('#date-select');
-
 const $inputPlace = document.querySelector('#schedule-input-place');
 const $inputDetail = document.querySelector('#schedule-input-detail');
 const $selectDateWarning = document.querySelector('#date-warning-label');
@@ -73,20 +74,15 @@ const closePopup = () => {
 };
 
 const resetSchedulePopup = () => {
-  // const selects = [...$selectWrappers].map(select => select.firstElementChild);
-  // selects.forEach(child => (child.firstElementChild.selected = 'selected'));
-
-  // console.log(selects)
   $inputSchedulePlace.value = '';
   $inputScheduleDetail.value = '';
+  $timeWarningText.style.display = 'none';
 };
 
 const resetTravelPopup = () => {
-  // const selects = [...$selectWrappers].map(select => select.firstElementChild);
-  // selects.forEach(child => (child.firstElementChild.selected = 'selected'));
-
   $inputTravelTitle.value = '';
   $inputTravelPlace.value = '';
+  $dateWarningText.style.display = 'none';
 };
 
 const closeSchedulePopup = () => {
@@ -115,8 +111,6 @@ const closeScheduleAlertPopup = () => {
 };
 
 // nav bar
-let navState = 'home';
-
 const changeNav = target => {
   if (!target.matches('.menu-list i')) return;
   navState = target.matches('i.fa-home') ? 'home' : target.parentNode.id;
@@ -163,7 +157,7 @@ const renderTravelList = () => {
 
   travels.forEach(({ id, title, place, startDate, endDate }) => {
     bg++;
-    html += ` <li id=t-${id} class="bg-${bg % 4}">
+    html += ` <li id=t-${id} class="bg-${bg % 8}">
           <h2>${title}</h2>
           <em>${generateDday(startDate)}</em>
           <div class="travel-info">
@@ -278,21 +272,27 @@ function moveDatetoPrev({ target }) {
     dateItemMove = 0;
     beforeBtn.style.opacity = '0.3';
   }
+
   dateList.style.transform = `translate3D(-${dateItemMove}px, 0, 0)`;
   dateList.style.transition = 'all 0.3s ease-out';
 }
 
 function moveDatetoNext({ target }) {
-  if (travelPeriod < 8) return;
   if (!target.matches('.date-after-btn')) return;
+  if (travelPeriod < 9) {
+    beforeBtn.style.opacity = '0.3';
+    return;
+  }
+
+  beforeBtn.style.opacity = '1';
   let moveLimit = (travelPeriod - 9) * 83;
   dateItemMove += 83;
-  beforeBtn.style.opacity = '1';
 
   if (dateItemMove > moveLimit) {
     dateItemMove = moveLimit;
     afterBtn.style.opacity = '0.3';
   }
+
   dateList.style.transform = `translate3D(-${dateItemMove}px, 0, 0)`;
   dateList.style.transition = 'all 0.3s ease-out';
 }
@@ -605,5 +605,6 @@ $startMinSelect.addEventListener('change', changeEndMin);
 // $startHourSelects.forEach(selects => selects.addEventListener('change', ({ target }) => printEndTime(target)));
 // $startMinuteSelects.forEach(selects => selects.addEventListener('change', ({ target }) => printEndTime(target)));
 
+
 // export
-export { changeNav, resetSchedulePopup, resetTravelPopup, $mainList, $menuList, $travelList, $timelineTitle };
+export { $timeWarningText, $dateWarningText, $startYear, $startMonth, $startDate, $endYear, $endMonth, $endDate, $startHour, $startMin, $endHour, $endMin, changeNav, resetSchedulePopup, resetTravelPopup, $mainList, $menuList, $travelList, $timelineTitle };
