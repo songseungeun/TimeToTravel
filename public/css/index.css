@@ -245,7 +245,7 @@ h1 {
   margin-bottom: 10px;
   line-height: 1.4;
   left: 80px;
-  /* display: flex; */
+  min-height: 38px;
 }
 /* 2, 5, 8, 11 */
 .schedule-list li:nth-child(3n + 2) {
@@ -434,10 +434,14 @@ h1 {
 .hotel-schedule li em {
   line-height: 50px;
 }
+.schedule .place,
+.schedule .detail {
+  font-size: 14px;
+}
 .date,
 .time {
   display: block;
-  font-size: 26px;
+  font-size: 20px;
   font-weight: 400;
   margin-bottom: 5px;
 }
