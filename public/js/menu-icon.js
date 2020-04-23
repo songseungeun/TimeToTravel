@@ -1,5 +1,5 @@
 // import { getAirlineData, getLodgingData } from './travel-info.js';
-import { $menuList, $mainList } from './main.js';
+import { $menuList, $mainList, $timelineTitle } from './main.js';
 
 let navState = 'home';
 
@@ -14,6 +14,7 @@ $menuList.onclick = ({ target }) => {
   if (navState === 'home') {
     const [homeMenu, ...removeMenus] = menus;
     removeMenus.forEach(menuIcon => menuIcon.style.display = 'none');
+    $timelineTitle.classList = 'timeline-travel-title';
   }
 
   // if (navState === 'airplane') {

@@ -267,6 +267,7 @@ main.main-view {
   background: none;
   border: none;
   cursor: pointer;
+  outline: none;
 }
 #s01 {
   top: 75px;
@@ -381,6 +382,7 @@ main.main-view {
   border: none;
   background: none;
   color: white;
+  outline: none;
 }
 .travel-remove-btn:hover {
   opacity: 0.8;
