@@ -593,34 +593,6 @@ main.main-view {
 .new-schedule-popup select {
   width: 30%;
 }
-/* 여행정보팝업 */
-
-.new-info-popup {
-  width: 500px;
-  /* display: block; */
-  top: 10px;
-}
-.new-info-popup input {
-  width: 50%;
-}
-/* REMIND: 클래스명 한개로  */
-.schedule-input {
-  font-size: 14px;
-  padding: 5px;
-  margin-bottom: 10px;
-  width: 100%;
-}
-/* REMIND: text-hidden추가 */
-/* .text-hidden {
-  display: none;
-} */
-.select-date,
-.select-start-hour,
-.select-end-hour {
-  /* background-color: #cdcdcd; */
-  padding-left: 13px;
-}
-
 .new-schedule-popup h2 {
   font-size: 23px;
   padding: 5px;
@@ -630,13 +602,39 @@ main.main-view {
   padding: 9px 10px;
 }
 
+/* 여행정보팝업 */
+.new-info-popup {
+  width: 500px;
+  display: block;
+  top: 10px;
+}
+.new-info-popup input {
+  width: 37%;
+}
+.new-info-popup select {
+  width: 22%;
+}
+.new-info-popup h3 {
+  font-weight: 600;
+}
+.start-airline,
+.end-airline {
+  padding: 10px 0;
+}
+.new-info-popup2 {
+  width: 500px;
+  /* display: block; */
+  top: 10px;
+}
+
+/* 
 .schedule-input-place,
 .schedule-input-detail {
   font-size: 14px;
   padding: 5px;
   margin-bottom: 10px;
   width: 100%;
-}
+} */
 .popup-remove-btn,
 .new-travel-popup-remove-btn {
   position: absolute;
@@ -654,19 +652,15 @@ main.main-view {
   color: #e38484;
 }
 
-.input-airlines,
-.dep-airlines,
-.arr-airlines,
-.input-place,
+/* .input-place,
 .input-title {
   font-size: 14px;
   padding: 5px;
   margin-bottom: 10px;
   width: 100px;
-}
+} */
 
 /* 팝업띄우는버튼 */
-
 .new-schedule-btn,
 .new-travel-btn,
 .new-info-btn {
@@ -692,6 +686,35 @@ main.main-view {
   background-color: #3f8594;
   transition: transform 0.3s;
   transform: scale(1.05);
+}
+/* 여행정보입력 팝업 추가 버튼 */
+.new-info-detail-btn {
+  position: fixed;
+  right: 30px;
+  width: 80px;
+  height: 80px;
+  border-radius: 20px;
+  text-align: center;
+  line-height: 76px;
+  color: #fff;
+  font-size: 30px;
+  cursor: pointer;
+  font-weight: 200;
+  transition: transform 0.3s;
+  transform: scale(1);
+}
+.airline-btn {
+  bottom: 210px;
+  background-color: rgb(66, 122, 183);
+}
+.hotel-btn {
+  bottom: 120px;
+  background-color: rgb(133, 85, 167);
+}
+.new-info-detail-btn:hover {
+  transition: transform 0.3s;
+  transform: scale(1.05);
+  opacity: .9;
 }
 /* 팝업 모달효과 배경 */
 .popup-bg,
