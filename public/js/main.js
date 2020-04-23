@@ -133,13 +133,15 @@ const sortTravels = travels => {
 
 const renderTravelList = () => {
   let html = '';
+  let bg = 0;
 
   $travelNoneText.style.display = travels.length === 0 ? 'block' : 'none';
 
   sortTravels(travels);
 
   travels.forEach(({ id, title, place, startDate, endDate }) => {
-    html += ` <li id=t-${id}>
+    bg++
+    html += ` <li id=t-${id} class="bg-${bg % 4}">
           <h2>${title}</h2>
           <em>${generateDday(startDate)}</em>
           <div class="travel-info">
