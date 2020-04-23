@@ -81,37 +81,6 @@
       "id": 6
     }
   ],
-  "info": [
-    {
-      "id": 1,
-      "flight1": {
-        "num": 1,
-        "departTime": "20.05.16.18:10:00",
-        "landTime": "20.05.16.18:10:00",
-        "departPlace": "인천",
-        "landPlace": "파리"
-      },
-      "flight2": {
-        "num": 2,
-        "departTime": "20.05.16.18:10:00",
-        "landTime": "20.05.16.18:10:00",
-        "departPlace": "인천",
-        "landPlace": "파리"
-      },
-      "hotel1": {
-        "num": 1,
-        "name": "novotel",
-        "address": "blabla",
-        "website": "blabla"
-      },
-      "hotel2": {
-        "num": 2,
-        "name": "novotel",
-        "address": "blabla",
-        "website": "blabla"
-      }
-    }
-  ],
   "airlines": [
     {
       "id": 1,
