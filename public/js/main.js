@@ -49,6 +49,7 @@ const $timeAlertPopupBg = document.querySelector('.timeline-popup-bg');
 const $travelNoneText = document.querySelector('.travel-none-text');
 const $timelineTitle = document.querySelector('.timeline-travel-title');
 
+
 const $popupBg = document.querySelector('.popup-bg');
 const $popupRemoveBtn = document.querySelector('.popup-remove-btn');
 const $monthSelect = document.querySelector('#month-select');
@@ -413,18 +414,6 @@ const goToTimeline = async target => {
   renderMonthYear(startDate.split('/')[1], startDate.split('/')[0]);
 };
 
-const $timeWarningText = document.querySelector('#end-warning-label');
-const $dateWarningText = document.querySelector('#newend-warning-label');
-
-const warnDate = () => {
-  const start = new Date(`${$startYear.value}/${$startMonth.value}/${$startDate.value}`);
-  const end = new Date(`${$endYear.value}/${$endMonth.value}/${$endDate.value}`);
-  const isValid = end.getTime() - start.getTime() > 0
-
-  $dateWarningText.style.display = isValid ? 'block' : 'none';
-  return isValid;
-};
-
 // event handlers
 window.onload = getTravels;
 
@@ -582,9 +571,5 @@ $startMinSelect.addEventListener('change', changeEndMin);
 // $startMinuteSelects.forEach(selects => selects.addEventListener('change', ({ target }) => printEndTime(target)));
 
 
-
-
-
-
 // export
-export { warnDate, changeNav, resetSchedulePopup, resetTravelPopup, $mainList, $menuList, $travelList, $timelineTitle };
+export { $startHour, $startMin, $endHour, $endMin, $startDate, $endDate, changeNav, resetSchedulePopup, resetTravelPopup, $mainList, $menuList, $travelList, $timelineTitle };
