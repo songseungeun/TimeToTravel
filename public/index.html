@@ -293,7 +293,7 @@
           <div class="timeline-travel-title">Travel title</div>
           <div class="airline-ticket">
             <h3>예약 항공권</h3>
-            <ol class="airline-schedule">
+            <ol class="departure-section airline-schedule">
               <li id="air1" class="airline-schedule-detail">
                 <div class="airline-departure">
                   <em>출발</em>
@@ -307,23 +307,6 @@
                   <span class="airport">ICN</span>
                 </div>
                 <div class="departure-arrival-time">
-                  <span class="time">16:00</span>
-                  <span class="airport">LAX</span>
-                </div>
-              </li>
-              <li>
-                <div class="airline-arrival">
-                  <em>도착</em>
-                </div>
-                <div class="arrival-info-date">
-                  <span class="date">4/3 FRI</span>
-                  <span class="airlines">아시아나항공</span>
-                </div>
-                <div class="arrival-airline-time">
-                  <span class="time">20:40</span>
-                  <span class="airport">ICN</span>
-                </div>
-                <div class="arrival-airline-time">
                   <span class="time">16:00</span>
                   <span class="airport">LAX</span>
                 </div>
@@ -347,7 +330,7 @@
               </li>
             </ol>
           </div>
-            
+
           <!-- POPUP BUTTON -->
           <div class="airline new-info-btn">
             +
@@ -370,18 +353,20 @@
               <h3>출발정보</h3>
               <!-- <label for="date-select">출발:</label> -->
               <div class="select-wrapper">
-                <select name="month" id="airline-month-select" class="month-select">
-                  <!-- <option value="MONTH">MONTH</option>
+                <select name="month" id="airline-month-select">
+                  <option value="MONTH" slected>MONTH</option>
                   <option value="APR">APR</option>
-                  <option value="MAY">MAY</option> -->
+                  <option value="MAY">MAY</option>
+                  -->
                 </select>
                 <div class="select-arrow"></div>
               </div>
               <div class="select-wrapper">
-                <select name="day" id="airline-day-select" class="date-select">
-                  <!-- <option value="DAY">DAY</option>
+                <select name="day" id="airline-day-select">
+                  <option value="DAY" slected>DAY</option>
                   <option value="13">13</option>
-                  <option value="14">14</option> -->
+                  <option value="14">14</option>
+                  -->
                 </select>
                 <div class="select-arrow"></div>
               </div>
@@ -478,7 +463,7 @@
               <input type="text" class="arr-airlines" placeholder="도착공항" />
             </div>
             <button class="airlineAddBtn add-schedule-btn">등록</button>
-            <div class="airlineRemoveBtn popup-remove-btn">X</div>            
+            <div class="airlineRemoveBtn popup-remove-btn">X</div>
           </div>
           <div class="hotelBg popup-bg"></div>
           <div class="new-info-popup2 popup-style">

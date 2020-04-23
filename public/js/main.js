@@ -1,3 +1,5 @@
+import { getAirlineData, getLodgingData } from './travel-info.js';
+
 // state
 let schedules = [];
 let travels = [];
@@ -128,8 +130,12 @@ const changeNav = target => {
 
   if (navState === 'home') {
     const [homeMenu, ...removeMenus] = [...$menuList.children];
-    removeMenus.forEach(menuIcon => menuIcon.style.display = 'none');
+    removeMenus.forEach(menuIcon => (menuIcon.style.display = 'none'));
     $timelineTitle.classList = 'timeline-travel-title';
+  }
+  if (navState === 'airplane') {
+    getAirlineData();
+    getLodgingData();
   }
 };
 
@@ -160,7 +166,7 @@ const renderTravelList = () => {
   sortTravels(travels);
 
   travels.forEach(({ id, title, place, startDate, endDate }) => {
-    bg++
+    bg++;
     html += ` <li id=t-${id} class="bg-${bg % 4}">
           <h2>${title}</h2>
           <em>${generateDday(startDate)}</em>
@@ -213,7 +219,7 @@ const sortTimeline = schedules => {
 
     block.style.top = `${top}px`;
     block.style.height = height < 38 ? '48px' : `${height}px`;
-    [...block.children].forEach(child => child.style.display =  height < 38 ? 'inline' : 'block');
+    [...block.children].forEach(child => (child.style.display = height < 38 ? 'inline' : 'block'));
 
     i++;
   });
@@ -243,7 +249,7 @@ const renderDateBox = (startDate, endDate) => {
 
   const travelArr = Array.from({ length: travelPeriod }, function (v, i) {
     let newDay = new Date(startDate);
-    newDay = new Date(newDay.getTime() + (oneDay * i));
+    newDay = new Date(newDay.getTime() + oneDay * i);
 
     return [...new String(newDay)];
   });
@@ -300,7 +306,7 @@ function moveDatetoNext({ target }) {
 }
 
 $travelList.addEventListener('click', () => {
-  dateList.style.transform = `translate3D(0, 0, 0)`
+  dateList.style.transform = `translate3D(0, 0, 0)`;
   dateItemMove = 0;
 });
 
@@ -519,8 +525,18 @@ const $endMinuteSelects = document.querySelectorAll('.popup-style .min-select');
 const $startMinuteSelects = document.querySelectorAll('.popup-style .min-select');
 
 const printStartTime = () => {
-  let hour = ['HOUR',...Array.from({ length: 17 }, function (v, i) { return i + 7; })];
-  let minute = ['MIN', ...Array.from({ length: 6 }, function (v, i) { return i * 10; })];
+  let hour = [
+    'HOUR',
+    ...Array.from({ length: 17 }, function (v, i) {
+      return i + 7;
+    }),
+  ];
+  let minute = [
+    'MIN',
+    ...Array.from({ length: 6 }, function (v, i) {
+      return i * 10;
+    }),
+  ];
 
   $startHourSelects.forEach(hourSelect => {
     hour.forEach((element, key) => {
