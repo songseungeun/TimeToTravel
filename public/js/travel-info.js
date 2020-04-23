@@ -46,7 +46,7 @@ const renderAirlineInfo = () => {
   console.log(airlines);
   let html = '';
 
-  airlines = airlines.forEach(({ travelId, type, id, date, airplaneName, departureTime, departureAirport, arrivalTime, arrivalAirport }) => {
+  airlines.forEach(({ travelId, type, id, date, airplaneName, departureTime, departureAirport, arrivalTime, arrivalAirport }) => {
     html += `<li id=${travelId}-${id} class="airline-schedule-detail clearfix">
     <div class="airline-info1 airline-departure">
       <em>${type === 'departure' ? '출발' : '도착'}</em>
@@ -95,9 +95,9 @@ const closeAirlinePopup = () => {
 const addAirlineInfo = async () => {
   const startMonth = `${$depMonthSelect.value}/${$depDaySelect.value}`;
   const inputAirName = $inputAirline.value.trim();
-  const departureTime = `${$depHourSelect}:${$depMinSelect}`;
+  const departureTime = `${$depHourSelect.value}:${$depMinSelect.value}`;
   const departureAirport = $inputDepAirport.value.trim();
-  const arrivalTime = `${$depArrHourSelect}:${$depArrMinSelect}`;
+  const arrivalTime = `${$depArrHourSelect.value}:${$depArrMinSelect.value}`;
   const arrivalAirport = $inputDepArrAirport.value.trim();
 
   const { data } = await axios.post('/airlines', { travelId, type: 'departure', date: startMonth, airplaneName: inputAirName, departureTime, departureAirport, arrivalTime, arrivalAirport });

@@ -12,7 +12,6 @@
   "airlines": [
     {
       "id": 1,
-      "travelId": 1,
       "type": "departure",
       "date": "5/16",
       "airplaneName": "아메리칸항공",
@@ -23,7 +22,6 @@
     },
     {
       "id": 2,
-      "travelId": 2,
       "type": "arrival",
       "date": "5/16",
       "airplaneName": "프랑스항공",
@@ -34,7 +32,6 @@
     },
     {
       "id": 3,
-      "travelId": 3,
       "type": "departure",
       "date": "5/16",
       "airplaneName": "델타항공",
@@ -46,24 +43,13 @@
     {
       "travelId": "",
       "type": "departure",
-      "date": "APR/13",
-      "airplaneName": "ㅌㅊㅌ",
-      "departureTime": "[object HTMLSelectElement]:[object HTMLSelectElement]",
-      "departureAirport": "ㅌㅊ",
-      "arrivalTime": "[object HTMLSelectElement]:[object HTMLSelectElement]",
-      "arrivalAirport": "ㅊㅊ",
-      "id": 4
-    },
-    {
-      "travelId": "",
-      "type": "departure",
-      "date": "APR/14",
+      "date": "4/24",
       "airplaneName": "ㄹ",
-      "departureTime": "[object HTMLSelectElement]:[object HTMLSelectElement]",
+      "departureTime": "10:20",
       "departureAirport": "ㄹ",
-      "arrivalTime": "[object HTMLSelectElement]:[object HTMLSelectElement]",
+      "arrivalTime": "10:30",
       "arrivalAirport": "ㄹ",
-      "id": 5
+      "id": 4
     }
   ],
   "lodgings": [
@@ -78,18 +64,6 @@
       "hotelName": "63빌딩",
       "hotelPlace": "서울",
       "hotelsite": "agoda"
-    },
-    {
-      "id": 3,
-      "hotelName": "",
-      "hotelPlace": "",
-      "hotelsite": "ㄹㄹㄹ"
-    },
-    {
-      "id": 4,
-      "hotelName": "",
-      "hotelPlace": "",
-      "hotelsite": "ㄹ"
     }
   ]
 }
