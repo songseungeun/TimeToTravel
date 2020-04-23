@@ -27,18 +27,23 @@
       "place": "fdssdf",
       "startDate": "2021/2/5",
       "endDate": "2021/5/4"
+    },
+    {
+      "id": 10,
+      "title": "?????????",
+      "place": "?????????",
+      "startDate": "2021/4/1",
+      "endDate": "2021/6/3"
+    },
+    {
+      "id": 11,
+      "title": "sfsdf",
+      "place": "dsffsd",
+      "startDate": "2021/3/4",
+      "endDate": "2023/4/4"
     }
   ],
   "schedules": [
-    {
-      "travelId": "5",
-      "date": "2/2",
-      "timeFrom": "12:30",
-      "timeTo": "15:30",
-      "place": "ㅋㅋ",
-      "detail": "ㅋㅋㅋ",
-      "id": 3
-    },
     {
       "travelId": "5",
       "date": "2/2",
@@ -65,6 +70,15 @@
       "place": "sdfd",
       "detail": "sdfdfs",
       "id": 7
+    },
+    {
+      "travelId": "11",
+      "date": "3/8",
+      "timeFrom": "12:40",
+      "timeTo": "11:40",
+      "place": "sfdfds",
+      "detail": "dsffds",
+      "id": 8
     }
   ],
   "airlines": [

@@ -228,12 +228,16 @@ const renderDateBox = (startDate, endDate) => {
   });
 
   travelArr.forEach(travel => {
-    const today = new Date(travel);
     const year = travel.split('/')[0];
     const month = travel.split('/')[1];
+
+    const today = new Date(travel);
     const date = today.getDate();
+
     const dayNames = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
     const day = dayNames[today.getDay()];
+
+
 
     html += `<li class="date-item">
         <div class="day ${year} ${month}">${date}</div>
