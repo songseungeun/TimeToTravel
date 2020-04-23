@@ -170,7 +170,7 @@ main.main-view {
 .date-list {
   /* float: left; */
   display: flex;
-  width: 660px;
+  /* width: 660px; */
   height: 100px;
   padding: 5px 0;
   /* background-color: rgb(220, 220, 220); */
@@ -203,21 +203,26 @@ main.main-view {
 }
 /* 여행타이틀 */
 .timeline-travel-title {
-  width: 90%;
+  width: 746px;
+  margin-left: 32px;
   font-size: 20px;
-  padding: 15px;
+  padding: 20px;
+  color: #fff;
+  font-weight: bold;
   background-color: #d4d4d4;
 }
 /* TIME */
 .timeline {
   position: relative;
   margin-top: 20px;
-  padding: 10px;
+  width: 746px;
+  margin-left: 32px;
+  /* padding: 10px; */
 }
 .time-list {
   float: left;
   margin-right: 10px;
-  width: 90%;
+  width: 100%;
 }
 .time-list li {
   padding: 30px 10px;
@@ -228,20 +233,21 @@ main.main-view {
 .schedule-list {
   position: absolute;
   float: left;
-  /* width: 80%; */
+  width: 100%;
   /* height: 100vh; */
   padding: 20px;
   /* background-color: #f4f4f4; */
 }
 .schedule-list li {
   position: absolute;
-  width: 610px;
+  width: 87%;
   background-color: #cdcdcd;
   border-radius: 8px;
   padding: 10px;
   margin-bottom: 10px;
+  margin-left: 55px;
   line-height: 1.4;
-  left: 80px;
+  /* left: 80px; */
 }
 /* 2, 5, 8, 11 */
 .schedule-list li:nth-child(3n + 2) {
@@ -262,11 +268,17 @@ main.main-view {
 
 .remove-btn {
   position: absolute;
-  top: 8px;
-  right: 13px;
+  top: 3px;
+  right: 8px;
   background: none;
   border: none;
   cursor: pointer;
+  padding: 5px;
+  font-size: 15px;
+  outline: transparent;
+}
+.remove-btn:hover {
+  opacity: .7;
 }
 #s01 {
   top: 75px;
@@ -344,6 +356,27 @@ main.main-view {
   filter: grayscale(40%);
   background-image: url('../img/bg-positano.jpg');
 }
+.bg-4 {
+  /* filter: blur(3px); */
+  filter: grayscale(40%);
+  background-image: url('../img/bg-resort.jpg');
+}
+.bg-5 {
+  /* filter: blur(3px); */
+  filter: grayscale(40%);
+  background-image: url('../img/bg-korea.jpg');
+}
+.bg-6 {
+  /* filter: blur(1px); */
+  filter: grayscale(40%);
+  background-image: url('../img/bg-hawaii.jpg');
+}
+.bg-7 {
+  filter: grayscale(40%);
+  background-image: url('../img/bg-winery.jpg');
+}
+
+
 .travel-list li h2 {
   font-size: 28px;
   font-weight: bold;

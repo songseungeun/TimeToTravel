@@ -8,27 +8,6 @@
       "endDate": "2019/8/1"
     },
     {
-      "id": 5,
-      "title": "로로로",
-      "place": "ㅗ로로로ㅗ로로",
-      "startDate": "2020/2/2",
-      "endDate": "2020/2/3"
-    },
-    {
-      "id": 7,
-      "title": "큐큐큐큐ㅠ큐",
-      "place": "ㅠㅠ큐큐큐큐ㅠㅋ",
-      "startDate": "2021/1/30",
-      "endDate": "2021/2/5"
-    },
-    {
-      "id": 8,
-      "title": "fdfsd",
-      "place": "fdssdf",
-      "startDate": "2021/2/5",
-      "endDate": "2021/5/4"
-    },
-    {
       "id": 12,
       "title": "ㅅㄷㄴㅅ",
       "place": "`````",
@@ -36,52 +15,33 @@
       "endDate": "2020/2/5"
     },
     {
-      "id": 13,
-      "title": "안녕",
-      "place": "화이팅",
-      "startDate": "2020/9/22",
-      "endDate": "2021/4/19"
+      "id": 14,
+      "title": "ㅇㄴㄹㅇㄹㄴ",
+      "place": "ㄴㅇㄹㅇㄴㄹ",
+      "startDate": "2020/7/7",
+      "endDate": "2020/7/20"
     }
   ],
   "schedules": [
     {
-      "travelId": "5",
-      "date": "2/2",
-      "timeFrom": "9:00",
-      "timeTo": "9:30",
-      "place": "ㅋ",
-      "detail": "ㄹㅇㄴ",
-      "id": 4
+      "travelId": "14",
+      "date": "7/10",
+      "timeFrom": "10:40",
+      "timeTo": "11:40",
+      "place": "fsfdsdsf",
+      "detail": "fsdfds",
+      "id": 1
     },
     {
-      "travelId": "5",
-      "date": "2/3",
-      "timeFrom": "13:20",
-      "timeTo": "16:30",
-      "place": "로ㅓㅏㅇ로ㅓㅏㄴㅇㄹ",
-      "detail": "ㄹ오ㅓㅏㄴㅇ러ㅏㅣㄹㅇ너ㅏㅣ;",
-      "id": 5
-    },
-    {
-      "travelId": "2",
-      "date": "4/3",
-      "timeFrom": "10:10",
-      "timeTo": "9:30",
-      "place": "sdfd",
-      "detail": "sdfdfs",
-      "id": 7
-    },
-    {
-      "travelId": "8",
-      "date": "2/7",
-      "timeFrom": "9:30",
-      "timeTo": "8:30",
-      "place": "sffsd",
-      "detail": "dsffs",
-      "id": 9
+      "travelId": "14",
+      "date": "7/7",
+      "timeFrom": "11:50",
+      "timeTo": "12:50",
+      "place": "sdfsdf",
+      "detail": "fdsfsdfsd",
+      "id": 2
     }
   ],
-  "schedules": [],
   "airlines": [
     {
       "id": 4,
