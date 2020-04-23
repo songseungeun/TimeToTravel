@@ -7,12 +7,19 @@ const $airlineSchedule = document.querySelector('.airline-schedule');
 const $airlineScheduleDetail = document.querySelector('.airline-schedule-detail');
 const $airlineScheduleList = document.querySelector('.airline-schedule');
 const $lodgingScheduleList = document.querySelector('.lodging-schedule');
-const $airlineBtn = document.querySelector('.airline');
-const $airlineBg = document.querySelector('.airlineBg');
+const $allBtn = document.querySelector('.airline');
+const $airlinePopupBg = document.querySelector('.airlineBg');
+const $hotelPopup = document.querySelector('.new-info-popup2');
 const $airlinePopup = document.querySelector('.new-info-popup');
 const $airlineAddBtn = document.querySelector('.airlineAddBtn');
 const $airlinePopupRemove = document.querySelector('.airlineRemoveBtn');
 const $airlineMonthSelect = document.querySelector('#airline-month-select');
+const $allMoreBtn = document.querySelector('.detail-btn-wrapper');
+const $hotelBtn = document.querySelector('.hotel-btn');
+const $airlineBtn = document.querySelector('.airline-btn');
+const $hotelPopupRemove = document.querySelector('.hotelRemoveBtn');
+const $hotelAddBtn = document.querySelector('.hotelAddBtn ');
+const $hotelPopupBg = document.querySelector('.hotelBg');
 
 //RENDER
 const renderAirlineInfo = () => {
@@ -70,14 +77,58 @@ export const getLodgingData = async () => {
 };
 
 //EVENT HANDLER
+
+//MODAL OPEN
+$allBtn.addEventListener('mouseenter', e => {
+  $allMoreBtn.style.display = 'block';
+});
+$allMoreBtn.addEventListener('mouseenter', e => {
+  $allMoreBtn.style.display = 'block';
+});
+
+$allBtn.addEventListener('mouseleave', e => {
+  $allMoreBtn.style.display = 'none';
+  $allMoreBtn.style.display = 'none';
+});
+
+//HOTEL정보 입력 MODAL
+$hotelBtn.onclick = () => {
+  $hotelPopup.style.display = 'block';
+  $hotelPopupBg.style.display = 'block';
+};
+
+const hotelClosePopup = () => {
+  $hotelPopup.style.display = 'none';
+  $hotelPopupBg.style.display = 'none';
+};
+
+$hotelPopupBg.onclick = () => {
+  hotelClosePopup();
+};
+
+$hotelPopupRemove.onclick = () => {
+  $hotelPopup.style.display = 'none';
+  $hotelPopupBg.style.display = 'none';
+};
+
+//비행기 정보 입력 MODAL
 $airlineBtn.onclick = () => {
-  $airlineBg.style.display = 'block';
   $airlinePopup.style.display = 'block';
+  $airlinePopupBg.style.display = 'block';
 };
 
 $airlinePopupRemove.onclick = () => {
-  $airlineBg.style.display = 'none';
   $airlinePopup.style.display = 'none';
+  $airlinePopupBg.style.display = 'none';
+};
+
+const airClosePopup = () => {
+  $airlinePopupBg.style.display = 'none';
+  $airlinePopup.style.display = 'none';
+};
+
+$airlinePopupBg.onclick = () => {
+  airClosePopup();
 };
 
 //TODO: 등록 버튼 팅김 처리
