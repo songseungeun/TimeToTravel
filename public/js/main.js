@@ -159,7 +159,7 @@ const sortTimeline = schedules => {
 };
 
 const renderMonthYear = (month, year) => {
-  const $monthYearBox = document.querySelector('#main-calendar > h3');
+  const $monthYearBox = document.querySelector('.timeline-wrapper > h3');
   const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
   $monthYearBox.textContent = `${months[month - 1]}, ${year}`;
@@ -192,12 +192,16 @@ const renderDateBox = (startDate, endDate) => {
   });
 
   travelArr.forEach(travel => {
-    const today = new Date(travel);
     const year = travel.split('/')[0];
     const month = travel.split('/')[1];
+
+    const today = new Date(travel);
     const date = today.getDate();
+
     const dayNames = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
     const day = dayNames[today.getDay()];
+
+
 
     html += `<li class="date-item">
         <div class="day ${year} ${month}">${date}</div>
