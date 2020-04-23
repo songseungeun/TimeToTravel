@@ -186,15 +186,11 @@ h1 {
 .date-list {
   /* float: left; */
   display: flex;
-  /* justify-content: space-between; */
   /* width: 660px; */
   height: 100px;
   padding: 5px 0;
   /* background-color: rgb(220, 220, 220); */
 }
-/* .date-item:first-child {
-  margin-left: 0;
-} */
 .date-item {
   flex: 0 0 70px;
   margin: 0 7px 10px 7px;
@@ -273,7 +269,8 @@ h1 {
   margin-bottom: 10px;
   margin-left: 55px;
   line-height: 1.4;
-  min-height: 48px;
+  left: 80px;
+  min-height: 38px;
 }
 /* 2, 5, 8, 11 */
 .schedule-list li:nth-child(3n + 2) {
@@ -305,6 +302,7 @@ h1 {
 }
 .remove-btn:hover {
   opacity: .7;
+  outline: none;
 }
 #s01 {
   top: 75px;
@@ -743,6 +741,7 @@ h1 {
   font-weight: 200;
   transition: transform 0.3s;
   transform: scale(1);
+  z-index: 90;
 }
 .new-schedule-btn:hover,
 .new-travel-btn:hover,
@@ -751,15 +750,16 @@ h1 {
   transition: transform 0.3s;
   transform: scale(1.05);
 }
+
 /* 여행정보입력 팝업 추가 버튼 */
 .detail-btn-wrapper {
   position: fixed;
-  right: 30px;
-  width: 90px;
-  height: 200px;
+  right: 20px;
+  width: 100px;
+  height: 300px;
   /* background-color: #ddd; */
-  bottom: 110px;
-  display: none;
+  bottom: 20px;
+  /* display: none; */
 }
 .new-info-detail-btn {
   position: fixed;
@@ -777,18 +777,35 @@ h1 {
   transform: scale(1);
 }
 .airline-btn {
-  bottom: 210px;
+  /* bottom: 210px; */
+  bottom: 30px;
   background-color: rgb(66, 122, 183);
+  z-index: 88;
+  transform: translate3d(0px, 0px, 0px);
+  transition: transform 0.5s;
 }
 .hotel-btn {
-  bottom: 120px;
+  /* bottom: 120px; */
+  bottom: 30px;
   background-color: rgb(133, 85, 167);
+  z-index: 89;
+  transform: translate3d(0px, 0px, 0px);
+  transition: transform 0.5s;
 }
-.new-info-detail-btn:hover {
-  transition: transform 0.3s;
-  transform: scale(1.05);
-  opacity: 0.9;
+
+.btn-act {
+  transform: translate3d(0px, -180px, 0px);
+  transition: transform 0.5s;
 }
+.btn-act2 {
+  transform: translate3d(0px, -90px, 0px);
+  transition: transform 0.5s;
+}
+.btn-enter {
+  transform: scale(1.1);
+  transition: transform 0.5s;
+}
+
 /* 팝업 모달효과 배경 */
 .popup-bg,
 .delete-popup-bg,
@@ -801,6 +818,7 @@ h1 {
   left: 0;
   right: 0;
   background-color: rgba(0, 0, 0, 0.7);
+  z-index: 94;
 }
 /* 경고팝업 */
 .delete-confirm {
