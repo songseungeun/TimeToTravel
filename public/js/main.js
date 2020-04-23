@@ -12,7 +12,7 @@ const $endHour = document.querySelector('#end-hour-select');
 const $endMin = document.querySelector('#end-min-select');
 const $addScheduleBtn = document.querySelector('.add-schedule-btn');
 const $newTravelPopup = document.querySelector('.new-travel-popup');
-const $newSchedulePopup = document.querySelector('.new-schedule-popup');
+//const $newSchedulePopup = document.querySelector('.new-schedule-popup');
 const $inputTravelTitle = document.querySelector('.input-title');
 const $inputTravelPlace = document.querySelector('.input-place');
 const $inputSchedulePlace = document.querySelector('#schedule-input-place');
@@ -44,7 +44,6 @@ const $timelineTitle = document.querySelector('.timeline-travel-title');
 
 const $popupBg = document.querySelector('.popup-bg');
 const $popupRemoveBtn = document.querySelector('.popup-remove-btn');
-const $deleteConfirmModal = document.querySelector('.delete-confirm-modal');
 
 // functions
 // popups
@@ -334,7 +333,7 @@ const removeSchedule = async removeId => {
 
 const goToTimeline = async target => {
   const nodeNames = ['LI', 'EM', 'SPAN', 'DIV', 'H2'];
-  const targetNode = nodeNames.filter(node => node === target.nodeName)[0]
+  const targetNode = nodeNames.filter(node => node === target.nodeName)[0];
   if (!targetNode) return;
 
   if (targetNode === 'LI') travelId = target.id.split('-')[1];
@@ -364,12 +363,10 @@ $addScheduleBtn.addEventListener('click', addSchedule);
 //x버튼을 누르면 팝업창 종료
 $popupRemoveBtn.addEventListener('click', closePopup);
 
-window.onclick = ({ target }) => {
-    if (target === $popupBg || target !== $newScheduleBtn) {
-      closePopup();
-      resetSchedulePopup();
-    }
-  };
+$popupBg.onclick = () => {
+  closePopup();
+  resetSchedulePopup();
+};
 
 $newScheduleBtn.onclick = () => {
   $newSchedulePopUp.style.display = 'block';
@@ -444,8 +441,18 @@ const $endMinuteSelects = document.querySelectorAll('.select-end-hour > .select-
 const $startMinuteSelects = document.querySelectorAll('.select-start-hour > .select-wrapper > .min-select');
 
 const printStartTime = () => {
-  let hour = ['HOUR', ...Array.from({ length: 17 }, function (v, i) { return (i + 7); })];
-  let minute = ['MIN', ...Array.from({ length: 6 }, function (v, i) { return i * 10; })];
+  let hour = [
+    'HOUR',
+    ...Array.from({ length: 17 }, function (v, i) {
+      return i + 7;
+    }),
+  ];
+  let minute = [
+    'MIN',
+    ...Array.from({ length: 6 }, function (v, i) {
+      return i * 10;
+    }),
+  ];
 
   $startHourSelects.forEach(hourSelect => {
     hour.forEach((element, key) => {
@@ -468,10 +475,18 @@ const printEndTime = target => {
   console.log([...target.children].map(child => child.selected));
   // console.log(target.children);
 
-  let hour = ['HOUR', ...Array.from({ length: 17 }, function (v, i) { return (i + 7); })];
-  let minute = ['MIN', ...Array.from({ length: 6 }, function (v, i) { return i * 10; })];
-
-
+  let hour = [
+    'HOUR',
+    ...Array.from({ length: 17 }, function (v, i) {
+      return i + 7;
+    }),
+  ];
+  let minute = [
+    'MIN',
+    ...Array.from({ length: 6 }, function (v, i) {
+      return i * 10;
+    }),
+  ];
 
   $endHourSelects.forEach(hourSelect => {
     hour.forEach((element, key) => {
