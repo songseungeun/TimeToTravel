@@ -168,9 +168,9 @@ const renderMonthYear = (month, year) => {
 // 날짜 세서 렌더하는 기능
 let travelPeriod = 0;
 
-const dateList = document.querySelector(".date-list");
-const beforeBtn = document.querySelector(".date-before-btn");
-const afterBtn = document.querySelector(".date-after-btn");
+const dateList = document.querySelector('.date-list');
+const beforeBtn = document.querySelector('.date-before-btn');
+const afterBtn = document.querySelector('.date-after-btn');
 
 let dateItemMove = 0;
 
@@ -212,18 +212,15 @@ const renderDateBox = (startDate, endDate) => {
 };
 
 // 날짜 화살표 클릭 시 이동하는 기능
-
-
 function moveDatetoPrev({ target }) {
-  console.log(travelPeriod);
-  if (!target.matches(".date-before-btn")) return;
+  if (!target.matches('.date-before-btn')) return;
   dateItemMove -= 83;
   if (dateItemMove <= 0) {
     dateItemMove = 0;
     beforeBtn.style.opacity = '0.3';
   }
   dateList.style.transform = `translate3D(-${dateItemMove}px, 0, 0)`;
-  dateList.style.transition = "all 0.3s ease-out";
+  dateList.style.transition = 'all 0.3s ease-out';
 }
 
 function moveDatetoNext({ target }) {
@@ -231,12 +228,12 @@ function moveDatetoNext({ target }) {
 
   let moveLimit = (travelPeriod - 9) * 83;
   if (travelPeriod < 8) return; 
-  if (!target.matches(".date-after-btn")) return;
+  if (!target.matches('.date-after-btn')) return;
   dateItemMove += 83;
   
   if (dateItemMove > moveLimit) dateItemMove = moveLimit;
   dateList.style.transform = `translate3D(-${dateItemMove}px, 0, 0)`;
-  dateList.style.transition = "all 0.3s ease-out";
+  dateList.style.transition = 'all 0.3s ease-out';
 }
 
 beforeBtn.addEventListener('click', moveDatetoPrev);
@@ -399,24 +396,23 @@ $timelineCancleBtn.onclick = () => {
 };
 
 // time test
-const $hourSelects = document.querySelectorAll('.hour-select');
-const $minuteSelects = document.querySelectorAll('.min-select');
+const $endHourSelects = document.querySelectorAll('.select-end-hour > .select-wrapper > .hour-select');
+const $startHourSelects = document.querySelectorAll('.select-start-hour > .select-wrapper > .hour-select');
+const $endMinuteSelects = document.querySelectorAll('.select-end-hour > .select-wrapper > .min-select');
+const $startMinuteSelects = document.querySelectorAll('.select-start-hour > .select-wrapper > .min-select');
 
-const printTime = () => {
-  let hour = Array.from({ length: 24 }, function (v, i) { return i; });
-  hour.splice(0, 7);
-  hour = ['HOUR', ...hour];
-  $hourSelects.forEach(hourSelect => {
+const printStartTime = () => {
+  let hour = ['HOUR', ...Array.from({ length: 17 }, function (v, i) { return (i + 7); })];
+  let minute = ['MIN', ...Array.from({ length: 6 }, function (v, i) { return i * 10; })];
+
+  $startHourSelects.forEach(hourSelect => {
     hour.forEach((element, key) => {
       hourSelect[key] = new Option(`${element} 시`, element, true);
       if (element === 'HOUR') hourSelect[key] = new Option(element, '0', true);
     });
   });
 
-  let minute = Array.from({ length: 6 }, function (v, i) { return i * 10; });
-  minute.splice(0, 1);
-  minute = ['MIN', '00', ...minute];
-  $minuteSelects.forEach(minuteSelect => {
+  $startMinuteSelects.forEach(minuteSelect => {
     minute.forEach((element, key) => {
       minuteSelect[key] = new Option(`${element}분`, (key - 1) * 10, true);
       if (element === 'MIN') minuteSelect[key] = new Option(`${element}`, '0', true);
@@ -425,7 +421,38 @@ const printTime = () => {
   });
 };
 
-$newScheduleBtn.addEventListener('click', printTime);
+const printEndTime = target => {
+  // console.log([...target.children].filter(child => child.selected === 'selected'));
+  console.log([...target.children].map(child => child.selected));
+  // console.log(target.children);
+
+  let hour = ['HOUR', ...Array.from({ length: 17 }, function (v, i) { return (i + 7); })];
+  let minute = ['MIN', ...Array.from({ length: 6 }, function (v, i) { return i * 10; })];
+
+
+
+  $endHourSelects.forEach(hourSelect => {
+    hour.forEach((element, key) => {
+      hourSelect[key] = new Option(`${element} 시`, element, true);
+      if (element === 'HOUR') hourSelect[key] = new Option(element, '0', true);
+      console.log(hourSelect[key]);
+    });
+  });
+
+  $endMinuteSelects.forEach(minuteSelect => {
+    minute.forEach((element, key) => {
+      minuteSelect[key] = new Option(`${element}분`, (key - 1) * 10, true);
+      if (element === 'MIN') minuteSelect[key] = new Option(`${element}`, '0', true);
+      if (element === '00') minuteSelect[key] = new Option(`${element} 분`, '00', true);
+    });
+  });
+};
+
+console.log($startHourSelects);
+
+$newScheduleBtn.addEventListener('click', printStartTime);
+$startHourSelects.forEach(selects => selects.addEventListener('change', ({ target }) => printEndTime(target)));
+$startMinuteSelects.forEach(selects => selects.addEventListener('change', ({ target }) => printEndTime(target)));
 
 // export
 export { resetSchedulePopup, resetTravelPopup };

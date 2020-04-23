@@ -13,6 +13,34 @@
       "place": "ㅗ로로로ㅗ로로",
       "startDate": "2020/2/2",
       "endDate": "2020/2/3"
+    },
+    {
+      "id": 6,
+      "title": "헐래래래래애ㅐ앵",
+      "place": "ㅁ아구우우우우ㅜㅇ",
+      "startDate": "2022/2/1",
+      "endDate": "2022/3/2"
+    },
+    {
+      "id": 7,
+      "title": "큐큐큐큐ㅠ큐",
+      "place": "ㅠㅠ큐큐큐큐ㅠㅋ",
+      "startDate": "2021/1/30",
+      "endDate": "2021/2/5"
+    },
+    {
+      "id": 8,
+      "title": "fdfsd",
+      "place": "fdssdf",
+      "startDate": "2021/2/5",
+      "endDate": "2021/5/4"
+    },
+    {
+      "id": 10,
+      "title": "?????????",
+      "place": "?????????",
+      "startDate": "2021/4/1",
+      "endDate": "2021/6/3"
     }
   ],
   "schedules": [
@@ -42,6 +70,15 @@
       "place": "로ㅓㅏㅇ로ㅓㅏㄴㅇㄹ",
       "detail": "ㄹ오ㅓㅏㄴㅇ러ㅏㅣㄹㅇ너ㅏㅣ;",
       "id": 5
+    },
+    {
+      "travelId": "6",
+      "date": "2/1",
+      "timeFrom": "11:20",
+      "timeTo": "14:10",
+      "place": "dsfd",
+      "detail": "fsddf",
+      "id": 6
     }
   ],
   "info": [
