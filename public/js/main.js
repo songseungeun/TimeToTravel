@@ -4,9 +4,10 @@ import { getAirlineData, getLodgingData } from './travel-info.js';
 let schedules = [];
 let travels = [];
 let travelId = '';
+let removeTId = '';
+let removeSId = '';
 
 // DOMs
-
 const $menuList = document.querySelector('.menu-list');
 const $mainList = document.querySelector('.main-wrapper');
 const $logo = document.querySelector('h1');
@@ -186,17 +187,13 @@ const getTravels = async () => {
   renderTravelList();
 };
 
-const removeTravel = async removeId => {
-  await axios.delete(`/travels/${removeId}`);
-  travels = travels.filter(travel => travel.id !== +removeId);
+const removeTravel = async removeTId => {
+  await axios.delete(`/travels/${removeTId}`);
+  travels = travels.filter(travel => travel.id !== +removeTId);
   renderTravelList();
 
   $alertPopupBg.style.display = 'none';
   $alertPopup.style.display = 'none';
-
-  console.log(removeId);
-  removeId = '';
-  console.log(removeId);
 };
 
 // time line
@@ -374,11 +371,9 @@ const toggleActiveDate = target => {
   [...$dateList.children].forEach(date => date.classList.toggle('active', target === date || target.parentNode === date));
 };
 
-const removeSchedule = async removeId => {
-  console.log(removeId);
-
-  await axios.delete(`/schedules/${removeId}`);
-  schedules = schedules.filter(schedule => schedule.id !== parseInt(removeId));
+const removeSchedule = async removeSId => {
+  await axios.delete(`/schedules/${removeSId}`);
+  schedules = schedules.filter(schedule => schedule.id !== parseInt(removeSId));
   renderTimeline(schedules);
 
   $timeAlertPopupBg.style.display = 'none';
@@ -460,8 +455,6 @@ $addTravelBtn.onclick = async () => {
   const endDate = `${$endYear.value}/${$endMonth.value}/${$endDate.value}`;
   const newId = generateId();
 
-  // console.log(travels);
-
   const { data } = await axios.post('/travels', {
     id: newId,
     title,
@@ -471,7 +464,6 @@ $addTravelBtn.onclick = async () => {
   });
   travels = [data, ...travels];
 
-  // console.log(travels);
   closeTravelPopup();
   renderTravelList();
   resetTravelPopup();
@@ -484,16 +476,13 @@ $travelList.addEventListener('click', ({ target }) => goToTimeline(target));
 
 $travelList.onclick = ({ target }) => {
   if (!target.matches('.travel-list > li > .travel-remove-btn')) return;
-  const removeId = target.parentNode.id.split('-')[1];
-
-
+  removeTId = target.parentNode.id.split('-')[1];
 
   $alertPopupBg.style.display = 'block';
   $alertPopup.style.display = 'block';
-
-  console.log('이벤트 리스너가 id값 가져옴',removeId);
-  $alertDeleteBtn.addEventListener('click', () => removeTravel(removeId));
 };
+
+$alertDeleteBtn.addEventListener('click', () => removeTravel(removeTId));
 
 $alertCancleBtn.onclick = () => {
   $alertPopupBg.style.display = 'none';
@@ -502,14 +491,13 @@ $alertCancleBtn.onclick = () => {
 
 $scheduleList.onclick = ({ target }) => {
   if (!target.matches('.schedule-list > li > .remove-btn')) return;
-  const scheduleId = target.parentNode.id.split('-')[1];
-  console.log(scheduleId);
+  removeSId = target.parentNode.id.split('-')[1];
 
   $timeAlertPopupBg.style.display = 'block';
   $timelineAlertPopup.style.display = 'block';
-
-  $timelineDeleteBtn.addEventListener('click', () => removeSchedule(scheduleId));
 };
+
+$timelineDeleteBtn.addEventListener('click', () => removeSchedule(removeSId));
 
 $timelineCancleBtn.onclick = () => {
   $timeAlertPopupBg.style.display = 'none';
@@ -553,9 +541,6 @@ const printStartTime = () => {
 };
 
 const printEndTime = target => {
-  // console.log([...target.children].filter(child => child.selected === 'selected'));
-  console.log([...target.children].map(child => child.selected));
-  // console.log(target.children);
 
   let hour = [
     'HOUR',

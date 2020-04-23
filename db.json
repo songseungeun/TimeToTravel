@@ -1,34 +1,6 @@
 {
   "travels": [
     {
-      "id": 2,
-      "title": "ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ",
-      "place": "ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ",
-      "startDate": "2019/4/3",
-      "endDate": "2019/8/1"
-    },
-    {
-      "id": 7,
-      "title": "큐큐큐큐ㅠ큐",
-      "place": "ㅠㅠ큐큐큐큐ㅠㅋ",
-      "startDate": "2021/1/30",
-      "endDate": "2021/2/5"
-    },
-    {
-      "id": 8,
-      "title": "fdfsd",
-      "place": "fdssdf",
-      "startDate": "2021/2/5",
-      "endDate": "2021/5/4"
-    },
-    {
-      "id": 13,
-      "title": "안녕",
-      "place": "화이팅",
-      "startDate": "2020/9/22",
-      "endDate": "2021/4/19"
-    },
-    {
       "id": 15,
       "title": "가갸거겨",
       "place": "라랴러려",
@@ -36,56 +8,22 @@
       "endDate": "2020/3/3"
     },
     {
-      "id": 16,
-      "title": "sfsfd",
-      "place": "sdffds",
-      "startDate": "2020/4/23",
-      "endDate": "2020/4/23"
-    },
-    {
       "id": 17,
-      "title": "dsffds",
-      "place": "dfsdsf",
-      "startDate": "2020/6/4",
-      "endDate": "2020/6/10"
+      "title": "룰루랄라",
+      "place": "롤로로로롤",
+      "startDate": "2020/2/2",
+      "endDate": "2020/3/1"
     }
   ],
   "schedules": [
     {
-      "travelId": "13",
-      "date": "9/22",
-      "timeFrom": "9:20",
-      "timeTo": "9:20",
-      "place": "sfdsdf",
-      "detail": "sdfsdf",
-      "id": 1
-    },
-    {
-      "travelId": "13",
-      "date": "9/22",
-      "timeFrom": "9:30",
-      "timeTo": "9:40",
-      "place": "fsdsfd",
-      "detail": "dsfsdf",
+      "travelId": "17",
+      "date": "2/2",
+      "timeFrom": "8:10",
+      "timeTo": "8:10",
+      "place": "ㄴㅇㄹ",
+      "detail": "ㄴㅇㄹ",
       "id": 2
-    },
-    {
-      "travelId": "16",
-      "date": "4/23",
-      "timeFrom": "9:20",
-      "timeTo": "8:20",
-      "place": "dsffs",
-      "detail": "sadasdasd",
-      "id": 3
-    },
-    {
-      "travelId": "7",
-      "date": "1/30",
-      "timeFrom": "7:00",
-      "timeTo": "7:00",
-      "place": "svdfdgsfgfd",
-      "detail": "dfgfdggfd",
-      "id": 4
     }
   ],
   "airlines": [
