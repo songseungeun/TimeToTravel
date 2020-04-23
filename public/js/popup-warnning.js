@@ -1,4 +1,4 @@
-import { $startHour, $startMin, $endHour, $endMin, $startDate, $endDate } from './main.js'
+import { $timeWarningText, $dateWarningText, $startYear, $startMonth, $startDate, $endYear, $endMonth, $endDate, $startHour, $startMin, $endHour, $endMin } from './main.js'
 
 const $travelPopupInput = document.querySelectorAll('.new-travel-popup input');
 const $travelPopupSelect = document.querySelectorAll('.new-travel-popup select');
@@ -7,9 +7,6 @@ const $travelHiddenBtn = document.querySelector('.add-travel-btn-hidden');
 const $schedulePopupInput = document.querySelectorAll('.new-schedule-popup input');
 const $schedulePopupSelect = document.querySelectorAll('.new-schedule-popup select');
 const $scheduleHiddenBtn = document.querySelector('.add-schedule-btn-hidden');
-
-const $timeWarningText = document.querySelector('#end-warning-label');
-const $dateWarningText = document.querySelector('#newend-warning-label');
 
 const $infoPopupInput = document.querySelectorAll('.new-info-popup input');
 const $infoPopupSelect = document.querySelectorAll('.new-info-popup select');
@@ -31,7 +28,7 @@ const warnTime = () => {
 const warnDate = () => {
   const start = new Date(`${$startYear.value}/${$startMonth.value}/${$startDate.value}`);
   const end = new Date(`${$endYear.value}/${$endMonth.value}/${$endDate.value}`);
-  const isValid = end.getTime() - start.getTime() > 0;
+  const isValid = end.getTime() - start.getTime() >= 0;
 
   $dateWarningText.style.display = isValid ? 'none' : 'block';
   return isValid;
@@ -49,8 +46,10 @@ function actBtn() {
   });
 
   $travelHiddenBtn.style.display = 'block';
-  if (![...arr, ...arr2].every(arr => arr) && !isValid) return;
+  if (![...arr, ...arr2].every(arr => arr)) return;
+  if (!isValid) return;
   $travelHiddenBtn.style.display = 'none';
+  $dateWarningText.style.display = 'none';
 }
 
 $travelPopupInput.forEach(input => {
@@ -80,6 +79,7 @@ function actScheduleBtn() {
   if (!isValid) return;
 
   $scheduleHiddenBtn.style.display = 'none';
+  $timeWarningText.style.display = 'none';
 }
 
 $schedulePopupInput.forEach(input => {
