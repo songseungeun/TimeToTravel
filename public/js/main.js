@@ -74,8 +74,8 @@ const closePopup = () => {
 };
 
 const resetSchedulePopup = () => {
-  // const selects = [...$selectWrappers].map(select => select.firstElementChild);
-  // selects.forEach(child => (child.firstElementChild.selected = 'selected'));
+  const selects = [...$selectWrappers].map(select => select.firstElementChild);
+  selects.forEach(child => (child.firstElementChild.selected = 'selected'));
 
   $inputSchedulePlace.value = '';
   $inputScheduleDetail.value = '';
