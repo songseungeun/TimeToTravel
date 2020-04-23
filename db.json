@@ -1,36 +1,56 @@
 {
   "travels": [
     {
-      "id": 2,
-      "title": "ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ",
-      "place": "ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ",
-      "startDate": "2019/4/3",
-      "endDate": "2019/8/1"
+      "id": 15,
+      "title": "신나는 LA여행",
+      "place": "로스앤젤레스",
+      "startDate": "2020/2/4",
+      "endDate": "2022/4/6"
     },
     {
-      "id": 12,
-      "title": "ㅅㄷㄴㅅ",
-      "place": "`````",
-      "startDate": "2020/7/10",
-      "endDate": "2020/2/5"
-    },
-    {
-      "id": 14,
-      "title": "ㅇㄴㄹㅇㄹㄴ",
-      "place": "ㄴㅇㄹㅇㄴㄹ",
-      "startDate": "2020/7/7",
-      "endDate": "2020/7/20"
+      "id": 16,
+      "title": "힐링여행",
+      "place": "발리",
+      "startDate": "2020/9/12",
+      "endDate": "2020/10/1"
     }
   ],
   "schedules": [
     {
-      "travelId": "14",
-      "date": "7/10",
-      "timeFrom": "10:40",
-      "timeTo": "11:40",
-      "place": "fsfdsdsf",
-      "detail": "fsdfds",
+      "travelId": "16",
+      "date": "9/12",
+      "timeFrom": "8:10",
+      "timeTo": "9:20",
+      "place": "호텔",
+      "detail": "체크인",
       "id": 1
+    },
+    {
+      "travelId": "16",
+      "date": "9/12",
+      "timeFrom": "11:10",
+      "timeTo": "11:50",
+      "place": "수영장",
+      "detail": "자유수영",
+      "id": 2
+    },
+    {
+      "travelId": "16",
+      "date": "9/12",
+      "timeFrom": "14:30",
+      "timeTo": "15:50",
+      "place": "레스토랑",
+      "detail": "점심먹으러~",
+      "id": 3
+    },
+    {
+      "travelId": "16",
+      "date": "9/13",
+      "timeFrom": "13:40",
+      "timeTo": "14:50",
+      "place": "하하하",
+      "detail": "메롱이지롱",
+      "id": 4
     }
   ],
   "airlines": [

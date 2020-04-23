@@ -205,11 +205,17 @@ main.main-view {
 .timeline-travel-title {
   width: 746px;
   margin-left: 32px;
-  font-size: 20px;
+  font-size: 25px;
   padding: 20px;
   color: #fff;
-  font-weight: bold;
-  background-color: #d4d4d4;
+  font-weight: 700;
+  /* background-color: #d4d4d4; */
+  background-position: 50% 65%;
+  background-size: cover;
+  border-radius: 5px;
+  background-color: rgba(83, 103, 104, 0.3);
+  background-blend-mode: multiply;
+  text-shadow: rgba(0, 0, 0, 0.3) 1px 0 4px;
 }
 /* TIME */
 .timeline {
@@ -507,7 +513,7 @@ main.main-view {
 .popup-style input {
   font-size: 16px;
   padding: 13px 10px 5px 10px;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   width: 100%;
   border: 0px;
   border-bottom: 1px solid #15233e;
@@ -532,6 +538,7 @@ main.main-view {
   border: 0px;
   border-bottom: 1px solid #000;
   border-radius: 0px;
+  margin-bottom: 13px;
 }
 .popup-style select:hover {
   background-color: rgb(92, 120, 172);
@@ -625,7 +632,8 @@ main.main-view {
 .new-info-popup {
   width: 500px;
   display: none;
-  top: 10px;
+  top: 65px;
+  left: calc(50% - 250px);
 }
 .new-info-popup input {
   width: 37%;
@@ -640,10 +648,22 @@ main.main-view {
 .end-airline {
   padding: 10px 0;
 }
+.start-airline select,
+.start-airline input {
+
+}
+.start-airline select {
+
+}
+.start-airline input,
+.end-airline input {
+  padding-bottom: 10px;
+}
 .new-info-popup2 {
   width: 500px;
   display: none;
-  top: 10px;
+  top: 150px;
+  left: calc(50% - 250px);
 }
 
 /* 

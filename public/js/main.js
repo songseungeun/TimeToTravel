@@ -526,4 +526,4 @@ $startHourSelects.forEach(selects => selects.addEventListener('change', ({ targe
 $startMinuteSelects.forEach(selects => selects.addEventListener('change', ({ target }) => printEndTime(target)));
 
 // export
-export { resetSchedulePopup, resetTravelPopup, $mainList, $menuList, $travelList };
+export { resetSchedulePopup, resetTravelPopup, $mainList, $menuList, $travelList, $timelineTitle };
