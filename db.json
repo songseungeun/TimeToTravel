@@ -48,6 +48,13 @@
       "place": "라랴러려",
       "startDate": "2020/2/18",
       "endDate": "2020/3/3"
+    },
+    {
+      "id": 16,
+      "title": "코카콜라보 화이팅",
+      "place": "소원: 패캠탈출",
+      "startDate": "2020/1/7",
+      "endDate": "2020/2/7"
     }
   ],
   "schedules": [
@@ -77,15 +84,6 @@
       "place": "ㄹㅇㄴ",
       "detail": "ㅇㄹㄴ",
       "id": 4
-    },
-    {
-      "travelId": "8",
-      "date": "2/5",
-      "timeFrom": "8:10",
-      "timeTo": "8:20",
-      "place": "ㅋㅋ",
-      "detail": "ㅋㅋ",
-      "id": 5
     },
     {
       "travelId": "8",
@@ -127,6 +125,7 @@
   "airlines": [
     {
       "travelId": 1,
+      "type": "departure",
       "date": "5/16",
       "airplaneName": "아메리칸항공",
       "depatureTime": "18:10",
@@ -136,6 +135,7 @@
     },
     {
       "travelId": 2,
+      "type": "arrival",
       "date": "5/16",
       "airplaneName": "프랑스항공",
       "depatureTime": "18:10",
@@ -145,6 +145,7 @@
     },
     {
       "travelId": 3,
+      "type": "departure",
       "date": "5/16",
       "airplaneName": "델타항공",
       "depatureTime": "18:10",

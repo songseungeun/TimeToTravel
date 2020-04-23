@@ -1,5 +1,4 @@
 let airlines = [];
-let airlines2 = [];
 let lodgings = [];
 
 //DOM
@@ -24,14 +23,26 @@ const $hotelPopupBg = document.querySelector('.hotelBg');
 const $departureSec = document.querySelector('.departure-section');
 const $arrivalSec = document.querySelector('.arrival-section');
 
+const $depMonthSelect = document.querySelector('#airline-month-select');
+const $depDaySelcet = document.querySelector('#airline-day-select');
+const $inputAirline = document.querySelector('.input-airlines');
+const $depHourSelect = document.querySelector('#airline-hour-select');
+const $depMinSelect = document.querySelector('#airline-min-select');
+const $inputDepAirport = document.querySelector('.dep-airlines');
+const $depArrMinSelect = document.querySelector('#dep-airline-min-select');
+const $depArrHourSelect = document.querySelector('#dep-airline-hour-select');
+const $inputDepArrAirport = document.querySelector('.arr-airlines');
+const $travelInfoList = document.querySelector('.start-airline');
+const $selectWrappers = document.querySelectorAll('.select-wrapper');
+
 //RENDER
 const renderAirlineInfo = () => {
   let html = '';
 
-  airlines = airlines.forEach(({ travelId, id, type, date, airplaneName, depatureTime, departureAirport, arrivalTime, arrivalAirport }) => {
+  airlines = airlines.forEach(({ travelId, type, id, date, airplaneName, depatureTime, departureAirport, arrivalTime, arrivalAirport }) => {
     html += `<li id=${travelId}-${id} class="airline-schedule-detail clearfix">
     <div class="airline-info1 airline-departure">
-      <em>출발</em>
+      <em>${type === 'departure' ? '출발' : '도착'}</em>
     </div>
     <div class="airline-info2 departure-info-date">
       <span class="date">${date}</span>
@@ -58,42 +69,37 @@ export const getAirlineData = async () => {
   renderAirlineInfo();
 };
 
+const resetAirlinePopup = () => {
+  const selects = [...$selectWrappers].map(select => select.firstElementChild);
+  selects.forEach(child => (child.firstElementChild.selected = 'selected'));
+
+  $inputAirline.value = '';
+  $inputDepAirport.value = '';
+  $inputDepArrAirport.value = '';
+};
+
+const closeAirlinePopup = () => {
+  $airlinePopup.style.display = 'none';
+  $airlinePopupBg.style.display = 'none';
+  resetAirlinePopup();
+};
+
 //post
-/*
-$airlineAddBtn.onclick = async () => {
-  const newId = .value.
+const addAirlieneInfo = async () => {
+  const startMonth = `${$depMonthSelect.value}/${$depDaySelcet.value}`;
+  const inputAirName = $travelInfoList.querySelector('.active').firstElementChild.textContent;
+  const departureTime = `${$depHourSelect}:${$depMinSelect}`;
+  const departureAirport = $travelInfoList.querySelector('.active').firstElementChild.textContent;
+  const arrivalTime = `${$depArrHourSelect}:${$depArrMinSelect}`;
+  const arrivalAirport = $travelInfoList.querySelector('.active').firstElementChild.textContent;
 
-  const { data } = await axios.post('/airlines', {
+  const { data } = await axios.post('/airlines', { travelId, type, id, date, airplaneName, depatureTime, departureAirport, arrivalTime, arrivalAirport });
+  airlines = [data, ...airlines];
 
-
-
-
-  });
+  closeAirlinePopup();
+  renderAirlineInfo(airlines);
+  resetAirlinePopup();
 };
-*/
-
-/*
-const title = $inputTravelTitle.value.trim();
-  const place = $inputTravelPlace.value.trim();
-  const startDate = `${$startYear.value}/${$startMonth.value}/${$startDate.value}`;
-  const endDate = `${$endYear.value}/${$endMonth.value}/${$endDate.value}`;
-  const newId = generateId();
-
-  const { data } = await axios.post('/travels', {
-    id: newId,
-    title,
-    place,
-    startDate,
-    endDate,
-  });
-  travels = [data, ...travels];
-
-  // console.log(travels);
-  closeTravelPopup();
-  renderTravelList();
-  resetTravelPopup();
-};
-*/
 
 const renderLodgingInfo = () => {
   let html = '';
@@ -172,9 +178,9 @@ $airlinePopupBg.onclick = () => {
 };
 
 //TODO: 등록 버튼 팅김 처리
-$airlineAddBtn.onclick = e => {
-  console.log(e.target);
-  if ($airlineMonthSelect === 'MONTH') return;
-  $airlineBg.style.display = 'none';
-  $airlinePopup.style.display = 'none';
-};
+// $airlineAddBtn.onclick = e => {
+//   console.log(e.target);
+//   if ($airlineMonthSelect === 'MONTH') return;
+//   $airlineBg.style.display = 'none';
+//   $airlinePopup.style.display = 'none';
+// };
