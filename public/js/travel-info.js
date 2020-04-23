@@ -20,15 +20,29 @@ const $airlineBtn = document.querySelector('.airline-btn');
 const $hotelPopupRemove = document.querySelector('.hotelRemoveBtn');
 const $hotelAddBtn = document.querySelector('.hotelAddBtn ');
 const $hotelPopupBg = document.querySelector('.hotelBg');
+const $departureSec = document.querySelector('.departure-section');
+const $arrivalSec = document.querySelector('.arrival-section');
+
+const $depMonthSelect = document.querySelector('#airline-month-select');
+const $depDaySelcet = document.querySelector('#airline-day-select');
+const $inputAirline = document.querySelector('.input-airlines');
+const $depHourSelect = document.querySelector('#airline-hour-select');
+const $depMinSelect = document.querySelector('#airline-min-select');
+const $inputDepAirport = document.querySelector('.dep-airlines');
+const $depArrMinSelect = document.querySelector('#dep-airline-min-select');
+const $depArrHourSelect = document.querySelector('#dep-airline-hour-select');
+const $inputDepArrAirport = document.querySelector('.arr-airlines');
+const $travelInfoList = document.querySelector('.start-airline');
+const $selectWrappers = document.querySelectorAll('.select-wrapper');
 
 //RENDER
 const renderAirlineInfo = () => {
   let html = '';
 
-  airlines = airlines.forEach(({ id, type, date, airplaneName, depatureTime, departureAirport, arrivalTime, arrivalAirport }) => {
-    html += `<li id=${id} class="airline-schedule-detail clearfix">
+  airlines = airlines.forEach(({ travelId, type, id, date, airplaneName, depatureTime, departureAirport, arrivalTime, arrivalAirport }) => {
+    html += `<li id=${travelId}-${id} class="airline-schedule-detail clearfix">
     <div class="airline-info1 airline-departure">
-      <em>${type ? '출발' : '도착'}</em>
+      <em>${type === 'departure' ? '출발' : '도착'}</em>
     </div>
     <div class="airline-info2 departure-info-date">
       <span class="date">${date}</span>
@@ -45,7 +59,7 @@ const renderAirlineInfo = () => {
   </li>`;
   });
 
-  $airlineScheduleList.innerHTML = html;
+  $airlineSchedule.innerHTML = html;
 };
 
 export const getAirlineData = async () => {
@@ -53,6 +67,38 @@ export const getAirlineData = async () => {
   airlines = data;
 
   renderAirlineInfo();
+};
+
+const resetAirlinePopup = () => {
+  const selects = [...$selectWrappers].map(select => select.firstElementChild);
+  selects.forEach(child => (child.firstElementChild.selected = 'selected'));
+
+  $inputAirline.value = '';
+  $inputDepAirport.value = '';
+  $inputDepArrAirport.value = '';
+};
+
+const closeAirlinePopup = () => {
+  $airlinePopup.style.display = 'none';
+  $airlinePopupBg.style.display = 'none';
+  resetAirlinePopup();
+};
+
+//post
+const addAirlieneInfo = async () => {
+  const startMonth = `${$depMonthSelect.value}/${$depDaySelcet.value}`;
+  const inputAirName = $travelInfoList.querySelector('.active').firstElementChild.textContent;
+  const departureTime = `${$depHourSelect}:${$depMinSelect}`;
+  const departureAirport = $travelInfoList.querySelector('.active').firstElementChild.textContent;
+  const arrivalTime = `${$depArrHourSelect}:${$depArrMinSelect}`;
+  const arrivalAirport = $travelInfoList.querySelector('.active').firstElementChild.textContent;
+
+  const { data } = await axios.post('/airlines', { travelId, type, id, date, airplaneName, depatureTime, departureAirport, arrivalTime, arrivalAirport });
+  airlines = [data, ...airlines];
+
+  closeAirlinePopup();
+  renderAirlineInfo(airlines);
+  resetAirlinePopup();
 };
 
 const renderLodgingInfo = () => {
@@ -132,15 +178,9 @@ $airlinePopupBg.onclick = () => {
 };
 
 //TODO: 등록 버튼 팅김 처리
-$airlineAddBtn.onclick = e => {
-  console.log(e.target);
-  if ($airlineMonthSelect === 'MONTH') return;
-  $airlineBg.style.display = 'none';
-  $airlinePopup.style.display = 'none';
-};
-
-//post
-// $airlineAddBtn.onclick = async () =>{
-// const title = $in
-
-// }
+// $airlineAddBtn.onclick = e => {
+//   console.log(e.target);
+//   if ($airlineMonthSelect === 'MONTH') return;
+//   $airlineBg.style.display = 'none';
+//   $airlinePopup.style.display = 'none';
+// };
