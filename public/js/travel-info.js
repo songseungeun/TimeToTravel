@@ -87,3 +87,9 @@ $airlineAddBtn.onclick = e => {
   $airlineBg.style.display = 'none';
   $airlinePopup.style.display = 'none';
 };
+
+//post
+// $airlineAddBtn.onclick = async () =>{
+// const title = $in
+
+// }
