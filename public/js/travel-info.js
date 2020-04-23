@@ -1,4 +1,5 @@
 let airlines = [];
+let airlines2 = [];
 let lodgings = [];
 
 //DOM
@@ -20,15 +21,17 @@ const $airlineBtn = document.querySelector('.airline-btn');
 const $hotelPopupRemove = document.querySelector('.hotelRemoveBtn');
 const $hotelAddBtn = document.querySelector('.hotelAddBtn ');
 const $hotelPopupBg = document.querySelector('.hotelBg');
+const $departureSec = document.querySelector('.departure-section');
+const $arrivalSec = document.querySelector('.arrival-section');
 
 //RENDER
 const renderAirlineInfo = () => {
   let html = '';
 
-  airlines = airlines.forEach(({ id, type, date, airplaneName, depatureTime, departureAirport, arrivalTime, arrivalAirport }) => {
-    html += `<li id=${id} class="airline-schedule-detail clearfix">
+  airlines = airlines.forEach(({ travelId, id, type, date, airplaneName, depatureTime, departureAirport, arrivalTime, arrivalAirport }) => {
+    html += `<li id=${travelId}-${id} class="airline-schedule-detail clearfix">
     <div class="airline-info1 airline-departure">
-      <em>${type ? '출발' : '도착'}</em>
+      <em>출발</em>
     </div>
     <div class="airline-info2 departure-info-date">
       <span class="date">${date}</span>
@@ -45,7 +48,7 @@ const renderAirlineInfo = () => {
   </li>`;
   });
 
-  $airlineScheduleList.innerHTML = html;
+  $airlineSchedule.innerHTML = html;
 };
 
 export const getAirlineData = async () => {
@@ -56,13 +59,26 @@ export const getAirlineData = async () => {
 };
 
 //post
+/*
 $airlineAddBtn.onclick = async () => {
-  const title = $in;
+  const newId = .value.
 
-  const { data } = await axios.post('/airlines', {});
+  const { data } = await axios.post('/airlines', {
+
+
+
+
+  });
 };
+*/
 
 /*
+const title = $inputTravelTitle.value.trim();
+  const place = $inputTravelPlace.value.trim();
+  const startDate = `${$startYear.value}/${$startMonth.value}/${$startDate.value}`;
+  const endDate = `${$endYear.value}/${$endMonth.value}/${$endDate.value}`;
+  const newId = generateId();
+
   const { data } = await axios.post('/travels', {
     id: newId,
     title,

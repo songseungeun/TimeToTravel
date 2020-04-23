@@ -84,15 +84,45 @@
   "schedules": [],
   "airlines": [
     {
-      "id": 4,
-      "type": "도착",
+      "travelId": 1,
       "date": "5/16",
-      "airplaneName": "아시아나항공",
+      "airplaneName": "아메리칸항공",
+      "depatureTime": "18:10",
+      "departureAirport": "ICN",
+      "arrivalTime": "18:10",
+      "arrivalAirport": "ICN"
+    },
+    {
+      "travelId": 2,
+      "date": "5/16",
+      "airplaneName": "프랑스항공",
+      "depatureTime": "18:10",
+      "departureAirport": "ICN",
+      "arrivalTime": "18:10",
+      "arrivalAirport": "ICN"
+    },
+    {
+      "travelId": 3,
+      "date": "5/16",
+      "airplaneName": "델타항공",
       "depatureTime": "18:10",
       "departureAirport": "ICN",
       "arrivalTime": "18:10",
       "arrivalAirport": "ICN"
     }
   ],
-  "lodgings": []
+  "lodgings": [
+    {
+      "lodgingNumber": 1,
+      "hotelName": "63빌딩",
+      "hotelPlace": "서울",
+      "hotelsite": "agoda"
+    },
+    {
+      "lodgingNumber": 2,
+      "hotelName": "63빌딩",
+      "hotelPlace": "서울",
+      "hotelsite": "agoda"
+    }
+  ]
 }
