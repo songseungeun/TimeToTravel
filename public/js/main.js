@@ -410,11 +410,12 @@ const goToTimeline = async target => {
 // event handlers
 window.onload = getTravels;
 
+$menuList.addEventListener('click', ({ target }) => changeNav(target));
+
 $logo.addEventListener('click', getTravels);
 $logo.addEventListener('click', ({ target }) => {
   if (target.matches('h1 > i') || target.matches('h1')) changeNav(document.querySelector('i.fa-home'));
 });
-
 
 //x버튼을 누르면 팝업창 종료
 $popupRemoveBtn.addEventListener('click', closePopup);

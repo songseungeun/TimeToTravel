@@ -11,4 +11,3 @@ import { $menuList, $mainList, $timelineTitle, changeNav } from './main.js';
   // }
 // };
 
-$menuList.addEventListener('click', ({ target }) => changeNav(target));
