@@ -10,7 +10,7 @@
     <script type="module" src="./js/main.js" defer></script>
     <script type="module" src="./js/date-btn.js" defer></script>
     <script type="module" src="./js/travel-list.js" defer></script>
-    <script type="module" src="./js/menu-icon.js" defer></script>
+    <!-- <script type="module" src="./js/menu-icon.js" defer></script> -->
     <script type="module" src="./js/travel-list-popup.js" defer></script>
     <script type="module" src="./js/timeline.js" defer></script>
     <script type="module" src="./js/select-box-date.js" defer></script>
@@ -56,7 +56,7 @@
           <div class="travel-none-text">
             + 버튼을 눌러 여행일정을 입력해주세요.
           </div>
-          <div class="new-travel-btn">
+          <div class="new-travel-btn" id="newTravelBtn">
             +
           </div>
           <!-- POPUP -->
@@ -69,24 +69,24 @@
             <div class="start-date">
               <label for="date-select">시작날짜:</label>
               <div class="select-wrapper">
-                <select name="year" id="start-year-select">
-                  <option value="0" selected>YEAR</option>
-                  <option value="2020">2020</option>
-                  <option value="2021">2021</option>
-                  <option value="2022">2022</option>
-                  <option value="2023">2023</option>
+                <select name="year" id="start-year-select" class="year-select">
+                  <!-- <option value="0" selected>YEAR</option> -->
+                  <!-- <option value="2020">2020 년</option>
+                  <option value="2021">2021 년</option>
+                  <option value="2022">2022 년</option>
+                  <option value="2023">2023 년</option> -->
                 </select>
                 <div class="select-arrow"></div>
               </div>
               <div class="select-wrapper">
                 <select name="month" id="start-month-select" class="month-select">
-                  <option value="0" selected>MONTH</option>
+                  <!-- <option value="0" selected>MONTH</option> -->
                 </select>
                 <div class="select-arrow"></div>
               </div>
               <div class="select-wrapper">
-                <select name="day" id="start-day-select">
-                  <option value="0" selected>DATE</option>
+                <select name="day" id="start-day-select" class="date-select">
+                  <!-- <option value="0" selected>DATE</option> -->
                 </select>
                 <div class="select-arrow"></div>
               </div>
@@ -96,24 +96,24 @@
             <div class="end-date">
               <label for="date-select">종료날짜:</label>
               <div class="select-wrapper">
-                <select name="year" id="end-year-select">
-                  <option value="0" selected>YEAR</option>
-                  <option value="2020">2020</option>
-                  <option value="2021">2021</option>
-                  <option value="2022">2022</option>
-                  <option value="2023">2023</option>
+                <select name="year" id="end-year-select" class="year-select">
+                  <!-- <option value="0" selected>YEAR</option> -->
+                  <!-- <option value="2020">2020 년</option>
+                  <option value="2021">2021 년</option>
+                  <option value="2022">2022 년</option>
+                  <option value="2023">2023 년</option> -->
                 </select>
                 <div class="select-arrow"></div>
               </div>
               <div class="select-wrapper">
                 <select name="month" id="end-month-select" class="month-select">
-                  <option value="0" selected>MONTH</option>
+                  <!-- <option value="0" selected>MONTH</option> -->
                 </select>
                 <div class="select-arrow"></div>
               </div>
               <div class="select-wrapper">
-                <select name="day" id="end-day-select">
-                  <option value="0" selected>DATE</option>
+                <select name="day" id="end-day-select" class="date-select">
+                  <!-- <option value="0" selected disabled hidden>DATE</option> -->
                 </select>
                 <div class="select-arrow"></div>
               </div>
@@ -290,6 +290,7 @@
           <header class="header">
             <h2>Travel <strong>Info</strong></h2>
           </header>
+          <div class="timeline-travel-title">Travel title</div>
           <div class="airline-ticket">
             <h3>예약 항공권</h3>
             <ol class="airline-schedule">
@@ -369,18 +370,18 @@
               <h3>출발정보</h3>
               <!-- <label for="date-select">출발:</label> -->
               <div class="select-wrapper">
-                <select name="month" id="airline-month-select">
-                  <option value="MONTH">MONTH</option>
+                <select name="month" id="airline-month-select" class="month-select">
+                  <!-- <option value="MONTH">MONTH</option>
                   <option value="APR">APR</option>
-                  <option value="MAY">MAY</option>
+                  <option value="MAY">MAY</option> -->
                 </select>
                 <div class="select-arrow"></div>
               </div>
               <div class="select-wrapper">
-                <select name="day" id="airline-day-select">
-                  <option value="DAY">DAY</option>
+                <select name="day" id="airline-day-select" class="date-select">
+                  <!-- <option value="DAY">DAY</option>
                   <option value="13">13</option>
-                  <option value="14">14</option>
+                  <option value="14">14</option> -->
                 </select>
                 <div class="select-arrow"></div>
               </div>
@@ -425,18 +426,18 @@
               <h3>도착정보</h3>
               <!-- <label for="date-select">도착:</label> -->
               <div class="select-wrapper">
-                <select name="month" id="arrival-month-select">
-                  <option value="">MONTH</option>
+                <select name="month" id="arrival-month-select" class="month-select">
+                  <!-- <option value="">MONTH</option>
                   <option value="">APR</option>
-                  <option value="">MAY</option>
+                  <option value="">MAY</option> -->
                 </select>
                 <div class="select-arrow"></div>
               </div>
               <div class="select-wrapper">
-                <select name="day" id="day-select">
-                  <option value="">DAY</option>
+                <select name="day" id="arrival-day-select" class="date-select">
+                  <!-- <option value="">DAY</option>
                   <option value="">13</option>
-                  <option value="">14</option>
+                  <option value="">14</option> -->
                 </select>
                 <div class="select-arrow"></div>
               </div>

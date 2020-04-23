@@ -74,16 +74,16 @@ const closePopup = () => {
 };
 
 const resetSchedulePopup = () => {
-  const selects = [...$selectWrappers].map(select => select.firstElementChild);
-  selects.forEach(child => (child.firstElementChild.selected = 'selected'));
+  // const selects = [...$selectWrappers].map(select => select.firstElementChild);
+  // selects.forEach(child => (child.firstElementChild.selected = 'selected'));
 
   $inputSchedulePlace.value = '';
   $inputScheduleDetail.value = '';
 };
 
 const resetTravelPopup = () => {
-  const selects = [...$selectWrappers].map(select => select.firstElementChild);
-  selects.forEach(child => (child.firstElementChild.selected = 'selected'));
+  // const selects = [...$selectWrappers].map(select => select.firstElementChild);
+  // selects.forEach(child => (child.firstElementChild.selected = 'selected'));
 
   $inputTravelTitle.value = '';
   $inputTravelPlace.value = '';
@@ -479,8 +479,6 @@ $travelList.addEventListener('click', ({ target }) => goToTimeline(target));
 $travelList.onclick = ({ target }) => {
   if (!target.matches('.travel-list > li > .travel-remove-btn')) return;
   const removeId = target.parentNode.id.split('-')[1];
-
-
 
   $alertPopupBg.style.display = 'block';
   $alertPopup.style.display = 'block';
