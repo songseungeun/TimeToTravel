@@ -402,73 +402,57 @@ main.main-view {
 /* ----- travel info ----- */
 
 /* MAIN */
-
-.main h2 {
-  font-size: 24px;
-  font-weight: bold;
-  text-align: center;
+.main-info h3 {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 10px;
 }
-.airline-ticket {
+.airline-ticket,
+.hotel-info {
   width: 100%;
   margin: 20px auto;
   padding: 20px;
   line-height: 1.2;
   /* background-color: #f4f4f4; */
 }
-.airline-schedule li {
+.airline-schedule li,
+.hotel-schedule li {
   background-color: #f4f4f4;
   margin-bottom: 10px;
-}
-.airline-schedule li * {
-  display: block;
   text-align: center;
+  padding: 20px;
+  /* vertical-align: middle; */
+  display: flex;
+  justify-content: space-between;
 }
-.main h3 {
-  font-size: 20px;
-  font-weight: bold;
-  padding: 10px;
+.airline-schedule li div,
+.hotel-schedule li * {
+  padding: 10px 20px;
+  flex: 1 1 auto;
 }
-.airline-info1,
-.airline-info2,
-.airline-departure,
-.airline-arrival {
-  float: left;
-  padding: 10px;
-}
-.airline-info1 {
-  width: 80px;
+.airline-schedule li em,
+.hotel-schedule li em {
   line-height: 50px;
-}
-.airline-info2 {
-  width: 160px;
-}
-.airline-departure,
-.airline-arrival {
-  width: 180px;
 }
 .date,
 .time {
+  display: block;
   font-size: 26px;
   font-weight: 400;
+  margin-bottom: 5px;
 }
 .airlines,
 .airport {
+  display: block;
   font-size: 16px;
 }
-.hotel-reservation1,
-.hotel-reservation2 {
-  width: 100%;
-  margin: 20px auto;
-  padding: 20px;
-  line-height: 1.2;
-  background-color: #f4f4f4;
-}
+
 .hotel-name,
 .hotel-place,
 .hotel-site {
-  padding: 50px;
   font-size: 24px;
   font-weight: 400;
+  line-height: 60px;
 }
 
 /* ----- POP UP ----- */

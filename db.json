@@ -29,13 +29,6 @@
       "endDate": "2021/5/4"
     },
     {
-      "id": 11,
-      "title": "sfsdf",
-      "place": "dsffsd",
-      "startDate": "2021/3/4",
-      "endDate": "2023/4/4"
-    },
-    {
       "id": 12,
       "title": "ㅅㄷㄴㅅ",
       "place": "`````",
@@ -79,73 +72,27 @@
       "id": 7
     },
     {
-      "travelId": "11",
-      "date": "3/8",
-      "timeFrom": "12:40",
-      "timeTo": "11:40",
-      "place": "sfdfds",
-      "detail": "dsffds",
-      "id": 8
+      "travelId": "8",
+      "date": "2/7",
+      "timeFrom": "9:30",
+      "timeTo": "8:30",
+      "place": "sffsd",
+      "detail": "dsffs",
+      "id": 9
     }
   ],
+  "schedules": [],
   "airlines": [
     {
-      "id": 1,
-      "travelId": "5",
-      "type": "출발",
-      "date": "20.05.16.18:10:00",
-      "airplaneName": "아시아나항공",
-      "depatureTime": "20.05.16.18:10:00",
-      "departureAirport": "ICN",
-      "arrivalTime": "20.05.16.18:10:00",
-      "arrivalAirport": "ICN"
-    },
-    {
-      "id": 2,
-      "travelId": "5",
-      "type": "출발",
-      "date": "20.05.16.18:10:00",
-      "airplaneName": "아시아나항공",
-      "depatureTime": "20.05.16.18:10:00",
-      "departureAirport": "ICN",
-      "arrivalTime": "20.05.16.18:10:00",
-      "arrivalAirport": "ICN"
-    },
-    {
-      "id": 3,
+      "id": 4,
       "type": "도착",
-      "date": "20.05.16.18:10:00",
+      "date": "5/16",
       "airplaneName": "아시아나항공",
-      "depatureTime": "20.05.16.18:10:00",
+      "depatureTime": "18:10",
       "departureAirport": "ICN",
-      "arrivalTime": "20.05.16.18:10:00",
+      "arrivalTime": "18:10",
       "arrivalAirport": "ICN"
     }
   ],
-  "lodgings": [
-    {
-      "id": 1,
-      "travelId": "5",
-      "lodgingNumber": "1",
-      "hotelName": "워커힐",
-      "hotelPlace": "파푸아뉴기니",
-      "hotelsite": "AGODA"
-    },
-    {
-      "id": 2,
-      "travelId": "5",
-      "lodgingNumber": "2",
-      "hotelName": "워커힐",
-      "hotelPlace": "파푸아뉴기니",
-      "hotelsite": "AGODA"
-    },
-    {
-      "id": 3,
-      "travelId": "5",
-      "lodgingNumber": "3",
-      "hotelName": "워커힐",
-      "hotelPlace": "파푸아뉴기니",
-      "hotelsite": "AGODA"
-    }
-  ]
+  "lodgings": []
 }
