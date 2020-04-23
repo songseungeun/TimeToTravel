@@ -524,6 +524,7 @@ const changeEndMin = () => {
   });
 };
 
+
 const printStartTime = () => {
   let hour = Array.from({ length: 17 }, function (v, i) { return i + 7; });
   let minute = Array.from({ length: 6 }, function (v, i) { return i * 10; });

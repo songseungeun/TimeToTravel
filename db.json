@@ -1,102 +1,95 @@
 {
   "travels": [
     {
-      "id": 15,
-      "title": "가갸거겨",
-      "place": "라랴러려",
-      "startDate": "2020/2/18",
-      "endDate": "2020/3/3"
-    },
-    {
-      "id": 17,
-      "title": "룰루랄라",
-      "place": "롤로로로롤",
-      "startDate": "2020/2/2",
-      "endDate": "2020/3/1"
+      "id": 1,
+      "title": "sdffds",
+      "place": "dsfdsf",
+      "startDate": "2020/6/5",
+      "endDate": "2020/8/5"
     }
   ],
-  "schedules": [
-    {
-      "travelId": "17",
-      "date": "2/2",
-      "timeFrom": "8:10",
-      "timeTo": "8:10",
-      "place": "ㄴㅇㄹ",
-      "detail": "ㄴㅇㄹ",
-      "id": 2
-    },
-    {
-      "travelId": "17",
-      "date": "2/2",
-      "timeFrom": "12:20",
-      "timeTo": "11:30",
-      "place": "ㅛ숋",
-      "detail": "ㅠㅊ",
-      "id": 3
-    },
-    {
-      "travelId": "17",
-      "date": "2/2",
-      "timeFrom": "10:20",
-      "timeTo": "11:30",
-      "place": "ㄴㅇㄹ",
-      "detail": "ㅇㄹ",
-      "id": 4
-    },
-    {
-      "travelId": "17",
-      "date": "2/2",
-      "timeFrom": "7:00",
-      "timeTo": "7:00",
-      "place": "ㄴㅇㄹ",
-      "detail": "ㄴㅇㄹ",
-      "id": 5
-    }
-  ],
+  "schedules": [],
   "airlines": [
     {
+      "id": 1,
       "travelId": 1,
       "type": "departure",
       "date": "5/16",
       "airplaneName": "아메리칸항공",
-      "depatureTime": "18:10",
+      "departureTime": "18:10",
       "departureAirport": "ICN",
       "arrivalTime": "18:10",
       "arrivalAirport": "ICN"
     },
     {
+      "id": 2,
       "travelId": 2,
       "type": "arrival",
       "date": "5/16",
       "airplaneName": "프랑스항공",
-      "depatureTime": "18:10",
+      "departureTime": "18:10",
       "departureAirport": "ICN",
       "arrivalTime": "18:10",
       "arrivalAirport": "ICN"
     },
     {
+      "id": 3,
       "travelId": 3,
       "type": "departure",
       "date": "5/16",
       "airplaneName": "델타항공",
-      "depatureTime": "18:10",
+      "departureTime": "18:10",
       "departureAirport": "ICN",
       "arrivalTime": "18:10",
       "arrivalAirport": "ICN"
+    },
+    {
+      "travelId": "",
+      "type": "departure",
+      "date": "APR/13",
+      "airplaneName": "ㅌㅊㅌ",
+      "departureTime": "[object HTMLSelectElement]:[object HTMLSelectElement]",
+      "departureAirport": "ㅌㅊ",
+      "arrivalTime": "[object HTMLSelectElement]:[object HTMLSelectElement]",
+      "arrivalAirport": "ㅊㅊ",
+      "id": 4
+    },
+    {
+      "travelId": "",
+      "type": "departure",
+      "date": "APR/14",
+      "airplaneName": "ㄹ",
+      "departureTime": "[object HTMLSelectElement]:[object HTMLSelectElement]",
+      "departureAirport": "ㄹ",
+      "arrivalTime": "[object HTMLSelectElement]:[object HTMLSelectElement]",
+      "arrivalAirport": "ㄹ",
+      "id": 5
     }
   ],
   "lodgings": [
     {
-      "lodgingNumber": 1,
+      "id": 1,
       "hotelName": "63빌딩",
       "hotelPlace": "서울",
       "hotelsite": "agoda"
     },
     {
-      "lodgingNumber": 2,
+      "id": 2,
       "hotelName": "63빌딩",
       "hotelPlace": "서울",
       "hotelsite": "agoda"
+    },
+    {
+      "id": 3,
+      "hotelName": "",
+      "hotelPlace": "",
+      "hotelsite": "ㄹㄹㄹ"
+    },
+    {
+      "id": 4,
+      "hotelName": "",
+      "hotelPlace": "",
+      "hotelsite": "ㄹ"
     }
   ]
 }
