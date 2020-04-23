@@ -88,6 +88,10 @@ h1 {
   /* background-color: #ccc; */
   /* outline: 1px solid #000; */
 }
+.menu-bar > h1:hover {
+  opacity: 0.8;
+  transition: opacity 0.3s;
+}
 .menu-list {
   padding-top: 50px;
 }
@@ -98,14 +102,23 @@ h1 {
   /* margin: 20px; */
   /* background-color: #999; */
 }
+.menu-list > li > i.fas:hover {
+  /* box-shadow: 2px 2px 7px 1px rgba(0, 0, 0, 0.2); */
+  transform: scale(1.2);
+  /* opacity: 0.9; */
+  transition: box-shadow 0.5s, transform 0.5s, opacity 0.3s;
+}
 .menu-list > li > i {
   color: #fff;
-  font-size: 21px;
+  font-size: 26px;
   line-height: 60px;
   cursor: pointer;
 }
+.menu-list > li > .fa-calendar-alt {
+  margin-left: 3px;
+}
 .menu-list > li > .fa-plane-departure {
-  font-size: 20px;
+  font-size: 24px;
 }
 .menu-list .active {
   opacity: 1;
@@ -173,7 +186,7 @@ h1 {
 .date-list {
   /* float: left; */
   display: flex;
-  width: 660px;
+  /* width: 660px; */
   height: 100px;
   padding: 5px 0;
   /* background-color: rgb(220, 220, 220); */
@@ -206,21 +219,32 @@ h1 {
 }
 /* 여행타이틀 */
 .timeline-travel-title {
-  width: 90%;
-  font-size: 20px;
-  padding: 15px;
-  background-color: #d4d4d4;
+  width: 746px;
+  margin-left: 32px;
+  font-size: 25px;
+  padding: 20px;
+  color: #fff;
+  font-weight: 700;
+  /* background-color: #d4d4d4; */
+  background-position: 50% 65%;
+  background-size: cover;
+  border-radius: 5px;
+  background-color: rgba(83, 103, 104, 0.3);
+  background-blend-mode: multiply;
+  text-shadow: rgba(0, 0, 0, 0.3) 1px 0 4px;
 }
 /* TIME */
 .timeline {
   position: relative;
   margin-top: 20px;
-  padding: 10px;
+  width: 746px;
+  margin-left: 32px;
+  /* padding: 10px; */
 }
 .time-list {
   float: left;
   margin-right: 10px;
-  width: 90%;
+  width: 100%;
 }
 .time-list li {
   padding: 30px 10px;
@@ -231,21 +255,21 @@ h1 {
 .schedule-list {
   position: absolute;
   float: left;
-  /* width: 80%; */
+  width: 100%;
   /* height: 100vh; */
   padding: 20px;
   /* background-color: #f4f4f4; */
 }
 .schedule-list li {
   position: absolute;
-  width: 610px;
+  width: 87%;
   background-color: #cdcdcd;
   border-radius: 8px;
   padding: 10px;
   margin-bottom: 10px;
+  margin-left: 55px;
   line-height: 1.4;
-  left: 80px;
-  min-height: 38px;
+  min-height: 48px;
 }
 /* 2, 5, 8, 11 */
 .schedule-list li:nth-child(3n + 2) {
@@ -266,12 +290,17 @@ h1 {
 
 .remove-btn {
   position: absolute;
-  top: 8px;
-  right: 13px;
+  top: 3px;
+  right: 8px;
   background: none;
   border: none;
   cursor: pointer;
-  outline: none;
+  padding: 5px;
+  font-size: 15px;
+  outline: transparent;
+}
+.remove-btn:hover {
+  opacity: .7;
 }
 #s01 {
   top: 75px;
@@ -349,6 +378,27 @@ h1 {
   filter: grayscale(40%);
   background-image: url('../img/bg-positano.jpg');
 }
+.bg-4 {
+  /* filter: blur(3px); */
+  filter: grayscale(40%);
+  background-image: url('../img/bg-resort.jpg');
+}
+.bg-5 {
+  /* filter: blur(3px); */
+  filter: grayscale(40%);
+  background-image: url('../img/bg-korea.jpg');
+}
+.bg-6 {
+  /* filter: blur(1px); */
+  filter: grayscale(40%);
+  background-image: url('../img/bg-hawaii.jpg');
+}
+.bg-7 {
+  filter: grayscale(40%);
+  background-image: url('../img/bg-winery.jpg');
+}
+
+
 .travel-list li h2 {
   font-size: 28px;
   font-weight: bold;
@@ -484,7 +534,7 @@ h1 {
 .popup-style input {
   font-size: 16px;
   padding: 13px 10px 5px 10px;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   width: 100%;
   border: 0px;
   border-bottom: 1px solid #15233e;
@@ -509,6 +559,7 @@ h1 {
   border: 0px;
   border-bottom: 1px solid #000;
   border-radius: 0px;
+  margin-bottom: 13px;
 }
 .popup-style select:hover {
   background-color: rgb(92, 120, 172);
@@ -578,7 +629,7 @@ h1 {
   padding: 5px;
 }
 .new-travel-popup select {
-  width: 22%;
+  width: 24%;
 }
 
 /* 타임라인팝업 */
@@ -602,7 +653,8 @@ h1 {
 .new-info-popup {
   width: 500px;
   display: none;
-  top: 10px;
+  top: 65px;
+  left: calc(50% - 250px);
 }
 .new-info-popup input {
   width: 37%;
@@ -617,10 +669,22 @@ h1 {
 .end-airline {
   padding: 10px 0;
 }
+.start-airline select,
+.start-airline input {
+
+}
+.start-airline select {
+
+}
+.start-airline input,
+.end-airline input {
+  padding-bottom: 10px;
+}
 .new-info-popup2 {
   width: 500px;
   display: none;
-  top: 10px;
+  top: 150px;
+  left: calc(50% - 250px);
 }
 
 /* 

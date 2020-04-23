@@ -76,16 +76,16 @@ const closePopup = () => {
 };
 
 const resetSchedulePopup = () => {
-  const selects = [...$selectWrappers].map(select => select.firstElementChild);
-  selects.forEach(child => (child.firstElementChild.selected = 'selected'));
+  // const selects = [...$selectWrappers].map(select => select.firstElementChild);
+  // selects.forEach(child => (child.firstElementChild.selected = 'selected'));
 
   $inputSchedulePlace.value = '';
   $inputScheduleDetail.value = '';
 };
 
 const resetTravelPopup = () => {
-  const selects = [...$selectWrappers].map(select => select.firstElementChild);
-  selects.forEach(child => (child.firstElementChild.selected = 'selected'));
+  // const selects = [...$selectWrappers].map(select => select.firstElementChild);
+  // selects.forEach(child => (child.firstElementChild.selected = 'selected'));
 
   $inputTravelTitle.value = '';
   $inputTravelPlace.value = '';
@@ -388,22 +388,28 @@ const removeSchedule = async removeId => {
 const goToTimeline = async target => {
   const nodeNames = ['LI', 'EM', 'SPAN', 'DIV', 'H2'];
   const targetNode = nodeNames.filter(node => node === target.nodeName)[0];
-  if (!targetNode) return;
-
-  if (targetNode === 'LI') travelId = target.id.split('-')[1];
-  if (targetNode === 'SPAN') travelId = target.parentNode.parentNode.id.split('-')[1];
-  if (targetNode !== 'LI' && targetNode !== 'SPAN') travelId = target.parentNode.id.split('-')[1];
-
   const timeline = document.getElementById('main-calendar');
   const home = document.getElementById('main-home');
-  const {
-    data: { startDate, endDate, title },
-  } = await axios.get(`/travels/${travelId}`);
+  let travelBg = '';
+  if (!targetNode) return;
+
+  if (targetNode === 'LI') {
+    travelId = target.id.split('-')[1];
+    travelBg = target.classList[0];
+  } else if (targetNode === 'SPAN') {
+    travelId = target.parentNode.parentNode.id.split('-')[1];
+    travelBg = target.parentNode.parentNode.classList[0];
+  } else if (targetNode !== 'LI' && targetNode !== 'SPAN') {
+    travelId = target.parentNode.id.split('-')[1];
+    travelBg = target.parentNode.classList[0];
+  }
+
+  const { data: { startDate, endDate, title }} = await axios.get(`/travels/${travelId}`);
 
   timeline.classList.add('main-view');
   home.classList.remove('main-view');
   $timelineTitle.textContent = title;
-  $timelineTitle.classList.add(target.classList[0]);
+  $timelineTitle.classList.add(travelBg);
 
   [...$menuList.children].forEach(icon => {
     icon.style.display = 'block';
@@ -480,9 +486,12 @@ $travelList.onclick = ({ target }) => {
   if (!target.matches('.travel-list > li > .travel-remove-btn')) return;
   const removeId = target.parentNode.id.split('-')[1];
 
+
+
   $alertPopupBg.style.display = 'block';
   $alertPopup.style.display = 'block';
 
+  console.log('이벤트 리스너가 id값 가져옴',removeId);
   $alertDeleteBtn.addEventListener('click', () => removeTravel(removeId));
 };
 

@@ -16,6 +16,7 @@ function actBtn() {
     arr2.push(select.value !== '0');
   });
 
+  $travelHiddenBtn.style.display = 'block';
   if (![...arr, ...arr2].every(arr => arr)) return;
   $travelHiddenBtn.style.display = 'none';
 }
@@ -38,6 +39,8 @@ function actScheduleBtn() {
   $schedulePopupSelect.forEach(select => {
     arr2.push(select.value !== '0');
   });
+
+  $scheduleHiddenBtn.style.display = 'block';
   if (![...arr, ...arr2].every(arr => arr)) return;
   $scheduleHiddenBtn.style.display = 'none';
 }
