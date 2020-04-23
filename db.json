@@ -67,15 +67,6 @@
     {
       "travelId": "8",
       "date": "2/5",
-      "timeFrom": "8:10",
-      "timeTo": "8:20",
-      "place": "ㅋㅋ",
-      "detail": "ㅋㅋ",
-      "id": 5
-    },
-    {
-      "travelId": "8",
-      "date": "2/5",
       "timeFrom": "9:10",
       "timeTo": "10:20",
       "place": "시작시간",
@@ -108,15 +99,6 @@
       "place": "ㅗㄹㅎ",
       "detail": "ㅗㄹㅎ",
       "id": 9
-    },
-    {
-      "travelId": "8",
-      "date": "2/5",
-      "timeFrom": "7:10",
-      "timeTo": "10:20",
-      "place": "ㄴㅇㄹ",
-      "detail": "ㄴㅇㄹ",
-      "id": 10
     }
   ],
   "airlines": [
