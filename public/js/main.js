@@ -9,7 +9,6 @@ let removeSId = '';
 let navState = 'home';
 
 // DOMs
-
 const $timeWarningText = document.querySelector('#end-warning-label');
 const $dateWarningText = document.querySelector('#newend-warning-label');
 const $menuList = document.querySelector('.menu-list');
@@ -158,7 +157,7 @@ const renderTravelList = () => {
 
   travels.forEach(({ id, title, place, startDate, endDate }) => {
     bg++;
-    html += ` <li id=t-${id} class="bg-${bg % 4}">
+    html += ` <li id=t-${id} class="bg-${bg % 8}">
           <h2>${title}</h2>
           <em>${generateDday(startDate)}</em>
           <div class="travel-info">
