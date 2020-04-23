@@ -8,7 +8,17 @@
       "endDate": "2020/8/5"
     }
   ],
-  "schedules": [],
+  "schedules": [
+    {
+      "travelId": "1",
+      "date": "6/9",
+      "timeFrom": "10:20",
+      "timeTo": "8:20",
+      "place": "ㄹㄴㅇㄹ",
+      "detail": "ㄹㅇㄴㄴㄹㅇ",
+      "id": 1
+    }
+  ],
   "airlines": [
     {
       "travelId": 1,
