@@ -24,6 +24,33 @@
       "place": "ㄴㅇㄹ",
       "detail": "ㄴㅇㄹ",
       "id": 2
+    },
+    {
+      "travelId": "17",
+      "date": "2/2",
+      "timeFrom": "12:20",
+      "timeTo": "11:30",
+      "place": "ㅛ숋",
+      "detail": "ㅠㅊ",
+      "id": 3
+    },
+    {
+      "travelId": "17",
+      "date": "2/2",
+      "timeFrom": "10:20",
+      "timeTo": "11:30",
+      "place": "ㄴㅇㄹ",
+      "detail": "ㅇㄹ",
+      "id": 4
+    },
+    {
+      "travelId": "17",
+      "date": "2/2",
+      "timeFrom": "7:00",
+      "timeTo": "7:00",
+      "place": "ㄴㅇㄹ",
+      "detail": "ㄴㅇㄹ",
+      "id": 5
     }
   ],
   "airlines": [

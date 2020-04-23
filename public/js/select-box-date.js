@@ -86,11 +86,13 @@ function changeEndYear() {
     if (opt.value === $startYearSelect.value) opt.setAttribute('selected','selected');
   });
 };
+
 function changeEndMonth() {
   [...$endMonthSelect.options].forEach(opt => {
     if (opt.value === $startMonthSelect.value) opt.setAttribute('selected','selected');
   });
 };
+
 function changeEndDay() {
   [...$endDaySelect.options].forEach(opt => {
     if (opt.value === $startDaySelect.value) opt.setAttribute('selected','selected');
