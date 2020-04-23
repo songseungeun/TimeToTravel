@@ -5,20 +5,36 @@ const $newTravelPopup = document.querySelector('.new-travel-popup');
 const $newSchedulePopup = document.querySelector('.new-schedule-popup');
 const $newInfoPopup = document.querySelector('.new-travel-popup');
 // const $dateSelect = document.querySelector('.date-select');
+const $yearSelects = document.querySelectorAll('.year-select');
 const $monthSelects = document.querySelectorAll('.month-select');
 const $hourSelects = document.querySelectorAll('.hour-select');
 const $minuteSelects = document.querySelectorAll('.min-select');
 
-function printMonth() {
+const today = new Date();
+const year = today.getFullYear();
+
+function printYearMonth() {
+
+  let yearArr = Array.from({ length: 5 }, function (v, i) { return year + i });
+  $yearSelects.forEach(yearSelect => {
+    yearArr.forEach((element, key) => {
+      yearSelect[key] = new Option(`${element} 년`, element);
+    });
+  });
+
   let month = Array.from({ length: 13 }, function (v, i) { return i; });
   month.splice(0, 1);
-  month = ['MONTH', ...month];
+  // console.log(month);
+  // month = ['MONTH', ...month];
   $monthSelects.forEach(monthSelect => {
     month.forEach((element, key) => {
-      monthSelect[key] = new Option(element, key, true);
+      monthSelect[key] = new Option(`${element} 월`, element);
     });
   });
 }
+// $("select option[value='010']").attr("selected", true);
+// <option value="" selected disabled hidden>==선택하세요==</option>
+
 
 function printDate({ target }) {
   if (!target.matches('.month-select')) return;
@@ -34,8 +50,8 @@ function printDate({ target }) {
   });
 }
 
-$newTravelBtn.addEventListener('click', printMonth);
+$newTravelBtn.addEventListener('click', printYearMonth);
 $newTravelPopup.addEventListener('change', printDate);
 
-$newInfoBtn.addEventListener('click', printMonth);
+$newInfoBtn.addEventListener('click', printYearMonth);
 $newInfoPopup.addEventListener('change', printDate);

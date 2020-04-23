@@ -69,24 +69,24 @@
             <div class="start-date">
               <label for="date-select">시작날짜:</label>
               <div class="select-wrapper">
-                <select name="year" id="start-year-select">
-                  <option value="0" selected>YEAR</option>
-                  <option value="2020">2020</option>
-                  <option value="2021">2021</option>
-                  <option value="2022">2022</option>
-                  <option value="2023">2023</option>
+                <select name="year" id="start-year-select" class="year-select">
+                  <!-- <option value="0" selected>YEAR</option> -->
+                  <!-- <option value="2020">2020 년</option>
+                  <option value="2021">2021 년</option>
+                  <option value="2022">2022 년</option>
+                  <option value="2023">2023 년</option> -->
                 </select>
                 <div class="select-arrow"></div>
               </div>
               <div class="select-wrapper">
                 <select name="month" id="start-month-select" class="month-select">
-                  <option value="0" selected>MONTH</option>
+                  <!-- <option value="0" selected>MONTH</option> -->
                 </select>
                 <div class="select-arrow"></div>
               </div>
               <div class="select-wrapper">
                 <select name="day" id="start-day-select">
-                  <option value="0" selected>DATE</option>
+                  <!-- <option value="0" selected>DATE</option> -->
                 </select>
                 <div class="select-arrow"></div>
               </div>
@@ -96,24 +96,24 @@
             <div class="end-date">
               <label for="date-select">종료날짜:</label>
               <div class="select-wrapper">
-                <select name="year" id="end-year-select">
-                  <option value="0" selected>YEAR</option>
-                  <option value="2020">2020</option>
-                  <option value="2021">2021</option>
-                  <option value="2022">2022</option>
-                  <option value="2023">2023</option>
+                <select name="year" id="end-year-select" class="year-select">
+                  <!-- <option value="0" selected>YEAR</option> -->
+                  <!-- <option value="2020">2020 년</option>
+                  <option value="2021">2021 년</option>
+                  <option value="2022">2022 년</option>
+                  <option value="2023">2023 년</option> -->
                 </select>
                 <div class="select-arrow"></div>
               </div>
               <div class="select-wrapper">
                 <select name="month" id="end-month-select" class="month-select">
-                  <option value="0" selected>MONTH</option>
+                  <!-- <option value="0" selected>MONTH</option> -->
                 </select>
                 <div class="select-arrow"></div>
               </div>
               <div class="select-wrapper">
                 <select name="day" id="end-day-select">
-                  <option value="0" selected>DATE</option>
+                  <option value="0" selected disabled hidden>DATE</option>
                 </select>
                 <div class="select-arrow"></div>
               </div>
@@ -290,6 +290,7 @@
           <header class="header">
             <h2>Travel <strong>Info</strong></h2>
           </header>
+          <div class="timeline-travel-title">Travel title</div>
           <div class="airline-ticket">
             <h3>예약 항공권</h3>
             <ol class="airline-schedule">
