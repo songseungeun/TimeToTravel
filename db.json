@@ -84,6 +84,7 @@
   "airlines": [
     {
       "id": 1,
+      "travelId": "5",
       "type": "출발",
       "date": "20.05.16.18:10:00",
       "airplaneName": "아시아나항공",
@@ -94,6 +95,7 @@
     },
     {
       "id": 2,
+      "travelId": "5",
       "type": "출발",
       "date": "20.05.16.18:10:00",
       "airplaneName": "아시아나항공",
@@ -115,18 +117,24 @@
   ],
   "lodgings": [
     {
+      "id": 1,
+      "travelId": "5",
       "lodgingNumber": "1",
       "hotelName": "워커힐",
       "hotelPlace": "파푸아뉴기니",
       "hotelsite": "AGODA"
     },
     {
+      "id": 2,
+      "travelId": "5",
       "lodgingNumber": "2",
       "hotelName": "워커힐",
       "hotelPlace": "파푸아뉴기니",
       "hotelsite": "AGODA"
     },
     {
+      "id": 3,
+      "travelId": "5",
       "lodgingNumber": "3",
       "hotelName": "워커힐",
       "hotelPlace": "파푸아뉴기니",
