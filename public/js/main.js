@@ -4,6 +4,10 @@ let travels = [];
 let travelId = '';
 
 // DOMs
+
+const $menuList = document.querySelector('.menu-list');
+const $mainList = document.querySelector('.main-wrapper');
+
 const $menuBar = document.querySelector('.menu-bar');
 const $header = document.querySelector('.header h2');
 const $startHour = document.querySelector('#start-hour-select');
@@ -59,6 +63,7 @@ const $selectEndWarning = document.querySelector('#end-warning-label');
 const $inputDetailWarning = document.querySelector('#detail-warning-label');
 const $inputPlaceWarning = document.querySelector('#place-warning-label');
 const $deleteConfirmModal = document.querySelector('.delete-confirm-modal');
+
 // functions
 // popups
 //+버튼 누르면 팝업창 오픈
@@ -370,6 +375,10 @@ const goToTimeline = async target => {
   timeline.classList.add('main-view');
   home.classList.remove('main-view');
   $timelineTitle.textContent = title;
+  [...$menuList.children].forEach(icon => {
+    icon.style.display = 'block';
+    icon.classList.toggle('active', icon.id === 'calendar');
+  });
 
   renderDateBox(startDate, endDate);
   getSchedules(travelId);
@@ -540,4 +549,4 @@ $startHourSelects.forEach(selects => selects.addEventListener('change', ({ targe
 $startMinuteSelects.forEach(selects => selects.addEventListener('change', ({ target }) => printEndTime(target)));
 
 // export
-export { resetSchedulePopup, resetTravelPopup };
+export { resetSchedulePopup, resetTravelPopup, $mainList, $menuList };

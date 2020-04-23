@@ -76,19 +76,19 @@
     {
       "travelId": "10",
       "date": "4/1",
-      "timeFrom": "10:30",
-      "timeTo": "10:40",
-      "place": "ff",
-      "detail": "ff",
+      "timeFrom": "9:20",
+      "timeTo": "10:10",
+      "place": "fsd",
+      "detail": "dfsdf",
       "id": 8
     },
     {
-      "travelId": "8",
-      "date": "2/5",
-      "timeFrom": "11:40",
-      "timeTo": "11:50",
-      "place": "fff",
-      "detail": "fff",
+      "travelId": "10",
+      "date": "4/1",
+      "timeFrom": "11:30",
+      "timeTo": "10:10",
+      "place": "ds",
+      "detail": "fdfs",
       "id": 9
     }
   ],
