@@ -55,6 +55,30 @@ export const getAirlineData = async () => {
   renderAirlineInfo();
 };
 
+//post
+$airlineAddBtn.onclick = async () => {
+  const title = $in;
+
+  const { data } = await axios.post('/airlines', {});
+};
+
+/*
+  const { data } = await axios.post('/travels', {
+    id: newId,
+    title,
+    place,
+    startDate,
+    endDate,
+  });
+  travels = [data, ...travels];
+
+  // console.log(travels);
+  closeTravelPopup();
+  renderTravelList();
+  resetTravelPopup();
+};
+*/
+
 const renderLodgingInfo = () => {
   let html = '';
 
@@ -138,9 +162,3 @@ $airlineAddBtn.onclick = e => {
   $airlineBg.style.display = 'none';
   $airlinePopup.style.display = 'none';
 };
-
-//post
-// $airlineAddBtn.onclick = async () =>{
-// const title = $in
-
-// }
