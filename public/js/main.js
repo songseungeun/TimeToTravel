@@ -63,10 +63,10 @@ const $selectEndWarning = document.querySelector('#end-warning-label');
 const $inputDetailWarning = document.querySelector('#detail-warning-label');
 const $inputPlaceWarning = document.querySelector('#place-warning-label');
 const $deleteConfirmModal = document.querySelector('.delete-confirm-modal');
+const $selectWrappers = document.querySelectorAll('.select-wrapper');
 
 // functions
 // popups
-//+버튼 누르면 팝업창 오픈
 const closePopup = () => {
   $newSchedulePopUp.style.display = 'none';
   $popupBg.style.display = 'none';
@@ -74,18 +74,19 @@ const closePopup = () => {
 };
 
 const resetSchedulePopup = () => {
+  const selects = [...$selectWrappers].map(select => select.firstElementChild);
+  selects.forEach(child => (child.firstElementChild.selected = 'selected'));
+
   $inputSchedulePlace.value = '';
   $inputScheduleDetail.value = '';
 };
 
 const resetTravelPopup = () => {
-  const selectWrappers = document.querySelectorAll('.select-wrapper');
-  const selects = [...selectWrappers].map(select => select.firstElementChild);
+  const selects = [...$selectWrappers].map(select => select.firstElementChild);
+  selects.forEach(child => (child.firstElementChild.selected = 'selected'));
 
   $inputTravelTitle.value = '';
   $inputTravelPlace.value = '';
-
-  selects.forEach(child => (child.firstElementChild.selected = 'selected'));
 };
 
 const closeSchedulePopup = () => {
