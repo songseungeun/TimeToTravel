@@ -205,12 +205,11 @@ const renderMonthYear = (month, year) => {
 
 // 날짜 세서 렌더하는 기능
 let travelPeriod = 0;
+let dateItemMove = 0;
 
 const dateList = document.querySelector('.date-list');
 const beforeBtn = document.querySelector('.date-before-btn');
 const afterBtn = document.querySelector('.date-after-btn');
-
-let dateItemMove = 0;
 
 const renderDateBox = (startDate, endDate) => {
   let html = '';
@@ -235,9 +234,6 @@ const renderDateBox = (startDate, endDate) => {
     const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
     month = months.findIndex(mm => mm === month) + 1;
 
-    console.log(year)
-    console.log(month)
-
     html += `<li class="date-item">
         <div class="day ${year} ${month}">${date}</div>
         <div class="week ${year} ${month}">${day}</div>
@@ -252,7 +248,6 @@ const renderDateBox = (startDate, endDate) => {
 
 // 날짜 화살표 클릭 시 이동하는 기능
 function moveDatetoPrev({ target }) {
-  console.log(travelPeriod);
   if (!target.matches('.date-before-btn')) return;
   dateItemMove -= 83;
   if (dateItemMove <= 0) {
@@ -275,6 +270,11 @@ function moveDatetoNext({ target }) {
   dateList.style.transform = `translate3D(-${dateItemMove}px, 0, 0)`;
   dateList.style.transition = 'all 0.3s ease-out';
 }
+
+$travelList.addEventListener('click', () => {
+  dateList.style.transform = `translate3D(0, 0, 0)`
+  dateItemMove = 0;
+});
 
 beforeBtn.addEventListener('click', moveDatetoPrev);
 afterBtn.addEventListener('click', moveDatetoNext);
@@ -523,4 +523,4 @@ $startHourSelects.forEach(selects => selects.addEventListener('change', ({ targe
 $startMinuteSelects.forEach(selects => selects.addEventListener('change', ({ target }) => printEndTime(target)));
 
 // export
-export { resetSchedulePopup, resetTravelPopup, $mainList, $menuList };
+export { resetSchedulePopup, resetTravelPopup, $mainList, $menuList, $travelList };
