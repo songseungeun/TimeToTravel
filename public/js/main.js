@@ -131,7 +131,7 @@ const renderTravelList = () => {
             <span class="travel-place">${place}</span>
             <span class="travel-date">${startDate} ~ ${endDate}</span>
           </div>
-          <div class="travel-remove-btn">X</div>
+          <button class="travel-remove-btn">X</button>
         </li>`;
   });
 
@@ -146,8 +146,6 @@ const getTravels = async () => {
 };
 
 const removeTravel = async removeId => {
-  console.log(removeId);
-
   await axios.delete(`/travels/${removeId}`);
   travels = travels.filter(travel => travel.id !== +removeId);
   renderTravelList();
@@ -271,7 +269,7 @@ const renderTimeline = schedules => {
             <div class="time">${timeFrom}</div>
             <div class="place">${place}</div>
             <div class="detail">${detail}</div>
-            <div class="remove-btn">X</div>
+            <button class="remove-btn">X</button>
           </li>`;
   });
 
@@ -418,7 +416,6 @@ $travelList.addEventListener('click', ({ target }) => goToTimeline(target));
 $travelList.onclick = ({ target }) => {
   if (!target.matches('.travel-list > li > .travel-remove-btn')) return;
   const removeId = target.parentNode.id.split('-')[1];
-  console.log(removeId);
 
   $alertPopupBg.style.display = 'block';
   $alertPopup.style.display = 'block';
