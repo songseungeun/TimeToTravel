@@ -38,7 +38,6 @@ function actScheduleBtn() {
   $schedulePopupSelect.forEach(select => {
     arr2.push(select.value !== '0');
   });
-
   if (![...arr, ...arr2].every(arr => arr)) return;
   $scheduleHiddenBtn.style.display = 'none';
 }
