@@ -376,6 +376,9 @@ main.main-view {
   right: 15px;
   font-size: 20px;
   cursor: pointer;
+  border: none;
+  background: none;
+  color: white;
 }
 .travel-remove-btn:hover {
   opacity: 0.8;
