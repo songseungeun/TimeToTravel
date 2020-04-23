@@ -65,6 +65,8 @@ const $inputPlaceWarning = document.querySelector('#place-warning-label');
 const $deleteConfirmModal = document.querySelector('.delete-confirm-modal');
 const $selectWrappers = document.querySelectorAll('.select-wrapper');
 
+const $newInfoDetailBtn = document.querySelector('.new-info-detail-btn');
+
 // functions
 // popups
 const closePopup = () => {
@@ -272,7 +274,7 @@ const renderDateBox = (startDate, endDate) => {
 function moveDatetoPrev({ target }) {
   if (!target.matches('.date-before-btn')) return;
   if (travelPeriod > 9) afterBtn.style.opacity = '1';
-  dateItemMove -= 83;
+  dateItemMove -= 84;
 
   if (dateItemMove <= 0) {
     dateItemMove = 0;
@@ -285,8 +287,8 @@ function moveDatetoPrev({ target }) {
 function moveDatetoNext({ target }) {
   if (travelPeriod < 8) return;
   if (!target.matches('.date-after-btn')) return;
-  let moveLimit = (travelPeriod - 9) * 83;
-  dateItemMove += 83;
+  let moveLimit = (travelPeriod - 9) * 84;
+  dateItemMove += 84;
   beforeBtn.style.opacity = '1';
 
   if (dateItemMove > moveLimit) {
@@ -511,10 +513,10 @@ $timelineCancleBtn.onclick = () => {
 };
 
 // time test
-const $endHourSelects = document.querySelectorAll('.select-end-hour > .select-wrapper > .hour-select');
-const $startHourSelects = document.querySelectorAll('.select-start-hour > .select-wrapper > .hour-select');
-const $endMinuteSelects = document.querySelectorAll('.select-end-hour > .select-wrapper > .min-select');
-const $startMinuteSelects = document.querySelectorAll('.select-start-hour > .select-wrapper > .min-select');
+const $endHourSelects = document.querySelectorAll('.popup-style .hour-select');
+const $startHourSelects = document.querySelectorAll('.popup-style .hour-select');
+const $endMinuteSelects = document.querySelectorAll('.popup-style .min-select');
+const $startMinuteSelects = document.querySelectorAll('.popup-style .min-select');
 
 const printStartTime = () => {
   let hour = ['HOUR',...Array.from({ length: 17 }, function (v, i) { return i + 7; })];
@@ -529,40 +531,43 @@ const printStartTime = () => {
 
   $startMinuteSelects.forEach(minuteSelect => {
     minute.forEach((element, key) => {
-      minuteSelect[key] = new Option(`${element} 분`, (key - 1) * 10, true);
-      if (element === 'MIN') minuteSelect[key] = new Option(`${element}`, '0', true);
-      if (element === 0) minuteSelect[key] = new Option(`${element}0 분`, '00', true);
+      minuteSelect[key] = new Option(`${element} 분`, (key - 1) * 10);
+      if (element === 'MIN') minuteSelect[key] = new Option(`${element}`, '0');
+      if (element === 0) minuteSelect[key] = new Option(`${element}0 분`, '00');
     });
   });
 };
 
-const printEndTime = target => {
-  // console.log([...target.children].filter(child => child.selected === 'selected'));
-  console.log([...target.children].map(child => child.selected));
-  // console.log(target.children);
+// const printEndTime = target => {
+//   console.log([...target.children].filter(child => child.selected === 'selected'));
+//   console.log([...target.children].map(child => child.selected));
+//   console.log(target.children);
 
-  let hour = ['HOUR',...Array.from({ length: 17 }, function (v, i) { return i + 7; })];
-  let minute = ['MIN', ...Array.from({ length: 6 }, function (v, i) { return i * 10; })];
+//   let hour = ['HOUR',...Array.from({ length: 17 }, function (v, i) { return i + 7; })];
+//   let minute = ['MIN', ...Array.from({ length: 6 }, function (v, i) { return i * 10; })];
 
-  $endHourSelects.forEach(hourSelect => {
-    hour.forEach((element, key) => {
-      hourSelect[key] = new Option(`${element} 시`, element, true);
-      if (element === 'HOUR') hourSelect[key] = new Option(element, '0', true);
-    });
-  });
+//   $endHourSelects.forEach(hourSelect => {
+//     hour.forEach((element, key) => {
+//       hourSelect[key] = new Option(`${element} 시`, element, true);
+//       if (element === 'HOUR') hourSelect[key] = new Option(element, '0');
+//     });
+//   });
 
-  $endMinuteSelects.forEach(minuteSelect => {
-    minute.forEach((element, key) => {
-      minuteSelect[key] = new Option(`${element} 분`, (key - 1) * 10, true);
-      if (element === 'MIN') minuteSelect[key] = new Option(`${element}`, '0', true);
-      if (element === 0) minuteSelect[key] = new Option(`${element}0 분`, '00', true);
-    });
-  });
-};
+//   $endMinuteSelects.forEach(minuteSelect => {
+//     minute.forEach((element, key) => {
+//       minuteSelect[key] = new Option(`${element} 분`, (key - 1) * 10);
+//       if (element === 'MIN') minuteSelect[key] = new Option(`${element}`, '0');
+//       if (element === 0) minuteSelect[key] = new Option(`${element}0 분`, '00');
+//     });
+//   });
+// };
 
 $newScheduleBtn.addEventListener('click', printStartTime);
-$startHourSelects.forEach(selects => selects.addEventListener('change', ({ target }) => printEndTime(target)));
-$startMinuteSelects.forEach(selects => selects.addEventListener('change', ({ target }) => printEndTime(target)));
+// $startHourSelects.forEach(selects => selects.addEventListener('change', ({ target }) => printEndTime(target)));
+// $startMinuteSelects.forEach(selects => selects.addEventListener('change', ({ target }) => printEndTime(target)));
+
+
+$newInfoDetailBtn.addEventListener('click', printStartTime);
 
 // export
 export { changeNav, resetSchedulePopup, resetTravelPopup, $mainList, $menuList, $travelList, $timelineTitle };

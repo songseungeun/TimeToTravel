@@ -186,11 +186,15 @@ h1 {
 .date-list {
   /* float: left; */
   display: flex;
+  /* justify-content: space-between; */
   /* width: 660px; */
   height: 100px;
   padding: 5px 0;
   /* background-color: rgb(220, 220, 220); */
 }
+/* .date-item:first-child {
+  margin-left: 0;
+} */
 .date-item {
   flex: 0 0 70px;
   margin: 0 7px 10px 7px;
