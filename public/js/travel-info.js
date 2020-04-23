@@ -155,7 +155,7 @@ const addHotelInfo = async () => {
   const hotelsite = $inputHotelSite.value.trim();
 
   const { data } = await axios.post('/lodgings', { id: lodgingNumber, hotelName, hotelPlace, hotelsite });
-  lodgings = [data, ...lodgings];
+  lodgings = [...lodgings, data];
 
   closeLodgingPopup();
   renderLodgingInfo(lodgings);
@@ -175,7 +175,6 @@ function closeDetailBtn() {
   $airlineBtn.classList.remove('btn-act');
   $hotelBtn.classList.remove('btn-act2');
 }
-
 
 $newInfoBtn.addEventListener('click', openDetailBtn);
 // $allMoreBtn.addEventListener('mouseenter', openDetailBtn);
@@ -221,7 +220,7 @@ $airlinePopupBg.onclick = () => {
   airClosePopup();
 };
 
-//TODO: 등록 버튼 팅김 처리
+//TODO: 등록 버튼튕김 처리
 $airlineAddBtn.onclick = () => {
   addAirlineInfo();
   // $airlineBg.style.display = 'none';
