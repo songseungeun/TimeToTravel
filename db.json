@@ -31,15 +31,6 @@
       "place": "fsfdsdsf",
       "detail": "fsdfds",
       "id": 1
-    },
-    {
-      "travelId": "14",
-      "date": "7/7",
-      "timeFrom": "11:50",
-      "timeTo": "12:50",
-      "place": "sdfsdf",
-      "detail": "fdsfsdfsd",
-      "id": 2
     }
   ],
   "airlines": [
