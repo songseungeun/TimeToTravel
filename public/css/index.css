@@ -88,6 +88,10 @@ h1 {
   /* background-color: #ccc; */
   /* outline: 1px solid #000; */
 }
+.menu-bar > h1:hover {
+  opacity: 0.8;
+  transition: opacity 0.3s;
+}
 .menu-list {
   padding-top: 50px;
 }
@@ -98,14 +102,23 @@ h1 {
   /* margin: 20px; */
   /* background-color: #999; */
 }
+.menu-list > li > i.fas:hover {
+  /* box-shadow: 2px 2px 7px 1px rgba(0, 0, 0, 0.2); */
+  transform: scale(1.2);
+  /* opacity: 0.9; */
+  transition: box-shadow 0.5s, transform 0.5s, opacity 0.3s;
+}
 .menu-list > li > i {
   color: #fff;
-  font-size: 21px;
+  font-size: 26px;
   line-height: 60px;
   cursor: pointer;
 }
+.menu-list > li > .fa-calendar-alt {
+  margin-left: 3px;
+}
 .menu-list > li > .fa-plane-departure {
-  font-size: 20px;
+  font-size: 24px;
 }
 .menu-list .active {
   opacity: 1;
@@ -257,7 +270,7 @@ h1 {
   margin-left: 55px;
   line-height: 1.4;
   left: 80px;
-  /* display: flex; */
+  min-height: 38px;
 }
 /* 2, 5, 8, 11 */
 .schedule-list li:nth-child(3n + 2) {
@@ -473,10 +486,14 @@ h1 {
 .hotel-schedule li em {
   line-height: 50px;
 }
+.schedule .place,
+.schedule .detail {
+  font-size: 14px;
+}
 .date,
 .time {
   display: block;
-  font-size: 26px;
+  font-size: 20px;
   font-weight: 400;
   margin-bottom: 5px;
 }
