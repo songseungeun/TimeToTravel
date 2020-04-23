@@ -4,6 +4,10 @@ let travels = [];
 let travelId = '';
 
 // DOMs
+
+const $menuList = document.querySelector('.menu-list');
+const $mainList = document.querySelector('.main-wrapper');
+
 const $menuBar = document.querySelector('.menu-bar');
 const $header = document.querySelector('.header h2');
 const $startHour = document.querySelector('#start-hour-select');
@@ -59,6 +63,7 @@ const $selectEndWarning = document.querySelector('#end-warning-label');
 const $inputDetailWarning = document.querySelector('#detail-warning-label');
 const $inputPlaceWarning = document.querySelector('#place-warning-label');
 const $deleteConfirmModal = document.querySelector('.delete-confirm-modal');
+
 // functions
 // popups
 //+버튼 누르면 팝업창 오픈
@@ -96,6 +101,16 @@ const closeTravelPopup = () => {
   $travelPopupBg.style.display = 'none';
   $newTravelPopup.style.display = 'none';
   resetTravelPopup();
+};
+
+const closeTravelAlertPopup = () => {
+  $alertPopup.style.display = 'none';
+  $alertPopupBg.style.display = 'none';
+};
+
+const closeScheduleAlertPopup = () => {
+  $timelineAlertPopup.style.display = 'none';
+  $timeAlertPopupBg.style.display = 'none';
 };
 
 // travel list
@@ -348,7 +363,7 @@ const removeSchedule = async removeId => {
 
 const goToTimeline = async target => {
   const nodeNames = ['LI', 'EM', 'SPAN', 'DIV', 'H2'];
-  const targetNode = nodeNames.filter(node => node === target.nodeName)[0]
+  const targetNode = nodeNames.filter(node => node === target.nodeName)[0];
   if (!targetNode) return;
 
   if (targetNode === 'LI') travelId = target.id.split('-')[1];
@@ -364,6 +379,10 @@ const goToTimeline = async target => {
   timeline.classList.add('main-view');
   home.classList.remove('main-view');
   $timelineTitle.textContent = title;
+  [...$menuList.children].forEach(icon => {
+    icon.style.display = 'block';
+    icon.classList.toggle('active', icon.id === 'calendar');
+  });
 
   renderDateBox(startDate, endDate);
   getSchedules(travelId);
@@ -381,6 +400,14 @@ $popupRemoveBtn.addEventListener('click', closePopup);
 $popupBg.onclick = () => {
   closePopup();
   resetSchedulePopup();
+};
+
+$alertPopupBg.onclick = () => {
+  closeTravelAlertPopup();
+};
+
+$timeAlertPopupBg.onclick = () => {
+  closeScheduleAlertPopup();
 };
 
 $newScheduleBtn.onclick = () => {
@@ -455,8 +482,18 @@ const $endMinuteSelects = document.querySelectorAll('.select-end-hour > .select-
 const $startMinuteSelects = document.querySelectorAll('.select-start-hour > .select-wrapper > .min-select');
 
 const printStartTime = () => {
-  let hour = ['HOUR', ...Array.from({ length: 17 }, function (v, i) { return (i + 7); })];
-  let minute = ['MIN', ...Array.from({ length: 6 }, function (v, i) { return i * 10; })];
+  let hour = [
+    'HOUR',
+    ...Array.from({ length: 17 }, function (v, i) {
+      return i + 7;
+    }),
+  ];
+  let minute = [
+    'MIN',
+    ...Array.from({ length: 6 }, function (v, i) {
+      return i * 10;
+    }),
+  ];
 
   $startHourSelects.forEach(hourSelect => {
     hour.forEach((element, key) => {
@@ -479,10 +516,18 @@ const printEndTime = target => {
   console.log([...target.children].map(child => child.selected));
   // console.log(target.children);
 
-  let hour = ['HOUR', ...Array.from({ length: 17 }, function (v, i) { return (i + 7); })];
-  let minute = ['MIN', ...Array.from({ length: 6 }, function (v, i) { return i * 10; })];
-
-
+  let hour = [
+    'HOUR',
+    ...Array.from({ length: 17 }, function (v, i) {
+      return i + 7;
+    }),
+  ];
+  let minute = [
+    'MIN',
+    ...Array.from({ length: 6 }, function (v, i) {
+      return i * 10;
+    }),
+  ];
 
   $endHourSelects.forEach(hourSelect => {
     hour.forEach((element, key) => {
@@ -508,4 +553,4 @@ $startHourSelects.forEach(selects => selects.addEventListener('change', ({ targe
 $startMinuteSelects.forEach(selects => selects.addEventListener('change', ({ target }) => printEndTime(target)));
 
 // export
-export { resetSchedulePopup, resetTravelPopup };
+export { resetSchedulePopup, resetTravelPopup, $mainList, $menuList };
