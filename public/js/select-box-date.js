@@ -4,7 +4,8 @@ const $newInfoBtn = document.querySelector('.new-info-btn');
 const $newTravelPopup = document.querySelector('.new-travel-popup');
 const $newSchedulePopup = document.querySelector('.new-schedule-popup');
 const $newInfoPopup = document.querySelector('.new-travel-popup');
-// const $dateSelect = document.querySelector('.date-select');
+
+const $dateSelects = document.querySelectorAll('.date-select');
 const $yearSelects = document.querySelectorAll('.year-select');
 const $monthSelects = document.querySelectorAll('.month-select');
 const $hourSelects = document.querySelectorAll('.hour-select');
@@ -12,6 +13,8 @@ const $minuteSelects = document.querySelectorAll('.min-select');
 
 const today = new Date();
 const year = today.getFullYear();
+const month = today.getMonth() + 1;
+const date = today.getDate();
 
 function printYearMonth() {
 
@@ -22,19 +25,37 @@ function printYearMonth() {
     });
   });
 
-  let month = Array.from({ length: 13 }, function (v, i) { return i; });
-  month.splice(0, 1);
-  // console.log(month);
-  // month = ['MONTH', ...month];
+  let monthArr = Array.from({ length: 13 }, function (v, i) { return i; });
+  monthArr.splice(0, 1);
+
+  let i = 0;
+
   $monthSelects.forEach(monthSelect => {
-    month.forEach((element, key) => {
+    monthArr.forEach((element, key) => {
       monthSelect[key] = new Option(`${element} 월`, element);
+      if (monthSelect.id === 'start-month-select') {
+        if (+monthSelect.options[i].value === month) monthSelect.options[month - 1].setAttribute('selected','selected');
+      }
+      i++;
     });
   });
-}
-// $("select option[value='010']").attr("selected", true);
-// <option value="" selected disabled hidden>==선택하세요==</option>
 
+  let date = 0;
+  const monthDate = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+  date = monthDate[month - 1];
+
+  let dateArr = Array.from({ length: date + 1 }, function (v, i) { return i; });
+  dateArr.splice(0, 1);
+
+  $dateSelects.forEach(dateSelect => {
+    dateArr.forEach((element, key) => {
+      dateSelect[key] = new Option(`${element} 일`, element);
+
+    });
+  });
+  
+
+}
 
 function printDate({ target }) {
   if (!target.matches('.month-select')) return;

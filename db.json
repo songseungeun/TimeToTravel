@@ -51,6 +51,24 @@
       "place": "하하하",
       "detail": "메롱이지롱",
       "id": 4
+    },
+    {
+      "travelId": "16",
+      "date": "9/12",
+      "timeFrom": "0:0",
+      "timeTo": "14:20",
+      "place": "sfsfdsdfsdf",
+      "detail": "dsfsdfsdfsdfsdf",
+      "id": 5
+    },
+    {
+      "travelId": "15",
+      "date": "2/4",
+      "timeFrom": "11:40",
+      "timeTo": "11:50",
+      "place": "fsdfds",
+      "detail": "dsfsfd",
+      "id": 6
     }
   ],
   "airlines": [
