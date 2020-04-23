@@ -1,4 +1,4 @@
-import { getAirlineData, getLodgingData } from './travel-info.js';
+// import { getAirlineData, getLodgingData } from './travel-info.js';
 import { $menuList, $mainList } from './main.js';
 
 let navState = 'home';
@@ -16,8 +16,8 @@ $menuList.onclick = ({ target }) => {
     removeMenus.forEach(menuIcon => menuIcon.style.display = 'none');
   }
 
-  if (navState === 'airplane') {
-    getAirlineData();
-    getLodgingData();
-  }
+  // if (navState === 'airplane') {
+  //   getAirlineData();
+  //   getLodgingData();
+  // }
 };
