@@ -272,21 +272,27 @@ function moveDatetoPrev({ target }) {
     dateItemMove = 0;
     beforeBtn.style.opacity = '0.3';
   }
+
   dateList.style.transform = `translate3D(-${dateItemMove}px, 0, 0)`;
   dateList.style.transition = 'all 0.3s ease-out';
 }
 
 function moveDatetoNext({ target }) {
-  if (travelPeriod < 8) return;
   if (!target.matches('.date-after-btn')) return;
+  if (travelPeriod < 9) {
+    beforeBtn.style.opacity = '0.3';
+    return;
+  }
+
+  beforeBtn.style.opacity = '1';
   let moveLimit = (travelPeriod - 9) * 83;
   dateItemMove += 83;
-  beforeBtn.style.opacity = '1';
 
   if (dateItemMove > moveLimit) {
     dateItemMove = moveLimit;
     afterBtn.style.opacity = '0.3';
   }
+
   dateList.style.transform = `translate3D(-${dateItemMove}px, 0, 0)`;
   dateList.style.transition = 'all 0.3s ease-out';
 }

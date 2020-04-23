@@ -1,87 +1,28 @@
 {
   "travels": [
     {
-      "id": 2,
-      "title": "ㄴㅇㄹ",
-      "place": "ㄴㅇㄹ",
+      "id": 1,
+      "title": "가나다라마바사",
+      "place": "아자차카타파하",
       "startDate": "2020/4/24",
-      "endDate": "2020/4/24"
+      "endDate": "2020/5/1"
+    },
+    {
+      "id": 2,
+      "title": "집에 가고파",
+      "place": "가고파 여행",
+      "startDate": "2020/7/1",
+      "endDate": "2021/2/1"
     },
     {
       "id": 3,
-      "title": "ㄴㅇㄹ",
-      "place": "ㄴㅇㄹ",
-      "startDate": "2020/4/24",
-      "endDate": "2020/4/29"
-    },
-    {
-      "id": 4,
-      "title": "ㄴㅇㄹ",
-      "place": "ㄴㅇㄹ",
-      "startDate": "2020/4/6",
-      "endDate": "2020/4/15"
-    },
-    {
-      "id": 5,
-      "title": "ㄴㅇㄹ",
-      "place": "ㄴㅇㄹ",
-      "startDate": "2020/4/24",
-      "endDate": "2020/4/1"
-    },
-    {
-      "id": 6,
-      "title": "ㄴㅇㄹ",
-      "place": "ㄴㅇㄹ",
-      "startDate": "2020/4/24",
-      "endDate": "2020/4/24"
-    },
-    {
-      "id": 7,
-      "title": "ㄴㅇㄹ",
-      "place": "ㄴㅇㄹ",
-      "startDate": "2020/4/24",
-      "endDate": "2020/4/24"
-    },
-    {
-      "id": 8,
-      "title": "ㄴㅇㄹ",
-      "place": "ㄴㅇㄹ",
-      "startDate": "2020/4/24",
-      "endDate": "2020/4/24"
-    },
-    {
-      "id": 9,
-      "title": "ㄴㅇㄹ",
-      "place": "ㄴㅇㄹ",
-      "startDate": "2020/4/24",
-      "endDate": "2020/4/4"
-    },
-    {
-      "id": 10,
-      "title": "sdf",
-      "place": "sdf",
-      "startDate": "2020/4/24",
-      "endDate": "2020/4/6"
-    },
-    {
-      "id": 11,
-      "title": "",
-      "place": "",
-      "startDate": "2020/4/24",
-      "endDate": "2020/4/8"
+      "title": "떠나요~",
+      "place": "둘이서~",
+      "startDate": "2020/8/1",
+      "endDate": "2020/11/1"
     }
   ],
-  "schedules": [
-    {
-      "travelId": "4",
-      "date": "4/6",
-      "timeFrom": "12:40",
-      "timeTo": "18:40",
-      "place": "ㅇㄴㄹ",
-      "detail": "ㅇㄹㄴ",
-      "id": 1
-    }
-  ],
+  "schedules": [],
   "airlines": [],
   "lodgings": [
     {
