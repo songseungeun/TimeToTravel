@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
 @import url('https://use.fontawesome.com/releases/v5.5.0/css/all.css');
 /* BORDER-BOX */
-body *, body *::before, body *::after {
+body *,
+body *::before,
+body *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -103,9 +105,8 @@ main.main-view {
   font-size: 20px;
 }
 .menu-list .active {
-  opacity: 1.0;
+  opacity: 1;
 }
-
 
 /* ----- timeline ----- */
 /* MAIN */
@@ -126,7 +127,7 @@ main.main-view {
 /* DATE */
 .date-wrapper {
   position: relative;
-  width: 100%; 
+  width: 100%;
   margin-left: -18px;
   padding: 10px 50px 10px 45px;
   /* background-color: #f4f4f4; */
@@ -135,7 +136,8 @@ main.main-view {
   width: calc(100% + 18px);
   overflow: hidden;
 }
-.date-before-btn, .date-after-btn {
+.date-before-btn,
+.date-after-btn {
   /* float: left; */
   position: absolute;
   top: 5px;
@@ -166,7 +168,6 @@ main.main-view {
   height: 100px;
   padding: 5px 0;
   /* background-color: rgb(220, 220, 220); */
-  
 }
 .date-item {
   flex: 0 0 70px;
@@ -237,15 +238,15 @@ main.main-view {
   left: 80px;
 }
 /* 2, 5, 8, 11 */
-.schedule-list li:nth-child( 3n+2 ) {
+.schedule-list li:nth-child(3n + 2) {
   background-color: thistle;
 }
 /* 3, 6, 9, 12 */
-.schedule-list li:nth-child( 3n ) {
+.schedule-list li:nth-child(3n) {
   background-color: rgb(127, 116, 183);
 }
 /* 3, 6, 9, 12 */
-.schedule-list li:nth-child( 4n ) {
+.schedule-list li:nth-child(4n) {
   background-color: rgb(73, 138, 134);
 }
 /* 1 */
@@ -302,36 +303,41 @@ main.main-view {
   cursor: pointer;
   color: #fff;
   background-color: rgba(83, 103, 104, 0.6);
-  background-blend-mode: multiply; 
+  background-blend-mode: multiply;
   background-size: cover;
   background-position: center;
   transition: box-shadow 0.5s, transform 0.5s, opacity 0.3s;
-
 }
 .travel-list li:nth-child(odd) {
   margin-right: 20px;
 }
 .travel-list li:hover {
-  box-shadow: 2px 2px 7px 1px rgba(0, 0, 0, .2);
+  box-shadow: 2px 2px 7px 1px rgba(0, 0, 0, 0.2);
   transform: translate(-2px, -2px);
   /* opacity: 0.9; */
   transition: box-shadow 0.5s, transform 0.5s, opacity 0.3s;
 }
-#t-1, #t-8 {
+#t-1,
+#t-8 {
   /* filter: blur(3px); */
   filter: grayscale(40%);
   background-image: url('../img/bg-paris.jpeg');
 }
-#t-2, #t-5, #t-9 {
+#t-2,
+#t-5,
+#t-9 {
   /* filter: blur(1px); */
   filter: grayscale(40%);
   background-image: url('../img/bg-greece.jpg');
 }
-#t-4, #t-6, #t-10 {
+#t-4,
+#t-6,
+#t-10 {
   filter: grayscale(40%);
   background-image: url('../img/bg-positano.jpg');
 }
-#t-3, #t-8 {
+#t-3,
+#t-8 {
   filter: grayscale(40%);
   background-image: url('../img/bg-maldives.jpg');
 }
@@ -372,7 +378,7 @@ main.main-view {
   cursor: pointer;
 }
 .travel-remove-btn:hover {
-  opacity: .8;
+  opacity: 0.8;
 }
 /* list 비어있을때 나타나는 문구 */
 .travel-none-text {
@@ -411,7 +417,10 @@ main.main-view {
   font-weight: bold;
   padding: 10px;
 }
-.airline-info1, .airline-info2, .airline-departure, .airline-arrival {
+.airline-info1,
+.airline-info2,
+.airline-departure,
+.airline-arrival {
   float: left;
   padding: 10px;
 }
@@ -422,24 +431,30 @@ main.main-view {
 .airline-info2 {
   width: 160px;
 }
-.airline-departure, .airline-arrival {
+.airline-departure,
+.airline-arrival {
   width: 180px;
 }
-.date, .time {
+.date,
+.time {
   font-size: 26px;
   font-weight: 400;
 }
-.airlines, .airport {
+.airlines,
+.airport {
   font-size: 16px;
 }
-.hotel-reservation1, .hotel-reservation2 {
+.hotel-reservation1,
+.hotel-reservation2 {
   width: 100%;
   margin: 20px auto;
   padding: 20px;
   line-height: 1.2;
   background-color: #f4f4f4;
 }
-.hotel-name, .hotel-place, .hotel-site {
+.hotel-name,
+.hotel-place,
+.hotel-site {
   padding: 50px;
   font-size: 24px;
   font-weight: 400;
@@ -455,9 +470,9 @@ main.main-view {
   background-color: rgb(72, 101, 154);
   z-index: 99;
   border-radius: 10px;
-  box-shadow: 8px 8px 10px 5px rgba(0, 0, 0, .3);
+  box-shadow: 8px 8px 10px 5px rgba(0, 0, 0, 0.3);
 }
-.popup-style label{
+.popup-style label {
   padding: 9px 10px;
   color: #15233e;
 }
@@ -522,7 +537,7 @@ main.main-view {
   width: 100%;
   height: 60px;
   z-index: 95;
-  background-color: rgba(72, 101, 154, .7);
+  background-color: rgba(72, 101, 154, 0.7);
 }
 .popup-style button {
   margin-top: 10px;
@@ -612,7 +627,8 @@ main.main-view {
   padding: 9px 10px;
 }
 
-.schedule-input-place, .schedule-input-detail {
+.schedule-input-place,
+.schedule-input-detail {
   font-size: 14px;
   padding: 5px;
   margin-bottom: 10px;
@@ -635,12 +651,15 @@ main.main-view {
   color: #e38484;
 }
 
-.input-airlines, .dep-airlines, .arr-airlines, .input-place, .input-title {
+.input-airlines,
+.dep-airlines,
+.arr-airlines,
+.input-place,
+.input-title {
   font-size: 14px;
   padding: 5px;
   margin-bottom: 10px;
   width: 100px;
-  
 }
 
 /* 팝업띄우는버튼 */

@@ -8,6 +8,16 @@
       "endDate": "2019/8/1"
     },
     {
+<<<<<<< HEAD
+=======
+      "id": 3,
+      "title": "ㅁㄴㄹㄴㅇㅇㄹㄴ",
+      "place": "ㅇㅁㄴㄹㄻㄴㅇ",
+      "startDate": "2022/1/2",
+      "endDate": "2022/6/3"
+    },
+    {
+>>>>>>> c60eed51257196084be19ea2991740b0cdd4a446
       "id": 5,
       "title": "로로로",
       "place": "ㅗ로로로ㅗ로로",
@@ -110,6 +120,58 @@
         "address": "blabla",
         "website": "blabla"
       }
+    }
+  ],
+  "airlines": [
+    {
+      "id": 1,
+      "type": "출발",
+      "date": "20.05.16.18:10:00",
+      "airplaneName": "아시아나항공",
+      "depatureTime": "20.05.16.18:10:00",
+      "departureAirport": "ICN",
+      "arrivalTime": "20.05.16.18:10:00",
+      "arrivalAirport": "ICN"
+    },
+    {
+      "id": 2,
+      "type": "출발",
+      "date": "20.05.16.18:10:00",
+      "airplaneName": "아시아나항공",
+      "depatureTime": "20.05.16.18:10:00",
+      "departureAirport": "ICN",
+      "arrivalTime": "20.05.16.18:10:00",
+      "arrivalAirport": "ICN"
+    },
+    {
+      "id": 3,
+      "type": "도착",
+      "date": "20.05.16.18:10:00",
+      "airplaneName": "아시아나항공",
+      "depatureTime": "20.05.16.18:10:00",
+      "departureAirport": "ICN",
+      "arrivalTime": "20.05.16.18:10:00",
+      "arrivalAirport": "ICN"
+    }
+  ],
+  "lodgings": [
+    {
+      "lodgingNumber": "1",
+      "hotelName": "워커힐",
+      "hotelPlace": "파푸아뉴기니",
+      "hotelsite": "AGODA"
+    },
+    {
+      "lodgingNumber": "2",
+      "hotelName": "워커힐",
+      "hotelPlace": "파푸아뉴기니",
+      "hotelsite": "AGODA"
+    },
+    {
+      "lodgingNumber": "3",
+      "hotelName": "워커힐",
+      "hotelPlace": "파푸아뉴기니",
+      "hotelsite": "AGODA"
     }
   ]
 }
