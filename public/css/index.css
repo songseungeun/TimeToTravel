@@ -41,7 +41,7 @@ body {
 }
 main.main-view {
   display: block;
-  z-index: 98;
+  z-index: 97;
   
 }
 
@@ -147,7 +147,9 @@ h1 {
 .main-schedule {
   width: 100%;
   float: right;
+
 }
+
 .main-schedule h3 {
   font-size: 24px;
   padding: 15px;
@@ -212,6 +214,22 @@ h1 {
   cursor: pointer;
   text-align: center;
   transition: background-color 0.3s;
+  animation-duration: .5s;
+  animation-fill-mode: both;
+  animation-name: loading-date;
+}
+
+@keyframes loading-date {
+  0% {
+      transform: translate3d(-20px, 0px, 0px);
+      /* left: -50px; */
+      opacity: 0;
+  }
+  100% {
+    transform: translate3d(0px, 0px, 0px);
+      /* left: 0px; */
+      opacity: 1;
+  }
 }
 .date-item:hover,
 .date-list .active {
@@ -488,9 +506,20 @@ h1 {
   display: none;
   position: absolute;
   top: 300px;
-  left: calc(50% - 90px);
-  font-size: 20px;
+  width: 460px;
+  text-align: center;
+  left: calc(50% - 180px);
+  font-size: 26px;
+  color: rgb(164, 164, 164);
 }
+.travel-none-text i {
+  padding: 5px 10px;
+  color: #f3f3f3;
+  display: inline-block;
+  background-color: rgb(96, 118, 176);
+  border-radius: 5px;
+}
+
 /* ----- travel info ----- */
 
 /* MAIN */
@@ -572,6 +601,18 @@ h1 {
   z-index: 99;
   border-radius: 10px;
   box-shadow: 8px 8px 10px 5px rgba(0, 0, 0, 0.3);
+  animation-duration: 1s;
+  animation-delay: .3s;
+  animation-fill-mode: both;
+  animation-name: loading-popup;
+}
+@keyframes loading-popup {
+  0% {
+      transform: translate3d(0px, -20px, 0);
+  }
+  100% {
+      transform: translate3d(0px, 0px, 0);
+  }
 }
 .popup-style label {
   padding: 9px 10px;
@@ -784,7 +825,7 @@ h1 {
   width: 80px;
   height: 80px;
   border-radius: 20px;
-  background-color: rgb(61, 112, 120);
+  /* background-color: rgb(61, 112, 120); */
   text-align: center;
   line-height: 76px;
   color: #fff;
@@ -793,10 +834,17 @@ h1 {
   font-weight: 200;
   transition: transform 0.3s;
   transform: scale(1);
-  z-index: 90;
+  z-index: 91;
+}
+.new-travel-btn {
+  background-color: rgb(96, 118, 176);
+}
+.new-travel-btn:hover {
+  background-color: rgb(105, 130, 196);
+  transition: transform 0.3s;
+  transform: scale(1.05);
 }
 .new-schedule-btn:hover,
-.new-travel-btn:hover,
 .new-info-btn:hover {
   background-color: #3f8594;
   transition: transform 0.3s;
@@ -869,8 +917,19 @@ h1 {
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgba(0, 0, 0, 0.7);
-  z-index: 94;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 97;
+  animation-duration: .5s;
+  animation-fill-mode: both;
+  animation-name: loading-popupbg;
+}
+@keyframes loading-popupbg {
+  0% {
+      opacity: .8;
+  }
+  100% {
+      opacity: 1;
+  }
 }
 /* 경고팝업 */
 .delete-confirm {
@@ -886,6 +945,10 @@ h1 {
   background-color: #fff;
   z-index: 99;
   border-radius: 5px;
+  animation-duration: 1s;
+  animation-delay: .3s;
+  animation-fill-mode: both;
+  animation-name: loading-popup;
 }
 .delete-icon {
   display: block;
