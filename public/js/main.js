@@ -22,7 +22,6 @@ const $endHour = document.querySelector('#end-hour-select');
 const $endMin = document.querySelector('#end-min-select');
 const $addScheduleBtn = document.querySelector('.add-schedule-btn');
 const $newTravelPopup = document.querySelector('.new-travel-popup');
-const $newSchedulePopup = document.querySelector('.new-schedule-popup');
 const $inputTravelTitle = document.querySelector('.input-title');
 const $inputTravelPlace = document.querySelector('.input-place');
 const $inputSchedulePlace = document.querySelector('#schedule-input-place');
@@ -54,35 +53,18 @@ const $timelineTitle = document.querySelector('.timeline-travel-title');
 const $infoTitle = document.querySelector('.info-travel-title');
 const $popupBg = document.querySelector('.popup-bg');
 const $popupRemoveBtn = document.querySelector('.popup-remove-btn');
-const $monthSelect = document.querySelector('#month-select');
-const $dateSelect = document.querySelector('#date-select');
-const $inputPlace = document.querySelector('#schedule-input-place');
-const $inputDetail = document.querySelector('#schedule-input-detail');
-const $selectDateWarning = document.querySelector('#date-warning-label');
-const $selectStartWarning = document.querySelector('#start-warning-label');
-const $selectEndWarning = document.querySelector('#end-warning-label');
-const $inputDetailWarning = document.querySelector('#detail-warning-label');
-const $inputPlaceWarning = document.querySelector('#place-warning-label');
-const $deleteConfirmModal = document.querySelector('.delete-confirm-modal');
-const $selectWrappers = document.querySelectorAll('.select-wrapper');
 const $airlineTicket = document.querySelector('.airline-ticket');
 const $airlineSchedule = document.querySelector('.airline-schedule');
-const $airlineScheduleDetail = document.querySelector('.airline-schedule-detail');
-const $airlineScheduleList = document.querySelector('.airline-schedule');
-const $lodgingScheduleList = document.querySelector('.lodging-schedule');
 const $airlinePopupBg = document.querySelector('.airlineBg');
 const $hotelPopup = document.querySelector('.new-info-popup2');
 const $airlinePopup = document.querySelector('.new-info-popup');
 const $airlineAddBtn = document.querySelector('.airlineAddBtn');
 const $airlinePopupRemove = document.querySelector('.airlineRemoveBtn');
-const $airlineMonthSelect = document.querySelector('#airline-month-select');
 const $hotelBtn = document.querySelector('.hotel-btn');
 const $airlineBtn = document.querySelector('.airline-btn');
 const $hotelPopupRemove = document.querySelector('.hotelRemoveBtn');
 const $hotelAddBtn = document.querySelector('.hotelAddBtn');
 const $hotelPopupBg = document.querySelector('.hotelBg');
-const $departureSec = document.querySelector('.departure-section');
-const $arrivalSec = document.querySelector('.arrival-section');
 const $depMonthSelect = document.querySelector('#airline-month-select');
 const $depDaySelect = document.querySelector('#airline-day-select');
 const $inputAirline = document.querySelector('.select-start-date > .input-airlines');
@@ -106,10 +88,19 @@ const $ArrDepMinSelect = document.querySelector('#dep-arrival-min-select');
 const $inputArrAirport = document.querySelector('.dep-arr-airline');
 const $scheduleHiddenBtn = document.querySelector('.add-schedule-btn-hidden');
 const $newInfoBtn = document.querySelector('.new-info-btn');
+const $lodgingScheduleList = document.querySelector('.lodging-schedule');
 const $allMoreBtn = document.querySelector('.detail-btn-wrapper');
 const $headerInfo = document.querySelector('.main-info header');
 const $hotelInfo = document.querySelector('.hotel-info');
-
+const $endHourSelects = document.querySelectorAll('.select-end-hour > .select-wrapper > .hour-select');
+const $startHourSelects = document.querySelectorAll('.select-start-hour > .select-wrapper > .hour-select');
+const $endMinuteSelects = document.querySelectorAll('.select-end-hour > .select-wrapper > .min-select');
+const $startMinuteSelects = document.querySelectorAll('.select-start-hour > .select-wrapper > .min-select');
+const $startHourSelect = document.getElementById('start-hour-select');
+const $startMinSelect = document.getElementById('start-min-select');
+const $endHourSelect = document.getElementById('end-hour-select');
+const $endMinSelect = document.getElementById('end-min-select');
+const $newAirlineBtn = document.querySelector('.airline-btn');
 
 // functions
 // popups
@@ -158,10 +149,14 @@ const closeTravelAlertPopup = () => {
   $alertPopupBg.style.display = 'none';
 };
 
+$alertPopupBg.addEventListener('click', closeTravelAlertPopup);
+
 const closeScheduleAlertPopup = () => {
   $timelineAlertPopup.style.display = 'none';
   $timeAlertPopupBg.style.display = 'none';
 };
+
+$timeAlertPopupBg.addEventListener('click', closeScheduleAlertPopup);
 
 // nav bar
 const changeNav = target => {
@@ -581,27 +576,6 @@ $timelineCancleBtn.onclick = () => {
 };
 
 // time test
-const $endHourSelects = document.querySelectorAll('.select-end-hour > .select-wrapper > .hour-select');
-const $startHourSelects = document.querySelectorAll('.select-start-hour > .select-wrapper > .hour-select');
-const $endMinuteSelects = document.querySelectorAll('.select-end-hour > .select-wrapper > .min-select');
-const $startMinuteSelects = document.querySelectorAll('.select-start-hour > .select-wrapper > .min-select');
-
-const $startHourSelect = document.getElementById('start-hour-select');
-const $startMinSelect = document.getElementById('start-min-select');
-const $endHourSelect = document.getElementById('end-hour-select');
-const $endMinSelect = document.getElementById('end-min-select');
-
-const $newAirlineBtn = document.querySelector('.airline-btn');
-
-const $airlineHourSelect = document.getElementById('airline-hour-select');
-const $airlineMinSelect = document.getElementById('airline-min-select');
-const $depAirlineHourSelect = document.getElementById('dep-airline-hour-select');
-const $depAirlineMinSelect = document.getElementById('dep-airline-min-select');
-const $arrivalHourSelect = document.getElementById('arrival-hour-select');
-const $arrivalMinSelect = document.getElementById('arrival-min-select');
-const $depArrivalHourSelect = document.getElementById('dep-arrival-hour-select');
-const $depArrivalMinSelect = document.getElementById('dep-arrival-min-select');
-
 const changeEndHour = () => {
   [...$endHourSelect.options].forEach(opt => {
     if (opt.value === $startHourSelect.value) opt.setAttribute('selected', 'selected');

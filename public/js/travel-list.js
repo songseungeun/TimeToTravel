@@ -5,7 +5,6 @@ import { resetTravelPopup } from './main.js';
 const $menuBar = document.querySelector('.menu-bar');
 const $header = document.querySelector('.header h2');
 const $travelList = document.querySelector('.travel-list');
-
 const $newTravelBtn = document.querySelector('.new-travel-btn');
 const $popupBg = document.querySelector('.new-travel-popup-bg');
 const $popupRemove = document.querySelector('.new-travel-popup-remove-btn');
@@ -32,13 +31,9 @@ const openTravelPopup = () => {
 };
 
 // event handlers
-
 $newTravelBtn.addEventListener('click', openTravelPopup);
 $popupBg.addEventListener('click', closeTravelPopup);
 $popupRemove.addEventListener('click', closeTravelPopup);
-
-// export
-// export { timelineOf };
 
 function showWarning(element, defaultValue, warningElement) {
   if (element.value === defaultValue) {
