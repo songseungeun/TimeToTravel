@@ -27,7 +27,7 @@ body {
   background-color: #f4f4f4;
 }
 .intro-wrapper {
-  /* display: none; */
+  display: none;
   position: fixed;
   top: 0px;
   bottom: 0px;
@@ -642,9 +642,35 @@ h1 {
   font-weight: 400;
   /* margin-bottom: 5px; */
 }
+
+.airline-schedule .time,
 .airline-schedule .date {
-  font-size: 25px;
-  margin-bottom: 4px;
+  font-size: 35px;
+  margin-bottom: 3px;
+  font-weight: 100;
+  font-family: 'Open Sans';
+}
+.airline-schedule .airline-schedule-detail em,
+.hotel-info .hotel-reservation em {
+  line-height: 70px;
+  margin-top: 5px;
+  font-weight: 700;
+  font-family: inherit;
+  letter-spacing: 1px;
+}
+.hotel-link {
+  font-size: 20px;
+  color: rgb(121, 75, 184);
+  text-decoration: none;
+}
+.hotel-reservation span {
+  line-height: 70px;
+}
+.airline-schedule .airlines,
+.airline-schedule .airport {
+  font-weight: 500;
+  font-family: inherit;
+  letter-spacing: 1px;
 }
 .airlines,
 .airport {

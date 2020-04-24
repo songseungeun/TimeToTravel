@@ -180,6 +180,28 @@
       "arrivalTime": "7:00",
       "arrivalAirport": "ICN",
       "id": 6
+    },
+    {
+      "travelId": "1",
+      "type": "departure",
+      "date": "4/24",
+      "airplaneName": "gf",
+      "departureTime": "7:00",
+      "departureAirport": "g",
+      "arrivalTime": "7:00",
+      "arrivalAirport": "efr",
+      "id": 7
+    },
+    {
+      "travelId": "1",
+      "type": "arrival",
+      "date": "4/24",
+      "airplaneName": "fwe",
+      "departureTime": "7:00",
+      "departureAirport": "wed",
+      "arrivalTime": "7:00",
+      "arrivalAirport": "few",
+      "id": 8
     }
   ],
   "lodgings": [
@@ -203,6 +225,13 @@
       "hotelsite": "www.airbnb.com",
       "travelId": "1",
       "id": 3
+    },
+    {
+      "hotelName": "dsf",
+      "hotelPlace": "sdf",
+      "hotelsite": "sdf",
+      "travelId": "1",
+      "id": 4
     }
   ]
 }
