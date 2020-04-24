@@ -1,8 +1,8 @@
-import { getAirlineData, getLodgingData } from './travel-info.js';
-
 // state
 let schedules = [];
 let travels = [];
+let airlines = [];
+let lodgings = [];
 let travelId = '';
 let removeTId = '';
 let removeSId = '';
@@ -51,6 +51,7 @@ const $timelineAlertPopup = document.querySelector('.timeline-popup');
 const $timeAlertPopupBg = document.querySelector('.timeline-popup-bg');
 const $travelNoneText = document.querySelector('.travel-none-text');
 const $timelineTitle = document.querySelector('.timeline-travel-title');
+const $infoTitle = document.querySelector('.info-travel-title');
 const $popupBg = document.querySelector('.popup-bg');
 const $popupRemoveBtn = document.querySelector('.popup-remove-btn');
 const $monthSelect = document.querySelector('#month-select');
@@ -64,6 +65,53 @@ const $inputDetailWarning = document.querySelector('#detail-warning-label');
 const $inputPlaceWarning = document.querySelector('#place-warning-label');
 const $deleteConfirmModal = document.querySelector('.delete-confirm-modal');
 const $selectWrappers = document.querySelectorAll('.select-wrapper');
+const $airlineTicket = document.querySelector('.airline-ticket');
+const $airlineSchedule = document.querySelector('.airline-schedule');
+const $airlineScheduleDetail = document.querySelector('.airline-schedule-detail');
+const $airlineScheduleList = document.querySelector('.airline-schedule');
+const $lodgingScheduleList = document.querySelector('.lodging-schedule');
+
+const $airlinePopupBg = document.querySelector('.airlineBg');
+const $hotelPopup = document.querySelector('.new-info-popup2');
+const $airlinePopup = document.querySelector('.new-info-popup');
+const $airlineAddBtn = document.querySelector('.airlineAddBtn');
+const $airlinePopupRemove = document.querySelector('.airlineRemoveBtn');
+const $airlineMonthSelect = document.querySelector('#airline-month-select');
+
+const $hotelBtn = document.querySelector('.hotel-btn');
+const $airlineBtn = document.querySelector('.airline-btn');
+const $hotelPopupRemove = document.querySelector('.hotelRemoveBtn');
+const $hotelAddBtn = document.querySelector('.hotelAddBtn');
+const $hotelPopupBg = document.querySelector('.hotelBg');
+const $departureSec = document.querySelector('.departure-section');
+const $arrivalSec = document.querySelector('.arrival-section');
+
+const $depMonthSelect = document.querySelector('#airline-month-select');
+const $depDaySelect = document.querySelector('#airline-day-select');
+const $inputAirline = document.querySelector('.select-start-date > .input-airlines');
+const $depHourSelect = document.querySelector('#airline-hour-select');
+const $depMinSelect = document.querySelector('#airline-min-select');
+const $inputDepAirport = document.querySelector('.select-start-hour > .dep-airlines');
+const $depArrMinSelect = document.querySelector('#dep-airline-min-select');
+const $depArrHourSelect = document.querySelector('#dep-airline-hour-select');
+const $inputDepArrAirport = document.querySelector('.arr-airlines');
+const $inputHotelName = document.querySelector('.new-info-popup2 > .input-title');
+const $inputHotelPlace = document.querySelector('.new-info-popup2 > .input-place');
+const $inputHotelSite = document.querySelector('.new-info-popup2 > .input-site');
+
+const $arrMonthSelect = document.querySelector('#arrival-month-select');
+const $arrDaySelect = document.querySelector('#arrival-day-select');
+const $inputArrAirline = document.querySelector('.arr-input');
+const $arrHourSelect = document.querySelector('#arrival-hour-select');
+const $arrMinSelect = document.querySelector('#arrival-min-select');
+console.log()
+const $inputArrDepAirport = document.querySelector('.select-start-hour > .arr-airlines');
+const $ArrDepHourSelect = document.querySelector('#dep-arrival-hour-select');
+const $ArrDepMinSelect = document.querySelector('#dep-arrival-min-select');
+const $inputArrAirport = document.querySelector('.dep-arr-airline');
+
+const $newInfoBtn = document.querySelector('.new-info-btn');
+const $allMoreBtn = document.querySelector('.detail-btn-wrapper');
 
 // functions
 // popups
@@ -122,6 +170,7 @@ const changeNav = target => {
     const [homeMenu, ...removeMenus] = [...$menuList.children];
     removeMenus.forEach(menuIcon => (menuIcon.style.display = 'none'));
     $timelineTitle.classList = 'timeline-travel-title';
+    $infoTitle.classList = 'info-travel-title';
   }
   if (navState === 'airplane') {
     getAirlineData();
@@ -130,6 +179,8 @@ const changeNav = target => {
 };
 
 // travel list
+const generateId = () => travels.length ? Math.max(...travels.map(({ id }) => id)) + 1 : 1;
+
 const generateDday = startDate => {
   let dDay = 0;
   let today = new Date();
@@ -140,8 +191,6 @@ const generateDday = startDate => {
 
   return dDay > 0 ? `D-${dDay}` : dDay === 0 ? 'D-Day' : '';
 };
-
-const generateId = () => (travels.length ? Math.max(...travels.map(({ id }) => id)) + 1 : 1);
 
 const sortTravels = travels => {
   travels.sort((trav1, trav2) => (trav2.startDate > trav1.startDate ? 1 : trav1.startDate > trav2.startDate ? -1 : 0));
@@ -378,6 +427,13 @@ const removeSchedule = async removeSId => {
   $timelineAlertPopup.style.display = 'none';
 };
 
+const getTitle = (title, travelBg) => {
+  $timelineTitle.textContent = title;
+  $timelineTitle.classList.add(travelBg);
+  $infoTitle.textContent = title;
+  $infoTitle.classList.add(travelBg);
+};
+
 const goToTimeline = async target => {
   const nodeNames = ['LI', 'EM', 'SPAN', 'DIV', 'H2'];
   const targetNode = nodeNames.filter(node => node === target.nodeName)[0];
@@ -401,14 +457,14 @@ const goToTimeline = async target => {
 
   timeline.classList.add('main-view');
   home.classList.remove('main-view');
-  $timelineTitle.textContent = title;
-  $timelineTitle.classList.add(travelBg);
+
 
   [...$menuList.children].forEach(icon => {
     icon.style.display = 'block';
     icon.classList.toggle('active', icon.id === 'calendar');
   });
 
+  getTitle(title, travelBg);
   renderDateBox(startDate, endDate);
   getSchedules(travelId);
   renderMonthYear(startDate.split('/')[1], startDate.split('/')[0]);
@@ -439,14 +495,6 @@ $addScheduleBtn.addEventListener('click', addSchedule);
 $popupBg.onclick = () => {
   closePopup();
   resetSchedulePopup();
-};
-
-$alertPopupBg.onclick = () => {
-  closeTravelAlertPopup();
-};
-
-$timeAlertPopupBg.onclick = () => {
-  closeScheduleAlertPopup();
 };
 
 $newScheduleBtn.onclick = () => {
@@ -604,15 +652,191 @@ $newAirlineBtn.addEventListener('click', printEndTime);
 $startHourSelect.addEventListener('change', changeEndHour);
 $startMinSelect.addEventListener('change', changeEndMin);
 
-// $airlineHourSelect.addEventListener('change', changeAirlineEndHour);
-// $airlineMinSelect.addEventListener('change', changeAirlineEndMin);
+// travel info
+//RENDER
+const renderAirlineInfo = () => {
+  let html = '';
 
-// $arrivalHourSelect.addEventListener('change', changeEndHour);
-// $arrivalMinSelect.addEventListener('change', changeEndMin);
+  airlines.forEach(({ travelId, type, id, date, airplaneName, departureTime, departureAirport, arrivalTime, arrivalAirport }) => {
+    html += `<li id=${travelId}-${id} class="airline-schedule-detail clearfix">
+    <div class="airline-info1 airline-departure">
+      <em>${type === 'departure' ? '출발' : '도착'}</em>
+    </div>
+    <div class="airline-info2 departure-info-date">
+      <span class="date">${date}</span>
+      <span class="airlines">${airplaneName}</span>
+    </div>
+    <div class="airline-departure departure-airline-time">
+      <span class="time">${departureTime}</span>
+      <span class="airport">${departureAirport}</span>
+    </div>
+    <div class="airline-arrival departure-arrival-time">
+      <span class="time">${arrivalTime}</span>
+      <span class="airport">${arrivalAirport}</span>
+    </div>
+  </li>`;
+  });
 
+  $airlineSchedule.innerHTML = html;
+};
 
-// $startHourSelects.forEach(selects => selects.addEventListener('change', ({ target }) => printEndTime(target)));
-// $startMinuteSelects.forEach(selects => selects.addEventListener('change', ({ target }) => printEndTime(target)));
+const getAirlineData = async () => {
+  const { data } = await axios.get(`/airlines?travelId=${travelId}`);
+  airlines = data;
+
+  renderAirlineInfo();
+};
+
+const resetAirlinePopup = () => {
+  $inputAirline.value = '';
+  $inputDepAirport.value = '';
+  $inputDepArrAirport.value = '';
+  $inputArrAirline.value = '';
+  $inputArrDepAirport.value = '';
+  $inputArrAirport.value = '';
+};
+
+const closeAirlinePopup = () => {
+  $airlinePopup.style.display = 'none';
+  $airlinePopupBg.style.display = 'none';
+  resetAirlinePopup();
+};
+
+//post
+const addDepAirlineInfo = async () => {
+  console.log(travelId, '뱅기 추가')
+  const date = `${$depMonthSelect.value}/${$depDaySelect.value}`;
+  const airplaneName = $inputAirline.value.trim();
+  const departureTime = `${$depHourSelect.value}:${$depMinSelect.value}`;
+  const departureAirport = $inputDepAirport.value.trim();
+  const arrivalTime = `${$depArrHourSelect.value}:${$depArrMinSelect.value}`;
+  const arrivalAirport = $inputDepArrAirport.value.trim();
+
+  const { data } = await axios.post('/airlines', { travelId, type: 'departure', date, airplaneName, departureTime, departureAirport, arrivalTime, arrivalAirport });
+  airlines = [...airlines, data];
+
+  closeAirlinePopup();
+  renderAirlineInfo(airlines);
+  resetAirlinePopup();
+};
+
+const addArrAirlineInfo = async () => {
+  const date = `${$arrMonthSelect.value}/${$arrDaySelect.value}`;
+  const airplaneName = $inputArrAirline.value.trim();
+  const departureTime = `${$arrHourSelect.value}:${$arrMinSelect.value}`;
+  const departureAirport = $inputArrDepAirport.value.trim();
+  const arrivalTime = `${$ArrDepHourSelect.value}:${$ArrDepMinSelect.value}`;
+  const arrivalAirport = $inputArrAirport.value.trim();
+
+  const { data } = await axios.post('/airlines', { travelId, type: 'arrival', date, airplaneName, departureTime, departureAirport, arrivalTime, arrivalAirport });
+  airlines = [...airlines, data];
+
+  closeAirlinePopup();
+  renderAirlineInfo(airlines);
+  resetAirlinePopup();
+};
+
+const renderLodgingInfo = () => {
+  let html = '';
+
+  lodgings.forEach(({ id, hotelName, hotelPlace, hotelsite }) => {
+    html += `<li class="hotel-reservation lodging-name">
+            <h3>${id}</h3>
+            <span class="hotel-name">${hotelName}</span>
+            <span class="hotel-place">${hotelPlace}</span>
+            <span class="hotel-site">${hotelsite}</span>
+          </li>`;
+  });
+  $lodgingScheduleList.innerHTML = html;
+};
+
+export const getLodgingData = async () => {
+  const { data } = await axios.get(`/lodgings?travelId=${travelId}`);
+  lodgings = data;
+
+  renderLodgingInfo();
+};
+
+const resetLodgingPopup = () => {
+  $inputHotelName.value = '';
+  $inputHotelPlace.value = '';
+  $inputHotelSite.value = '';
+};
+
+const closeLodgingPopup = () => {
+  $hotelPopup.style.display = 'none';
+  $hotelPopupBg.style.display = 'none';
+  resetLodgingPopup();
+};
+
+//post
+const addHotelInfo = async () => {
+  const hotelName = $inputHotelName.value.trim();
+  const hotelPlace = $inputHotelPlace.value.trim();
+  const hotelsite = $inputHotelSite.value.trim();
+
+  const { data } = await axios.post('/lodgings', { hotelName, hotelPlace, hotelsite, travelId });
+  lodgings = [...lodgings, data];
+
+  closeLodgingPopup();
+  renderLodgingInfo(lodgings);
+  resetLodgingPopup();
+};
+
+//EVENT HANDLER
+// MODAL OPEN
+function openDetailBtn() {
+  $airlineBtn.classList.toggle('btn-act');
+  $hotelBtn.classList.toggle('btn-act2');
+}
+
+function closeDetailBtn() {
+  $airlineBtn.classList.remove('btn-act');
+  $hotelBtn.classList.remove('btn-act2');
+}
+
+$newInfoBtn.addEventListener('click', openDetailBtn);
+// $allMoreBtn.addEventListener('mouseenter', openDetailBtn);
+$allMoreBtn.addEventListener('mouseleave', closeDetailBtn);
+
+//HOTEL정보 입력 MODAL
+const hotelClosePopup = () => {
+  $hotelPopup.style.display = 'none';
+  $hotelPopupBg.style.display = 'none';
+};
+
+$hotelBtn.addEventListener('click', hotelClosePopup);
+$hotelPopupBg.addEventListener('click', hotelClosePopup);
+$hotelPopupRemove.addEventListener('click', hotelClosePopup);
+
+$hotelBtn.onclick = () => {
+  $hotelPopup.style.display = 'block';
+  $hotelPopupBg.style.display = 'block';
+};
+
+//비행기 정보 입력 MODAL
+const airClosePopup = () => {
+  $airlinePopupBg.style.display = 'none';
+  $airlinePopup.style.display = 'none';
+};
+
+// $airlineBtn.addEventListener('click', airClosePopup);
+$airlinePopupRemove.addEventListener('click', airClosePopup);
+$airlinePopupBg.addEventListener('click', airClosePopup);
+
+$airlineBtn.onclick = () => {
+  $airlinePopup.style.display = 'block';
+  $airlinePopupBg.style.display = 'block';
+};
+
+$hotelAddBtn.onclick = () => {
+  addHotelInfo();
+};
+
+$airlineAddBtn.onclick = () => {
+  addDepAirlineInfo();
+  addArrAirlineInfo();
+};
 
 
 // export
