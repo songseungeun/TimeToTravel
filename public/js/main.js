@@ -711,6 +711,10 @@ const resetAirlinePopup = () => {
 };
 
 const closeAirlinePopup = () => {
+  $menuBar.style.filter = 'blur(0px)';
+  $headerInfo.style.filter = 'blur(0px)';
+  $airlineTicket.style.filter = 'blur(0px)';
+  $hotelInfo.style.filter = 'blur(0px)';
   $airlinePopup.style.display = 'none';
   $airlinePopupBg.style.display = 'none';
   resetAirlinePopup();
@@ -780,6 +784,10 @@ const resetLodgingPopup = () => {
 };
 
 const closeLodgingPopup = () => {
+  $menuBar.style.filter = 'blur(0px)';
+  $headerInfo.style.filter = 'blur(0px)';
+  $airlineTicket.style.filter = 'blur(0px)';
+  $hotelInfo.style.filter = 'blur(0px)';
   $hotelPopup.style.display = 'none';
   $hotelPopupBg.style.display = 'none';
   resetLodgingPopup();
