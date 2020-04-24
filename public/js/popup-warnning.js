@@ -3,14 +3,11 @@ import { $scheduleHiddenBtn, $timeWarningText, $dateWarningText, $startYear, $st
 const $travelPopupInput = document.querySelectorAll('.new-travel-popup input');
 const $travelPopupSelect = document.querySelectorAll('.new-travel-popup select');
 const $travelHiddenBtn = document.querySelector('.add-travel-btn-hidden');
-
 const $schedulePopupInput = document.querySelectorAll('.new-schedule-popup input');
 const $schedulePopupSelect = document.querySelectorAll('.new-schedule-popup select');
-
 const $infoPopupInput = document.querySelectorAll('.new-info-popup input');
 const $infoPopupSelect = document.querySelectorAll('.new-info-popup select');
 const $infoHiddenBtn = document.querySelector('.add-info-btn-hidden');
-
 const $info2PopupInput = document.querySelectorAll('.new-info-popup2 input');
 const $info2PopupSelect = document.querySelectorAll('.new-info-popup2 select');
 const $info2HiddenBtn = document.querySelector('.add-info2-btn-hidden');

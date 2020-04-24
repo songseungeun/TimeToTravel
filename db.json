@@ -40,15 +40,6 @@
       "id": 2
     },
     {
-      "travelId": "2",
-      "date": "7/1",
-      "timeFrom": "7:20",
-      "timeTo": "7:40",
-      "place": "gdfdgf",
-      "detail": "gdfdfg",
-      "id": 3
-    },
-    {
       "travelId": "4",
       "date": "7/1",
       "timeFrom": "7:00",
@@ -58,22 +49,22 @@
       "id": 5
     },
     {
-      "travelId": "2",
-      "date": "7/1",
+      "travelId": "1",
+      "date": "4/24",
       "timeFrom": "7:00",
       "timeTo": "7:00",
-      "place": "fsd",
-      "detail": "dsffds",
-      "id": 12
+      "place": "ㄴㅇㄹ",
+      "detail": "ㄴㅇㄹ",
+      "id": 6
     },
     {
       "travelId": "1",
       "date": "4/24",
       "timeFrom": "7:00",
       "timeTo": "7:00",
-      "place": "ㄹ",
-      "detail": "ㄹ",
-      "id": 13
+      "place": "ㄴㅇㄹ",
+      "detail": "ㄴㅇㄹ",
+      "id": 7
     }
   ],
   "airlines": [
@@ -120,6 +111,28 @@
       "arrivalTime": "7:00",
       "arrivalAirport": "ㄴㅇㄹ",
       "id": 7
+    },
+    {
+      "travelId": "1",
+      "type": "departure",
+      "date": "4/24",
+      "airplaneName": "ㄹㄴㅇ",
+      "departureTime": "7:00",
+      "departureAirport": "ㄴㅇㄹ",
+      "arrivalTime": "7:00",
+      "arrivalAirport": "ㄴㅇㄹ",
+      "id": 8
+    },
+    {
+      "travelId": "1",
+      "type": "arrival",
+      "date": "4/24",
+      "airplaneName": "ㅋ",
+      "departureTime": "7:00",
+      "departureAirport": "ㅋ",
+      "arrivalTime": "7:00",
+      "arrivalAirport": "ㅋ",
+      "id": 9
     }
   ],
   "lodgings": [
@@ -129,6 +142,13 @@
       "hotelsite": "ㅋㅋ",
       "travelId": "4",
       "id": 1
+    },
+    {
+      "hotelName": "ㄹㄴㅇ",
+      "hotelPlace": "ㄴㅇㄹ",
+      "hotelsite": "ㄴㅇㄹ",
+      "travelId": "1",
+      "id": 2
     }
   ]
 }

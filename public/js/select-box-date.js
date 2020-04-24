@@ -1,24 +1,20 @@
 const $newScheduleBtn = document.querySelector('.new-schedule-btn');
 const $newTravelBtn = document.querySelector('.new-travel-btn');
 const $newInfoDetailBtn = document.querySelector('.new-info-detail-btn');
-
 const $newTravelPopup = document.querySelector('.new-travel-popup');
 const $newSchedulePopup = document.querySelector('.new-schedule-popup');
 const $newInfoPopup = document.querySelector('.new-travel-popup');
-
 const $dateSelects = document.querySelectorAll('.date-select');
 const $yearSelects = document.querySelectorAll('.year-select');
 const $monthSelects = document.querySelectorAll('.month-select');
 const $hourSelects = document.querySelectorAll('.hour-select');
 const $minuteSelects = document.querySelectorAll('.min-select');
-
 const $startYearSelect = document.querySelector('#start-year-select');
 const $endYearSelect = document.querySelector('#end-year-select');
 const $startMonthSelect = document.querySelector('#start-month-select');
 const $endMonthSelect = document.querySelector('#end-month-select');
 const $startDaySelect = document.querySelector('#start-day-select');
 const $endDaySelect = document.querySelector('#end-day-select');
-
 const $airlineMonthSelect = document.querySelector('#airline-month-select');
 const $airlineDaySelect = document.querySelector('#airline-day-select');
 const $arrivalMonthSelect = document.querySelector('#arrival-month-select');
@@ -28,9 +24,8 @@ const today = new Date();
 const year = today.getFullYear();
 const month = today.getMonth() + 1;
 const todayDate = today.getDate();
-
-let date = 0;
 const monthDate = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+let date = 0;
 
 function printYearMonth({ target }) {
   if (target.id === 'newTravelBtn') {
