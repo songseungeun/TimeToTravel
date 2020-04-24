@@ -283,6 +283,9 @@ const dateList = document.querySelector('.date-list');
 const beforeBtn = document.querySelector('.date-before-btn');
 const afterBtn = document.querySelector('.date-after-btn');
 
+
+
+
 const renderDateBox = (startDate, endDate) => {
   let html = '';
   const oneDay = 86400000;
@@ -441,6 +444,15 @@ const getTitle = (title, travelBg) => {
   $infoTitle.classList.add(travelBg);
 };
 
+function dateTransition() {
+  const $dateItems = document.querySelectorAll('.date-list li');
+  let i = 0;
+  $dateItems.forEach(item => {
+    i++;
+    item.style.animationDelay = `${i * 80}ms`
+  });
+}
+
 const goToTimeline = async target => {
   const nodeNames = ['LI', 'EM', 'SPAN', 'DIV', 'H2'];
   const targetNode = nodeNames.filter(node => node === target.nodeName)[0];
@@ -474,6 +486,7 @@ const goToTimeline = async target => {
 
   getTitle(title, travelBg);
   renderDateBox(startDate, endDate);
+  dateTransition();
   getSchedules(travelId);
   renderMonthYear(startDate.split('/')[1], startDate.split('/')[0]);
 };
