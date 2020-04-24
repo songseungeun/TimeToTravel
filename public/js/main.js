@@ -88,10 +88,10 @@ const $arrivalSec = document.querySelector('.arrival-section');
 
 const $depMonthSelect = document.querySelector('#airline-month-select');
 const $depDaySelect = document.querySelector('#airline-day-select');
-const $inputAirline = document.querySelector('.input-airlines');
+const $inputAirline = document.querySelector('.select-start-date > .input-airlines');
 const $depHourSelect = document.querySelector('#airline-hour-select');
 const $depMinSelect = document.querySelector('#airline-min-select');
-const $inputDepAirport = document.querySelector('.dep-airlines');
+const $inputDepAirport = document.querySelector('.select-start-hour > .dep-airlines');
 const $depArrMinSelect = document.querySelector('#dep-airline-min-select');
 const $depArrHourSelect = document.querySelector('#dep-airline-hour-select');
 const $inputDepArrAirport = document.querySelector('.arr-airlines');
@@ -104,7 +104,8 @@ const $arrDaySelect = document.querySelector('#arrival-day-select');
 const $inputArrAirline = document.querySelector('.arr-input');
 const $arrHourSelect = document.querySelector('#arrival-hour-select');
 const $arrMinSelect = document.querySelector('#arrival-min-select');
-const $inputArrDepAirport = document.querySelector('.arr-airlines');
+console.log()
+const $inputArrDepAirport = document.querySelector('.select-start-hour > .arr-airlines');
 const $ArrDepHourSelect = document.querySelector('#dep-arrival-hour-select');
 const $ArrDepMinSelect = document.querySelector('#dep-arrival-min-select');
 const $inputArrAirport = document.querySelector('.dep-arr-airline');
@@ -681,6 +682,9 @@ const resetAirlinePopup = () => {
   $inputAirline.value = '';
   $inputDepAirport.value = '';
   $inputDepArrAirport.value = '';
+  $inputArrAirline.value = '';
+  $inputArrDepAirport.value = '';
+  $inputArrAirport.value = '';
 };
 
 const closeAirlinePopup = () => {
@@ -716,18 +720,12 @@ const addArrAirlineInfo = async () => {
   const arrivalAirport = $inputArrAirport.value.trim();
 
   const { data } = await axios.post('/airlines', { travelId, type: 'arrival', date, airplaneName, departureTime, departureAirport, arrivalTime, arrivalAirport });
-  airlines = [data, ...airlines];
+  airlines = [...airlines, data];
 
   closeAirlinePopup();
   renderAirlineInfo(airlines);
   resetAirlinePopup();
 };
-
-//TODO: SORT 구하기
-// const sortAirlineinfo = (airlines) =>{
-//   airlines.sort(air1,air2)=>(air1.)
-
-// }
 
 const renderLodgingInfo = () => {
   let html = '';
@@ -822,16 +820,7 @@ $airlineBtn.onclick = () => {
   $airlinePopupBg.style.display = 'block';
 };
 
-//TODO: 등록 버튼튕김 처리
-$airlineAddBtn.onclick = () => {
-  addDepAirlineInfo();
-  addArrAirlineInfo();
-  // $airlineBg.style.display = 'none';
-  // $airlinePopup.style.display = 'none';
-};
-
 $hotelAddBtn.onclick = () => {
-  console.log(lodgings);
   addHotelInfo();
 };
 
