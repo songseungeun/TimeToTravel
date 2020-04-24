@@ -53,6 +53,37 @@
       "id": 4
     }
   ],
-  "airlines": [],
-  "lodgings": []
+  "airlines": [
+    {
+      "travelId": "2",
+      "type": "departure",
+      "date": "1/20",
+      "airplaneName": "대한항공",
+      "departureTime": "7:00",
+      "departureAirport": "ICN",
+      "arrivalTime": "9:00",
+      "arrivalAirport": "WWW",
+      "id": 1
+    },
+    {
+      "travelId": "2",
+      "type": "arrival",
+      "date": "1/29",
+      "airplaneName": "대한항공",
+      "departureTime": "7:00",
+      "departureAirport": "WWW",
+      "arrivalTime": "7:00",
+      "arrivalAirport": "ICN",
+      "id": 2
+    }
+  ],
+  "lodgings": [
+    {
+      "hotelName": "IBIS",
+      "hotelPlace": "레이캬비크",
+      "hotelsite": "www.booking.com",
+      "travelId": "2",
+      "id": 1
+    }
+  ]
 }
