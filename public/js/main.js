@@ -266,7 +266,7 @@ const renderDateBox = (startDate, endDate) => {
 function moveDatetoPrev({ target }) {
   if (!target.matches('.date-before-btn')) return;
   if (travelPeriod > 9) afterBtn.style.opacity = '1';
-  dateItemMove -= 83;
+  dateItemMove -= 84;
 
   if (dateItemMove <= 0) {
     dateItemMove = 0;
@@ -285,8 +285,8 @@ function moveDatetoNext({ target }) {
   }
 
   beforeBtn.style.opacity = '1';
-  let moveLimit = (travelPeriod - 9) * 83;
-  dateItemMove += 83;
+  let moveLimit = (travelPeriod - 9) * 84;
+  dateItemMove += 84;
 
   if (dateItemMove > moveLimit) {
     dateItemMove = moveLimit;
