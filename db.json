@@ -65,6 +65,24 @@
       "place": "ff",
       "detail": "fff",
       "id": 4
+    },
+    {
+      "travelId": "4",
+      "date": "7/1",
+      "timeFrom": "7:00",
+      "timeTo": "12:00",
+      "place": "ㄹㄴㅇ",
+      "detail": "ㄴㅇㄹ",
+      "id": 5
+    },
+    {
+      "travelId": "3",
+      "date": "8/1",
+      "timeFrom": "7:00",
+      "timeTo": "7:00",
+      "place": "ㄹㄴㅇ",
+      "detail": "ㄴㅇㄹ",
+      "id": 6
     }
   ],
   "airlines": [
@@ -79,14 +97,26 @@
       "arrivalAirport": "ICN"
     },
     {
-      "id": 2,
+      "travelId": "3",
+      "type": "departure",
+      "date": "4/24",
+      "airplaneName": "ㄹㄴㅇ",
+      "departureTime": "7:00",
+      "departureAirport": "ㄴㅇㄹ",
+      "arrivalTime": "7:00",
+      "arrivalAirport": "ㄴㅇㄹ",
+      "id": 2
+    },
+    {
+      "travelId": "3",
       "type": "arrival",
-      "date": "5/16",
-      "airplaneName": "프랑스항공",
-      "departureTime": "18:10",
-      "departureAirport": "ICN",
-      "arrivalTime": "18:10",
-      "arrivalAirport": "ICN"
+      "date": "4/24",
+      "airplaneName": "ㄹㅇㄴ",
+      "departureTime": "7:00",
+      "departureAirport": "ㄴㅇㄹ",
+      "arrivalTime": "7:00",
+      "arrivalAirport": "ㄹㅇㄴㄹ",
+      "id": 3
     }
   ],
   "lodgings": [
@@ -98,9 +128,9 @@
     },
     {
       "id": 2,
-      "hotelName": "",
-      "hotelPlace": "",
-      "hotelsite": "ㅇㄹㄴㄴㄹㅇ"
+      "hotelName": "ㄹㄴㅇ",
+      "hotelPlace": "ㄴㅇㄹ",
+      "hotelsite": "ㄴㅇㄹ"
     }
   ]
 }
