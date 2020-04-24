@@ -2,214 +2,46 @@
   "travels": [
     {
       "id": 1,
-      "title": "가나다라마바사",
-      "place": "아자차카타파하",
-      "startDate": "2020/4/24",
-      "endDate": "2020/5/1"
+      "title": "sdf",
+      "place": "sdf",
+      "startDate": "2020/3/1",
+      "endDate": "2020/3/15"
     },
     {
       "id": 2,
-      "title": "집에 가고파",
-      "place": "가고파 여행",
-      "startDate": "2020/7/1",
-      "endDate": "2021/2/1"
+      "title": "sdf",
+      "place": "sdf",
+      "startDate": "2023/3/4",
+      "endDate": "2023/3/8"
     },
     {
-      "id": 4,
-      "title": "fsd",
-      "place": "sdfsdf",
-      "startDate": "2020/7/1",
-      "endDate": "2020/7/24"
-    },
-    {
-      "id": 6,
-      "title": "ㄹ호",
-      "place": "ㄹㅎ",
-      "startDate": "2020/1/1",
-      "endDate": "2020/1/24"
-    },
-    {
-      "id": 7,
-      "title": "dsf",
-      "place": "dsf",
-      "startDate": "2020/4/24",
-      "endDate": "2020/4/24"
+      "id": 3,
+      "title": "sdf",
+      "place": "sfdasdf",
+      "startDate": "2020/2/1",
+      "endDate": "2020/2/24"
     }
   ],
   "schedules": [
     {
-      "travelId": "1",
-      "date": "6/5",
-      "timeFrom": "13:20",
-      "timeTo": "13:40",
-      "place": "aa",
-      "detail": "aaa",
-      "id": 2
-    },
-    {
-      "travelId": "4",
-      "date": "7/1",
+      "travelId": "2",
+      "date": "3/4",
       "timeFrom": "7:00",
-      "timeTo": "12:00",
-      "place": "ㄹㄴㅇ",
-      "detail": "ㄴㅇㄹ",
-      "id": 5
-    },
-    {
-      "travelId": "1",
-      "date": "4/24",
-      "timeFrom": "7:00",
-      "timeTo": "7:00",
-      "place": "f",
-      "detail": "ss",
-      "id": 6
-    },
-    {
-      "travelId": "6",
-      "date": "1/1",
-      "timeFrom": "7:00",
-      "timeTo": "7:00",
-      "place": "fsd",
-      "detail": "hh",
-      "id": 7
-    },
-    {
-      "travelId": "2",
-      "date": "7/1",
-      "timeFrom": "7:00",
-      "timeTo": "7:00",
-      "place": "g",
-      "detail": "q",
-      "id": 8
-    },
-    {
-      "travelId": "2",
-      "date": "7/1",
-      "timeFrom": "11:20",
-      "timeTo": "11:40",
-      "place": "ghh",
-      "detail": "ewewr",
-      "id": 9
-    },
-    {
-      "travelId": "2",
-      "date": "7/1",
-      "timeFrom": "10:00",
-      "timeTo": "10:40",
-      "place": "식당",
-      "detail": "밥먹음",
-      "id": 10
-    },
-    {
-      "travelId": "2",
-      "date": "7/1",
-      "timeFrom": "13:00",
-      "timeTo": "13:40",
-      "place": "ㅗㅗㅗ",
-      "detail": "ㅉㅈ",
-      "id": 11
-    },
-    {
-      "travelId": "2",
-      "date": "7/1",
-      "timeFrom": "17:00",
-      "timeTo": "18:10",
-      "place": "ㄹㅇㄴㄴㄹㅇ",
-      "detail": "ㄹㄴㅇㄹㄴㅇ",
-      "id": 12
-    },
-    {
-      "travelId": "1",
-      "date": "4/24",
-      "timeFrom": "9:00",
-      "timeTo": "10:10",
-      "place": "ggg",
-      "detail": "bb",
-      "id": 13
-    }
-  ],
-  "airlines": [
-    {
-      "travelId": "4",
-      "type": "departure",
-      "date": "4/24",
-      "airplaneName": "ㄴㅇㄹ",
-      "departureTime": "7:00",
-      "departureAirport": "ㄴㅇㄹ",
-      "arrivalTime": "7:00",
-      "arrivalAirport": "ㄴㅇㄹ",
-      "id": 4
-    },
-    {
-      "travelId": "4",
-      "type": "arrival",
-      "date": "4/24",
-      "airplaneName": "ㄴㅇㄹ",
-      "departureTime": "7:00",
-      "departureAirport": "ㄴㅇㄹ",
-      "arrivalTime": "7:00",
-      "arrivalAirport": "ㄴㅇㄹ",
-      "id": 5
-    },
-    {
-      "travelId": "1",
-      "type": "departure",
-      "date": "4/24",
-      "airplaneName": "ㄴㅇㄹ",
-      "departureTime": "7:00",
-      "departureAirport": "ㄴㅇㄹ",
-      "arrivalTime": "7:00",
-      "arrivalAirport": "ㄴㅇㄹ",
-      "id": 6
-    },
-    {
-      "travelId": "1",
-      "type": "arrival",
-      "date": "4/24",
-      "airplaneName": "ㄴㅇㄹ",
-      "departureTime": "7:00",
-      "departureAirport": "ㄴㅇㄹ",
-      "arrivalTime": "7:00",
-      "arrivalAirport": "ㄴㅇㄹ",
-      "id": 7
-    },
-    {
-      "travelId": "1",
-      "type": "departure",
-      "date": "4/24",
-      "airplaneName": "ㄹㄴㅇ",
-      "departureTime": "7:00",
-      "departureAirport": "ㄴㅇㄹ",
-      "arrivalTime": "7:00",
-      "arrivalAirport": "ㄴㅇㄹ",
-      "id": 8
-    },
-    {
-      "travelId": "1",
-      "type": "arrival",
-      "date": "4/24",
-      "airplaneName": "ㅋ",
-      "departureTime": "7:00",
-      "departureAirport": "ㅋ",
-      "arrivalTime": "7:00",
-      "arrivalAirport": "ㅋ",
-      "id": 9
-    }
-  ],
-  "lodgings": [
-    {
-      "hotelName": "ㄹㄴㅇ",
-      "hotelPlace": "ㅋㅋ",
-      "hotelsite": "ㅋㅋ",
-      "travelId": "4",
+      "timeTo": "7:40",
+      "place": "sdf",
+      "detail": "sdf",
       "id": 1
     },
     {
-      "hotelName": "ㄹㄴㅇ",
-      "hotelPlace": "ㄴㅇㄹ",
-      "hotelsite": "ㄴㅇㄹ",
-      "travelId": "1",
+      "travelId": "2",
+      "date": "3/4",
+      "timeFrom": "12:00",
+      "timeTo": "13:00",
+      "place": "fsd",
+      "detail": "fsd",
       "id": 2
     }
-  ]
+  ],
+  "airlines": [],
+  "lodgings": []
 }
