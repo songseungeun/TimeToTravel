@@ -109,6 +109,28 @@
       "arrivalTime": "7:00",
       "arrivalAirport": "ㄹㄹ",
       "id": 4
+    },
+    {
+      "travelId": "",
+      "type": "departure",
+      "date": "4/24",
+      "airplaneName": "ㅇ",
+      "departureTime": "7:00",
+      "departureAirport": "ㅇ",
+      "arrivalTime": "7:00",
+      "arrivalAirport": "ㅇ",
+      "id": 5
+    },
+    {
+      "travelId": "",
+      "type": "arrival",
+      "date": "4/24",
+      "airplaneName": "ㅇ",
+      "departureTime": "7:00",
+      "departureAirport": "ㅇ",
+      "arrivalTime": "7:00",
+      "arrivalAirport": "ㅇ",
+      "id": 6
     }
   ],
   "lodgings": [
@@ -123,6 +145,12 @@
       "hotelName": "패캠",
       "hotelPlace": "서울",
       "hotelsite": "google"
+    },
+    {
+      "id": 3,
+      "hotelName": "ㄹ",
+      "hotelPlace": "ㄹ",
+      "hotelsite": "ㄹ"
     }
   ]
 }
