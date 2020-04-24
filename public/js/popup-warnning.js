@@ -1,4 +1,4 @@
-import { $timeWarningText, $dateWarningText, $startYear, $startMonth, $startDate, $endYear, $endMonth, $endDate, $startHour, $startMin, $endHour, $endMin } from './main.js'
+import { $scheduleHiddenBtn, $timeWarningText, $dateWarningText, $startYear, $startMonth, $startDate, $endYear, $endMonth, $endDate, $startHour, $startMin, $endHour, $endMin } from './main.js'
 
 const $travelPopupInput = document.querySelectorAll('.new-travel-popup input');
 const $travelPopupSelect = document.querySelectorAll('.new-travel-popup select');
@@ -6,7 +6,6 @@ const $travelHiddenBtn = document.querySelector('.add-travel-btn-hidden');
 
 const $schedulePopupInput = document.querySelectorAll('.new-schedule-popup input');
 const $schedulePopupSelect = document.querySelectorAll('.new-schedule-popup select');
-const $scheduleHiddenBtn = document.querySelector('.add-schedule-btn-hidden');
 
 const $infoPopupInput = document.querySelectorAll('.new-info-popup input');
 const $infoPopupSelect = document.querySelectorAll('.new-info-popup select');
@@ -64,18 +63,14 @@ $travelPopupSelect.forEach(select => {
 
 function actScheduleBtn() {
   $scheduleHiddenBtn.style.display = 'block';
-  const arr = [];
-  const arr2 = [];
+  let arr = [];
   const isValid = warnTime();
 
   $schedulePopupInput.forEach(input => {
     arr.push(input.value !== '');
   });
-  $schedulePopupSelect.forEach(select => {
-    arr2.push(select.value !== '0');
-  });
 
-  if (![...arr, ...arr2].every(arr => arr)) return;
+  if (!arr.every(arr => arr)) return;
   if (!isValid) return;
 
   $scheduleHiddenBtn.style.display = 'none';
