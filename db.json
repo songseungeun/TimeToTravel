@@ -47,6 +47,24 @@
       "place": "aa",
       "detail": "aaa",
       "id": 2
+    },
+    {
+      "travelId": "2",
+      "date": "7/1",
+      "timeFrom": "7:20",
+      "timeTo": "7:40",
+      "place": "gdfdgf",
+      "detail": "gdfdfg",
+      "id": 3
+    },
+    {
+      "travelId": "3",
+      "date": "8/1",
+      "timeFrom": "7:00",
+      "timeTo": "7:20",
+      "place": "ff",
+      "detail": "fff",
+      "id": 4
     }
   ],
   "airlines": [
@@ -91,6 +109,50 @@
       "arrivalTime": "7:00",
       "arrivalAirport": "서울",
       "id": 4
+    },
+    {
+      "travelId": "",
+      "type": "departure",
+      "date": "4/24",
+      "airplaneName": "fddfs",
+      "departureTime": "7:00",
+      "departureAirport": "dsfdfsdfs",
+      "arrivalTime": "7:00",
+      "arrivalAirport": "dsfdsf",
+      "id": 5
+    },
+    {
+      "travelId": "",
+      "type": "arrival",
+      "date": "4/24",
+      "airplaneName": "sdfdsf",
+      "departureTime": "7:00",
+      "departureAirport": "dsfdsf",
+      "arrivalTime": "7:00",
+      "arrivalAirport": "dsfdsf",
+      "id": 6
+    },
+    {
+      "travelId": "",
+      "type": "departure",
+      "date": "4/24",
+      "airplaneName": "fdsfds",
+      "departureTime": "7:00",
+      "departureAirport": "fdsfds",
+      "arrivalTime": "7:00",
+      "arrivalAirport": "fdsfsd",
+      "id": 7
+    },
+    {
+      "travelId": "",
+      "type": "arrival",
+      "date": "4/24",
+      "airplaneName": "sdfdsf",
+      "departureTime": "7:00",
+      "departureAirport": "fdsfsd",
+      "arrivalTime": "7:00",
+      "arrivalAirport": "dsfdsf",
+      "id": 8
     }
   ],
   "lodgings": [
@@ -123,6 +185,12 @@
       "hotelName": "",
       "hotelPlace": "",
       "hotelsite": "f"
+    },
+    {
+      "id": 5,
+      "hotelName": "",
+      "hotelPlace": "",
+      "hotelsite": "dsfsfd"
     }
   ]
 }
