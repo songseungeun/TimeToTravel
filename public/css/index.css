@@ -1044,3 +1044,42 @@ button.add-schedule-btn:hover {
 .delete-y:hover {
   background-color: #ed7373;
 }
+.intro-wrapper {
+  /* display: none; */
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  background: #f3f3f3;
+  z-index: 100;
+  animation-duration: 3s;
+  animation-delay: 2s;
+  animation-fill-mode: both;
+  animation-name: loading-intro;
+}
+@keyframes loading-intro {
+  0% {
+      opacity: 1;
+  }
+  100% {
+      opacity: 0;
+  }
+}
+.menu-bar > h1 {
+  position: relative;
+  z-index: 999;
+  animation-duration: 3s;
+  animation-fill-mode: both;
+  animation-name: loading-logo;
+}
+@keyframes loading-logo {
+  0% {
+      transform: scale(3) translate3d(130px, 80px, 0px);
+      opacity: 0;
+  }
+  100% {
+    transform: scale(1) translate3d(0px, 0px, 0px);
+      opacity: 1;
+  }
+}
