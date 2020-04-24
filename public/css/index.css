@@ -677,7 +677,7 @@ h1 {
 .new-info-popup {
   width: 500px;
   display: none;
-  top: 65px;
+  top: 35px;
   left: calc(50% - 250px);
 }
 .new-info-popup input {
