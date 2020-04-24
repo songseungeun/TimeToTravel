@@ -201,6 +201,28 @@
       "arrivalTime": "7:00",
       "arrivalAirport": "ㄴㅇㄹ",
       "id": 13
+    },
+    {
+      "travelId": "1",
+      "type": "departure",
+      "date": "4/24",
+      "airplaneName": "aa",
+      "departureTime": "7:00",
+      "departureAirport": "aa",
+      "arrivalTime": "7:00",
+      "arrivalAirport": "aa",
+      "id": 14
+    },
+    {
+      "travelId": "1",
+      "type": "arrival",
+      "date": "4/24",
+      "airplaneName": "aaa",
+      "departureTime": "7:00",
+      "departureAirport": "aaa",
+      "arrivalTime": "7:00",
+      "arrivalAirport": "aaa",
+      "id": 15
     }
   ],
   "lodgings": [
@@ -222,6 +244,13 @@
       "hotelsite": "ㄴㅇㄹ",
       "travelId": "1",
       "id": 3
+    },
+    {
+      "hotelName": "dsffs",
+      "hotelPlace": "bbb",
+      "hotelsite": "bb",
+      "travelId": "1",
+      "id": 4
     }
   ]
 }
