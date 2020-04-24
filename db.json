@@ -13,13 +13,6 @@
       "place": "ICELAND",
       "startDate": "2020/1/20",
       "endDate": "2020/1/29"
-    },
-    {
-      "id": 3,
-      "title": "희진, 승은과 함께하는 우정 여행",
-      "place": "샌프란시스코",
-      "startDate": "2020/4/25",
-      "endDate": "2020/5/5"
     }
   ],
   "schedules": [
@@ -85,33 +78,6 @@
       "place": "자그레브 공항",
       "detail": "프랑스로 이동",
       "id": 7
-    },
-    {
-      "travelId": "3",
-      "date": "4/25",
-      "timeFrom": "11:00",
-      "timeTo": "12:00",
-      "place": "인천 공항",
-      "detail": "패캠 탈출",
-      "id": 8
-    },
-    {
-      "travelId": "3",
-      "date": "4/25",
-      "timeFrom": "13:00",
-      "timeTo": "13:00",
-      "place": "공항",
-      "detail": "맛점",
-      "id": 9
-    },
-    {
-      "travelId": "3",
-      "date": "4/25",
-      "timeFrom": "9:00",
-      "timeTo": "9:10",
-      "place": "홈스윗홈",
-      "detail": "딥슬립",
-      "id": 10
     }
   ],
   "airlines": [
@@ -158,50 +124,6 @@
       "arrivalTime": "10:00",
       "arrivalAirport": "ICN",
       "id": 4
-    },
-    {
-      "travelId": "3",
-      "type": "departure",
-      "date": "4/25",
-      "airplaneName": "아시아나",
-      "departureTime": "7:00",
-      "departureAirport": "ICN",
-      "arrivalTime": "7:00",
-      "arrivalAirport": "SPF",
-      "id": 5
-    },
-    {
-      "travelId": "3",
-      "type": "arrival",
-      "date": "5/5",
-      "airplaneName": "대한항공",
-      "departureTime": "7:00",
-      "departureAirport": "SPF",
-      "arrivalTime": "7:00",
-      "arrivalAirport": "ICN",
-      "id": 6
-    },
-    {
-      "travelId": "1",
-      "type": "departure",
-      "date": "4/24",
-      "airplaneName": "gf",
-      "departureTime": "7:00",
-      "departureAirport": "g",
-      "arrivalTime": "7:00",
-      "arrivalAirport": "efr",
-      "id": 7
-    },
-    {
-      "travelId": "1",
-      "type": "arrival",
-      "date": "4/24",
-      "airplaneName": "fwe",
-      "departureTime": "7:00",
-      "departureAirport": "wed",
-      "arrivalTime": "7:00",
-      "arrivalAirport": "few",
-      "id": 8
     }
   ],
   "lodgings": [
@@ -225,13 +147,6 @@
       "hotelsite": "www.airbnb.com",
       "travelId": "1",
       "id": 3
-    },
-    {
-      "hotelName": "dsf",
-      "hotelPlace": "sdf",
-      "hotelsite": "sdf",
-      "travelId": "1",
-      "id": 4
     }
   ]
 }
