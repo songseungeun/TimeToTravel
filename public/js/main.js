@@ -51,6 +51,7 @@ const $timelineAlertPopup = document.querySelector('.timeline-popup');
 const $timeAlertPopupBg = document.querySelector('.timeline-popup-bg');
 const $travelNoneText = document.querySelector('.travel-none-text');
 const $timelineTitle = document.querySelector('.timeline-travel-title');
+const $infoTitle = document.querySelector('.info-travel-title');
 const $popupBg = document.querySelector('.popup-bg');
 const $popupRemoveBtn = document.querySelector('.popup-remove-btn');
 const $monthSelect = document.querySelector('#month-select');
@@ -168,6 +169,7 @@ const changeNav = target => {
     const [homeMenu, ...removeMenus] = [...$menuList.children];
     removeMenus.forEach(menuIcon => (menuIcon.style.display = 'none'));
     $timelineTitle.classList = 'timeline-travel-title';
+    $infoTitle.classList = 'info-travel-title';
   }
   if (navState === 'airplane') {
     getAirlineData();
@@ -423,6 +425,13 @@ const removeSchedule = async removeSId => {
   $timelineAlertPopup.style.display = 'none';
 };
 
+const getTitle = (title, travelBg) => {
+  $timelineTitle.textContent = title;
+  $timelineTitle.classList.add(travelBg);
+  $infoTitle.textContent = title;
+  $infoTitle.classList.add(travelBg);
+};
+
 const goToTimeline = async target => {
   const nodeNames = ['LI', 'EM', 'SPAN', 'DIV', 'H2'];
   const targetNode = nodeNames.filter(node => node === target.nodeName)[0];
@@ -446,14 +455,14 @@ const goToTimeline = async target => {
 
   timeline.classList.add('main-view');
   home.classList.remove('main-view');
-  $timelineTitle.textContent = title;
-  $timelineTitle.classList.add(travelBg);
+
 
   [...$menuList.children].forEach(icon => {
     icon.style.display = 'block';
     icon.classList.toggle('active', icon.id === 'calendar');
   });
 
+  getTitle(title, travelBg);
   renderDateBox(startDate, endDate);
   getSchedules(travelId);
   renderMonthYear(startDate.split('/')[1], startDate.split('/')[0]);
