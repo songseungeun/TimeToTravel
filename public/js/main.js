@@ -200,7 +200,7 @@ const sortTravels = travels => {
   newTravels.sort((trav1, trav2) => trav2.startDate < trav1.startDate ? 1 : (trav1.startDate < trav2.startDate ? -1 : 0))
   pastTravels.sort((trav1, trav2) => trav2.startDate > trav1.startDate ? 1 : (trav1.startDate > trav2.startDate ? -1 : 0));
 
-  travels = [...newTravels, ...pastTravels];
+  return travels = [...newTravels, ...pastTravels];
 };
 
 const renderTravelList = () => {
@@ -209,7 +209,7 @@ const renderTravelList = () => {
 
   $travelNoneText.style.display = travels.length === 0 ? 'block' : 'none';
 
-  sortTravels(travels);
+  travels = sortTravels(travels);
 
   travels.forEach(({ id, title, place, startDate, endDate }) => {
     bg++;
@@ -261,8 +261,8 @@ const sortTimeline = schedules => {
     const height = hourHeight * hhDiff + (hourHeight / 6) * (mmDiff / 10);
 
     block.style.top = `${top}px`;
-    block.style.height = height < 38 ? '48px' : `${height}px`;
-    [...block.children].forEach(child => (child.style.display = height < 38 ? 'inline' : 'block'));
+    block.style.height = height < hourHeight ? 'hourHeight' : `${height}px`;
+    [...block.children].forEach(child => (child.style.display = height <= hourHeight ? 'inline' : 'block'));
 
     i++;
   });
