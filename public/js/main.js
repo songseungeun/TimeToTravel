@@ -750,7 +750,7 @@ const renderLodgingInfo = () => {
             <em>숙소${i}</em>
             <span class="hotel-name">${hotelName}</span>
             <span class="hotel-place">${hotelPlace}</span>
-            <span class="hotel-site">${hotelsite}</span>
+            <span class="hotel-site"><a class="hotel-link" href="${hotelsite}">${hotelsite}</a></span>
           </li>`;
     i++;
   });

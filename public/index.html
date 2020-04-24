@@ -290,6 +290,23 @@
             <div class="info-travel-title">Travel title</div>
             <h3>예약 항공권</h3>
             <ol class="airline-schedule departure-section">
+        <!-- <li id=${travelId}-${id} class="airline-schedule-detail clearfix">
+              <div class="airline-info1 airline-departure">
+                <em>${type === 'departure' ? '출발' : '도착'}</em>
+              </div>
+              <div class="airline-info2 departure-info-date">
+                <span class="date">${date}</span>
+                <span class="airlines">${airplaneName}</span>
+              </div>
+              <div class="airline-departure departure-airline-time">
+                <span class="time">${departureTime}</span>
+                <span class="airport">${departureAirport}</span>
+              </div>
+              <div class="airline-arrival departure-arrival-time">
+                <span class="time">${arrivalTime}</span>
+                <span class="airport">${arrivalAirport}</span>
+              </div>
+            </li> -->
               <!-- <li id="air1" class="airline-schedule-detail">
                 <div class="airline-departure">
                   <em>출발</em>
@@ -484,7 +501,7 @@
               </div>
             </div>
             <div class="add-info-btn-hidden"></div>
-            <button class="airlineAddBtn add-schedule-btn">등록</button>
+            <button class="airlineAddBtn">등록</button>
             <div class="airlineRemoveBtn popup-remove-btn">X</div>
           </div>
           <div class="hotelBg popup-bg"></div>
@@ -495,7 +512,7 @@
             <input type="text" class="input-place" placeholder="장소" />
             <input type="text" class="input-site" placeholder="예약사이트" />
             <div class="add-info2-btn-hidden"></div>
-            <button class="hotelAddBtn add-schedule-btn">등록</button>
+            <button class="hotelAddBtn">등록</button>
             <div class="hotelRemoveBtn popup-remove-btn">X</div>
           </div>
         </main>

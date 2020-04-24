@@ -2,68 +2,117 @@
   "travels": [
     {
       "id": 1,
-      "title": "sdf",
-      "place": "sdf",
+      "title": "유럽 가족여행",
+      "place": "프랑스, 이탈리아, 크로아티아",
       "startDate": "2020/3/1",
-      "endDate": "2020/3/15"
+      "endDate": "2020/3/24"
     },
     {
       "id": 2,
-      "title": "sdf",
-      "place": "sdf",
-      "startDate": "2023/3/4",
-      "endDate": "2023/3/8"
-    },
-    {
-      "id": 3,
-      "title": "sdf",
-      "place": "sfdasdf",
-      "startDate": "2020/2/1",
-      "endDate": "2020/2/24"
+      "title": "얼음국 여행",
+      "place": "ICELAND",
+      "startDate": "2020/1/20",
+      "endDate": "2020/1/29"
     }
   ],
   "schedules": [
     {
       "travelId": "2",
-      "date": "3/4",
+      "date": "1/20",
+      "timeFrom": "8:00",
+      "timeTo": "10:00",
+      "place": "레이캬비크",
+      "detail": "동네 한바퀴",
+      "id": 1
+    },
+    {
+      "travelId": "2",
+      "date": "1/20",
       "timeFrom": "12:00",
       "timeTo": "13:00",
-      "place": "fsd",
-      "detail": "fsd",
+      "place": "레스토랑",
+      "detail": "점심 먹기",
       "id": 2
+    },
+    {
+      "travelId": "2",
+      "date": "1/21",
+      "timeFrom": "14:00",
+      "timeTo": "16:00",
+      "place": "블루라군",
+      "detail": "목욕하기",
+      "id": 3
+    },
+    {
+      "travelId": "2",
+      "date": "1/21",
+      "timeFrom": "9:00",
+      "timeTo": "10:00",
+      "place": "호텔",
+      "detail": "조식 먹기",
+      "id": 4
     }
   ],
   "airlines": [
     {
       "travelId": "2",
       "type": "departure",
-      "date": "4/24",
-      "airplaneName": "a",
+      "date": "1/20",
+      "airplaneName": "대한항공",
       "departureTime": "7:00",
-      "departureAirport": "b",
-      "arrivalTime": "7:00",
-      "arrivalAirport": "c",
+      "departureAirport": "ICN",
+      "arrivalTime": "9:00",
+      "arrivalAirport": "WWW",
       "id": 1
     },
     {
       "travelId": "2",
       "type": "arrival",
-      "date": "4/24",
-      "airplaneName": "d",
+      "date": "1/29",
+      "airplaneName": "대한항공",
       "departureTime": "7:00",
-      "departureAirport": "e",
+      "departureAirport": "WWW",
       "arrivalTime": "7:00",
-      "arrivalAirport": "f",
+      "arrivalAirport": "ICN",
       "id": 2
+    },
+    {
+      "travelId": "2",
+      "type": "departure",
+      "date": "4/24",
+      "airplaneName": "fs",
+      "departureTime": "7:00",
+      "departureAirport": "fds",
+      "arrivalTime": "7:00",
+      "arrivalAirport": "fds",
+      "id": 3
+    },
+    {
+      "travelId": "2",
+      "type": "arrival",
+      "date": "4/24",
+      "airplaneName": "dfs",
+      "departureTime": "7:00",
+      "departureAirport": "fds",
+      "arrivalTime": "7:00",
+      "arrivalAirport": "fds",
+      "id": 4
     }
   ],
   "lodgings": [
     {
-      "hotelName": "a",
-      "hotelPlace": "b",
-      "hotelsite": "c",
+      "hotelName": "IBIS",
+      "hotelPlace": "레이캬비크",
+      "hotelsite": "www.booking.com",
       "travelId": "2",
       "id": 1
+    },
+    {
+      "hotelName": "gg",
+      "hotelPlace": "bb",
+      "hotelsite": "ff",
+      "travelId": "2",
+      "id": 2
     }
   ]
 }

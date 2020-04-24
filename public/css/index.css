@@ -597,6 +597,10 @@ h1 {
   font-weight: 400;
   /* margin-bottom: 5px; */
 }
+.airline-schedule .date {
+  font-size: 25px;
+  margin-bottom: 4px;
+}
 .airlines,
 .airport {
   display: block;
@@ -902,11 +906,11 @@ button.add-schedule-btn:hover {
 }
 .new-info-btn {
   z-index: 97;
-  background-color: rgb(96, 118, 176);
+  background-color: rgb(188, 93, 123);
 }
 
 .new-info-btn:hover {
-  background-color: #3f8594;
+  background-color: rgb(209, 94, 131);
   transition: transform 0.3s;
   transform: scale(1.05);
 }
