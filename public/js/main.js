@@ -108,7 +108,7 @@ const $inputArrDepAirport = document.querySelector('.select-start-hour > .arr-ai
 const $ArrDepHourSelect = document.querySelector('#dep-arrival-hour-select');
 const $ArrDepMinSelect = document.querySelector('#dep-arrival-min-select');
 const $inputArrAirport = document.querySelector('.dep-arr-airline');
-
+const $scheduleHiddenBtn = document.querySelector('.add-schedule-btn-hidden');
 const $newInfoBtn = document.querySelector('.new-info-btn');
 const $allMoreBtn = document.querySelector('.detail-btn-wrapper');
 
@@ -127,6 +127,7 @@ const resetSchedulePopup = () => {
   $inputSchedulePlace.value = '';
   $inputScheduleDetail.value = '';
   $timeWarningText.style.display = 'none';
+  $scheduleHiddenBtn.style.display = 'block';
 };
 
 const resetTravelPopup = () => {
@@ -729,7 +730,6 @@ const closeAirlinePopup = () => {
 
 //post
 const addDepAirlineInfo = async () => {
-  console.log(travelId, '뱅기 추가')
   const date = `${$depMonthSelect.value}/${$depDaySelect.value}`;
   const airplaneName = $inputAirline.value.trim();
   const departureTime = `${$depHourSelect.value}:${$depMinSelect.value}`;
@@ -887,4 +887,4 @@ $airlineAddBtn.onclick = () => {
 
 
 // export
-export { $timeWarningText, $dateWarningText, $startYear, $startMonth, $startDate, $endYear, $endMonth, $endDate, $startHour, $startMin, $endHour, $endMin, changeNav, resetSchedulePopup, resetTravelPopup, $mainList, $menuList, $travelList, $timelineTitle };
+export { $scheduleHiddenBtn, $timeWarningText, $dateWarningText, $startYear, $startMonth, $startDate, $endYear, $endMonth, $endDate, $startHour, $startMin, $endHour, $endMin, changeNav, resetSchedulePopup, resetTravelPopup, $mainList, $menuList, $travelList, $timelineTitle };
