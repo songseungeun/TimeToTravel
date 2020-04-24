@@ -1,3 +1,28 @@
+Skip to content
+Search or jump to…
+
+Pull requests
+Issues
+Marketplace
+Explore
+ 
+@heejinlee07 
+Learn Git and GitHub without any code!
+Using the Hello World guide, you’ll start a branch, write comments, and open a pull request.
+
+
+heejinlee07
+/
+TimeToTravel
+1
+02
+ Code Issues 0 Pull requests 0 Actions Projects 0 Wiki Security 0 Insights Settings
+TimeToTravel/public/js/main.js /
+@kimfriendship kimfriendship 🐛 fix rendering hotel info
+e18485c 11 minutes ago
+@kimfriendship@heejinlee07@songseungeun
+835 lines (685 sloc)  29.4 KB
+  
 // state
 let schedules = [];
 let travels = [];
@@ -833,3 +858,4 @@ $airlineAddBtn.onclick = () => {
 
 // export
 export { $timeWarningText, $dateWarningText, $startYear, $startMonth, $startDate, $endYear, $endMonth, $endDate, $startHour, $startMin, $endHour, $endMin, changeNav, resetSchedulePopup, resetTravelPopup, $mainList, $menuList, $travelList, $timelineTitle };
+

@@ -217,6 +217,28 @@
       "arrivalTime": "7:00",
       "arrivalAirport": "ㄴㅇㄹ",
       "id": 13
+    },
+    {
+      "travelId": "3",
+      "type": "departure",
+      "date": "4/24",
+      "airplaneName": "ㅇㅇ",
+      "departureTime": "7:00",
+      "departureAirport": "ㅇㅇ",
+      "arrivalTime": "7:00",
+      "arrivalAirport": "ㅇㅇ",
+      "id": 14
+    },
+    {
+      "travelId": "3",
+      "type": "arrival",
+      "date": "4/24",
+      "airplaneName": "ㅇㅇ",
+      "departureTime": "7:00",
+      "departureAirport": "ㅇㅇ",
+      "arrivalTime": "7:00",
+      "arrivalAirport": "ㅇㅇ",
+      "id": 15
     }
   ],
   "lodgings": [
