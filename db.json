@@ -69,17 +69,6 @@
   ],
   "airlines": [
     {
-      "travelId": "1",
-      "type": "departure",
-      "date": "4/24",
-      "airplaneName": "ㄴㅇㄹ",
-      "departureTime": "7:00",
-      "departureAirport": "ㄴㅇㄹ",
-      "arrivalTime": "7:00",
-      "arrivalAirport": "ㄴㅇㄹ",
-      "id": 3
-    },
-    {
       "travelId": "4",
       "type": "departure",
       "date": "4/24",

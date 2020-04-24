@@ -185,7 +185,7 @@ const changeNav = target => {
 };
 
 // travel list
-const generateId = () => travels.length ? Math.max(...travels.map(({ id }) => id)) + 1 : 1;
+const generateId = () => (travels.length ? Math.max(...travels.map(({ id }) => id)) + 1 : 1);
 
 const generateDday = startDate => {
   let dDay = 0;
@@ -466,11 +466,12 @@ const goToTimeline = async target => {
     travelBg = target.parentNode.classList[0];
   }
 
-  const { data: { startDate, endDate, title }} = await axios.get(`/travels/${travelId}`);
+  const {
+    data: { startDate, endDate, title },
+  } = await axios.get(`/travels/${travelId}`);
 
   timeline.classList.add('main-view');
   home.classList.remove('main-view');
-
 
   [...$menuList.children].forEach(icon => {
     icon.style.display = 'block';
@@ -490,7 +491,7 @@ function updateTransition() {
   let i = 0;
   $travelItems.forEach(item => {
     i++;
-    item.style.animationDelay = `${i * 200}ms`
+    item.style.animationDelay = `${i * 200}ms`;
   });
 }
 
@@ -604,20 +605,23 @@ const $depArrivalMinSelect = document.getElementById('dep-arrival-min-select');
 
 const changeEndHour = () => {
   [...$endHourSelect.options].forEach(opt => {
-    if (opt.value === $startHourSelect.value) opt.setAttribute('selected','selected');
+    if (opt.value === $startHourSelect.value) opt.setAttribute('selected', 'selected');
   });
 };
 
 const changeEndMin = () => {
   [...$endMinSelect.options].forEach(opt => {
-    if (opt.value === $startMinSelect.value) opt.setAttribute('selected','selected');
+    if (opt.value === $startMinSelect.value) opt.setAttribute('selected', 'selected');
   });
 };
 
-
 const printStartTime = () => {
-  let hour = Array.from({ length: 17 }, function (v, i) { return i + 7; });
-  let minute = Array.from({ length: 6 }, function (v, i) { return i * 10; });
+  let hour = Array.from({ length: 17 }, function (v, i) {
+    return i + 7;
+  });
+  let minute = Array.from({ length: 6 }, function (v, i) {
+    return i * 10;
+  });
 
   $startHourSelects.forEach(hourSelect => {
     hour.forEach((element, key) => {
@@ -634,8 +638,12 @@ const printStartTime = () => {
 };
 
 const printEndTime = target => {
-  let hour = Array.from({ length: 17 }, function (v, i) { return i + 7; });
-  let minute = Array.from({ length: 6 }, function (v, i) { return i * 10; });
+  let hour = Array.from({ length: 17 }, function (v, i) {
+    return i + 7;
+  });
+  let minute = Array.from({ length: 6 }, function (v, i) {
+    return i * 10;
+  });
 
   $endHourSelects.forEach(hourSelect => {
     hour.forEach((element, key) => {
@@ -885,6 +893,8 @@ $airlineAddBtn.onclick = () => {
   addArrAirlineInfo();
 };
 
+$airlinePopupBg.addEventListener('click', resetAirlinePopup);
+$hotelPopupBg.addEventListener('click', resetLodgingPopup);
 
 // export
 export { $scheduleHiddenBtn, $timeWarningText, $dateWarningText, $startYear, $startMonth, $startDate, $endYear, $endMonth, $endDate, $startHour, $startMin, $endHour, $endMin, changeNav, resetSchedulePopup, resetTravelPopup, $mainList, $menuList, $travelList, $timelineTitle };
