@@ -2,14 +2,44 @@
   "travels": [
     {
       "id": 1,
-<<<<<<< HEAD
-      "title": "sdffds",
-      "place": "dsfdsf",
-      "startDate": "2020/6/5",
-      "endDate": "2020/8/5"
+      "title": "가나다라마바사",
+      "place": "아자차카타파하",
+      "startDate": "2020/4/24",
+      "endDate": "2020/5/1"
+    },
+    {
+      "id": 2,
+      "title": "집에 가고파",
+      "place": "가고파 여행",
+      "startDate": "2020/7/1",
+      "endDate": "2021/2/1"
+    },
+    {
+      "id": 3,
+      "title": "떠나요~",
+      "place": "둘이서~",
+      "startDate": "2020/8/1",
+      "endDate": "2020/11/1"
+    },
+    {
+      "id": 4,
+      "title": "d",
+      "place": "d",
+      "startDate": "2020/2/1",
+      "endDate": "2020/2/24"
     }
   ],
-  "schedules": [],
+  "schedules": [
+    {
+      "travelId": "3",
+      "date": "8/22",
+      "timeFrom": "9:10",
+      "timeTo": "9:10",
+      "place": ",,",
+      "detail": "ㅇㅇㅇ",
+      "id": 1
+    }
+  ],
   "airlines": [
     {
       "id": 1,
@@ -32,63 +62,37 @@
       "arrivalAirport": "ICN"
     },
     {
-      "id": 3,
-      "type": "departure",
-      "date": "5/16",
-      "airplaneName": "델타항공",
-      "departureTime": "18:10",
-      "departureAirport": "ICN",
-      "arrivalTime": "18:10",
-      "arrivalAirport": "ICN"
-    },
-    {
       "travelId": "",
       "type": "departure",
       "date": "4/24",
-      "airplaneName": "ㄹ",
-      "departureTime": "10:20",
-      "departureAirport": "ㄹ",
-      "arrivalTime": "10:30",
-      "arrivalAirport": "ㄹ",
+      "airplaneName": "인천",
+      "departureTime": "7:00",
+      "departureAirport": "인천",
+      "arrivalTime": "7:00",
+      "arrivalAirport": "인천",
+      "id": 3
+    },
+    {
+      "travelId": "",
+      "type": "arrival",
+      "date": "4/24",
+      "airplaneName": "서울",
+      "departureTime": "7:00",
+      "departureAirport": "인천",
+      "arrivalTime": "7:00",
+      "arrivalAirport": "서울",
       "id": 4
-=======
-      "title": "가나다라마바사",
-      "place": "아자차카타파하",
-      "startDate": "2020/4/24",
-      "endDate": "2020/5/1"
-    },
-    {
-      "id": 2,
-      "title": "집에 가고파",
-      "place": "가고파 여행",
-      "startDate": "2020/7/1",
-      "endDate": "2021/2/1"
-    },
-    {
-      "id": 3,
-      "title": "떠나요~",
-      "place": "둘이서~",
-      "startDate": "2020/8/1",
-      "endDate": "2020/11/1"
->>>>>>> 4775bc6b0b4395d40bc8941c3ac0e9da60cc9146
     }
   ],
-  "schedules": [],
-  "airlines": [],
   "lodgings": [
     {
       "id": 1,
-<<<<<<< HEAD
       "hotelName": "63빌딩",
       "hotelPlace": "서울",
       "hotelsite": "agoda"
     },
     {
       "id": 2,
-      "hotelName": "63빌딩",
-      "hotelPlace": "서울",
-      "hotelsite": "agoda"
-=======
       "hotelName": "",
       "hotelPlace": "",
       "hotelsite": "ㅇㄹㄴㄴㄹㅇ"
@@ -98,7 +102,18 @@
       "hotelName": "",
       "hotelPlace": "",
       "hotelsite": "sdfsfd"
->>>>>>> 4775bc6b0b4395d40bc8941c3ac0e9da60cc9146
+    },
+    {
+      "id": 3,
+      "hotelName": "",
+      "hotelPlace": "",
+      "hotelsite": "ff"
+    },
+    {
+      "id": 4,
+      "hotelName": "",
+      "hotelPlace": "",
+      "hotelsite": "f"
     }
   ]
 }
