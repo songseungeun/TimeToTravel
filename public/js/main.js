@@ -466,7 +466,7 @@ function updateTransition() {
   let i = 0;
   $travelItems.forEach(item => {
     i++;
-    item.style.animationDelay = `${i * 200}ms`
+    item.style.animationDelay = `${i * 200}ms`;
   });
 }
 

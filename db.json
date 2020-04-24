@@ -49,8 +49,6 @@
       "place": "ㄹㄴㅇ",
       "detail": "ㄴㅇㄹ",
       "id": 5
-<<<<<<< HEAD
-=======
     },
     {
       "travelId": "3",
@@ -114,7 +112,6 @@
       "place": "fsd",
       "detail": "dsffds",
       "id": 12
->>>>>>> 3d12d86533e4fc1e798127ce9a0b40868678c451
     }
   ],
   "airlines": [
@@ -183,8 +180,6 @@
       "arrivalTime": "7:00",
       "arrivalAirport": "ㅋㅋㅋ",
       "id": 9
-<<<<<<< HEAD
-=======
     },
     {
       "travelId": "2",
@@ -317,7 +312,6 @@
       "arrivalTime": "7:00",
       "arrivalAirport": "sdf",
       "id": 21
->>>>>>> 3d12d86533e4fc1e798127ce9a0b40868678c451
     }
   ],
   "lodgings": [
@@ -326,8 +320,6 @@
       "hotelName": "63빌딩",
       "hotelPlace": "서울",
       "hotelsite": "agoda"
-<<<<<<< HEAD
-=======
     },
     {
       "id": 2,
@@ -404,7 +396,6 @@
       "hotelsite": "sfd",
       "travelId": "2",
       "id": 12
->>>>>>> 3d12d86533e4fc1e798127ce9a0b40868678c451
     }
   ]
 }
