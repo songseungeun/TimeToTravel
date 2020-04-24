@@ -659,20 +659,6 @@ const printEndTime = target => {
   });
 };
 
-// const changeAirlineEndHour = () => {
-//   // console.log([...$depAirlineHourSelect.options]);
-//   [...$depAirlineHourSelect.options].forEach(opt => {
-//     console.log(opt);
-//     if (opt.value === $startHourSelect.value) opt.setAttribute('selected','selected');
-//   });
-// };
-
-// const changeAirlineEndMin = () => {
-//   [...$depAirlineMinSelect.options].forEach(opt => {
-//     if (opt.value === $startMinSelect.value) opt.setAttribute('selected','selected');
-//   });
-// };
-
 $newScheduleBtn.addEventListener('click', printStartTime);
 $newScheduleBtn.addEventListener('click', printEndTime);
 

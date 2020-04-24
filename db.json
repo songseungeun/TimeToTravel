@@ -56,15 +56,6 @@
       "place": "ㄹㄴㅇ",
       "detail": "ㄴㅇㄹ",
       "id": 5
-    },
-    {
-      "travelId": "2",
-      "date": "7/1",
-      "timeFrom": "7:00",
-      "timeTo": "7:00",
-      "place": "fsd",
-      "detail": "dsffds",
-      "id": 12
     }
   ],
   "airlines": [
