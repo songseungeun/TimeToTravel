@@ -70,14 +70,12 @@ const $airlineSchedule = document.querySelector('.airline-schedule');
 const $airlineScheduleDetail = document.querySelector('.airline-schedule-detail');
 const $airlineScheduleList = document.querySelector('.airline-schedule');
 const $lodgingScheduleList = document.querySelector('.lodging-schedule');
-
 const $airlinePopupBg = document.querySelector('.airlineBg');
 const $hotelPopup = document.querySelector('.new-info-popup2');
 const $airlinePopup = document.querySelector('.new-info-popup');
 const $airlineAddBtn = document.querySelector('.airlineAddBtn');
 const $airlinePopupRemove = document.querySelector('.airlineRemoveBtn');
 const $airlineMonthSelect = document.querySelector('#airline-month-select');
-
 const $hotelBtn = document.querySelector('.hotel-btn');
 const $airlineBtn = document.querySelector('.airline-btn');
 const $hotelPopupRemove = document.querySelector('.hotelRemoveBtn');
@@ -85,7 +83,6 @@ const $hotelAddBtn = document.querySelector('.hotelAddBtn');
 const $hotelPopupBg = document.querySelector('.hotelBg');
 const $departureSec = document.querySelector('.departure-section');
 const $arrivalSec = document.querySelector('.arrival-section');
-
 const $depMonthSelect = document.querySelector('#airline-month-select');
 const $depDaySelect = document.querySelector('#airline-day-select');
 const $inputAirline = document.querySelector('.select-start-date > .input-airlines');
@@ -98,7 +95,6 @@ const $inputDepArrAirport = document.querySelector('.arr-airlines');
 const $inputHotelName = document.querySelector('.new-info-popup2 > .input-title');
 const $inputHotelPlace = document.querySelector('.new-info-popup2 > .input-place');
 const $inputHotelSite = document.querySelector('.new-info-popup2 > .input-site');
-
 const $arrMonthSelect = document.querySelector('#arrival-month-select');
 const $arrDaySelect = document.querySelector('#arrival-day-select');
 const $inputArrAirline = document.querySelector('.arr-input');
@@ -111,6 +107,9 @@ const $inputArrAirport = document.querySelector('.dep-arr-airline');
 const $scheduleHiddenBtn = document.querySelector('.add-schedule-btn-hidden');
 const $newInfoBtn = document.querySelector('.new-info-btn');
 const $allMoreBtn = document.querySelector('.detail-btn-wrapper');
+const $headerInfo = document.querySelector('.main-info header');
+const $hotelInfo = document.querySelector('.hotel-info');
+
 
 // functions
 // popups
@@ -861,9 +860,6 @@ const airClosePopup = () => {
 $hotelAddBtn.onclick = addHotelInfo;
 $airlinePopupRemove.addEventListener('click', airClosePopup);
 $airlinePopupBg.addEventListener('click', airClosePopup);
-
-const $headerInfo = document.querySelector('.main-info header');
-const $hotelInfo = document.querySelector('.hotel-info');
 
 $airlineBtn.onclick = () => {
   $menuBar.style.filter = 'blur(3px)';
