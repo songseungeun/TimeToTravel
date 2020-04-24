@@ -26,15 +26,6 @@
     {
       "travelId": "2",
       "date": "3/4",
-      "timeFrom": "7:00",
-      "timeTo": "7:40",
-      "place": "sdf",
-      "detail": "sdf",
-      "id": 1
-    },
-    {
-      "travelId": "2",
-      "date": "3/4",
       "timeFrom": "12:00",
       "timeTo": "13:00",
       "place": "fsd",
@@ -42,6 +33,37 @@
       "id": 2
     }
   ],
-  "airlines": [],
-  "lodgings": []
+  "airlines": [
+    {
+      "travelId": "2",
+      "type": "departure",
+      "date": "4/24",
+      "airplaneName": "a",
+      "departureTime": "7:00",
+      "departureAirport": "b",
+      "arrivalTime": "7:00",
+      "arrivalAirport": "c",
+      "id": 1
+    },
+    {
+      "travelId": "2",
+      "type": "arrival",
+      "date": "4/24",
+      "airplaneName": "d",
+      "departureTime": "7:00",
+      "departureAirport": "e",
+      "arrivalTime": "7:00",
+      "arrivalAirport": "f",
+      "id": 2
+    }
+  ],
+  "lodgings": [
+    {
+      "hotelName": "a",
+      "hotelPlace": "b",
+      "hotelsite": "c",
+      "travelId": "2",
+      "id": 1
+    }
+  ]
 }
