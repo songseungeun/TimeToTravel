@@ -187,7 +187,7 @@ const generateDday = startDate => {
 
   today = today.getTime();
   dDay = new Date(startDate).getTime();
-  dDay = Math.ceil((dDay - today) / 86400000) + 1;
+  dDay = Math.ceil((dDay - today) / 86400000);
 
   return dDay > 0 ? `D-${dDay}` : dDay === 0 ? 'D-Day' : '';
 };
