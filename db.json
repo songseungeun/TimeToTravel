@@ -83,6 +83,51 @@
       "place": "ㄹㄴㅇ",
       "detail": "ㄴㅇㄹ",
       "id": 6
+    },
+    {
+      "travelId": "3",
+      "date": "8/1",
+      "timeFrom": "12:00",
+      "timeTo": "12:00",
+      "place": "ㄴㅇㄹ",
+      "detail": "ㄴㅇㄹ",
+      "id": 7
+    },
+    {
+      "travelId": "3",
+      "date": "8/1",
+      "timeFrom": "9:00",
+      "timeTo": "9:00",
+      "place": "ㄹㄴㅇ",
+      "detail": "ㄴㅇㄹ",
+      "id": 8
+    },
+    {
+      "travelId": "3",
+      "date": "8/1",
+      "timeFrom": "20:00",
+      "timeTo": "20:00",
+      "place": "ㄴㅇㄹ",
+      "detail": "ㄴㅇㄹ",
+      "id": 9
+    },
+    {
+      "travelId": "3",
+      "date": "8/1",
+      "timeFrom": "11:00",
+      "timeTo": "11:00",
+      "place": "ㄴㅇㄹ",
+      "detail": "ㄴㅇㄹ",
+      "id": 10
+    },
+    {
+      "travelId": "3",
+      "date": "8/1",
+      "timeFrom": "15:00",
+      "timeTo": "15:00",
+      "place": "ㅇㄹㄴ",
+      "detail": "ㄴㅇㄹ",
+      "id": 11
     }
   ],
   "airlines": [
@@ -274,6 +319,20 @@
       "hotelsite": "ㅋㅋ",
       "travelId": "3",
       "id": 5
+    },
+    {
+      "hotelName": "ㄴㅇㄹ",
+      "hotelPlace": "ㄴㅇㄹ",
+      "hotelsite": "ㄴㅇㄹ",
+      "travelId": "1",
+      "id": 6
+    },
+    {
+      "hotelName": "ㅋ",
+      "hotelPlace": "ㅋ",
+      "hotelsite": "ㅋ",
+      "travelId": "1",
+      "id": 7
     }
   ]
 }

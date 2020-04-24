@@ -382,7 +382,7 @@ const renderTimeline = schedules => {
   let html = '';
 
   schedules.forEach(({ travelId, timeFrom, place, detail, id }) => {
-    html += `<li class="schedule" id="${travelId}-${id}">
+    html += `<li class="schedule color-${id % 4}" id="${travelId}-${id}">
             <div class="time">${timeFrom}</div>
             <div class="place">${place}</div>
             <div class="detail">${detail}</div>
@@ -767,7 +767,7 @@ const renderLodgingInfo = () => {
   $lodgingScheduleList.innerHTML = html;
 };
 
-export const getLodgingData = async () => {
+const getLodgingData = async () => {
   const { data } = await axios.get(`/lodgings?travelId=${travelId}`);
   lodgings = data;
 
@@ -838,16 +838,13 @@ const airClosePopup = () => {
 };
 
 // $airlineBtn.addEventListener('click', airClosePopup);
+$hotelAddBtn.onclick = addHotelInfo;
 $airlinePopupRemove.addEventListener('click', airClosePopup);
 $airlinePopupBg.addEventListener('click', airClosePopup);
 
 $airlineBtn.onclick = () => {
   $airlinePopup.style.display = 'block';
   $airlinePopupBg.style.display = 'block';
-};
-
-$hotelAddBtn.onclick = () => {
-  addHotelInfo();
 };
 
 $airlineAddBtn.onclick = () => {
