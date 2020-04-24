@@ -290,19 +290,19 @@ h1 {
   min-height: 38px;
 }
 /* 2, 5, 8, 11 */
-.schedule-list li:nth-child(3n + 2) {
+.schedule-list .color-0 {
   background-color: thistle;
 }
 /* 3, 6, 9, 12 */
-.schedule-list li:nth-child(3n) {
+.schedule-list .color-1 {
   background-color: rgb(127, 116, 183);
 }
 /* 3, 6, 9, 12 */
-.schedule-list li:nth-child(4n) {
+.schedule-list .color-2 {
   background-color: rgb(73, 138, 134);
 }
 /* 1 */
-.schedule-list li:first-child {
+.schedule-list .color-3 {
   background-color: rgb(220, 139, 151);
 }
 
