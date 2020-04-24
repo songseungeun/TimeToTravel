@@ -62,6 +62,50 @@
       "departureAirport": "ICN",
       "arrivalTime": "18:10",
       "arrivalAirport": "ICN"
+    },
+    {
+      "travelId": "",
+      "type": "departure",
+      "date": "4/24",
+      "airplaneName": "aa",
+      "departureTime": "7:00",
+      "departureAirport": "aa",
+      "arrivalTime": "7:00",
+      "arrivalAirport": "aa",
+      "id": 3
+    },
+    {
+      "travelId": "",
+      "type": "arrival",
+      "date": "4/24",
+      "airplaneName": "aa",
+      "departureTime": "7:00",
+      "departureAirport": "aa",
+      "arrivalTime": "7:00",
+      "arrivalAirport": "aa",
+      "id": 4
+    },
+    {
+      "travelId": "",
+      "type": "departure",
+      "date": "4/24",
+      "airplaneName": "fsdfds",
+      "departureTime": "7:20",
+      "departureAirport": "dfssdf",
+      "arrivalTime": "7:00",
+      "arrivalAirport": "dsfdsf",
+      "id": 5
+    },
+    {
+      "travelId": "",
+      "type": "arrival",
+      "date": "4/24",
+      "airplaneName": "sfdsdf",
+      "departureTime": "7:00",
+      "departureAirport": "dsfdsf",
+      "arrivalTime": "7:00",
+      "arrivalAirport": "sdfsfdsdf",
+      "id": 6
     }
   ],
   "lodgings": [

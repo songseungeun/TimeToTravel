@@ -157,7 +157,7 @@ const renderTravelList = () => {
 
   travels.forEach(({ id, title, place, startDate, endDate }) => {
     bg++;
-    html += ` <li id=t-${id} class="bg-${bg % 8}">
+    html += ` <li id="t-${id}" class="bg-${bg % 8}">
           <h2>${title}</h2>
           <em>${generateDday(startDate)}</em>
           <div class="travel-info">
@@ -176,6 +176,7 @@ const getTravels = async () => {
   travels = data;
 
   renderTravelList();
+  updateTransition();
 };
 
 const removeTravel = async removeTId => {
@@ -412,6 +413,14 @@ const goToTimeline = async target => {
   getSchedules(travelId);
   renderMonthYear(startDate.split('/')[1], startDate.split('/')[0]);
 };
+
+// loading transition
+
+
+function updateTransition() {
+  const $travelItems = document.querySelectorAll('.travel-list li');
+  $travelItems.forEach(item => item.classList.toggle('act-item'));
+}
 
 // event handlers
 window.onload = getTravels;
