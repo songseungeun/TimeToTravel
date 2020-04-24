@@ -15,13 +15,6 @@
       "endDate": "2021/2/1"
     },
     {
-      "id": 3,
-      "title": "떠나요~",
-      "place": "둘이서~",
-      "startDate": "2020/8/1",
-      "endDate": "2020/11/1"
-    },
-    {
       "id": 4,
       "title": "d",
       "place": "d",
@@ -30,15 +23,6 @@
     }
   ],
   "schedules": [
-    {
-      "travelId": "3",
-      "date": "8/22",
-      "timeFrom": "9:10",
-      "timeTo": "9:10",
-      "place": ",,",
-      "detail": "ㅇㅇㅇ",
-      "id": 1
-    },
     {
       "travelId": "1",
       "date": "6/5",
@@ -56,15 +40,6 @@
       "place": "gdfdgf",
       "detail": "gdfdfg",
       "id": 3
-    },
-    {
-      "travelId": "3",
-      "date": "8/1",
-      "timeFrom": "7:00",
-      "timeTo": "7:20",
-      "place": "ff",
-      "detail": "fff",
-      "id": 4
     }
   ],
   "airlines": [
@@ -87,72 +62,6 @@
       "departureAirport": "ICN",
       "arrivalTime": "18:10",
       "arrivalAirport": "ICN"
-    },
-    {
-      "travelId": "",
-      "type": "departure",
-      "date": "4/24",
-      "airplaneName": "인천",
-      "departureTime": "7:00",
-      "departureAirport": "인천",
-      "arrivalTime": "7:00",
-      "arrivalAirport": "인천",
-      "id": 3
-    },
-    {
-      "travelId": "",
-      "type": "arrival",
-      "date": "4/24",
-      "airplaneName": "서울",
-      "departureTime": "7:00",
-      "departureAirport": "인천",
-      "arrivalTime": "7:00",
-      "arrivalAirport": "서울",
-      "id": 4
-    },
-    {
-      "travelId": "",
-      "type": "departure",
-      "date": "4/24",
-      "airplaneName": "fddfs",
-      "departureTime": "7:00",
-      "departureAirport": "dsfdfsdfs",
-      "arrivalTime": "7:00",
-      "arrivalAirport": "dsfdsf",
-      "id": 5
-    },
-    {
-      "travelId": "",
-      "type": "arrival",
-      "date": "4/24",
-      "airplaneName": "sdfdsf",
-      "departureTime": "7:00",
-      "departureAirport": "dsfdsf",
-      "arrivalTime": "7:00",
-      "arrivalAirport": "dsfdsf",
-      "id": 6
-    },
-    {
-      "travelId": "",
-      "type": "departure",
-      "date": "4/24",
-      "airplaneName": "fdsfds",
-      "departureTime": "7:00",
-      "departureAirport": "fdsfds",
-      "arrivalTime": "7:00",
-      "arrivalAirport": "fdsfsd",
-      "id": 7
-    },
-    {
-      "travelId": "",
-      "type": "arrival",
-      "date": "4/24",
-      "airplaneName": "sdfdsf",
-      "departureTime": "7:00",
-      "departureAirport": "fdsfsd",
-      "arrivalTime": "7:00",
-      "arrivalAirport": "dsfdsf",
-      "id": 8
     }
   ],
   "lodgings": [
