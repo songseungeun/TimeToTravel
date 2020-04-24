@@ -20,6 +20,13 @@
       "place": "sdfsdf",
       "startDate": "2020/7/1",
       "endDate": "2020/7/24"
+    },
+    {
+      "id": 6,
+      "title": "ㄹ호",
+      "place": "ㄹㅎ",
+      "startDate": "2020/1/1",
+      "endDate": "2020/1/24"
     }
   ],
   "schedules": [
@@ -49,6 +56,18 @@
       "place": "ㄹㄴㅇ",
       "detail": "ㄴㅇㄹ",
       "id": 5
+<<<<<<< HEAD
+=======
+    },
+    {
+      "travelId": "2",
+      "date": "7/1",
+      "timeFrom": "7:00",
+      "timeTo": "7:00",
+      "place": "fsd",
+      "detail": "dsffds",
+      "id": 12
+>>>>>>> db29585d7833da683218efe198f28625df772f7b
     }
   ],
   "airlines": [
@@ -58,7 +77,7 @@
       "date": "4/24",
       "airplaneName": "ㄴㅇㄹ",
       "departureTime": "7:00",
-      "departureAirport": "ㄹㄴㅇ",
+      "departureAirport": "ㄴㅇㄹ",
       "arrivalTime": "7:00",
       "arrivalAirport": "ㄴㅇㄹ",
       "id": 4
@@ -95,6 +114,7 @@
       "arrivalTime": "7:00",
       "arrivalAirport": "ㄴㅇㄹ",
       "id": 7
+<<<<<<< HEAD
     },
     {
       "travelId": "1",
@@ -271,18 +291,14 @@
       "arrivalTime": "7:00",
       "arrivalAirport": "ㅇ",
       "id": 25
+=======
+>>>>>>> db29585d7833da683218efe198f28625df772f7b
     }
   ],
   "lodgings": [
     {
-      "id": 1,
-      "hotelName": "63빌딩",
-      "hotelPlace": "서울",
-      "hotelsite": "agoda"
-    },
-    {
-      "id": 2,
       "hotelName": "ㄹㄴㅇ",
+<<<<<<< HEAD
       "hotelPlace": "ㄴㅇㄹ",
       "hotelsite": "ㄴㅇㄹ"
     },
@@ -348,6 +364,12 @@
       "hotelsite": "ㄹ",
       "travelId": "2",
       "id": 13
+=======
+      "hotelPlace": "ㅋㅋ",
+      "hotelsite": "ㅋㅋ",
+      "travelId": "4",
+      "id": 1
+>>>>>>> db29585d7833da683218efe198f28625df772f7b
     }
   ]
 }

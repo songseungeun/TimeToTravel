@@ -108,7 +108,7 @@ const $inputArrDepAirport = document.querySelector('.select-start-hour > .arr-ai
 const $ArrDepHourSelect = document.querySelector('#dep-arrival-hour-select');
 const $ArrDepMinSelect = document.querySelector('#dep-arrival-min-select');
 const $inputArrAirport = document.querySelector('.dep-arr-airline');
-
+const $scheduleHiddenBtn = document.querySelector('.add-schedule-btn-hidden');
 const $newInfoBtn = document.querySelector('.new-info-btn');
 const $allMoreBtn = document.querySelector('.detail-btn-wrapper');
 
@@ -127,6 +127,7 @@ const resetSchedulePopup = () => {
   $inputSchedulePlace.value = '';
   $inputScheduleDetail.value = '';
   $timeWarningText.style.display = 'none';
+  $scheduleHiddenBtn.style.display = 'block';
 };
 
 const resetTravelPopup = () => {
@@ -202,7 +203,14 @@ const generateDday = startDate => {
 };
 
 const sortTravels = travels => {
-  travels.sort((trav1, trav2) => (trav2.startDate > trav1.startDate ? 1 : trav1.startDate > trav2.startDate ? -1 : 0));
+  const today = new Date();
+  const newTravels = travels.filter(travel => new Date(travel.startDate) > today);
+  const pastTravels = travels.filter(travel => new Date(travel.startDate) < today);
+
+  newTravels.sort((trav1, trav2) => trav2.startDate < trav1.startDate ? 1 : (trav1.startDate < trav2.startDate ? -1 : 0))
+  pastTravels.sort((trav1, trav2) => trav2.startDate > trav1.startDate ? 1 : (trav1.startDate > trav2.startDate ? -1 : 0));
+
+  travels = [...newTravels, ...pastTravels];
 };
 
 const renderTravelList = () => {
@@ -734,7 +742,6 @@ const closeAirlinePopup = () => {
 
 //post
 const addDepAirlineInfo = async () => {
-  console.log(travelId, '뱅기 추가');
   const date = `${$depMonthSelect.value}/${$depDaySelect.value}`;
   const airplaneName = $inputAirline.value.trim();
   const departureTime = `${$depHourSelect.value}:${$depMinSelect.value}`;
@@ -894,4 +901,4 @@ $airlinePopupBg.addEventListener('click', resetAirlinePopup);
 $hotelPopupBg.addEventListener('click', resetLodgingPopup);
 
 // export
-export { $timeWarningText, $dateWarningText, $startYear, $startMonth, $startDate, $endYear, $endMonth, $endDate, $startHour, $startMin, $endHour, $endMin, changeNav, resetSchedulePopup, resetTravelPopup, $mainList, $menuList, $travelList, $timelineTitle };
+export { $scheduleHiddenBtn, $timeWarningText, $dateWarningText, $startYear, $startMonth, $startDate, $endYear, $endMonth, $endDate, $startHour, $startMin, $endHour, $endMin, changeNav, resetSchedulePopup, resetTravelPopup, $mainList, $menuList, $travelList, $timelineTitle };
