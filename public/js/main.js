@@ -104,7 +104,6 @@ const $arrDaySelect = document.querySelector('#arrival-day-select');
 const $inputArrAirline = document.querySelector('.arr-input');
 const $arrHourSelect = document.querySelector('#arrival-hour-select');
 const $arrMinSelect = document.querySelector('#arrival-min-select');
-console.log()
 const $inputArrDepAirport = document.querySelector('.select-start-hour > .arr-airlines');
 const $ArrDepHourSelect = document.querySelector('#dep-arrival-hour-select');
 const $ArrDepMinSelect = document.querySelector('#dep-arrival-min-select');
@@ -729,14 +728,16 @@ const addArrAirlineInfo = async () => {
 
 const renderLodgingInfo = () => {
   let html = '';
+  let i = 1;
 
-  lodgings.forEach(({ id, hotelName, hotelPlace, hotelsite }) => {
+  lodgings.forEach(({ hotelName, hotelPlace, hotelsite }) => {
     html += `<li class="hotel-reservation lodging-name">
-            <h3>${id}</h3>
+            <em>숙소${i}</em>
             <span class="hotel-name">${hotelName}</span>
             <span class="hotel-place">${hotelPlace}</span>
             <span class="hotel-site">${hotelsite}</span>
           </li>`;
+    i++;
   });
   $lodgingScheduleList.innerHTML = html;
 };
