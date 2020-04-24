@@ -26,6 +26,48 @@ body {
   padding: 20px;
   background-color: #f4f4f4;
 }
+.intro-wrapper {
+  /* display: none; */
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  background: #f3f3f3;
+  z-index: 100;
+  animation-duration: 7s;
+  animation-delay: 3s;
+  animation-fill-mode: both;
+  animation-name: loading-intro;
+}
+
+@keyframes loading-intro {
+  0% {
+      opacity: 1;
+  }
+  100% {
+      opacity: 0;
+  }
+}
+.menu-bar > h1 {
+  position: relative;
+  z-index: 999;
+  animation-duration: 4s;
+
+  animation-fill-mode: both;
+  animation-name: loading-logo;
+}
+
+@keyframes loading-logo {
+  0% {
+      transform: scale(3) translate3d(130px, 80px, 0px);
+      opacity: 0;
+  }
+  100% {
+    transform: scale(1) translate3d(0px, 0px, 0px);
+      opacity: 1;
+  }
+}
 .wrapper {
   width: 980px;
   /* min-height: 680px; */
@@ -468,8 +510,11 @@ h1 {
 
 
 .travel-list li h2 {
+  width: 290px;
+  line-height: 1.2;
   font-size: 32px;
   font-weight: 300;
+  margin-bottom: 5px;
 }
 .travel-list li em {
   font-size: 22px;
