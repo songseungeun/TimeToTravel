@@ -285,6 +285,7 @@ h1 {
   padding: 30px 10px;
   font-size: 15px;
   border-bottom: 1px solid #dcdcdc;
+  
 }
 
 .schedule-list {
@@ -305,7 +306,11 @@ h1 {
   /* margin-left: 55px; */
   line-height: 1.4;
   left: 80px;
+  cursor: pointer;
   min-height: 38px;
+}
+.schedule-list li:hover {
+  opacity: .9;
 }
 /* 2, 5, 8, 11 */
 .schedule-list .color-0 {
@@ -323,17 +328,26 @@ h1 {
 .schedule-list .color-3 {
   background-color: rgb(220, 139, 151);
 }
+.schedule-list li .time,
+.schedule-list li .place {
+  padding-right: 5px;
+}
+.schedule-list li .place {
+  font-weight: 600;
+}
 
 .remove-btn {
   position: absolute;
-  top: 3px;
-  right: 8px;
+  top: 0px;
+  right: 5px;
   background: none;
   border: none;
   cursor: pointer;
   padding: 5px;
-  font-size: 15px;
+  font-size: 17px;
   outline: transparent;
+  font-family: 'Open Sans';
+  font-weight: 200;
 }
 .remove-btn:hover {
   opacity: .7;
@@ -484,7 +498,9 @@ h1 {
   display: block;
   font-size: 15px;
 }
-.travel-remove-btn {
+.travel-remove-btn,
+.new-travel-popup > .new-travel-popup-remove-btn,
+.new-schedule-popup > .popup-remove-btn {
   position: absolute;
   top: 10px;
   right: 15px;
@@ -498,6 +514,11 @@ h1 {
   padding: 5px 7px;
   font-family: 'Open Sans';
 }
+.new-schedule-popup > .popup-remove-btn,
+.new-travel-popup > .new-travel-popup-remove-btn {
+  color: #000;
+}
+.new-travel-popup-remove-btn
 .travel-remove-btn:hover {
   opacity: 0.8;
 }
@@ -574,7 +595,7 @@ h1 {
   display: block;
   font-size: 20px;
   font-weight: 400;
-  margin-bottom: 5px;
+  /* margin-bottom: 5px; */
 }
 .airlines,
 .airport {
@@ -731,9 +752,34 @@ h1 {
 .new-schedule-popup {
   left: calc(50% - 210px);
   width: 400px;
+  background-color: rgb(83, 151, 181);
+}
+.add-schedule-btn-hidden {
+  background-color: rgba(83, 151, 181, .7);
+}
+button.add-schedule-btn {
+  background-color: rgb(13, 77, 104);
+  color: rgb(105, 166, 193);
+}
+button.add-schedule-btn:hover {
+  background-color: rgb(29, 96, 125);
+  color: rgb(127, 192, 220);
 }
 .new-schedule-popup select {
   width: 30%;
+}
+.new-schedule-popup select:hover {
+  background-color: rgb(105, 166, 193);
+}
+.new-schedule-popup input{
+  color: rgb(143, 206, 234);
+}
+.new-schedule-popup input:hover {
+  border-bottom: 1px solid rgb(143, 206, 234);
+}
+.new-schedule-popup input:focus {
+  border-bottom: 1px solid rgb(143, 206, 234);
+  color: rgb(143, 206, 234);
 }
 .new-schedule-popup h2 {
   font-size: 23px;
@@ -834,17 +880,31 @@ h1 {
   font-weight: 200;
   transition: transform 0.3s;
   transform: scale(1);
-  z-index: 91;
+  z-index: 97;
 }
 .new-travel-btn {
   background-color: rgb(96, 118, 176);
+  
 }
 .new-travel-btn:hover {
   background-color: rgb(105, 130, 196);
   transition: transform 0.3s;
   transform: scale(1.05);
 }
-.new-schedule-btn:hover,
+.new-schedule-btn {
+  z-index: 97;
+  background-color: rgb(76, 116, 130);
+}
+.new-schedule-btn:hover {
+  background-color: rgb(85, 137, 155);
+  transition: transform 0.3s;
+  transform: scale(1.05);
+}
+.new-info-btn {
+  z-index: 97;
+  background-color: rgb(96, 118, 176);
+}
+
 .new-info-btn:hover {
   background-color: #3f8594;
   transition: transform 0.3s;

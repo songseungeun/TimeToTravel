@@ -27,6 +27,13 @@
       "place": "ㄹㅎ",
       "startDate": "2020/1/1",
       "endDate": "2020/1/24"
+    },
+    {
+      "id": 7,
+      "title": "dsf",
+      "place": "dsf",
+      "startDate": "2020/4/24",
+      "endDate": "2020/4/24"
     }
   ],
   "schedules": [
@@ -53,18 +60,72 @@
       "date": "4/24",
       "timeFrom": "7:00",
       "timeTo": "7:00",
-      "place": "ㄴㅇㄹ",
-      "detail": "ㄴㅇㄹ",
+      "place": "f",
+      "detail": "ss",
       "id": 6
+    },
+    {
+      "travelId": "6",
+      "date": "1/1",
+      "timeFrom": "7:00",
+      "timeTo": "7:00",
+      "place": "fsd",
+      "detail": "hh",
+      "id": 7
+    },
+    {
+      "travelId": "2",
+      "date": "7/1",
+      "timeFrom": "7:00",
+      "timeTo": "7:00",
+      "place": "g",
+      "detail": "q",
+      "id": 8
+    },
+    {
+      "travelId": "2",
+      "date": "7/1",
+      "timeFrom": "11:20",
+      "timeTo": "11:40",
+      "place": "ghh",
+      "detail": "ewewr",
+      "id": 9
+    },
+    {
+      "travelId": "2",
+      "date": "7/1",
+      "timeFrom": "10:00",
+      "timeTo": "10:40",
+      "place": "식당",
+      "detail": "밥먹음",
+      "id": 10
+    },
+    {
+      "travelId": "2",
+      "date": "7/1",
+      "timeFrom": "13:00",
+      "timeTo": "13:40",
+      "place": "ㅗㅗㅗ",
+      "detail": "ㅉㅈ",
+      "id": 11
+    },
+    {
+      "travelId": "2",
+      "date": "7/1",
+      "timeFrom": "17:00",
+      "timeTo": "18:10",
+      "place": "ㄹㅇㄴㄴㄹㅇ",
+      "detail": "ㄹㄴㅇㄹㄴㅇ",
+      "id": 12
     },
     {
       "travelId": "1",
       "date": "4/24",
-      "timeFrom": "7:00",
-      "timeTo": "7:00",
-      "place": "ㄴㅇㄹ",
-      "detail": "ㄴㅇㄹ",
-      "id": 7
+      "timeFrom": "9:00",
+      "timeTo": "10:10",
+      "place": "ggg",
+      "detail": "bb",
+      "id": 13
     }
   ],
   "airlines": [
