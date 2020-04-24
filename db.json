@@ -15,13 +15,6 @@
       "endDate": "2021/2/1"
     },
     {
-      "id": 3,
-      "title": "떠나요~",
-      "place": "둘이서~",
-      "startDate": "2020/8/1",
-      "endDate": "2020/11/1"
-    },
-    {
       "id": 4,
       "title": "fsd",
       "place": "sdfsdf",
@@ -30,15 +23,6 @@
     }
   ],
   "schedules": [
-    {
-      "travelId": "3",
-      "date": "8/22",
-      "timeFrom": "9:10",
-      "timeTo": "9:10",
-      "place": ",,",
-      "detail": "ㅇㅇㅇ",
-      "id": 1
-    },
     {
       "travelId": "1",
       "date": "6/5",
@@ -58,15 +42,6 @@
       "id": 3
     },
     {
-      "travelId": "3",
-      "date": "8/1",
-      "timeFrom": "7:00",
-      "timeTo": "7:20",
-      "place": "ff",
-      "detail": "fff",
-      "id": 4
-    },
-    {
       "travelId": "4",
       "date": "7/1",
       "timeFrom": "7:00",
@@ -74,85 +49,9 @@
       "place": "ㄹㄴㅇ",
       "detail": "ㄴㅇㄹ",
       "id": 5
-    },
-    {
-      "travelId": "3",
-      "date": "8/1",
-      "timeFrom": "7:00",
-      "timeTo": "7:00",
-      "place": "ㄹㄴㅇ",
-      "detail": "ㄴㅇㄹ",
-      "id": 6
-    },
-    {
-      "travelId": "3",
-      "date": "8/1",
-      "timeFrom": "12:00",
-      "timeTo": "12:00",
-      "place": "ㄴㅇㄹ",
-      "detail": "ㄴㅇㄹ",
-      "id": 7
-    },
-    {
-      "travelId": "3",
-      "date": "8/1",
-      "timeFrom": "9:00",
-      "timeTo": "9:00",
-      "place": "ㄹㄴㅇ",
-      "detail": "ㄴㅇㄹ",
-      "id": 8
-    },
-    {
-      "travelId": "3",
-      "date": "8/1",
-      "timeFrom": "20:00",
-      "timeTo": "20:00",
-      "place": "ㄴㅇㄹ",
-      "detail": "ㄴㅇㄹ",
-      "id": 9
-    },
-    {
-      "travelId": "3",
-      "date": "8/1",
-      "timeFrom": "11:00",
-      "timeTo": "11:00",
-      "place": "ㄴㅇㄹ",
-      "detail": "ㄴㅇㄹ",
-      "id": 10
-    },
-    {
-      "travelId": "3",
-      "date": "8/1",
-      "timeFrom": "15:00",
-      "timeTo": "15:00",
-      "place": "ㅇㄹㄴ",
-      "detail": "ㄴㅇㄹ",
-      "id": 11
     }
   ],
   "airlines": [
-    {
-      "travelId": "3",
-      "type": "departure",
-      "date": "4/24",
-      "airplaneName": "ㄹㄴㅇ",
-      "departureTime": "7:00",
-      "departureAirport": "ㄴㅇㄹ",
-      "arrivalTime": "7:00",
-      "arrivalAirport": "ㄴㅇㄹ",
-      "id": 2
-    },
-    {
-      "travelId": "3",
-      "type": "arrival",
-      "date": "4/24",
-      "airplaneName": "ㄹㅇㄴ",
-      "departureTime": "7:00",
-      "departureAirport": "ㄴㅇㄹ",
-      "arrivalTime": "7:00",
-      "arrivalAirport": "ㄹㅇㄴㄹ",
-      "id": 3
-    },
     {
       "travelId": "4",
       "type": "departure",
@@ -218,72 +117,6 @@
       "arrivalTime": "7:00",
       "arrivalAirport": "ㅋㅋㅋ",
       "id": 9
-    },
-    {
-      "travelId": "2",
-      "type": "departure",
-      "date": "4/24",
-      "airplaneName": "ㄹㄴㅇ",
-      "departureTime": "7:00",
-      "departureAirport": "ㄴㅇㄹ",
-      "arrivalTime": "7:00",
-      "arrivalAirport": "ㄴㅇㄹ",
-      "id": 10
-    },
-    {
-      "travelId": "2",
-      "type": "arrival",
-      "date": "4/24",
-      "airplaneName": "ㄴㅇㄹ",
-      "departureTime": "7:00",
-      "departureAirport": "ㄴㅇㄹ",
-      "arrivalTime": "7:00",
-      "arrivalAirport": "ㄴㅇㄹ",
-      "id": 11
-    },
-    {
-      "travelId": "3",
-      "type": "departure",
-      "date": "4/24",
-      "airplaneName": "ㄴㅇㄹ",
-      "departureTime": "7:00",
-      "departureAirport": "ㄴㅇㄹ",
-      "arrivalTime": "7:00",
-      "arrivalAirport": "ㄴㅇㄹ",
-      "id": 12
-    },
-    {
-      "travelId": "3",
-      "type": "arrival",
-      "date": "4/24",
-      "airplaneName": "ㄴㅇㄹ",
-      "departureTime": "7:00",
-      "departureAirport": "ㄴㅇㄹ",
-      "arrivalTime": "7:00",
-      "arrivalAirport": "ㄴㅇㄹ",
-      "id": 13
-    },
-    {
-      "travelId": "3",
-      "type": "departure",
-      "date": "4/24",
-      "airplaneName": "ㅇㅇ",
-      "departureTime": "7:00",
-      "departureAirport": "ㅇㅇ",
-      "arrivalTime": "7:00",
-      "arrivalAirport": "ㅇㅇ",
-      "id": 14
-    },
-    {
-      "travelId": "3",
-      "type": "arrival",
-      "date": "4/24",
-      "airplaneName": "ㅇㅇ",
-      "departureTime": "7:00",
-      "departureAirport": "ㅇㅇ",
-      "arrivalTime": "7:00",
-      "arrivalAirport": "ㅇㅇ",
-      "id": 15
     }
   ],
   "lodgings": [
@@ -292,47 +125,6 @@
       "hotelName": "63빌딩",
       "hotelPlace": "서울",
       "hotelsite": "agoda"
-    },
-    {
-      "id": 2,
-      "hotelName": "ㄹㄴㅇ",
-      "hotelPlace": "ㄴㅇㄹ",
-      "hotelsite": "ㄴㅇㄹ"
-    },
-    {
-      "hotelName": "ㄴㄹㅇ",
-      "hotelPlace": "ㄴㅇㄹ",
-      "hotelsite": "ㄴㅇㄹ",
-      "travelId": "1",
-      "id": 3
-    },
-    {
-      "hotelName": "ㄴㅇㄹ",
-      "hotelPlace": "ㄴㅇㄹ",
-      "hotelsite": "ㄴㅇㄹ",
-      "travelId": "3",
-      "id": 4
-    },
-    {
-      "hotelName": "ㅋㅋ",
-      "hotelPlace": "ㅋㅋ",
-      "hotelsite": "ㅋㅋ",
-      "travelId": "3",
-      "id": 5
-    },
-    {
-      "hotelName": "ㄴㅇㄹ",
-      "hotelPlace": "ㄴㅇㄹ",
-      "hotelsite": "ㄴㅇㄹ",
-      "travelId": "1",
-      "id": 6
-    },
-    {
-      "hotelName": "ㅋ",
-      "hotelPlace": "ㅋ",
-      "hotelsite": "ㅋ",
-      "travelId": "1",
-      "id": 7
     }
   ]
 }

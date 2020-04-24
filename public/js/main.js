@@ -1,28 +1,3 @@
-Skip to content
-Search or jump to…
-
-Pull requests
-Issues
-Marketplace
-Explore
- 
-@heejinlee07 
-Learn Git and GitHub without any code!
-Using the Hello World guide, you’ll start a branch, write comments, and open a pull request.
-
-
-heejinlee07
-/
-TimeToTravel
-1
-02
- Code Issues 0 Pull requests 0 Actions Projects 0 Wiki Security 0 Insights Settings
-TimeToTravel/public/js/main.js /
-@kimfriendship kimfriendship 🐛 fix rendering hotel info
-e18485c 11 minutes ago
-@kimfriendship@heejinlee07@songseungeun
-835 lines (685 sloc)  29.4 KB
-  
 // state
 let schedules = [];
 let travels = [];
@@ -79,21 +54,7 @@ const $timelineTitle = document.querySelector('.timeline-travel-title');
 const $infoTitle = document.querySelector('.info-travel-title');
 const $popupBg = document.querySelector('.popup-bg');
 const $popupRemoveBtn = document.querySelector('.popup-remove-btn');
-const $monthSelect = document.querySelector('#month-select');
-const $dateSelect = document.querySelector('#date-select');
-const $inputPlace = document.querySelector('#schedule-input-place');
-const $inputDetail = document.querySelector('#schedule-input-detail');
-const $selectDateWarning = document.querySelector('#date-warning-label');
-const $selectStartWarning = document.querySelector('#start-warning-label');
-const $selectEndWarning = document.querySelector('#end-warning-label');
-const $inputDetailWarning = document.querySelector('#detail-warning-label');
-const $inputPlaceWarning = document.querySelector('#place-warning-label');
-const $deleteConfirmModal = document.querySelector('.delete-confirm-modal');
-const $selectWrappers = document.querySelectorAll('.select-wrapper');
-const $airlineTicket = document.querySelector('.airline-ticket');
 const $airlineSchedule = document.querySelector('.airline-schedule');
-const $airlineScheduleDetail = document.querySelector('.airline-schedule-detail');
-const $airlineScheduleList = document.querySelector('.airline-schedule');
 const $lodgingScheduleList = document.querySelector('.lodging-schedule');
 
 const $airlinePopupBg = document.querySelector('.airlineBg');
@@ -101,15 +62,12 @@ const $hotelPopup = document.querySelector('.new-info-popup2');
 const $airlinePopup = document.querySelector('.new-info-popup');
 const $airlineAddBtn = document.querySelector('.airlineAddBtn');
 const $airlinePopupRemove = document.querySelector('.airlineRemoveBtn');
-const $airlineMonthSelect = document.querySelector('#airline-month-select');
 
 const $hotelBtn = document.querySelector('.hotel-btn');
 const $airlineBtn = document.querySelector('.airline-btn');
 const $hotelPopupRemove = document.querySelector('.hotelRemoveBtn');
 const $hotelAddBtn = document.querySelector('.hotelAddBtn');
 const $hotelPopupBg = document.querySelector('.hotelBg');
-const $departureSec = document.querySelector('.departure-section');
-const $arrivalSec = document.querySelector('.arrival-section');
 
 const $depMonthSelect = document.querySelector('#airline-month-select');
 const $depDaySelect = document.querySelector('#airline-day-select');
@@ -203,7 +161,7 @@ const changeNav = target => {
 };
 
 // travel list
-const generateId = () => travels.length ? Math.max(...travels.map(({ id }) => id)) + 1 : 1;
+const generateId = () => (travels.length ? Math.max(...travels.map(({ id }) => id)) + 1 : 1);
 
 const generateDday = startDate => {
   let dDay = 0;
@@ -476,11 +434,12 @@ const goToTimeline = async target => {
     travelBg = target.parentNode.classList[0];
   }
 
-  const { data: { startDate, endDate, title }} = await axios.get(`/travels/${travelId}`);
+  const {
+    data: { startDate, endDate, title },
+  } = await axios.get(`/travels/${travelId}`);
 
   timeline.classList.add('main-view');
   home.classList.remove('main-view');
-
 
   [...$menuList.children].forEach(icon => {
     icon.style.display = 'block';
@@ -597,20 +556,23 @@ const $depArrivalMinSelect = document.getElementById('dep-arrival-min-select');
 
 const changeEndHour = () => {
   [...$endHourSelect.options].forEach(opt => {
-    if (opt.value === $startHourSelect.value) opt.setAttribute('selected','selected');
+    if (opt.value === $startHourSelect.value) opt.setAttribute('selected', 'selected');
   });
 };
 
 const changeEndMin = () => {
   [...$endMinSelect.options].forEach(opt => {
-    if (opt.value === $startMinSelect.value) opt.setAttribute('selected','selected');
+    if (opt.value === $startMinSelect.value) opt.setAttribute('selected', 'selected');
   });
 };
 
-
 const printStartTime = () => {
-  let hour = Array.from({ length: 17 }, function (v, i) { return i + 7; });
-  let minute = Array.from({ length: 6 }, function (v, i) { return i * 10; });
+  let hour = Array.from({ length: 17 }, function (v, i) {
+    return i + 7;
+  });
+  let minute = Array.from({ length: 6 }, function (v, i) {
+    return i * 10;
+  });
 
   $startHourSelects.forEach(hourSelect => {
     hour.forEach((element, key) => {
@@ -627,8 +589,12 @@ const printStartTime = () => {
 };
 
 const printEndTime = target => {
-  let hour = Array.from({ length: 17 }, function (v, i) { return i + 7; });
-  let minute = Array.from({ length: 6 }, function (v, i) { return i * 10; });
+  let hour = Array.from({ length: 17 }, function (v, i) {
+    return i + 7;
+  });
+  let minute = Array.from({ length: 6 }, function (v, i) {
+    return i * 10;
+  });
 
   $endHourSelects.forEach(hourSelect => {
     hour.forEach((element, key) => {
@@ -719,7 +685,7 @@ const closeAirlinePopup = () => {
 
 //post
 const addDepAirlineInfo = async () => {
-  console.log(travelId, '뱅기 추가')
+  console.log(travelId, '뱅기 추가');
   const date = `${$depMonthSelect.value}/${$depDaySelect.value}`;
   const airplaneName = $inputAirline.value.trim();
   const departureTime = `${$depHourSelect.value}:${$depMinSelect.value}`;
@@ -852,7 +818,8 @@ $airlineAddBtn.onclick = () => {
   addArrAirlineInfo();
 };
 
+$airlinePopupBg.addEventListener('click', resetAirlinePopup);
+$hotelPopupBg.addEventListener('click', resetLodgingPopup);
 
 // export
 export { $timeWarningText, $dateWarningText, $startYear, $startMonth, $startDate, $endYear, $endMonth, $endDate, $startHour, $startMin, $endHour, $endMin, changeNav, resetSchedulePopup, resetTravelPopup, $mainList, $menuList, $travelList, $timelineTitle };
-
