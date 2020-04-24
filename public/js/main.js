@@ -104,7 +104,6 @@ const $arrDaySelect = document.querySelector('#arrival-day-select');
 const $inputArrAirline = document.querySelector('.arr-input');
 const $arrHourSelect = document.querySelector('#arrival-hour-select');
 const $arrMinSelect = document.querySelector('#arrival-min-select');
-
 const $inputArrDepAirport = document.querySelector('.select-start-hour > .arr-airlines');
 const $ArrDepHourSelect = document.querySelector('#dep-arrival-hour-select');
 const $ArrDepMinSelect = document.querySelector('#dep-arrival-min-select');
@@ -365,7 +364,7 @@ const renderTimeline = schedules => {
   let html = '';
 
   schedules.forEach(({ travelId, timeFrom, place, detail, id }) => {
-    html += `<li class="schedule" id="${travelId}-${id}">
+    html += `<li class="schedule color-${id % 4}" id="${travelId}-${id}">
             <div class="time">${timeFrom}</div>
             <div class="place">${place}</div>
             <div class="detail">${detail}</div>
@@ -753,19 +752,21 @@ const addArrAirlineInfo = async () => {
 
 const renderLodgingInfo = () => {
   let html = '';
+  let i = 1;
 
-  lodgings.forEach(({ id, hotelName, hotelPlace, hotelsite }) => {
+  lodgings.forEach(({ hotelName, hotelPlace, hotelsite }) => {
     html += `<li class="hotel-reservation lodging-name">
-            <h3>${id}</h3>
+            <em>숙소${i}</em>
             <span class="hotel-name">${hotelName}</span>
             <span class="hotel-place">${hotelPlace}</span>
             <span class="hotel-site">${hotelsite}</span>
           </li>`;
+    i++;
   });
   $lodgingScheduleList.innerHTML = html;
 };
 
-export const getLodgingData = async () => {
+const getLodgingData = async () => {
   const { data } = await axios.get(`/lodgings?travelId=${travelId}`);
   lodgings = data;
 
@@ -848,6 +849,7 @@ const airClosePopup = () => {
 };
 
 // $airlineBtn.addEventListener('click', airClosePopup);
+$hotelAddBtn.onclick = addHotelInfo;
 $airlinePopupRemove.addEventListener('click', airClosePopup);
 $airlinePopupBg.addEventListener('click', airClosePopup);
 
@@ -861,10 +863,6 @@ $airlineBtn.onclick = () => {
   $hotelInfo.style.filter = 'blur(3px)';
   $airlinePopup.style.display = 'block';
   $airlinePopupBg.style.display = 'block';
-};
-
-$hotelAddBtn.onclick = () => {
-  addHotelInfo();
 };
 
 $airlineAddBtn.onclick = () => {
