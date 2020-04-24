@@ -368,29 +368,32 @@ h1 {
   background-blend-mode: multiply;
   background-size: cover;
   background-position: center;
-  /* transition: box-shadow 0.5s, transform 0.5s, opacity 0.3s; */
-  /* transform: translate3d(0px, -350px, 0px); */
-  /* transition-property: transform;
-  transition-duration: 2s; */
-  /* transition-delay: 3s; */
-  /* transition-timing-function: linear; */
-  /* transition: transform 0.5s; */
-  
+  transition: box-shadow 0.5s, transform 0.5s, opacity 0.3s;
+  transition: transform 0.5s;
+  animation-duration: 1000ms;
+  animation-fill-mode: both;
+  animation-name: loading-item;
 }
-.travel-list .act-item {
-  transform: translate3d(0px, -350px, 0px);
-  transition: transform 1s;
+@keyframes loading-item {
+  0% {
+      top: -50px;
+      opacity: 0;
+  }
+  100% {
+      top: 0px;
+      opacity: 1;
+  }
 }
 
 .travel-list li:nth-child(odd) {
   margin-right: 30px;
 }
 
-/* .travel-list li:hover {
+.travel-list li:hover {
   box-shadow: 2px 2px 7px 1px rgba(0, 0, 0, 0.2);
   transform: translate(-2px, -2px);
   transition: box-shadow 0.5s, transform 0.5s, opacity 0.3s;
-} */
+}
 
 .bg-0 {
   /* filter: blur(3px); */
