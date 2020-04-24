@@ -92,67 +92,23 @@
       "travelId": "",
       "type": "departure",
       "date": "4/24",
-      "airplaneName": "인천",
+      "airplaneName": "ㄹㄹ",
       "departureTime": "7:00",
-      "departureAirport": "인천",
+      "departureAirport": "ㄹㄹ",
       "arrivalTime": "7:00",
-      "arrivalAirport": "인천",
+      "arrivalAirport": "ㄹㄹ",
       "id": 3
     },
     {
       "travelId": "",
       "type": "arrival",
       "date": "4/24",
-      "airplaneName": "서울",
+      "airplaneName": "ㄹㄹ",
       "departureTime": "7:00",
-      "departureAirport": "인천",
+      "departureAirport": "ㄹㄹ",
       "arrivalTime": "7:00",
-      "arrivalAirport": "서울",
+      "arrivalAirport": "ㄹㄹ",
       "id": 4
-    },
-    {
-      "travelId": "",
-      "type": "departure",
-      "date": "4/24",
-      "airplaneName": "fddfs",
-      "departureTime": "7:00",
-      "departureAirport": "dsfdfsdfs",
-      "arrivalTime": "7:00",
-      "arrivalAirport": "dsfdsf",
-      "id": 5
-    },
-    {
-      "travelId": "",
-      "type": "arrival",
-      "date": "4/24",
-      "airplaneName": "sdfdsf",
-      "departureTime": "7:00",
-      "departureAirport": "dsfdsf",
-      "arrivalTime": "7:00",
-      "arrivalAirport": "dsfdsf",
-      "id": 6
-    },
-    {
-      "travelId": "",
-      "type": "departure",
-      "date": "4/24",
-      "airplaneName": "fdsfds",
-      "departureTime": "7:00",
-      "departureAirport": "fdsfds",
-      "arrivalTime": "7:00",
-      "arrivalAirport": "fdsfsd",
-      "id": 7
-    },
-    {
-      "travelId": "",
-      "type": "arrival",
-      "date": "4/24",
-      "airplaneName": "sdfdsf",
-      "departureTime": "7:00",
-      "departureAirport": "fdsfsd",
-      "arrivalTime": "7:00",
-      "arrivalAirport": "dsfdsf",
-      "id": 8
     }
   ],
   "lodgings": [
@@ -164,33 +120,9 @@
     },
     {
       "id": 2,
-      "hotelName": "",
-      "hotelPlace": "",
-      "hotelsite": "ㅇㄹㄴㄴㄹㅇ"
-    },
-    {
-      "id": 2,
-      "hotelName": "",
-      "hotelPlace": "",
-      "hotelsite": "sdfsfd"
-    },
-    {
-      "id": 3,
-      "hotelName": "",
-      "hotelPlace": "",
-      "hotelsite": "ff"
-    },
-    {
-      "id": 4,
-      "hotelName": "",
-      "hotelPlace": "",
-      "hotelsite": "f"
-    },
-    {
-      "id": 5,
-      "hotelName": "",
-      "hotelPlace": "",
-      "hotelsite": "dsfsfd"
+      "hotelName": "패캠",
+      "hotelPlace": "서울",
+      "hotelsite": "google"
     }
   ]
 }
