@@ -23,10 +23,10 @@
     },
     {
       "id": 4,
-      "title": "d",
-      "place": "d",
-      "startDate": "2020/2/1",
-      "endDate": "2020/2/24"
+      "title": "fsd",
+      "place": "sdfsdf",
+      "startDate": "2020/7/1",
+      "endDate": "2020/7/24"
     }
   ],
   "schedules": [
@@ -65,72 +65,194 @@
       "place": "ff",
       "detail": "fff",
       "id": 4
+    },
+    {
+      "travelId": "4",
+      "date": "7/1",
+      "timeFrom": "7:00",
+      "timeTo": "12:00",
+      "place": "ㄹㄴㅇ",
+      "detail": "ㄴㅇㄹ",
+      "id": 5
+    },
+    {
+      "travelId": "3",
+      "date": "8/1",
+      "timeFrom": "7:00",
+      "timeTo": "7:00",
+      "place": "ㄹㄴㅇ",
+      "detail": "ㄴㅇㄹ",
+      "id": 6
     }
   ],
   "airlines": [
     {
-      "id": 1,
-      "type": "departure",
-      "date": "5/16",
-      "airplaneName": "아메리칸항공",
-      "departureTime": "18:10",
-      "departureAirport": "ICN",
-      "arrivalTime": "18:10",
-      "arrivalAirport": "ICN"
-    },
-    {
-      "id": 2,
-      "type": "arrival",
-      "date": "5/16",
-      "airplaneName": "프랑스항공",
-      "departureTime": "18:10",
-      "departureAirport": "ICN",
-      "arrivalTime": "18:10",
-      "arrivalAirport": "ICN"
-    },
-    {
-      "travelId": "",
+      "travelId": "3",
       "type": "departure",
       "date": "4/24",
+      "airplaneName": "ㄹㄴㅇ",
+      "departureTime": "7:00",
+      "departureAirport": "ㄴㅇㄹ",
+      "arrivalTime": "7:00",
+      "arrivalAirport": "ㄴㅇㄹ",
+      "id": 2
+    },
+    {
+      "travelId": "3",
+      "type": "arrival",
+      "date": "4/24",
+      "airplaneName": "ㄹㅇㄴ",
+      "departureTime": "7:00",
+      "departureAirport": "ㄴㅇㄹ",
+      "arrivalTime": "7:00",
+      "arrivalAirport": "ㄹㅇㄴㄹ",
+      "id": 3
+    },
+    {
+      "travelId": "4",
+      "type": "departure",
+      "date": "4/24",
+<<<<<<< HEAD
       "airplaneName": "ㄹㄹ",
       "departureTime": "7:00",
       "departureAirport": "ㄹㄹ",
       "arrivalTime": "7:00",
       "arrivalAirport": "ㄹㄹ",
       "id": 3
+=======
+      "airplaneName": "ㄴㅇㄹ",
+      "departureTime": "7:00",
+      "departureAirport": "ㄹㄴㅇ",
+      "arrivalTime": "7:00",
+      "arrivalAirport": "ㄴㅇㄹ",
+      "id": 4
+>>>>>>> 07d7181df39f0b9ba6a7cf2441886a41db87833c
     },
     {
-      "travelId": "",
+      "travelId": "4",
       "type": "arrival",
       "date": "4/24",
+<<<<<<< HEAD
       "airplaneName": "ㄹㄹ",
       "departureTime": "7:00",
       "departureAirport": "ㄹㄹ",
       "arrivalTime": "7:00",
       "arrivalAirport": "ㄹㄹ",
       "id": 4
+=======
+      "airplaneName": "ㄴㅇㄹ",
+      "departureTime": "7:00",
+      "departureAirport": "ㄴㅇㄹ",
+      "arrivalTime": "7:00",
+      "arrivalAirport": "ㄴㅇㄹ",
+      "id": 5
+>>>>>>> 07d7181df39f0b9ba6a7cf2441886a41db87833c
     },
     {
-      "travelId": "",
+      "travelId": "1",
       "type": "departure",
       "date": "4/24",
+<<<<<<< HEAD
       "airplaneName": "ㅇ",
       "departureTime": "7:00",
       "departureAirport": "ㅇ",
       "arrivalTime": "7:00",
       "arrivalAirport": "ㅇ",
       "id": 5
+=======
+      "airplaneName": "ㄴㅇㄹ",
+      "departureTime": "7:00",
+      "departureAirport": "ㄴㅇㄹ",
+      "arrivalTime": "7:00",
+      "arrivalAirport": "ㄴㅇㄹ",
+      "id": 6
+>>>>>>> 07d7181df39f0b9ba6a7cf2441886a41db87833c
     },
     {
-      "travelId": "",
+      "travelId": "1",
       "type": "arrival",
       "date": "4/24",
+<<<<<<< HEAD
       "airplaneName": "ㅇ",
       "departureTime": "7:00",
       "departureAirport": "ㅇ",
       "arrivalTime": "7:00",
       "arrivalAirport": "ㅇ",
       "id": 6
+=======
+      "airplaneName": "ㄴㅇㄹ",
+      "departureTime": "7:00",
+      "departureAirport": "ㄴㅇㄹ",
+      "arrivalTime": "7:00",
+      "arrivalAirport": "ㄴㅇㄹ",
+      "id": 7
+    },
+    {
+      "travelId": "1",
+      "type": "departure",
+      "date": "4/24",
+      "airplaneName": "ㄴㅇㄹ",
+      "departureTime": "7:00",
+      "departureAirport": "ㄴㅇㄹ",
+      "arrivalTime": "7:00",
+      "arrivalAirport": "ㄴㅇㄹ",
+      "id": 8
+    },
+    {
+      "travelId": "1",
+      "type": "arrival",
+      "date": "4/24",
+      "airplaneName": "ㄴㄹㅋ",
+      "departureTime": "7:00",
+      "departureAirport": "ㄴㅇㄹ",
+      "arrivalTime": "7:00",
+      "arrivalAirport": "ㅋㅋㅋ",
+      "id": 9
+    },
+    {
+      "travelId": "2",
+      "type": "departure",
+      "date": "4/24",
+      "airplaneName": "ㄹㄴㅇ",
+      "departureTime": "7:00",
+      "departureAirport": "ㄴㅇㄹ",
+      "arrivalTime": "7:00",
+      "arrivalAirport": "ㄴㅇㄹ",
+      "id": 10
+    },
+    {
+      "travelId": "2",
+      "type": "arrival",
+      "date": "4/24",
+      "airplaneName": "ㄴㅇㄹ",
+      "departureTime": "7:00",
+      "departureAirport": "ㄴㅇㄹ",
+      "arrivalTime": "7:00",
+      "arrivalAirport": "ㄴㅇㄹ",
+      "id": 11
+    },
+    {
+      "travelId": "3",
+      "type": "departure",
+      "date": "4/24",
+      "airplaneName": "ㄴㅇㄹ",
+      "departureTime": "7:00",
+      "departureAirport": "ㄴㅇㄹ",
+      "arrivalTime": "7:00",
+      "arrivalAirport": "ㄴㅇㄹ",
+      "id": 12
+    },
+    {
+      "travelId": "3",
+      "type": "arrival",
+      "date": "4/24",
+      "airplaneName": "ㄴㅇㄹ",
+      "departureTime": "7:00",
+      "departureAirport": "ㄴㅇㄹ",
+      "arrivalTime": "7:00",
+      "arrivalAirport": "ㄴㅇㄹ",
+      "id": 13
+>>>>>>> 07d7181df39f0b9ba6a7cf2441886a41db87833c
     }
   ],
   "lodgings": [
@@ -142,6 +264,7 @@
     },
     {
       "id": 2,
+<<<<<<< HEAD
       "hotelName": "패캠",
       "hotelPlace": "서울",
       "hotelsite": "google"
@@ -151,6 +274,18 @@
       "hotelName": "ㄹ",
       "hotelPlace": "ㄹ",
       "hotelsite": "ㄹ"
+=======
+      "hotelName": "ㄹㄴㅇ",
+      "hotelPlace": "ㄴㅇㄹ",
+      "hotelsite": "ㄴㅇㄹ"
+    },
+    {
+      "hotelName": "ㄴㄹㅇ",
+      "hotelPlace": "ㄴㅇㄹ",
+      "hotelsite": "ㄴㅇㄹ",
+      "travelId": "1",
+      "id": 3
+>>>>>>> 07d7181df39f0b9ba6a7cf2441886a41db87833c
     }
   ]
 }
