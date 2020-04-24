@@ -101,6 +101,7 @@ const $startMinSelect = document.getElementById('start-min-select');
 const $endHourSelect = document.getElementById('end-hour-select');
 const $endMinSelect = document.getElementById('end-min-select');
 const $newAirlineBtn = document.querySelector('.airline-btn');
+const $introWrapper = document.querySelector('.intro-wrapper');
 
 // functions
 // popups
@@ -864,6 +865,9 @@ $airlineAddBtn.onclick = () => {
 
 $airlinePopupBg.addEventListener('click', resetAirlinePopup);
 $hotelPopupBg.addEventListener('click', resetLodgingPopup);
+
+const intro = setTimeout(() => $introWrapper.style.display = 'none', 4000);
+// window.addEventListener('load', () => intro());
 
 // export
 export { $scheduleHiddenBtn, $timeWarningText, $dateWarningText, $startYear, $startMonth, $startDate, $endYear, $endMonth, $endDate, $startHour, $startMin, $endHour, $endMin, changeNav, resetSchedulePopup, resetTravelPopup, $mainList, $menuList, $travelList, $timelineTitle };
