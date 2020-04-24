@@ -158,10 +158,14 @@ const closeTravelAlertPopup = () => {
   $alertPopupBg.style.display = 'none';
 };
 
+$alertPopupBg.addEventListener('click', closeTravelAlertPopup);
+
 const closeScheduleAlertPopup = () => {
   $timelineAlertPopup.style.display = 'none';
   $timeAlertPopupBg.style.display = 'none';
 };
+
+$timeAlertPopupBg.addEventListener('click', closeScheduleAlertPopup);
 
 // nav bar
 const changeNav = target => {
