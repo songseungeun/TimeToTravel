@@ -98,6 +98,9 @@ const $allMoreBtn = document.querySelector('.detail-btn-wrapper');
 // functions
 // popups
 const closePopup = () => {
+  $menuBar.style.filter = 'blur(0px)';
+  $headerH2.style.filter = 'blur(0px)';
+  $mainSchedule.style.filter = 'blur(0px)';
   $newSchedulePopUp.style.display = 'none';
   $popupBg.style.display = 'none';
   resetSchedulePopup();
@@ -116,6 +119,9 @@ const resetTravelPopup = () => {
 };
 
 const closeSchedulePopup = () => {
+  $menuBar.style.filter = 'blur(0px)';
+  $headerH2.style.filter = 'blur(0px)';
+  $mainSchedule.style.filter = 'blur(0px)';
   $newSchedulePopUp.style.display = 'none';
   $schedulePopupBg.style.display = 'none';
   resetSchedulePopup();
@@ -188,7 +194,7 @@ const renderTravelList = () => {
 
   travels.forEach(({ id, title, place, startDate, endDate }) => {
     bg++;
-    html += ` <li id=t-${id} class="bg-${bg % 8}">
+    html += ` <li id="t-${id}" class="bg-${bg % 8}">
           <h2>${title}</h2>
           <em>${generateDday(startDate)}</em>
           <div class="travel-info">
@@ -207,6 +213,7 @@ const getTravels = async () => {
   travels = data;
 
   renderTravelList();
+  updateTransition();
 };
 
 const removeTravel = async removeTId => {
@@ -452,6 +459,17 @@ const goToTimeline = async target => {
   renderMonthYear(startDate.split('/')[1], startDate.split('/')[0]);
 };
 
+// loading transition
+
+function updateTransition() {
+  const $travelItems = document.querySelectorAll('.travel-list li');
+  let i = 0;
+  $travelItems.forEach(item => {
+    i++;
+    item.style.animationDelay = `${i * 200}ms`
+  });
+}
+
 // event handlers
 window.onload = getTravels;
 
@@ -471,7 +489,13 @@ $popupBg.onclick = () => {
   resetSchedulePopup();
 };
 
+const $mainSchedule = document.querySelector('.timeline-wrapper');
+const $headerH2 = document.querySelector('.main-schedule .header h2');
+
 $newScheduleBtn.onclick = () => {
+  $menuBar.style.filter = 'blur(3px)';
+  $headerH2.style.filter = 'blur(3px)';
+  $mainSchedule.style.filter = 'blur(3px)';
   $newSchedulePopUp.style.display = 'block';
   $popupBg.style.display = 'block';
 };
@@ -678,6 +702,10 @@ const resetAirlinePopup = () => {
 };
 
 const closeAirlinePopup = () => {
+  $menuBar.style.filter = 'blur(0px)';
+  $headerInfo.style.filter = 'blur(0px)';
+  $airlineTicket.style.filter = 'blur(0px)';
+  $hotelInfo.style.filter = 'blur(0px)';
   $airlinePopup.style.display = 'none';
   $airlinePopupBg.style.display = 'none';
   resetAirlinePopup();
@@ -747,6 +775,10 @@ const resetLodgingPopup = () => {
 };
 
 const closeLodgingPopup = () => {
+  $menuBar.style.filter = 'blur(0px)';
+  $headerInfo.style.filter = 'blur(0px)';
+  $airlineTicket.style.filter = 'blur(0px)';
+  $hotelInfo.style.filter = 'blur(0px)';
   $hotelPopup.style.display = 'none';
   $hotelPopupBg.style.display = 'none';
   resetLodgingPopup();
@@ -784,6 +816,10 @@ $allMoreBtn.addEventListener('mouseleave', closeDetailBtn);
 
 //HOTEL정보 입력 MODAL
 const hotelClosePopup = () => {
+  $menuBar.style.filter = 'blur(0px)';
+  $headerInfo.style.filter = 'blur(0px)';
+  $airlineTicket.style.filter = 'blur(0px)';
+  $hotelInfo.style.filter = 'blur(0px)';
   $hotelPopup.style.display = 'none';
   $hotelPopupBg.style.display = 'none';
 };
@@ -793,12 +829,20 @@ $hotelPopupBg.addEventListener('click', hotelClosePopup);
 $hotelPopupRemove.addEventListener('click', hotelClosePopup);
 
 $hotelBtn.onclick = () => {
+  $menuBar.style.filter = 'blur(3px)';
+  $headerInfo.style.filter = 'blur(3px)';
+  $airlineTicket.style.filter = 'blur(3px)';
+  $hotelInfo.style.filter = 'blur(3px)';
   $hotelPopup.style.display = 'block';
   $hotelPopupBg.style.display = 'block';
 };
 
 //비행기 정보 입력 MODAL
 const airClosePopup = () => {
+  $menuBar.style.filter = 'blur(0px)';
+  $headerInfo.style.filter = 'blur(0px)';
+  $airlineTicket.style.filter = 'blur(0px)';
+  $hotelInfo.style.filter = 'blur(0px)';
   $airlinePopupBg.style.display = 'none';
   $airlinePopup.style.display = 'none';
 };
@@ -808,7 +852,14 @@ $hotelAddBtn.onclick = addHotelInfo;
 $airlinePopupRemove.addEventListener('click', airClosePopup);
 $airlinePopupBg.addEventListener('click', airClosePopup);
 
+const $headerInfo = document.querySelector('.main-info header');
+const $hotelInfo = document.querySelector('.hotel-info');
+
 $airlineBtn.onclick = () => {
+  $menuBar.style.filter = 'blur(3px)';
+  $headerInfo.style.filter = 'blur(3px)';
+  $airlineTicket.style.filter = 'blur(3px)';
+  $hotelInfo.style.filter = 'blur(3px)';
   $airlinePopup.style.display = 'block';
   $airlinePopupBg.style.display = 'block';
 };
