@@ -15,13 +15,6 @@
       "endDate": "2021/2/1"
     },
     {
-      "id": 3,
-      "title": "떠나요~",
-      "place": "둘이서~",
-      "startDate": "2020/8/1",
-      "endDate": "2020/11/1"
-    },
-    {
       "id": 4,
       "title": "fsd",
       "place": "sdfsdf",
@@ -44,15 +37,6 @@
     }
   ],
   "schedules": [
-    {
-      "travelId": "3",
-      "date": "8/22",
-      "timeFrom": "9:10",
-      "timeTo": "9:10",
-      "place": ",,",
-      "detail": "ㅇㅇㅇ",
-      "id": 1
-    },
     {
       "travelId": "1",
       "date": "6/5",
@@ -142,6 +126,15 @@
       "place": "ㅇㄹㄴ",
       "detail": "ㄴㅇㄹ",
       "id": 11
+    },
+    {
+      "travelId": "2",
+      "date": "7/1",
+      "timeFrom": "7:00",
+      "timeTo": "7:00",
+      "place": "fsd",
+      "detail": "dsffds",
+      "id": 12
     }
   ],
   "airlines": [
@@ -166,25 +159,9 @@
       "arrivalTime": "7:00",
       "arrivalAirport": "ㄴㅇㄹ",
       "id": 3
-    },
-    {
-      "travelId": "1",
-      "type": "arrival",
-      "date": "4/24",
-      "airplaneName": "ㄴㅇㄹ",
-      "departureTime": "7:00",
-      "departureAirport": "ㄴㅇㄹ",
-      "arrivalTime": "7:00",
-      "arrivalAirport": "ㄴㅇㄹ",
-      "id": 4
     }
   ],
   "lodgings": [
-    {
-      "id": 1,
-      "hotelName": "63빌딩",
-      "hotelPlace": "서울",
-      "hotelsite": "agoda"
-    }
+
   ]
 }
