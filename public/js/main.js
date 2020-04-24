@@ -192,7 +192,14 @@ const generateDday = startDate => {
 };
 
 const sortTravels = travels => {
-  travels.sort((trav1, trav2) => (trav2.startDate > trav1.startDate ? 1 : trav1.startDate > trav2.startDate ? -1 : 0));
+  const today = new Date();
+  const newTravels = travels.filter(travel => new Date(travel.startDate) > today);
+  const pastTravels = travels.filter(travel => new Date(travel.startDate) < today);
+
+  newTravels.sort((trav1, trav2) => trav2.startDate < trav1.startDate ? 1 : (trav1.startDate < trav2.startDate ? -1 : 0))
+  pastTravels.sort((trav1, trav2) => trav2.startDate > trav1.startDate ? 1 : (trav1.startDate > trav2.startDate ? -1 : 0));
+
+  travels = [...newTravels, ...pastTravels];
 };
 
 const renderTravelList = () => {

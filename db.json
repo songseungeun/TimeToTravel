@@ -27,6 +27,20 @@
       "place": "sdfsdf",
       "startDate": "2020/7/1",
       "endDate": "2020/7/24"
+    },
+    {
+      "id": 5,
+      "title": "호",
+      "place": "ㄹ호",
+      "startDate": "2020/2/1",
+      "endDate": "2020/2/24"
+    },
+    {
+      "id": 6,
+      "title": "ㄹ호",
+      "place": "ㄹㅎ",
+      "startDate": "2020/1/1",
+      "endDate": "2020/1/24"
     }
   ],
   "schedules": [
@@ -311,6 +325,13 @@
       "hotelsite": "ㅋ",
       "travelId": "1",
       "id": 7
+    },
+    {
+      "hotelName": "얍ㅇ",
+      "hotelPlace": "얍",
+      "hotelsite": "얍",
+      "travelId": "1",
+      "id": 8
     }
   ]
 }
