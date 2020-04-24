@@ -15,13 +15,6 @@
       "endDate": "2021/2/1"
     },
     {
-      "id": 3,
-      "title": "떠나요~",
-      "place": "둘이서~",
-      "startDate": "2020/8/1",
-      "endDate": "2020/11/1"
-    },
-    {
       "id": 4,
       "title": "fsd",
       "place": "sdfsdf",
@@ -30,15 +23,6 @@
     }
   ],
   "schedules": [
-    {
-      "travelId": "3",
-      "date": "8/22",
-      "timeFrom": "9:10",
-      "timeTo": "9:10",
-      "place": ",,",
-      "detail": "ㅇㅇㅇ",
-      "id": 1
-    },
     {
       "travelId": "1",
       "date": "6/5",
@@ -128,6 +112,15 @@
       "place": "ㅇㄹㄴ",
       "detail": "ㄴㅇㄹ",
       "id": 11
+    },
+    {
+      "travelId": "2",
+      "date": "7/1",
+      "timeFrom": "7:00",
+      "timeTo": "7:00",
+      "place": "fsd",
+      "detail": "dsffds",
+      "id": 12
     }
   ],
   "airlines": [
@@ -262,6 +255,94 @@
       "arrivalTime": "7:00",
       "arrivalAirport": "ㄴㅇㄹ",
       "id": 13
+    },
+    {
+      "travelId": "1",
+      "type": "departure",
+      "date": "4/24",
+      "airplaneName": "aa",
+      "departureTime": "7:00",
+      "departureAirport": "aa",
+      "arrivalTime": "7:00",
+      "arrivalAirport": "aa",
+      "id": 14
+    },
+    {
+      "travelId": "1",
+      "type": "arrival",
+      "date": "4/24",
+      "airplaneName": "aaa",
+      "departureTime": "7:00",
+      "departureAirport": "aaa",
+      "arrivalTime": "7:00",
+      "arrivalAirport": "aaa",
+      "id": 15
+    },
+    {
+      "travelId": "2",
+      "type": "departure",
+      "date": "4/24",
+      "airplaneName": "aa",
+      "departureTime": "7:00",
+      "departureAirport": "aa",
+      "arrivalTime": "7:00",
+      "arrivalAirport": "aa",
+      "id": 16
+    },
+    {
+      "travelId": "2",
+      "type": "arrival",
+      "date": "4/24",
+      "airplaneName": "aa",
+      "departureTime": "7:00",
+      "departureAirport": "aa",
+      "arrivalTime": "7:00",
+      "arrivalAirport": "aa",
+      "id": 17
+    },
+    {
+      "travelId": "4",
+      "type": "departure",
+      "date": "4/24",
+      "airplaneName": "dsf",
+      "departureTime": "7:00",
+      "departureAirport": "sdf",
+      "arrivalTime": "7:00",
+      "arrivalAirport": "sdf",
+      "id": 18
+    },
+    {
+      "travelId": "4",
+      "type": "arrival",
+      "date": "4/24",
+      "airplaneName": "dsf",
+      "departureTime": "7:00",
+      "departureAirport": "sdf",
+      "arrivalTime": "7:00",
+      "arrivalAirport": "sdf",
+      "id": 19
+    },
+    {
+      "travelId": "2",
+      "type": "departure",
+      "date": "4/24",
+      "airplaneName": "fsd",
+      "departureTime": "7:00",
+      "departureAirport": "dsf",
+      "arrivalTime": "7:00",
+      "arrivalAirport": "dsf",
+      "id": 20
+    },
+    {
+      "travelId": "2",
+      "type": "arrival",
+      "date": "4/24",
+      "airplaneName": "sdf",
+      "departureTime": "7:00",
+      "departureAirport": "sdf",
+      "arrivalTime": "7:00",
+      "arrivalAirport": "sdf",
+      "id": 21
     }
   ],
   "lodgings": [
@@ -311,6 +392,41 @@
       "hotelsite": "ㅋ",
       "travelId": "1",
       "id": 7
+    },
+    {
+      "hotelName": "sdffd",
+      "hotelPlace": "sfdfds",
+      "hotelsite": "dfsfsd",
+      "travelId": "4",
+      "id": 8
+    },
+    {
+      "hotelName": "fsdfsd",
+      "hotelPlace": "fdsfsd",
+      "hotelsite": "fsddsf",
+      "travelId": "2",
+      "id": 9
+    },
+    {
+      "hotelName": "sfdfds",
+      "hotelPlace": "fdsfds",
+      "hotelsite": "fdsfds",
+      "travelId": "2",
+      "id": 10
+    },
+    {
+      "hotelName": "sfdfds",
+      "hotelPlace": "sfdfsd",
+      "hotelsite": "sfdfsd",
+      "travelId": "2",
+      "id": 11
+    },
+    {
+      "hotelName": "fsd",
+      "hotelPlace": "dsf",
+      "hotelsite": "sfd",
+      "travelId": "2",
+      "id": 12
     }
   ]
 }
