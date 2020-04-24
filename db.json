@@ -38,9 +38,57 @@
       "place": ",,",
       "detail": "ㅇㅇㅇ",
       "id": 1
+    },
+    {
+      "travelId": "1",
+      "date": "6/5",
+      "timeFrom": "13:20",
+      "timeTo": "13:40",
+      "place": "aa",
+      "detail": "aaa",
+      "id": 2
+    },
+    {
+      "travelId": "2",
+      "date": "7/1",
+      "timeFrom": "7:20",
+      "timeTo": "7:40",
+      "place": "gdfdgf",
+      "detail": "gdfdfg",
+      "id": 3
+    },
+    {
+      "travelId": "3",
+      "date": "8/1",
+      "timeFrom": "7:00",
+      "timeTo": "7:20",
+      "place": "ff",
+      "detail": "fff",
+      "id": 4
     }
   ],
-  "airlines": [],
+  "airlines": [
+    {
+      "id": 1,
+      "type": "departure",
+      "date": "5/16",
+      "airplaneName": "아메리칸항공",
+      "departureTime": "18:10",
+      "departureAirport": "ICN",
+      "arrivalTime": "18:10",
+      "arrivalAirport": "ICN"
+    },
+    {
+      "id": 2,
+      "type": "arrival",
+      "date": "5/16",
+      "airplaneName": "프랑스항공",
+      "departureTime": "18:10",
+      "departureAirport": "ICN",
+      "arrivalTime": "18:10",
+      "arrivalAirport": "ICN"
+    }
+  ],
   "lodgings": [
     {
       "id": 1,
