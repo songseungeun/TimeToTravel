@@ -17,6 +17,9 @@ body *::after {
 .float-left {
   float: left;
 }
+/* html, body {
+  height: 100%;
+} */
 body {
   font-family: 'Open Sans', sans-serif;
   /* font-family: 'Nanum Gothic', sans-serif; */
@@ -25,23 +28,29 @@ body {
 }
 .wrapper {
   width: 980px;
+  /* min-height: 680px; */
   margin: 0 auto;
   border-radius: 20px;
   background-color: #fff;
+  overflow: hidden;
 }
 .main-wrapper {
   width: calc(100% - 90px);
   float: right;
+  
 }
 main.main-view {
   display: block;
   z-index: 98;
+  
 }
 
 .main-schedule,
 .main-travels,
 .main-info {
   display: none;
+  height: 690px;
+  overflow: auto;
 }
 
 /* HEADER */
@@ -70,7 +79,8 @@ h1 {
 /* LEFT SIDE MENU */
 .menu-bar {
   width: 90px;
-  height: 900px;
+  min-height: 690px;
+  height: 100%;
   float: left;
   padding: 30px;
   border-radius: 20px 0 0 20px;
@@ -220,7 +230,8 @@ h1 {
   font-weight: 200;
 }
 /* 여행타이틀 */
-.timeline-travel-title {
+.timeline-travel-title,
+.info-travel-title {
   width: 746px;
   margin-left: 32px;
   font-size: 25px;
@@ -234,6 +245,10 @@ h1 {
   background-color: rgba(83, 103, 104, 0.3);
   background-blend-mode: multiply;
   text-shadow: rgba(0, 0, 0, 0.3) 1px 0 4px;
+}
+.main-info .info-travel-title {
+  width: 100%;
+  margin: 0 0 30px 0;
 }
 /* TIME */
 .timeline {
@@ -465,9 +480,12 @@ h1 {
 .hotel-info {
   width: 100%;
   margin: 20px auto;
-  padding: 20px;
+  padding: 20px 40px;
   line-height: 1.2;
   /* background-color: #f4f4f4; */
+}
+.main-info .airline-ticket {
+  margin-top: 0;
 }
 .airline-schedule li,
 .hotel-schedule li {
@@ -584,7 +602,9 @@ h1 {
   opacity: 0.7;
 }
 .add-travel-btn-hidden,
-.add-schedule-btn-hidden {
+.add-schedule-btn-hidden,
+.add-info-btn-hidden,
+.add-info2-btn-hidden {
   position: absolute;
   bottom: 18px;
   left: 0;
